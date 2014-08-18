@@ -1,31 +1,51 @@
-### Step 4. Deploy your app using the companion app
-
-The AppBuilder companion app makes it easy to test your app on real devices, without the need to manage SDKs or deal with complex provisioning options.
-
-<hr data-action="start" />
-
-#### Action
-
-* a. Download and install the AppBuilder companion app from your device's app store—i.e. the App Store for iOS users, Google Play for Android users, or the Windows Store for Windows Phone users.
-* b. In the browser, select **Run** --> **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
-* c. Scan the resulting QR code on your device.
-
-<hr data-action="end" />
-
-When scanned, the QR code launches the AppBuilder companion app on your device, and shows the image gallery app you just built. Now that you have the app on your device, let's make some changes.
-
-<hr data-action="start" />
-
-#### Action
-
-* d. Change the `data-title` attribute of the app's view and save your changes.
-* e. On your device, within the companion app, tap with three fingers and hold until a popup appears. (We need an image here.)
-
-<hr data-action="end" />
-
-This process is known as *LiveSync*, and it makes updating your apps as easy as a quick tap. Now that you have a functioning app, and can test it on your device, let's see how to use the device's camera.
-
 ## Lesson 2. Add images to the gallery using your device's camera
+
+### Step 4. Add data to the the listview
+
+Since apps are rarely comprised of static data, let's see you can alter your list of images. You'll start by adding images to the list, and to do that, you'll use a button in the app's navbar.
+
+<hr data-action="start" />
+
+#### Action
+
+* a. Add the following markup to the navbar: `<button data-role="button" data-align="right">Add</button>`. The `data-align` attribute controls which side the button appears on. Try playing with it in the simulator to see how it affects the app's layout.
+
+<hr data-action="end" />
+
+The next step is to listen for clicks on the button, and then add an image to the listview. You'll do so using Kendo UI's MVVM data bindings, as it provides an elegant way to the data (or the model) from the view.
+
+<hr data-action="start" />
+
+#### Action
+
+* b. Paste the following code into your app.js file, *before* the `kendo.mobile.Application` call.
+```
+window.listView = kendo.observable({
+    addImage: function() {
+        $("#images")
+            .data("kendoMobileListView")
+            .prepend([ "http://telerik.com/favicon.ico" ]);
+    }
+});
+```
+
+<hr data-action="end" />
+
+This creates the an observable object with the functionality you need for your view.
+
+<hr data-action="start" />
+
+#### Action
+
+* c. Bind the view to the `listView` object by adding a `data-model="listView"` attribute to the `<div data-role="view">` element (`<div data-role="view" data-model="listView">`).
+* d. Add a `data-bind` attribute to the add button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`). This tells Kendo UI Mobile to invoke the `addImage` method when the user clicks the add button.
+* e. Test out the button in the simulator.
+
+<hr data-action="end" />
+
+Now, when the user clicks the button, the `addImage()` method runs, which calls the ListView widget's `prepend()` method to add a new image to the list.
+
+At this point you have a list of images, and a mechanism for adding new images to the list. In the next lesson, you'll switch the add button to add images using your device's camera. And in lesson 3 you'll move all the data to a database that lives in the cloud. Before getting into that though, let's see how to test this app on physical devices.
 
 ### Step 5. Use the Cordova camera API
 
