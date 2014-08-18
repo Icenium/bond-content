@@ -1,51 +1,52 @@
-## Lesson 2. Add images to the gallery using your device's camera
+## Lesson 2. Add photos to the gallery using your device's camera
 
 ### Step 4. Add data to the the listview
 
-Since apps are rarely comprised of static data, let's see you can alter your list of images. You'll start by adding images to the list, and to do that, you'll use a button in the app's navbar.
+Since apps are rarely comprised of static data, let's see you can alter your list of photos. You'll start by adding images to the list, and to do that, you'll use a button in the app's navbar.
 
 <hr data-action="start" />
 
 #### Action
 
-* a. Add the following markup to the navbar: `<button data-role="button" data-align="right">Add</button>`. The `data-align` attribute controls which side the button appears on. Try playing with it in the simulator to see how it affects the app's layout.
+* a. Add the following markup to your index.html: `<button data-role="button" data-align="right">Add</button>`. The button should go within the navbar, so your markup should look like this:
+```
+<div data-role="navbar">
+    <span data-role="view-title"></span>
+    <button data-role="button" data-align="right">Add</button>
+</div>
+```
+* b. Save your index.html file and open your app in the simulator to view the new button.
 
 <hr data-action="end" />
 
-The next step is to listen for clicks on the button, and then add an image to the listview. You'll do so using Kendo UI's MVVM data bindings, as it provides an elegant way to the data (or the model) from the view.
+> Tip: The `data-align` attribute controls which side of the navbar the button appears on. Try playing with it to see how it affects the app's layout.
+
+The next step is to listen for clicks on the button, and then add a photo to the listview. You'll do so using Kendo UI's MVVM data bindings, as it provides an elegant way to the data (or the model) from the view.
 
 <hr data-action="start" />
 
 #### Action
 
-* b. Paste the following code into your app.js file, *before* the `kendo.mobile.Application` call.
+* c. Paste the following code into your app.js file, *before* the `kendo.mobile.Application` call.
 ```
 window.listView = kendo.observable({
     addImage: function() {
         $("#images")
             .data("kendoMobileListView")
-            .prepend([ "http://telerik.com/favicon.ico" ]);
+            .prepend([ "images/08.jpg" ]);
     }
 });
 ```
-
-<hr data-action="end" />
-
-This creates the an observable object with the functionality you need for your view.
-
-<hr data-action="start" />
-
-#### Action
-
-* c. Bind the view to the `listView` object by adding a `data-model="listView"` attribute to the `<div data-role="view">` element (`<div data-role="view" data-model="listView">`).
-* d. Add a `data-bind` attribute to the add button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`). This tells Kendo UI Mobile to invoke the `addImage` method when the user clicks the add button.
-* e. Test out the button in the simulator.
+* d. Bind the view to the `listView` object by adding a `data-model="listView"` attribute to the `<div data-role="view">` element (`<div data-role="view" data-model="listView">`).
+* e. Add a `data-bind` attribute to the add button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`). This tells Kendo UI Mobile to invoke the `addImage` method when the user clicks the add button.
+* f. Save your index.html and app.js files.
+* g. Test out the button in the simulator.
 
 <hr data-action="end" />
 
 Now, when the user clicks the button, the `addImage()` method runs, which calls the ListView widget's `prepend()` method to add a new image to the list.
 
-At this point you have a list of images, and a mechanism for adding new images to the list. In the next lesson, you'll switch the add button to add images using your device's camera. And in lesson 3 you'll move all the data to a database that lives in the cloud. Before getting into that though, let's see how to test this app on physical devices.
+At this point you have a list of photos, and a mechanism for adding new photos to the list. Next, let's see how you can switch from adding a hardcoded image to one that uses your device's camera.
 
 ### Step 5. Use the Cordova camera API
 
