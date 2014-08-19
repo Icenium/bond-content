@@ -12,15 +12,15 @@ The Telerik Platform provides tools for the entire app building experience. In t
 
 <hr data-action="end" />
 
-You are now looking at your Telerik Platform home screen, which lists all workspaces on your account. Workspaces are a way of organizing your projects. You can use them to manage team members, permissions, and more. For now you have a single “Photo Manager” (TODO: What will we name their workspace?) workspace that contains the AppBuilder project you've been working on. Your next step is to create a Backend Services Project and incorporate it into your project.
+You are now looking at your Telerik Platform home screen, which lists all workspaces on your account. Workspaces are a way of organizing your projects. You can use them to manage team members, permissions, and more. For now you have a single “Photo Album app” workspace that contains the AppBuilder project you've been working on. Your next step is to create a Backend Services Project and incorporate it into your project.
 
 <hr data-action="start" />
 
 #### Action
 
-* a. Click on the “Photo Manager” workspace to enter it.
-* b. Within the “Photo Manager” workspace, click the “Create project” button, and then select “Backend Services project”.
-* c. Give your project a name — for instance “Photo Manager Backend” — and then click “Create project”.
+* a. Click on the “Photo Album app workspace to enter it.
+* b. Within the “Photo Album app” workspace, click the “Create project” button, and then select “Backend Services project”.
+* c. Give your project a name — for instance “Photo Album Backend” — and then click “Create project”.
 * d. Click the “API Keys” menu option.
 * e. Copy the API key shown under the “API Key” heading and paste it somewhere convenient; you'll need it to complete the next step.
 
@@ -30,7 +30,7 @@ Within your Backend Services project you can see all the things Backend Services
 
 #### Step 8. Upload images to your backend
 
-With a Backend Services project in place now you're going to add data to it. Backend Services provides SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a Cordova app you're interested in the JavaScript SDK. In this step you'll add the Backend Services JavaScript SDK to your project, and use it to store your images in the cloud.
+With a Backend Services project in place, your next step is to add data to it. Backend Services provides SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a Cordova app you're interested in the JavaScript SDK. In this step you'll add the Backend Services JavaScript SDK to your project, and use it to store your images in the cloud.
 
 <hr data-action="start" />
 
@@ -43,29 +43,31 @@ With a Backend Services project in place now you're going to add data to it. Bac
 ```
 * c. Add the following to the top of your app.js file, replacing the `"YOUR API KEY"` string with the API key you saved off in the previous step. (TODO: A hint for how to go back into the Backend Services project to retrieve the key?)
 ```
-var el = new Everlive("YOUR API KEY");
+var everlive = new Everlive("YOUR API KEY");
 ```
 
 <hr data-action="end" />
 
-The `el` object now contains an Everlive instance you can use to interact with your Backend Services project. Let's return to our image management code to see how to use it.
+The `everlive` object now contains an Everlive instance you can use to interact with your Backend Services project. Let's return to our photo management code to see how to use it.
 
 <hr data-action="start" />
 
 #### Action
 
-* a. In app.js, remove the `$("#images").data(...).prepend(...)` code in the `getPicture()` success callback, and replace it with this code:
+* d. In app.js, change the camera's `success()` function to use the following code:
 ```
-el.Files.create({
-    Filename: Math.random().toString(36).substring(2, 15) + ".jpg",
-    ContentType: "image/jpeg",
-    base64: data
-}).then(loadImages);
+var success = function(data) {
+    everlive.Files.create({
+        Filename: Math.random().toString(36).substring(2, 15) + ".jpg",
+        ContentType: "image/jpeg",
+        base64: data
+    }).then(loadPhotos);
+};
 ```
-* b. Next, locate the block of code that creates the Kendo UI Mobile ListView (`$("#images").kendoMobileListView()`), and replace it with the following:
+* e. Next, locate the block of code that creates the Kendo UI Mobile ListView (`$("#images").kendoMobileListView()`), and replace it with the following:
 ```
-function loadImages() {
-    el.Files.get().then(function(data) {
+function loadPhotos() {
+    everlive.Files.get().then(function(data) {
         var files = [];
         data.result.forEach(function(image) {
             files.push(image.Uri);
@@ -76,24 +78,21 @@ function loadImages() {
         });
     });
 }
+loadPhotos();
 ```
-* c. Add a call to `loadImages` after the line that creates the `kendo.mobile.Application`.
-```
-var app = new kendo.mobile.Application(document.body, { skin: "flat" });
-loadImages();
-```
-* d. Use a three-finger tap to refresh the app on your device.
-* e. Use the Add button to take a picture with your device.
+* f. Save your app.js and index.html files.
+* g. Use a three-finger tap to refresh the app on your device.
+* h. Use the Add button to take a picture with your device.
 
 <hr data-action="end" />
 
-The `create()` method uploads a picture to your Backend Services project and the `get()` method retrieves all pictures currently stored there. After the upload to Backend Services completes your call to `loadImages()` (and subsequently `el.Files.get()`) reloads your list of images — there's no need to manually append content!
+The `create()` method uploads a picture to your Backend Services project and the `get()` method retrieves all pictures currently stored there. After the upload to Backend Services completes your call to `loadPhotos()` (and subsequently `el.Files.get()`) reloads your list of photos — there's no need to manually append content!
 
-After you have taken a few pictures, go to the “Files” menu in your Backend Services project to see a list of images you are storing. With your backend now in place, let's see how to solve another tricky problem: optimizing the delivery of these images for mobile devices.
+After you have taken a few pictures, go to the “Files” menu in your Backend Services project to see a list of photos you are storing. You can even upload new photos without having to go through your app's UI! With your backend now in place, let's see how to solve another tricky problem: optimizing the delivery of these photos for mobile devices.
 
 #### Step 9. Enable responsive images
 
-One of the tools Backend Services provides is a responsive images solution. The responsive images service automatically analyzes the user's device, determines the optimal image size, builds that image (server-side), and stores it on Amazon's CloudFront CDN network for optimal delivery. Let's look at how to apply the service to your photo manager project.
+One of the tools Backend Services provides is a responsive images solution. The responsive images service automatically analyzes the user's device, determines the optimal image size, builds that image (server-side), and stores it on Amazon's CloudFront CDN network for optimal delivery. Let's look at how to apply the service to your photo album project.
 
 <hr data-action="start" />
 
@@ -101,12 +100,12 @@ One of the tools Backend Services provides is a responsive images solution. The 
 
 * a. Add the following `<script>` tag in your index.html file.
 ```
-<script src="http://bs-static.cdn.telerik.com/1.0.0/everlive.images.min.js"></script>
+<script src="https://bs-static.cdn.telerik.com/1.0.0/everlive.images.min.js"></script>
 ```
 * b. In your app.js file, call `everliveImages.init()` after calling `new Everlive()`. Pass the same Backend Services API key you call `Everlive()` with.
 ```
 var apiKey = "YOUR API KEY";
-var el = new Everlive(apiKey);
+var everlive = new Everlive(apiKey);
 everliveImages.init(apiKey);
 ```
 
@@ -118,12 +117,19 @@ This sets up the responsive images services and makes it available for use. Ther
 
 #### Action
 
-* a. In your app.js file, in the `loadImages()` function, look for the line of code that declares the template for the ListView widget. On that line, change `"<img src='#: data #''>"` to `"<img data-src='#: data #' class='resimgs'>"`.
-* b. After the creation of the ListView widget (`$("#images").kendoMobileListView(...)`), add the following line of code:
+* c. In your app.js file, in the `loadPhotos()` function, look for the line of code that declares the template for the ListView widget. On that line, change `"<img src='#: data #''>"` to `"<img data-src='#: data #' class='resimgs'>"`.
+* d. Alter the creation of the ListView widget to call `everliveImages.responsiveAll()` in a `dataBound` event handler. The full call should look like this:
 ```
-everliveImages.responsiveAll();
+$("#images").kendoMobileListView({
+    dataSource: files,
+    template: "<img data-src='#: data #' class='resimgs'>",
+    dataBound: function() {
+        everliveImages.responsiveAll();
+    }
+});
 ```
-* c. Use a three-finger tap to refresh the app on your device.
+* e. Save your app.js and index.html files.
+* f. Use a three-finger tap to refresh the app on your device.
 
 <hr data-action="end" />
 
