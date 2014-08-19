@@ -27,7 +27,7 @@ The next step is to listen for clicks on the button, and then add a photo to the
 
 #### Action
 
-* c. Paste the following code into your app.js file, *before* the `kendo.mobile.Application` call.
+* c. Paste the following code into your app.js file, directly *before* the `kendo.mobile.Application` call.
 ```
 window.listView = kendo.observable({
     addImage: function() {
@@ -56,12 +56,18 @@ The Cordova library makes invoking native device methods as easy as JavaScript m
 
 #### Action
 
-* a. In your app.js, remove the current contents of the `addImage()` method, and replace it with a call to `navigator.camera.getPicture()`, and pass it an empty function for now (`navigator.camera.getPicture(function(){})`).
-* b. Use a three-finger tap to refresh the companion app and test your changes.
+* a. In your app.js, remove the current contents of the `addImage()` method, and replace it with a call to `navigator.camera.getPicture()`, and pass it an empty function for now. You code should look like this:
+```
+addImage: function() {
+    navigator.camera.getPicture(function(){});
+}
+```
+* b. Save the app.js file.
+* c. Use a three-finger tap to refresh the companion app and test your changes.
 
 <hr data-action="end" />
 
-Now, when you tap the Add button, the camera displays on your device, but nothing happens after taking the picture. Let's see how you can render the photos you take on the screen.
+Now, when you tap the Add button, the Cordova `getPicture()` API invokes the camera on your device, but nothing happens after taking the picture. Let's see how you can render the photos you take on the screen.
 
 ### Step 6. Add a photo to the gallery
 
@@ -71,45 +77,33 @@ The Cordova `navigator.camera.getPicture()` method takes a required callback fun
 
 #### Action
 
-* a. Switch the existing call to `navigator.camera.getPicture()` with the one below.
+* a. Switch the contents of the `addImage()` method to the following code:
 ```
-navigator.camera.getPicture(function(data) {
-    $("#images")
-        .data("kendoMobileListView")
-        .prepend([ "data:image/jpeg;base64," + data ]);
-}, function() {
-    navigator.notification.alert("Unfortunately we could not add the image");
-}, {
-    destinationType: Camera.DestinationType.DATA_URL
-});
-```
-* b. Use a three-finger tap to refresh the app on your device.
-* c. Use the add button to take a photo and add it to the list.
-
-<hr data-action="end" />
-
-You are now using your device's camera to add photos to the list, but on most devices the default camera resolution is way too big for the screen, and photos jump out of the list; therefore you need to reduce the dimensions of the photo.
-
-To do that, you'll need to add some additional configuration options to your call to `navigator.camera.getPicture()`. Currently you're only setting a `destinationType` (which is needed to display the photo in an `<img>` tag). Let's add a few more values to that object.
-
-<hr data-action="start" />
-
-#### Action
-
-* a. Add `targetWidth` and `targetHeight` properties to the final `navigator.camera.getPicture()` argument. You can use the object shown below.
-```
-{
-    destinationType: Camera.DestinationType.DATA_URL,
-    targetWidth: 300,
-    targetHeight: 400
+addImage: function() {
+    var success = function(data) {
+        $("#images")
+            .data("kendoMobileListView")
+            .prepend(["data:image/jpeg;base64," + data]);
+    };
+    var error = function() {
+        navigator.notification.alert("Unfortunately we could not add the image");
+    };
+    var config = {
+        destinationType: Camera.DestinationType.DATA_URL,
+        targetHeight: 400,
+        targetWidth: 400
+    };
+    navigator.camera.getPicture(success, error, config);
 }
 ```
-* b. Use the three-finger tap to refresh the app on your device.
-* c. Use the add button to take a photo and add it to the list.
-* d. Try playing with a few different values for the `targetWidth` and `targetHeight`. Use *LiveSync* to see how they render on your device.
+* b. Save your app.js file.
+* c. Use a three-finger tap to refresh the app on your device.
+* d. Use the add button to take a photo and add it to the list.
 
 <hr data-action="end" />
 
-As you see, Cordova turns cross-platform device access into simple JavaScript method calls, and AppBuilder makes it easy to test those calls on real devices.
+The `getPicture()` method takes three arguments: a success callback, an error callback, and a configuration object. Here you are using the success callback to take the raw data from the camera and append it to the listview. The error callback shows the user an error message, and the configuration object tells Cordova to capture the image as a Base64-encoded string (which the `success()` function uses).
 
-Your app can now take photos from the camera and build a photo gallery, which is pretty cool. But there's one problem: the images aren't persisted. If you close the app, all the images in the list go away. Let's see how you can take those images and store them in the cloud.
+What's great is that all of this is as simple as some basic configuration. Cordova turns cross-platform device access into simple JavaScript method calls, and AppBuilder makes it easy to test those calls on real devices.
+
+Your app can now take photos from the camera and build a photo gallery, which is pretty cool. But there's one problem: the photos aren't persisted. If you close the app, all the photos in the list go away. Let's see how you can take those photos and store them in the cloud.
