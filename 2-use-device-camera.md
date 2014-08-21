@@ -8,14 +8,14 @@ Since apps are rarely comprised of static data, let's see you can alter your lis
 
 #### Action
 
-* a. Add the following markup to your index.html: `<button data-role="button" data-align="right">Add</button>`. The button should go within the navbar, so your markup should look like this:
+* **a**. Add the following markup to your index.html: `<button data-role="button" data-align="right">Add</button>`. The button should go within the navbar, so your markup should look like this:
 ```
 <div data-role="navbar">
     <span data-role="view-title"></span>
     <button data-role="button" data-align="right">Add</button>
 </div>
 ```
-* b. Save your index.html file and open your app in the simulator to view the new button.
+* **b**. Save your index.html file and open your app in the simulator to view the new button.
 
 <hr data-action="end" />
 
@@ -27,7 +27,7 @@ The next step is to listen for clicks on the button, and then add a photo to the
 
 #### Action
 
-* c. Paste the following code into your app.js file, directly *before* the `kendo.mobile.Application` call.
+* **c**. Paste the following code into your app.js file, directly *before* the `kendo.mobile.Application` call.
 ```
 window.listView = kendo.observable({
     addImage: function() {
@@ -37,10 +37,10 @@ window.listView = kendo.observable({
     }
 });
 ```
-* d. Bind the view to the `listView` object by adding a `data-model="listView"` attribute to the `<div data-role="view">` element (`<div data-role="view" data-model="listView">`).
-* e. Add a `data-bind` attribute to the add button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`). This tells Kendo UI Mobile to invoke the `addImage` method when the user clicks the add button.
-* f. Save your index.html and app.js files.
-* g. Test out the button in the simulator.
+* **d**. Bind the view to the `listView` object by adding a `data-model="listView"` attribute to the `<div data-role="view">` element (`<div data-role="view" data-model="listView">`).
+* **e**. Add a `data-bind` attribute to the add button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`). This tells Kendo UI Mobile to invoke the `addImage` method when the user clicks the add button.
+* **f**. Save your index.html and app.js files.
+* **g**. Test out the button in the simulator.
 
 <hr data-action="end" />
 
@@ -56,14 +56,14 @@ The Cordova library makes invoking native device methods as easy as JavaScript m
 
 #### Action
 
-* a. In your app.js, remove the current contents of the `addImage()` method, and replace it with a call to `navigator.camera.getPicture()`, and pass it an empty function for now. You code should look like this:
+* **a**. In your app.js, remove the current contents of the `addImage()` method, and replace it with a call to `navigator.camera.getPicture()`, and pass it an empty function for now. You code should look like this:
 ```
 addImage: function() {
     navigator.camera.getPicture(function(){});
 }
 ```
-* b. Save the app.js file.
-* c. Use a three-finger tap to refresh the companion app and test your changes.
+* **b**. Save the app.js file.
+* **c**. Use a three-finger tap to refresh the companion app and test your changes.
 
 <hr data-action="end" />
 
@@ -77,7 +77,7 @@ The Cordova `navigator.camera.getPicture()` method takes a required callback fun
 
 #### Action
 
-* a. Switch the contents of the `addImage()` method to the following code:
+* **a**. Switch the contents of the `addImage()` method to the following code:
 ```
 addImage: function() {
     var success = function(data) {
@@ -96,9 +96,9 @@ addImage: function() {
     navigator.camera.getPicture(success, error, config);
 }
 ```
-* b. Save your app.js file.
-* c. Use a three-finger tap to refresh the app on your device.
-* d. Use the add button to take a photo and add it to the list.
+* **b**. Save your app.js file.
+* **c**. Use a three-finger tap to refresh the app on your device.
+* **d**. Use the add button to take a photo and add it to the list.
 
 <hr data-action="end" />
 

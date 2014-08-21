@@ -8,7 +8,7 @@ Kendo UI Mobile apps are made up of views, and a basic one view has already been
 
 #### Action
 
-* a. Add markup to the view so that it looks this:
+* **a**. Add markup to the view so that it looks this:
 ```
 <div data-role="view">
     <div data-role="navbar">
@@ -16,8 +16,8 @@ Kendo UI Mobile apps are made up of views, and a basic one view has already been
     </div>
 </div>
 ```
-* b: Add a `data-title` attribute to the view, e.g. `<div data-role="view" data-title="Photos">`.
-* c. Save the index.html file.
+* **b**. Add a `data-title` attribute to the view, e.g. `<div data-role="view" data-title="Photos">`.
+* **c**. Save the index.html file.
 
 <hr data-action="end" />
 
@@ -27,8 +27,8 @@ Kendo UI Mobile automatically styles the navbar to look great on each platform. 
 
 #### Action
 
-* d. Open the iPhone 5 simulator by selecting **Run** --> **iPhone 5**.
-* e. With the simulator open, change the title of the view by updating its `data-title` attribute 
+* **d**. Open the iPhone 5 simulator by selecting **Run** --> **iPhone 5**.
+* **e**. With the simulator open, change the title of the view by updating its `data-title` attribute 
 The simulators automatically update with every change you make. Take a minute to experiment with the various things the simulator can do. You can even open multiple simulators at once!
 
 <hr data-action="end" />
@@ -41,16 +41,16 @@ Your next step is to show some photos in your album, and you'll use the Kendo UI
 
 #### Action
 
-* a. Add a `<ul>` element underneath the navbar with an `id` of `"images"` (`<ul id="images"></ul>`). The view should look like this:
+* **a**. Add a `<ul>` element underneath the navbar with an `id` of `"images"` (`<ul id="images"></ul>`). The view should look like this:
 ```
 <div data-role="view">
     <div data-role="navbar">...</div>
     <ul id="images"></ul>
 </div>
 ```
-* b. Save the index.html file.
-* c. Open the project's app.js file, located in the scripts folder.
-* e. In your app.js, use the code below to select the `<ul>` with jQuery and convert it into a ListView widget. Place this code directly after the `kendo.mobile.Application()` call, as the Kendo UI Mobile app needs to exist before you initialize widgets.
+* **b**. Save the index.html file.
+* **c**. Open the project's app.js file, located in the scripts folder.
+* **d**. In your app.js, use the code below to select the `<ul>` with jQuery and convert it into a ListView widget. Place this code directly after the `kendo.mobile.Application()` call, as the Kendo UI Mobile app needs to exist before you initialize widgets.
 ```
 $("#images").kendoMobileListView({
     dataSource: [
@@ -60,7 +60,7 @@ $("#images").kendoMobileListView({
     template: "<img src='#: data #''>"
 });
 ```
-* f. Run this in the simulator to see how the photos display.
+* **e**. Run this in the simulator to see how the photos display.
 
 <hr data-action="end" />
 
@@ -72,9 +72,9 @@ The AppBuilder companion app makes it easy to test your app on real devices, wit
 
 #### Action
 
-* a. Download and install the AppBuilder companion app from your device's app store—i.e. the App Store for iOS users, Google Play for Android users, or the Windows Store for Windows Phone users (search for **AppBuilder**).
-* b. In the browser, select **Run** --> **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
-* c. Scan the resulting QR code on your device.
+* **a**. Download and install the AppBuilder companion app from your device's app store—i.e. the App Store for iOS users, Google Play for Android users, or the Windows Store for Windows Phone users (search for **AppBuilder**).
+* **b**. In the browser, select **Run** --> **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
+* **c**. Scan the resulting QR code on your device.
 
 <hr data-action="end" />
 
@@ -84,8 +84,8 @@ When scanned, the QR code launches the AppBuilder companion app on your device, 
 
 #### Action
 
-* d. Change the `data-title` attribute of the app's view and save your changes.
-* e. On your device, within the companion app, tap with three fingers and hold until a popup appears.
+* **d**. Change the `data-title` attribute of the app's view and save your changes.
+* **e**. On your device, within the companion app, tap with three fingers and hold until a popup appears.
 ![Using a three-finger refresh on your device](images/three-finger-tap.png)
 
 <hr data-action="end" />
