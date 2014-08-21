@@ -41,10 +41,11 @@ With a Backend Services project in place, your next step is to add data to it. B
 ```
 <script src="https://bs-static.cdn.telerik.com/1.2.5/everlive.all.min.js"></script>
 ```
-* **c**. Add the following to the top of your app.js file, replacing the `"YOUR API KEY"` string with the API key you saved off in the previous step. (TODO: A hint for how to go back into the Backend Services project to retrieve the key?)
+* **c**. Add the following to the top of your app.js file:
 ```
 var everlive = new Everlive("YOUR API KEY");
 ```
+* **d.** Replace the `"YOUR API KEY"` string with the API key you saved off in the previous step.
 
 <hr data-action="end" />
 
