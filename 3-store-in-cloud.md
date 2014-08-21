@@ -18,11 +18,11 @@ You are now looking at your Telerik Platform home screen, which lists all worksp
 
 #### Action
 
-* **a**. Click on the “Photo Album app workspace to enter it.
-* **b**. Within the “Photo Album app” workspace, click the “Create project” button, and then select “Backend Services project”.
-* **c**. Give your project a name — for instance “Photo Album Backend” — and then click “Create project”.
-* **d**. Click the “API Keys” menu option.
-* **e**. Copy the API key shown under the “API Key” heading and paste it somewhere convenient; you'll need it to complete the next step.
+* **b**. Click on the “Photo Album app workspace to enter it.
+* **c**. Within the “Photo Album app” workspace, click the “Create project” button, and then select “Backend Services project”.
+* **d**. Give your project a name — for instance “Photo Album Backend” — and then click “Create project”.
+* **e**. Click the “API Keys” menu option.
+* **f**. Copy the API key shown under the “API Key” heading and paste it somewhere convenient; you'll need it to complete the next step.
 
 <hr data-action="end" />
 
