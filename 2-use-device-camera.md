@@ -50,28 +50,7 @@ At this point you have a list of photos, and a mechanism for adding new photos t
 
 ### Step 5. Use the Cordova camera API
 
-The Cordova library makes invoking native device methods as easy as JavaScript method calls. Let's see how to use Cordova plugins, starting with the camera.
-
-<hr data-action="start" />
-
-#### Action
-
-* **a**. In your app.js, remove the current contents of the `addImage()` method, and replace it with a call to `navigator.camera.getPicture()`, and pass it an empty function for now. You code should look like this:
-```
-addImage: function() {
-    navigator.camera.getPicture(function(){});
-}
-```
-* **b**. Save the app.js file.
-* **c**. Use a three-finger tap to refresh the companion app and test your changes.
-
-<hr data-action="end" />
-
-Now, when you tap the Add button, the Cordova `getPicture()` API invokes the camera on your device, but nothing happens after taking the picture. Let's see how you can render the photos you take on the screen.
-
-### Step 6. Add a photo to the gallery
-
-The Cordova `navigator.camera.getPicture()` method takes a required callback function that runs after you take a photo. Currently you're using an empty callback function (`function(){}`), so the photo is discarded. Let's switch the code to add the photo to the existing list of images.
+The Cordova library makes invoking native device methods as easy as JavaScript method calls. Let's see how to use Cordova plugins, starting with the API to take a picture using the camera: `navigator.camera.getPicture()`.
 
 <hr data-action="start" />
 
@@ -98,7 +77,8 @@ addImage: function() {
 ```
 * **b**. Save your app.js file.
 * **c**. Use a three-finger tap to refresh the app on your device.
-* **d**. Use the add button to take a photo and add it to the list.
+* **d**. Click the add button on your device.
+* **e**. Take a picture! It can be of you, your keyboard, or that stress ball you got at some conference three years ago. If everyone went right, you should see the picture appear at the top of the list.
 
 <hr data-action="end" />
 
