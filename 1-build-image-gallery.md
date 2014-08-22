@@ -28,10 +28,12 @@ Kendo UI Mobile automatically styles the navbar to look great on each platform. 
 #### Action
 
 * **d**. Open the iPhone 5 simulator by selecting **Run** --> **iPhone 5**.
-* **e**. With the simulator open, change the title of the view by updating its `data-title` attribute 
-The simulators automatically update with every change you make. Take a minute to experiment with the various things the simulator can do. You can even open multiple simulators at once!
+* **e**. With the simulator open, change the title of the view by updating its `data-title` attribute—for instance `<div data-role="view" data-title="My Cool Photos">`.
+* **f**. Save your index.html file and note how the simulator updates automatically.
 
 <hr data-action="end" />
+
+The simulators automatically update with every change you make. Take a minute to experiment with the various controls the simulator offers. You can simulate multiple devices, rotate devices to test portrait & landscape modes, and a lot more.
 
 ### Step 2. Show data in a listview
 
