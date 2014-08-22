@@ -1,6 +1,6 @@
 ## Lesson 3. Stores the images in the cloud
 
-#### Step 7. Create a Backend Services project
+### Step 7. Create a Backend Services project
 
 The Telerik Platform provides tools for the entire app building experience. In this lesson, you'll use create a new Backend Services project to store your data, and enable its responsive images feature.
 
@@ -28,7 +28,7 @@ You are now looking at your Telerik Platform home screen, which lists all worksp
 
 Within your Backend Services project you can see all the things Backend Services makes possible, such as user management, push notifications, email messaging, and more. For your photo uploader you're interested in the “Files” menu option. You'll see how to use it in the next step.
 
-#### Step 8. Upload images to your backend
+### Step 8. Upload images to your backend
 
 With a Backend Services project in place, your next step is to add data to it. Backend Services provides SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a Cordova app you're interested in the JavaScript SDK. In this step you'll add the Backend Services JavaScript SDK to your project, and use it to store your images in the cloud.
 
