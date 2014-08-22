@@ -76,9 +76,10 @@ The AppBuilder companion app makes it easy to test your app on real devices, wit
 
 #### Action
 
-* **a**. Download and install the AppBuilder companion app from your device's app store—i.e. the App Store for iOS users, Google Play for Android users, or the Windows Store for Windows Phone users (search for **AppBuilder**).
-* **b**. In the browser, select **Run** --> **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
-* **c**. Scan the resulting QR code on your device.
+* **a.** Get out your iOS, Android, or Windows Phone device.
+* **b**. Download and install the AppBuilder companion app from your device's app store—i.e. the App Store for iOS users, Google Play for Android users, or the Windows Store for Windows Phone users (search for **AppBuilder**).
+* **c**. In the browser, select **Run** --> **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
+* **d**. Scan the resulting QR code on your device.
 
 <hr data-action="end" />
 
@@ -88,8 +89,9 @@ When scanned, the QR code launches the AppBuilder companion app on your device, 
 
 #### Action
 
-* **d**. Change the `data-title` attribute of the app's view and save your changes.
-* **e**. On your device, within the companion app, tap with three fingers and hold until a popup appears.
+* **e**. Change the `data-title` attribute of the app's view (for instance `<div data-role="view" data-title="My Cool Photos">`).
+* **f.** Save your index.html file.
+* **g**. On your device, within the companion app, tap with three fingers and hold until a popup appears.
 ![Using a three-finger refresh on your device](images/three-finger-tap.png)
 
 <hr data-action="end" />
