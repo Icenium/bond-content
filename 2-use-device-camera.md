@@ -38,13 +38,13 @@ window.listView = kendo.observable({
 });
 ```
 * **d**. Bind the view to the `listView` object by adding a `data-model="listView"` attribute to the `<div data-role="view">` element (`<div data-role="view" data-model="listView">`).
-* **e**. Add a `data-bind` attribute to the add button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`). This tells Kendo UI Mobile to invoke the `addImage` method when the user clicks the add button.
+* **e**. Add a `data-bind` attribute to the add button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`). This tells Kendo UI Mobile to invoke the `addImage` method when you click the add button.
 * **f**. Save your index.html and app.js files.
 * **g**. Test out the button in the simulator.
 
 <hr data-action="end" />
 
-Now, when the user clicks the button, the `addImage()` method runs, which calls the ListView widget's `prepend()` method to add a new image to the list.
+Now, when you click the add button, the `addImage()` method runs, which calls the ListView widget's `prepend()` method to add a new image to the list.
 
 At this point you have a list of photos, and a mechanism for adding new photos to the list. Next, let's see how you can switch from adding a hardcoded image to one that uses your device's camera.
 
@@ -102,7 +102,7 @@ addImage: function() {
 
 <hr data-action="end" />
 
-The `getPicture()` method takes three arguments: a success callback, an error callback, and a configuration object. Here you are using the success callback to take the raw data from the camera and append it to the listview. The error callback shows the user an error message, and the configuration object tells Cordova to capture the image as a Base64-encoded string (which the `success()` function uses).
+The `getPicture()` method takes three arguments: a success callback, an error callback, and a configuration object. Here you are using the success callback to take the raw data from the camera and append it to the listview. The error callback shows you an error message if something goes wrong, and the configuration object tells Cordova to capture the image as a Base64-encoded string (which the `success()` function uses).
 
 What's great is that all of this is as simple as some basic configuration. Cordova turns cross-platform device access into simple JavaScript method calls, and AppBuilder makes it easy to test those calls on real devices.
 
