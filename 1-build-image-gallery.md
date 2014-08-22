@@ -45,8 +45,10 @@ Your next step is to show some photos in your album, and you'll use the Kendo UI
 
 * **a**. Add a `<ul>` element underneath the navbar with an `id` of `"images"` (`<ul id="images"></ul>`). The view should look like this:
 ```
-<div data-role="view">
-    <div data-role="navbar">...</div>
+<div data-role="view" data-title="Photos">
+    <div data-role="navbar">
+        <span data-role="view-title"></span>
+    </div>
     <ul id="images"></ul>
 </div>
 ```
