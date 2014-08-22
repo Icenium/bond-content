@@ -89,7 +89,7 @@ When scanned, the QR code launches the AppBuilder companion app on your device, 
 
 #### Action
 
-* **e**. Change the `data-title` attribute of the app's view (for instance `<div data-role="view" data-title="My Cool Photos">`).
+* **e**. Change the `data-title` attribute of the app's view (for instance `<div data-role="view" data-title="My Super Cool Photos">`).
 * **f.** Save your index.html file.
 * **g**. On your device, within the companion app, tap with three fingers and hold until a popup appears.
 ![Using a three-finger refresh on your device](images/three-finger-tap.png)
