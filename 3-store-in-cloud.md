@@ -55,7 +55,7 @@ The `everlive` object now contains an Everlive instance you can use to interact 
 
 #### Action
 
-* **d**. In app.js, change the camera's `success()` function to use the following code:
+* **e**. In app.js, change the camera's `success()` function to use the following code:
 ```
 var success = function(data) {
     everlive.Files.create({
@@ -65,7 +65,7 @@ var success = function(data) {
     }).then(loadPhotos);
 };
 ```
-* **e**. Next, locate the block of code that creates the Kendo UI Mobile ListView (`$("#images").kendoMobileListView()`), and replace it with the following:
+* **f**. Next, locate the block of code that creates the Kendo UI Mobile ListView (`$("#images").kendoMobileListView()`), and replace it with the following:
 ```
 function loadPhotos() {
     everlive.Files.get().then(function(data) {
@@ -81,12 +81,13 @@ function loadPhotos() {
 }
 loadPhotos();
 ```
-* **f**. Save your app.js and index.html files.
-* **g**. Use a three-finger tap to refresh the app on your device.
-* **h**. Use the Add button to take a picture with your device.
+* **g**. Save your app.js and index.html files.
+* **h**. Use a three-finger tap to refresh the app on your device.
+* **i**. Click the add button on your device.
+* **j**. Put your photography skills to use. You've always wanted an artistic picture of your mouse, keyboard, or laptop haven't you?
 
 <hr data-action="end" />
 
-The `create()` method uploads a picture to your Backend Services project and the `get()` method retrieves all pictures currently stored there. After the upload to Backend Services completes your call to `loadPhotos()` (and subsequently `el.Files.get()`) reloads your list of photos — there's no need to manually append content!
+The `create()` method uploads a picture to your Backend Services project and the `get()` method retrieves all pictures currently stored there. After the upload to Backend Services completes your call to `loadPhotos()` (and subsequently `el.Files.get()`) reloads your list of photos — there's no need to manually append content! After you have taken a few pictures, go to the “Files” menu in your Backend Services project to see a list of photos you are storing.
 
-After you have taken a few pictures, go to the “Files” menu in your Backend Services project to see a list of photos you are storing. You can even upload new photos without having to go through your app's UI!
+And that's all there is to it, which is pretty cool if you think about it — you just built a mobile app that takes pictures and stores them in the cloud!
