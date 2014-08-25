@@ -65,7 +65,16 @@ var success = function(data) {
     }).then(loadPhotos);
 };
 ```
-* **f**. Next, locate the block of code that creates the Kendo UI Mobile ListView (`$("#images").kendoMobileListView()`), and replace it with the following:
+* **f**. Next, make the following change to change how the Kendo UI Mobile ListView gets the data it needs.
+
+Before:
+```
+$("#images").kendoMobileListView({
+    dataSource: [ ... ],
+    template: "<img src='#: data #''>"
+});
+```
+After:
 ```
 function loadPhotos() {
     everlive.Files.get().then(function(data) {
@@ -81,6 +90,7 @@ function loadPhotos() {
 }
 loadPhotos();
 ```
+
 * **g**. Save your app.js and index.html files.
 * **h**. Use a three-finger tap to refresh the app on your device.
 * **i**. Click the add button on your device.
