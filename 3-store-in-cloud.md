@@ -8,7 +8,7 @@ The Telerik Platform provides tools for the entire app building experience. In t
 
 #### Action
 
-* **a**. Click on your account name in the top-left corner of the screen. (TODO: It would be nice to have some sort of hint here that helped the user find this.)
+* **a**. Click on your account name in the top-left corner of the screen.
 
 <hr data-action="end" />
 
@@ -36,7 +36,7 @@ With a Backend Services project in place, your next step is to add data to it. B
 
 #### Action
 
-* **a**. Navigate back to your AppBuilder project. (TODO: Give details on how to do this in a hint?)
+* **a**. Navigate back to your AppBuilder project.
 * **b**. Add the Backend Services SDK (which is code named Everlive) to your project by inserting the following `<script>` tag directly after the `<script>` that imports kendo.mobile.min.js:
 ```
 <script src="https://bs-static.cdn.telerik.com/1.2.5/everlive.all.min.js"></script>
