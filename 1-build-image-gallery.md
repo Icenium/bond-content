@@ -21,6 +21,8 @@ Kendo UI Mobile apps are made up of views, and a basic one view has already been
 
 <hr data-action="end" />
 
+> Tip: Keyboard shortcut `Ctrl` + `Alt` + `F` cleans up indentation and formatting for you. Try using it after you paste in code throughout these lessons.
+
 Kendo UI Mobile automatically styles the navbar to look great on each platform. To see what this looks like, let’s try this app out in the AppBuilder simulators.
 
 <hr data-action="start" />
