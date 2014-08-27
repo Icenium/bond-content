@@ -52,6 +52,8 @@ At this point you have a list of photos, and a mechanism for adding new photos t
 
 The Cordova library makes invoking native device methods as easy as JavaScript method calls. Let's see how to use Cordova plugins, starting with the API to take a picture using the camera: `navigator.camera.getPicture()`.
 
+> Tip: Remember that keyboard shortcut `Ctrl` + `Alt` + `F` can format the code that you paste in. You can also view all keyboard shortcuts using `Ctrl` + `Shift` + `/`.
+
 <hr data-action="start" />
 
 #### Action
