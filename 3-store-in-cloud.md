@@ -2,7 +2,7 @@
 
 ### Step 6. Create a Backend Services project
 
-The Telerik Platform provides tools for the entire app building experience. In this lesson, you'll use create a new Backend Services project to store your data, and enable its responsive images feature.
+The Telerik Platform provides tools for the entire app building experience. In this lesson, you'll use create a new Backend Services project to store your data.
 
 <hr data-action="start" />
 
