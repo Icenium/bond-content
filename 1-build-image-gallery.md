@@ -1,4 +1,4 @@
-## Lesson 1. Build an photo album
+## Lesson 1. Build a photo album
 
 ### Step 1. Add a navbar
 
