@@ -21,7 +21,7 @@ Since apps are rarely comprised of static data, let's see you can alter your lis
 
 > Tip: The `data-align` attribute controls which side of the navbar the button appears on. Try playing with it to see how it affects the app's layout.
 
-The next step is to listen for clicks on the button, and then add a photo to the listview. You'll do so using Kendo UI's MVVM data bindings, as it provides an elegant way to the data (or the model) from the view.
+The next step is to listen for clicks on the button, and then add a photo to the listview. You'll do so using Kendo UI's MVVM data bindings, as they provide an elegant way to separate the data (or the model) from the view.
 
 <hr data-action="start" />
 

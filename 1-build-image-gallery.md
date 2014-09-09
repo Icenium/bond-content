@@ -60,10 +60,7 @@ Your next step is to show some photos in your album, and you'll use the Kendo UI
 * **d**. In your app.js, use the code below to select the `<ul>` with jQuery and convert it into a ListView widget. Place this code directly after the `kendo.mobile.Application()` call, as the Kendo UI Mobile app needs to exist before you initialize widgets.
 ```
 $("#images").kendoMobileListView({
-    dataSource: [
-        "images/01.jpg", "images/02.jpg", "images/03.jpg", "images/04.jpg",
-        "images/05.jpg", "images/06.jpg", "images/07.jpg"
-    ],
+    dataSource: ["images/01.jpg", "images/02.jpg", "images/03.jpg", "images/04.jpg", "images/05.jpg", "images/06.jpg", "images/07.jpg"],
     template: "<img src='#: data #''>"
 });
 ```
@@ -97,7 +94,7 @@ When scanned, the QR code launches the AppBuilder companion app on your device, 
 
 #### Action
 
-* **e**. Change the `data-title` attribute of the app's view (for instance `<div data-role="view" data-title="My Super Cool Photos">`).
+* **e**. Change the `data-title` attribute of the app's view (for instance `<div data-role="view" data-title="My Awesome Photos">`).
 * **f.** Save your index.html file.
 * **g**. On your device, within the companion app, tap with three fingers and hold until a popup appears.
 ![Using a three-finger refresh on your device](images/three-finger-tap.png)

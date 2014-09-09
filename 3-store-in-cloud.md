@@ -37,7 +37,7 @@ With a Backend Services project in place, your next step is to add data to it. B
 #### Action
 
 * **a**. Navigate back to your “Photo Album” AppBuilder project that is part of your workspace. 
-* **b**. Add the Backend Services SDK (which is code named Everlive) to your project by inserting the following `<script>` tag directly after the `<script>` that imports kendo.mobile.min.js:
+* **b**. In your index.html file, insert the following `<script>` tag to import the Backend Services SDK (which is code named Everlive). Place it directly after the `<script>` that imports kendo.mobile.min.js:
 ```
 <script src="https://bs-static.cdn.telerik.com/1.2.5/everlive.all.min.js"></script>
 ```
