@@ -84,7 +84,7 @@ The AppBuilder companion app makes it easy to test your app on real devices, wit
 
 [![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/us/app/telerik-appbuilder/id527547398?mt=8)
 [![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.AppBuilder&hl=en)
-[![Windows Phone Store](images/windows-phone-store-icon.png)](http://www.windowsphone.com/en-us/store/app/appbuilder/0171d46b-b5f2-43d9-a36b-0a78c9692aab?signin=true)
+[![Windows Phone Store](images/windows-phone-store-icon.png)](https://www.windowsphone.com/en-us/store/app/appbuilder/0171d46b-b5f2-43d9-a36b-0a78c9692aab?signin=true)
 
 * **c**. In the browser, select **Run** --> **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
 * **d**. Scan the resulting QR code on your device.
