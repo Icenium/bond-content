@@ -2,7 +2,7 @@
 
 ### Step 1. Add a navbar
 
-Kendo UI Mobile apps are made up of views, and a basic one view has already been created for you (`<div data-role="view">`). To liven up this view, you'll start by adding a Kendo UI NavBar widget to display the view's title.
+Kendo UI Mobile apps are made up of views, and a basic one has already been created for you (`<div data-role="view">`). To liven up this view, you'll start by adding a Kendo UI NavBar widget to display the view's title.
 
 <hr data-action="start" />
 
@@ -76,7 +76,7 @@ The AppBuilder companion app makes it easy to test your app on real devices, wit
 
 #### Action
 
-* **a.** Get out your iOS, Android, or Windows Phone device.
+* **a.** Get your iOS, Android, or Windows Phone device out.
 * **b**. Download and install the AppBuilder companion app from your device's app store—i.e. the App Store for iOS users, Google Play for Android users, or the Windows Store for Windows Phone users (search for **AppBuilder**).
 
 [![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/us/app/telerik-appbuilder/id527547398?mt=8)
