@@ -2,7 +2,7 @@
 
 ### Step 4. Add data to the the listview
 
-Since apps are rarely comprised of static data, let's see you can alter your list of photos. You'll start by adding images to the list, and to do that, you'll use a button in the app's navbar.
+Since apps are rarely comprised of static data, let's see how you can alter your list of photos. You'll start by adding images to the list, and to do that, you'll use a button in the app's navbar.
 
 <hr data-action="start" />
 
