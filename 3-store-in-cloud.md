@@ -71,7 +71,7 @@ Before:
 ```
 $("#images").kendoMobileListView({
     dataSource: [ ... ],
-    template: "<img src='#: data #''>"
+    template: "<img src='#: data #'>"
 });
 ```
 After:
@@ -84,7 +84,7 @@ function loadPhotos() {
         });
         $("#images").kendoMobileListView({
             dataSource: files,
-            template: "<img src='#: data #''>"
+            template: "<img src='#: data #'>"
         });
     });
 }
@@ -98,6 +98,6 @@ loadPhotos();
 
 <hr data-action="end" />
 
-The `create()` method uploads a picture to your Backend Services project and the `get()` method retrieves all pictures currently stored there. After the upload to Backend Services completes your call to `loadPhotos()` (and subsequently `el.Files.get()`) reloads your list of photos — there's no need to manually append content! After you have taken a few pictures, go to the “Files” menu in your Backend Services project to see a list of photos you are storing.
+The `create()` method uploads a picture to your Backend Services project and the `get()` method retrieves all pictures currently stored there. After the upload to Backend Services completes your call to `loadPhotos()` (and subsequently `everlive.Files.get()`) reloads your list of photos — there's no need to manually append content! After you have taken a few pictures, go to the “Files” menu in your Backend Services project to see a list of photos you are storing.
 
 And that's all there is to it, which is pretty cool if you think about it — you just built a mobile app that takes pictures and stores them in the cloud!
