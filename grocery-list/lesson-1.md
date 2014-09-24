@@ -105,8 +105,8 @@ A grocery list app isn't all that useful if you can't add to the list, so that's
 
     <ul data-role="listview" data-style="inset">
         <li>
-            <label for="grocery">
-                Grocery:<input type="text" id="grocery">
+            <label>
+                Grocery:<input type="text" data-bind="value: grocery">
             </label>
         </li>
     </ul>
@@ -127,24 +127,21 @@ Notice how the `href` attribute of the new anchor matches the `id` attribute of 
 
 * **d**. In your app.js file, add the following code directly after the `initialize()` function:
 ```
-function closeDialog() {
-    $("#add").data("kendoMobileModalView").close();
-    $("#grocery").val("");
-}
-
 window.addView = kendo.observable({
     add: function() {
-        var grocery = $("#grocery").val();
-        if (grocery.trim() === "") {
+        if (this.grocery.trim() === "") {
             navigator.notification.alert("Please provide a grocery.");
             return;
         }
 
-        groceryDataSource.add({ Name: grocery });
-        groceryDataSource.one("sync", closeDialog);
+        groceryDataSource.add({ Name: this.grocery });
+        groceryDataSource.one("sync", this.close);
         groceryDataSource.sync();
     },
-    close: closeDialog
+    close: function() {
+        $("#add").data("kendoMobileModalView").close();
+        this.grocery = "";
+    }
 });
 ```
 
