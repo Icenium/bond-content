@@ -1,10 +1,8 @@
 ## Lesson 2: Managing users and authorization
 
-Backend Services automates the tricky process of registering and managing user accounts. In this lesson you'll create user accounts, configure your backend to use them, and add a login screen to your application.
-
 ### Step 4. Configure permissions
 
-Adding user management to an app is a multi-step process, so to simply things, the first thing you're going to do is make your app work with a hardcoded user account. Let's set that up in your Backend Services project.
+Backend Services automates the tricky process of registering and managing user accounts. In this lesson you'll create user accounts, configure your backend to use them, and add a login screen to your application. To start, let's add a new user to your Backend Services project.
 
 <hr data-action="start" />
 
@@ -145,8 +143,8 @@ window.listView = kendo.observable({
         // Prevent going to the login page until the login call processes.
         event.preventDefault();
         el.Users.logout(function() {
-            this.loginView.set( "username", "" );
-            this.loginView.set( "password", "" );
+            this.loginView.set("username", "" );
+            this.loginView.set("password", "");
             window.location.href = "#login";
         }, function() {
             navigator.notification.alert("Unfortunately an error occurred logging out of your account.");

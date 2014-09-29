@@ -1,7 +1,5 @@
 ## Lesson 1: Add data services to your app
 
-Data is an important component of most applications. The Telerik Platform contains a Backend Services solution that makes it simple to configure and interact with a backend that lives in the cloud. In this lesson you'll create a backend structure for managing grocery lists. Within a few minutes you'll have a complete data service, and have built a UI that reads and writes to it. Let's get started.
-
 ### Step 1. Configure an endpoint
 
 Before you interact with data you need to setup a structure for your data to live in. Although you're free to store your data wherever you'd like, the Telerik Platform provides a Backend Services offering that integrates with AppBuilder and Kendo UI Mobile. To start, you're going to create a Backend Services project to serve as the backend of your grocery list app.
