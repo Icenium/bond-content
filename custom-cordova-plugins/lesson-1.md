@@ -1,7 +1,3 @@
-## Lesson 1: Install a custom Cordova plugin
+## Lesson 1: Accessing native device features with core Cordova plugins
 
-### Step 1: Discover the AppBuilder package manager
-
-### Step 2: Find and install the Native Page Transitions plugin
-
-### Step 3: Find and install the Toast plugin
+Hybrid mobile apps built with AppBuilder use Apache Cordova as a bridge between your HTML5 application and native device features. You use simple JavaScript commands to access these "core" Cordova plugins such as the device camera, stored contacts, geolocation data, and more. In this lesson we will create an app that displays your device contacts and lets you assign a picture to each contact.
