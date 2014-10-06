@@ -1,47 +1,63 @@
-## Lesson 2: Learn about custom Cordova plugins
+## Lesson 2: Extending your app by integrating with the device camera
 
-Custom plugins allow you to tap into native device features that you normally wouldn't be able to do with the core functionality of Cordova. In this lesson you will learn how to find and install two custom plugins: "Native Page Transitions", which allows you to use native device animations to seamlessly transition between views, and "Toast" which allows you to show a native alert dialog. Let's get started!
+The app you have created functions just great right now by consuming contacts data, but let's take a look at how we can easily integrate with another core Cordova plugin, the camera.
 
-### Step 1: Discover the AppBuilder package manager
+### Step 1: Customize your main contacts view to display an inline profile picture
 
-Before you begin, make sure your `index.html` file is open. You'll notice we have two Kendo UI Mobile views set up for you (`<div>` and `<div>`). These views have been pre-populated with `data-title` properties to give each view it's own distinguishing title. Each view also has a Kendo UI Mobile navbar (`<div data-role="navbar">`) which gives you a header navigation bar to display the view title.
-
-Now that you know your app's structure, let's discover the AppBuilder package manager.
+Let's do a slight customization to your Kendo UI template to retrieve and display any profile pictures you already have stored for your contacts.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. In the `Project Navigator`, right-click on your project name and choose `Manage Packages`. This will open the AppBuilder package manager which you can use to switch between versions of **Kendo UI**, find and install new libraries with **Bower**, and install custom Cordova plugins from the **Verified Plugins Marketplace**.
+* **a**. Add the following `img` element to your Kendo UI template: `<img>`. The end result should look like this:
 
-* **b**. Click on the **Plugins Marketplace** tab. Here you will find all of the custom Cordova plugins that are available as part of the Verified Plugins Marketplace. This is a curated list of Cordova plugins that have been tested, verified, and extended to multiple mobile device platforms.
+`template`
+
+* **b**. Now, when binding your contact data to the ListView, you'll have to make some adjustments to also now bind any photos. Go ahead and add this to your `app.js` file, tbd.
+
+`js`
 
 <hr data-action="end" />
 
-### Step 2: Find and install the Native Page Transitions plugin
+### Step 2: Customize the contacts detail screen to display a profile picture
 
-Let's install the "Native Page Transitions" plugin. As previously mentioned, this plugin allows you to tap into the native animations available on your device to move your users between views. This makes your app feel more native than by using the default CSS-based transitions.
+Now, let's do the same thing to your contacts detail screen. We want to show the profile picture when the contact details are displayed.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. In the provided search box type "native page transitions".
+* **a**. Add the following `img` element to the top of your second Kendo UI Mobile view (`<div>`): `<img>`. The end result should look like this:
 
-* **b**. Highlight the plugin and click the `Install` button.
+`view`
+
+* **b**. In order to actually display the photo, you'll have to add one line of JavaScript to your existing function that populates the other contact details: `js`. The final function should look like this:
+
+`js`
 
 <hr data-action="end" />
 
-### Step 3: Find and install the Toast plugin
+### Step 3: Use the device camera to add a profile picture
 
-Let's next install the "Toast" plugin. Again, this plugin allows you to display native alert dialogs in your apps that fade away on their own without user intervention.
+Since you have a place to display a picture, now is a good time to learn how to populate the picture with a real image.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. In the provided search box type "toast".
+* **a**. Add a button to your contacts detail view (`<div>`) that will initiate the camera. This can be placed underneath the the existing elements which display data about your contact.
 
-* **b**. Highlight the plugin and click the `Install` button.
+`<button>`
+
+* **b**. The button references a JavaScript function you haven't created yet, so let's get that in there. Paste the following function into your `app.js` file:
+
+`js`
+
+What's happening here is that once the button is pressed, Cordova finds your device camera and enables it. You may then take a picture or choose an image from your device's photo library. There are two callback functions as well, `xxx`, and `yyy`. The former is called when you successfully take or use an image, the latter is called if something goes wrong.
+
+* **c**. Save all of your changes and run your app in the device simulator again. Another useful feature of the device simulator is that you can test out most core Cordova plugin features without using a real device!
 
 <hr data-action="end" />
+
+Your next step is learn how to use custom Cordova plugins from the Verified Plugins Marketplace to add even more native functionality to your app. Finally, you will learn how to run your app on a real mobile device.
