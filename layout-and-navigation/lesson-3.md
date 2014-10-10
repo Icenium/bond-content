@@ -2,17 +2,9 @@
 
 TODO: Summary
 
-### Step 1: ?
+### Step 1: Specifying app transitions
 
-
-<hr data-action="start" />
-
-#### Action
-
-
-<hr data-action="end" />
-
-### Step 2: ?
+- HERE
 
 <hr data-action="start" />
 
@@ -21,7 +13,16 @@ TODO: Summary
 
 <hr data-action="end" />
 
-### Step 3: ?
+### Step 2: Using simple navigation
+
+<hr data-action="start" />
+
+#### Action
+
+
+<hr data-action="end" />
+
+### Step 3: Navigation between views
 
 <hr data-action="start" />
 
