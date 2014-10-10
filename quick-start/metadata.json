@@ -1,4 +1,14 @@
 {
 	"title": "Quick Start Tutorial",
-	"key": "quick-start"
+	"key": "quick-start",
+	"workspaces": [{
+		"name": "Photo Album app",
+		"description": "Sample app for learning how to develop hybrid apps using the Telerik Platform",
+		"projects": [{ 
+			"name": "Photo Album",
+			"description": "",
+			"type": "appbuilder",
+			"url": "https://github.com/icenium/bond-app-template.git"
+		}]
+	}]
 }
