@@ -10,7 +10,8 @@
 		"project": { 
 			"name": "Photo Album",
 			"description": "",
-			"type": "backendservices"
+			"type": "appbuilder",
+			"url": "https://github.com/icenium/bond-app-template.git"
 		}
 	}
 }
