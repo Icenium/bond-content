@@ -8,7 +8,7 @@ When creating views with Kendo UI, you'll often find yourself using common eleme
 
 #### Action
 
-* **a**. In the index.html file, Add the following markup just before the closing `<body>` tag:
+* **a**. In the index.html file, add the following markup just before the closing `<body>` tag:
 ```
 <div data-role="layout" data-id="main-layout">
 	<div data-role="header">Header</div>
@@ -36,7 +36,7 @@ new kendo.mobile.Application($(document.body), { layout: "main-layout" });
 ```
 
 * **e**. Save the app.js file.
-* **f**. Open the iPhone 5 simulator (select **Run** --> **iPhone 5**) to see your new layout in action.
+* **f**. Open the iPhone 5 simulator (select **Run** --> **iPhone 5**) to see your new layout in action.sizw
 
 <hr data-action="end" />
 
