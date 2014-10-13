@@ -1,6 +1,5 @@
 {  
-   "defaultTutorial":"quick-start",
-   "activeTutorials":[  
+   "orderedActiveTutorials":[  
       "quick-start",
       "layout-and-navigation"
    ]
