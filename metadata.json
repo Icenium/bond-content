@@ -1,0 +1,7 @@
+{  
+   "defaultTutorial":"quick-start",
+   "activeTutorials":[  
+      "quick-start",
+      "layout-and-navigation"
+   ]
+}
