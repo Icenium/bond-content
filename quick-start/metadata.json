@@ -3,7 +3,6 @@
 	"key": "quick-start",
 	"description": "",
 	"estimateTime": "35",
-	"land": "workspace",
 	"workspace": {
 		"name": "Photo Album app",
 		"description": "Sample app for learning how to develop hybrid apps using the Telerik Platform",
