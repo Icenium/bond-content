@@ -80,10 +80,6 @@ MVVM can be used to declaratively wire-up every event supported by a Kendo UI wi
 
 Another big time-saver for MVVM comes when working with data, which we'll look at now. For our current app, you've probably noticed that we've started with a ListView with data on the initial screen. We'll add a second ListView to work with a related data set in this step.
 
-- data-source
-- data-bind
-- Both through adding a new collection and ListView to the empty view
-
 <hr data-action="start" />
 
 #### Action
