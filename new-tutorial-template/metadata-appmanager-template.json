@@ -1,0 +1,14 @@
+{
+	"title": "Tutorial Title",
+	"description": "Tutorial description",
+	"estimateTime": "48",
+	"land": "project",
+	"workspace": {
+		"name": "Tutorial Application",
+		"description": "Tutorial application description",
+		"project": { 
+			"storeName": "Tutorial Store Name",
+			"type": "appmanager"
+		}
+	}
+}
