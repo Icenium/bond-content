@@ -8,8 +8,13 @@
 		"description": "Sample app for learning how to develop hybrid apps using the Telerik Platform",
 		"project": { 
 			"name": "Photo Album",
-			"description": "",
-			"type": "prototyping"
+			"description": "test",
+			"type": "prototyping",
+			"sizingType":"predefined",
+			"screenSize":{"width":640,"height":1136},
+			"device":"phone",
+			"tags":["iPhone"],
+			"selectedScreenSize":"iPhone 5 - 640 x 1136"
 		}
 	}
 }
