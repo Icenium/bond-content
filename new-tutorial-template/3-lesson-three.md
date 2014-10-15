@@ -1,6 +1,6 @@
 ## Lesson 3. Lesson 3 Title
 
-### Step X. Step X Title where X is (the index of the last step from Lesson 2) +1
+### Step 3. Step 3 Title where 3 is (the index of the last step from Lesson 2) +1
 
 First Action description.
 
