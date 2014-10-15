@@ -9,12 +9,7 @@
 		"project": { 
 			"name": "Photo Album",
 			"description": "test",
-			"type": "prototyping",
-			"sizingType":"predefined",
-			"screenSize":{"width":640,"height":1136},
-			"device":"phone",
-			"tags":["iPhone"],
-			"selectedScreenSize":"iPhone 5 - 640 x 1136"
+			"type": "feedback"
 		}
 	}
 }
