@@ -7,8 +7,7 @@
 		"name": "Photo Album app",
 		"description": "Sample app for learning how to develop hybrid apps using the Telerik Platform",
 		"project": { 
-			"name": "Photo Album",
-			"description": "test",
+			"StoreName": "Photo Album",
 			"type": "appmanager"
 		}
 	}
