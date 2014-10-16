@@ -9,4 +9,4 @@ This folder contains the following items:
 - A **separate folder** for **each tutorial** like `quick-start`. Bear in mind that the **name** of each **tutorial folder** is taken as its **key**.
 - The `metadata.json` file - it contains the **keys of the active tutorials and their order** in the Telerik Platform.
 
-> Please follow [these steps](http://tap.telerik.com/process/tutorials#sync-tutorials, "Update Telerik Platform tutorials based on the repository") in order to get the **Telerik Platform tutorials updated** after a **repository change**.
+> Please follow [these steps](http://tap.telerik.com/process/tutorials#sync-tutorials "Update Telerik Platform tutorials based on the repository") in order to get the **Telerik Platform tutorials updated** after a **repository change**.
