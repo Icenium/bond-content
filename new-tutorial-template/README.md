@@ -21,7 +21,7 @@ Each tutorial folder should contains the following items:
 
 - `lesson` files - the tutorial content is split on multiple parts (lessons) that should be executed successively. This folder contains 3 sample lessons - `1-lesson-one.md`, `2-lesson-two.md` and `3-lesson-three.md`. 
 
-	>The only requirement for the **file names** is that their **alphabetical order** should be **the same as** the l**ogical order** of the lessons.
+	>The only requirement for the **file names** is that their **alphabetical order** should be **the same as** the **logical order** of the lessons.
 
 	Each lesson contains the following information:
 	-  `title` (*format:## Lesson &lt;Number&gt;. &lt;Title&gt;*) - the title of the lesson e.g. *## Lesson 1. Build a photo album*.
