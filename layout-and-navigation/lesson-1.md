@@ -4,7 +4,7 @@
 
 <hr data-action="start" />
 
-When creating views with Kendo UI, you'll often find yourself using common elements like headers and footers throughout your app. With layouts, we can define those elements in a single place, and reuse them throughout our app.
+When creating views with Kendo UI, you'll often find yourself using common elements like headers and footers throughout your app. With layouts, we can define those elements in a single place, and reuse them throughout.
 
 #### Action
 
@@ -16,7 +16,9 @@ When creating views with Kendo UI, you'll often find yourself using common eleme
 </div>
 ```
 
-* **b**. Remove the full NavBar div (`<div data-role="navbar">`) from the first view in index.html and copy it into the div with `data-role="header"`. Your layout should now look like this:
+* **b**. Add a `data-title="Books"` attribute to the first view in index.html.
+
+* **c**. Remove the full NavBar div (`<div data-role="navbar">`) from the first view in index.html and copy it into the div with `data-role="header"`. Your layout should now look like this:
 ```
 <div data-role="layout" data-id="main-layout">
 	<div data-role="header">
@@ -26,21 +28,21 @@ When creating views with Kendo UI, you'll often find yourself using common eleme
 	</div>
   	<div data-role="footer">Footer</div>
 </div>
+``` 
+
+* **d**. Save the index.html file.
+
+* **e**. Open the app.js file in the scripts folder and modify the Kendo UI application constructor to include your layout:
+```
+app = new kendo.mobile.Application(document.body, { layout: "main-layout" });
 ```
 
-* **c**. Save the index.html file.
-
-* **d**. Open the app.js file in the scripts folder and modify the Kendo UI application constructor to include your layout:
-```
-new kendo.mobile.Application($(document.body), { layout: "main-layout" });
-```
-
-* **e**. Save the app.js file.
-* **f**. Open the iPhone 5 simulator (select **Run** --> **iPhone 5**) to see your new layout in action.sizw
+* **f**. Save the app.js file.
+* **g**. Open the iPhone 5 simulator (select **Run** --> **iPhone 5**) to see your new layout in action.
 
 <hr data-action="end" />
 
-With a common layout, we can now add multiple views to our app and ensure that the appllication shell remains consistent throughout. In order to see the benfit of our new layout, we need to add some basic navigation. Kendo UI provides two basic navigation paradigms out of the box, the TabStrip and the Drawer.
+With a common layout, we can now add multiple views to our app and ensure that the application shell remains consistent throughout. In order to see the benfit of our new layout, we need to add some basic navigation. Kendo UI provides two basic navigation paradigms out of the box, the TabStrip and the Drawer.
 
 ### Step 2. Add a TabStrip
 
@@ -69,7 +71,7 @@ The TabStrip, as the name indicates, provides a tab menu at the base or top of y
 * **b**. Tabs in the TabStrip are simply anchor (`<a>`) elements, so let's add two of those now, inside the `data-role="tabstrip"` div:
 ```
 <a href="#index" data-icon="home">Home</a>
-<a href="#about" data-icon="globe">About</a>
+<a href="views/about.html" data-icon="globe">About</a>
 ```
 
 > Tip: The `data-icon` attribute allows you to specify the image that will accompany a tab or drawer item. You can learn more about icons, including how to create your own, in [this article](http://docs.telerik.com/kendo-ui/mobile/icons).
@@ -92,14 +94,14 @@ While the TabStrip has been a common navigation pattern since the early days of 
 <div data-role="drawer" id="app-drawer">
     <div data-role="header">
         <div data-role="navbar">
-            <span data-role="view-title">App Menu</span>
+            <span data-role="view-title">Menu</span>
         </div>
     </div>
 
     <ul data-role="listview">
         <li><a href="#index" data-icon="home">Home</a></li>
-        <li><a href="#favorites" data-icon="favorites">Favorites</a></li>
-		<li><a href="#about" data-icon="globe">About</a></li>
+        <li><a href="views/favorites.html" data-icon="favorites">Favorites</a></li>
+		<li><a href="views/about.html" data-icon="globe">About</a></li>
     </ul>
 </div>
 ```
@@ -123,7 +125,7 @@ Users can activate the Drawer by swiping in from the left by default, but most a
 
 * **c**. Add a button to invoke the drawer by adding the following markup inside of the `data-role="navbar"` div of your layout:
 ```
-<a href="#app-drawer" data-rel="drawer" data-role="button">Menu</a>
+<a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>
 ```
 * **d**. Open up the iPhone simulator, click the Menu link in the header and watch the drawer magically appear!
 

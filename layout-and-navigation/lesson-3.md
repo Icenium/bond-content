@@ -1,4 +1,4 @@
-## Lesson 3. App navigation and routing
+## Lesson 3. App navigation
 
 ### Step 7. Specifying app transitions
 
@@ -6,37 +6,40 @@ So far in this tutorial, you've learned how to work with layouts, how to leverag
 
 <hr data-action="start" />
 
-As you've worked through this tutorial so fare
+As you've worked through this tutorial so far, you may have noticed that Kendo UI provides some nice built-in transitions between views and when open and closing the Drawer menu. 
 
 #### Action
 
 * **a**. Open the app.js file, and add a transition property to the Kendo UI Application constructor so that it looks like this:
 ```
-new kendo.mobile.Application(body, { transition: "slide" });
+app = new kendo.mobile.Application(document.body, { layout: "main-layout", transition: "fade" });
 ```
 
-* **b**. Open up the iPhone simulator and click a link or button. Notice the transition between pages.
+* **b**. Open up the iPhone simulator and click a link or button. Notice the fade transition between pages.
 * **c**. Now change the Application constructor to use a different transition, in this case "zoom." The code should now look like this:
 ```
-new kendo.mobile.Application(body, { transition: "zoom" });
+app = new kendo.mobile.Application(document.body, { layout: "main-layout", transition: "zoom" });
 ```
 
 * **d**. Now open the iPhone simulator back up and navigate within the app. Notice how the transition has changed from the last step?
 
 <hr data-action="end" />
 
-If you clicked on the drawer menu during simulation, you probably noticed that it also used the new navigation set in the lest few steps. Users typically expect drawer menus to slide out on activation, so this change is less than ideal. Thankfully, Kendo UI allows us to set transitions at the view level, in addition to the app level.
+If you clicked on the drawer menu during simulation, you probably noticed that it continues to use a slide transition. Much like the Drawer does by default, Kendo UI allows us to set transitions at the view level, in addition to the app level.
 
 <hr data-action="start" />
 
 #### Action
 
-* **e**. Open index.html, find the `back-layout` layout that you created in the last lesson, and add a `data-transition="slide"` property to the link for the back button. It should now look like this:
+* **e**. Open details.html, and add a `data-transition="fade"` property to the main view. It should now look like this:
 ```
-<a data-role="button" data-transition="slide">Back</a>
+<div data-role="view" data-title="Book Details" 
+     data-show="BookDetail.show"
+     data-hide="BookDetail.hide"
+     data-layout="back-layout" data-reload="true" data-transition="fade">
 ```
 
-* **f**. Open the iPhone simulator back up and click the back button. Notice that the drawer slides out when activated, even as the rest of the app uses the app-level transiton you specificed above.
+* **f**. Open the iPhone simulator back up and click on one of the items in the ListView. Notice the fade transition, even as the rest of the app uses the app-level transiton you specificed above.
 
 <hr data-action="end" />
 
@@ -55,7 +58,7 @@ Now let's look a little bit more at navigation. As with many other features in K
 		<div data-role="navbar">
 			<a href="#app-drawer" data-rel="drawer" data-role="button">Menu</a>
 	    	<span data-role="view-title"></span>
-	    	<a data-click="app.settings" data-role="button">Settings</a>
+	    	<a data-click="Books.settings" data-role="button" data-align="right" data-icon="settings"></a>
 	    </div>
 	</div>
 </div>
@@ -63,20 +66,20 @@ Now let's look a little bit more at navigation. As with many other features in K
 
 * **b**. Open the app.js file and, inside of the empty settings function, add the following navigation code:
 ```
-CODE app.navigate()
+app.navigate('views/settings.html');
 ```
 
 * **c**. Open the iPhone simulator and click the settings button to see your navigation code in action. 
 
 <hr data-action="end" />
 
-As noted above, Kendo UI allows you to perform navigation with code or declaratively, primarially though the `href` attribute on links and the use of url fragments starting with the pound or hash character (#).
+As noted above, Kendo UI allows you to perform navigation with code or declaratively, primarially though the `href` attribute on links and the use of urls or fragments starting with the pound or hash character (#).
 
 <hr data-action="start" />
 
 * **d**. In the index.html file, remove the `data-click` attribute from the settings button and replace it with an `href` attribute so that the link looks like this:
 ```
-<a href="#settings" data-role="button">Settings</a>
+<a href="views/settings.html" data-role="button" data-align="right" data-icon="settings"></a>
 ```
 * **e**. Reload the iPhone simulator and click the settings button again. Things should still work just fine, and you've saved yourself a few lines of JavaScript to boot!
 

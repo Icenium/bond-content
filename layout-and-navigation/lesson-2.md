@@ -2,7 +2,7 @@
 
 ### Step 4. Working with simple bindings
 
-In the last lesson, you may have noticed that you were able to add a good bit of structure and interactivity to your app without having to write much JavaScript. This is because Kendo UI allows you to use the MVVM pattern to declaratively (meaning, using HTML markup instead of JavaScript code) wire up your apps.
+In the last lesson, you may have noticed that you were able to add a good amount of structure and interactivity to your app without having to write much JavaScript. This is because Kendo UI allows you to use the MVVM pattern to declaratively (meaning, using HTML markup instead of JavaScript code) wire up your apps.
 
 In this lesson, we'll look at how Kendo UI allows you to leverage a declaritive style for a variety of common tasks, including defining layouts, binding to data sources and wiring up events.
 
@@ -17,7 +17,7 @@ Let's start by using MVVM to define a layout for certain views. In the last less
 <div data-role="layout" data-id="back-layout">
 	<div data-role="header">
 		<div data-role="navbar">
-	    	<a data-role="button">Back</a>
+	    	<a data-role="button" data-align="left" data-icon="rewind">Back</a>
 	    	<span data-role="view-title"></span>
 	    </div>
 	</div>
@@ -38,7 +38,7 @@ Let's use this new layout in one of our existing views.
 
 * **b**. Open the details.html file in the views folder, and add a `data-layout` attribute that points to `back-layout` to the view's main `<div>`. The view should now look like this:
 ```
-CODE
+<div data-role="view" data-title="Book Details" data-reload="true" data-layout="back-layout">
 ```
 
 * **c**. Open up the iPhone simulator and navigate to the details view by clicking on one of the items in the list. Notice that, instead of a drawer menu button, we now have a nice back button in its place. In the next step, we'll wire this button up using, you guessed it, MVVM.
@@ -55,7 +55,7 @@ To make this back button functional, we need to define an event and tell Kendo U
 
 * **a**. Open the app.js file and add the following JavaScript to the empty 'back' function already defined:
 ```
-CODE
+app.navigate("#:back");
 ```
 
 * **b**. Now, open index.html, find the new layout you created earlier in this lesson, and add a `data-click` attribute that points to the function you just created. The layout should now look like this:
@@ -63,7 +63,7 @@ CODE
 <div data-role="layout" data-id="back-layout">
 	<div data-role="header">
 		<div data-role="navbar">
-	    	<a data-click="app.back" data-role="button">Back</a>
+	    	<a data-click="Books.back" data-role="button" data-align="left" data-icon="rewind">Back</a>
 	    	<span data-role="view-title"></span>
 	    </div>
 	</div>
@@ -74,37 +74,88 @@ CODE
 
 <hr data-action="end" />
 
-MVVM can be used to declaratively wire-up every event supported by a Kendo UI widget, which saves you from having to create your own event listeners in code.
+MVVM can be used to declaratively wire-up every event supported by a Kendo UI widget, which saves you from having to create your own event listeners in code. 
+
+At this point, we have an empty details screen, which isn't very useful, so let's use a bit more data-binding to show more information about a selected book.
 
 ### Step 6. Binding to data
 
-Another big time-saver for MVVM comes when working with data, which we'll look at now. For our current app, you've probably noticed that we've started with a ListView with data on the initial screen. We'll add a second ListView to work with a related data set in this step.
+Another big time-saver for MVVM comes when working with data, which we'll look at now. For our current app, you've probably noticed that we've started with a ListView with data on the initial screen. In this step, we'll use MVVM-style data-binding to show details for a single selected record.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Open the favorites.js file in the js folder. Notice that we have a Kendo UI DataSource already defined, and that this source points to a JSON file local to the project. Normally, we'd be working with remote data, but we'll keep things simple for now.
-* **b**. Open the favorites.html file and add the following markup inside of the main `<div>` for the view:
+* **a**. Open the app.js file in the js folder. Notice that we have a Kendo UI DataSource already defined, and that this source points to a JSON file local to the project. Normally, we'd be working with remote data, but we'll keep things simple for now.
+* **b**. Open the details.html file and add the following markup inside to replace the current view placeholder:
 ```
-CODE
+<div data-role="view" data-title="Book Details" 
+     data-show="BookDetail.show"
+     data-hide="BookDetail.hide"
+     data-layout="back-layout" data-reload="true">
 ```
 
 <hr data-action="end" />
 
-Now that we have a ListView, let's do some declarative binding.
+The `data-show` and `data-hide` attributes tell Kendo UI which methods to call when the view is navigated to or away from by the user. We're using these methods in order to work with our shared Kendo UI DataSource and filter by only the record we want to display. Now let's add the meat of the view.
 
 <hr data-action="start" />
 
 #### Action
 
-* **c**. Open favorites.html file and add a `data-source` attribute to the ListView `<div>` defined in the last step. You'll point this attribute to the `favoritesData` property in the favorites.js model. Your ListView should now look like this:
+* **c**. Add the following markup to the main `<div>` of details.html:
 ```
-CODE
+<div id="bookContent">
+	<div class="title" data-bind="text: title"></div>
+	<div class="bigImage">
+	  <img data-bind="attr: { src: image_url }" />
+	</div>
+	<div>
+	  <label for="favorite">Favorite?</label>
+	  <input id="favorite" type="checkbox" data-role="switch" data-checked=false />
+	</div>
+	<div>
+	  <p><a data-role="button" id="amazonLink" data-click="BookDetail.openLink">Order from Amazon</a></p>
+	</div>
+</div>
 ```
 
-* **d**. TODO: additional action using `data-bind` to set the text of a view element [Maybe a status bar at the top with a loading message].
-* **e**. Save the favorites.html and favorites.js files and re-open, the iPhone simulator and navigate to the Favorites page from the Drawer menu.
+<hr data-action="end" />
+
+In the snippet above, you'll notice the use of `data-bind` in a couple of places. This is Kendo UI's way to allowing the developer to specify values--at runtime--for widgets, forms and other UI elements. With this syntax, we're telling Kendo UI to set the text of a `<div>` and the source of a image based on values from this view's model.
+
+Now that we've defined the view and our bindings, let's configure the model and wire up our details page.
+
+<hr data-action="start" />
+
+#### Action
+
+* **d**. Open the details.js file and add the following to the end of the `show` function:
+```
+// Create a model for the page and bind it to the view
+var book = {
+  title: currentBook.name + " by " + currentBook.author,
+  image_url: currentBook.image_url,
+  amazon_url: currentBook.amazon_url,
+  is_favorite: currentBook.is_favorite
+};
+kendo.bind($('#bookContent'), book, kendo.mobile.ui);
+
+// If the current book is a favorited item, toggle the switch on the view
+if (currentBook.is_favorite) {
+  $('#favorite').data('kendoMobileSwitch').toggle();
+}
+```
+
+<hr data-action="end" />
+
+The code before this snippet provides a filtered view of our Books DartaSource based on the selected item. With that in hand, we create a model for the book and call `kendo.bind` to wire up the declarative markup we added to the view in the last step.
+
+<hr data-action="start" />
+
+#### Action
+
+* **e**. Save the details.html and details.js files and re-open, the iPhone simulator and navigate to the details page by clicking on an item in the list.
 
 <hr data-action="end" />
 
