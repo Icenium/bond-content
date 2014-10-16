@@ -2,7 +2,7 @@
 
 Each tutorial folder should contains the following items:
 
-- The `metadata.json` file - it contains the **metadata information** used to create and display the **tutorial** in the **Telerik Platform**:
+- The `metadata.json` file containing the **metadata** used to create and display the **tutorial** in the **Telerik Platform**:
 	- `title` (*string*) - the title of the tutorial.
 	- `description` (*string*) - the description of the tutorial.
 	- `estimateTime` (*number*) - the estimate time for completing the tutorial.
