@@ -33,4 +33,4 @@ Each tutorial folder should contains the following items:
 		- `summary`  (*string*, *optional*) - more information about the achieved goals and a conclusion
 	- `summary` (*string*, *optional*) - more information about the achieved goals and a conclusion. 
 
-> Please follow [these steps](http://tap.telerik.com/process/tutorials, "Update Telerik Platform tutorials based on the repository") in order to get the **Telerik Platform tutorials updated** after a **repository change**.
+> Please follow [these steps](http://tap.telerik.com/process/tutorials#sync-tutorials, "Update Telerik Platform tutorials based on the repository") in order to get the **Telerik Platform tutorials updated** after a **repository change**.
