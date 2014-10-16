@@ -1,6 +1,6 @@
-## Lesson 2: Understanding MVVM
+## Lesson 2. Understanding MVVM
 
-### Step 1: Working with simple bindings
+### Step 4. Working with simple bindings
 
 In the last lesson, you may have noticed that you were able to add a good bit of structure and interactivity to your app without having to write much JavaScript. This is because Kendo UI allows you to use the MVVM pattern to declaratively (meaning, using HTML markup instead of JavaScript code) wire up your apps.
 
@@ -45,7 +45,7 @@ CODE
 
 <hr data-action="end" />
 
-### Step 2: Binding to events
+### Step 5. Binding to events
 
 To make this back button functional, we need to define an event and tell Kendo UI to call this event when the button is clicked. We'll start by defining our click event.
 
@@ -76,7 +76,7 @@ CODE
 
 MVVM can be used to declaratively wire-up every event supported by a Kendo UI widget, which saves you from having to create your own event listeners in code.
 
-### Step 3: Binding to data
+### Step 6. Binding to data
 
 Another big time-saver for MVVM comes when working with data, which we'll look at now. For our current app, you've probably noticed that we've started with a ListView with data on the initial screen. We'll add a second ListView to work with a related data set in this step.
 

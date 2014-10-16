@@ -1,6 +1,6 @@
-## Lesson 1: Working with app layouts
+## Lesson 1. Working with app layouts
 
-### Step 1: Add common app layout
+### Step 1. Add common app layout
 
 <hr data-action="start" />
 
@@ -42,7 +42,7 @@ new kendo.mobile.Application($(document.body), { layout: "main-layout" });
 
 With a common layout, we can now add multiple views to our app and ensure that the appllication shell remains consistent throughout. In order to see the benfit of our new layout, we need to add some basic navigation. Kendo UI provides two basic navigation paradigms out of the box, the TabStrip and the Drawer.
 
-### Step 2: Add a TabStrip
+### Step 2. Add a TabStrip
 
 The TabStrip, as the name indicates, provides a tab menu at the base or top of your app (depending on the mobile platform) that allows you to swich between multiple views. Let's add one to the layout we created in the last step. 
 
@@ -79,7 +79,7 @@ The TabStrip, as the name indicates, provides a tab menu at the base or top of y
 
 <hr data-action="end" />
 
-### Step 3: Switch to a Drawer
+### Step 3. Switch to a Drawer
 
 While the TabStrip has been a common navigation pattern since the early days of mobile, drawer navgation has gained in popularity in recent years. In mobile apps, the Drawer is a hidden navigation menu that slides into view from the right or left side of the screen based on user interaction, like clicking a button or swiping in from the edge of the screen.
 

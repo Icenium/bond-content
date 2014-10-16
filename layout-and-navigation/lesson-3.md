@@ -1,6 +1,6 @@
-## Lesson 3: App navigation and routing
+## Lesson 3. App navigation and routing
 
-### Step 1: Specifying app transitions
+### Step 7. Specifying app transitions
 
 So far in this tutorial, you've learned how to work with layouts, how to leverage common navigation widgets like the TabStrip and Drawer, and how to utilize MVVM to quickly configure widgets and wire up events. In this lesson, we'll look at how to control transitions, and how to work with view navigations in your app.
 
@@ -40,7 +40,7 @@ If you clicked on the drawer menu during simulation, you probably noticed that i
 
 <hr data-action="end" />
 
-### Step 2: Using simple navigation
+### Step 8. Using simple navigation
 
 Now let's look a little bit more at navigation. As with many other features in Kendo UI, you can work with navigation in one of two ways: in JavaScript code or declaratively in your markup. Let's look at both now.
 
