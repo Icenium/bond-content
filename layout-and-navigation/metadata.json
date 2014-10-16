@@ -1,0 +1,16 @@
+{
+	"title": "Working with app layout and navigation",
+	"description": "",
+	"estimateTime": "0",
+	"land": "project",
+	"workspace": {
+		"name": "Working with app layout and navigation",
+		"description": "Sample app for learning how to work with the layout and navigation of the Telerik Platform",
+		"project": { 
+			"name": "Working with app layout and navigation",
+			"description": "",
+			"type": "appbuilder",
+			"url": "https://github.com/icenium/bond-app-template.git"
+		}
+	}
+}

@@ -17,6 +17,25 @@ Each tutorial folder should contains the following items:
 			- `type` - the service type of the project (e.g. appbuilder) 
 			- the other properties are depending on the service type (appBuilder, backendServices, analytics etc.). They can be found in the **metadata-serviceType.json files**.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	> Each tutorial should have **only one metadata file** named `metadata.json`. The metadata files in this folder are examples for the structure of the project object depending on the service type.
 
 - `lesson` files - the tutorial content is split on multiple parts (lessons) that should be executed successively. This folder contains 3 sample lessons - `1-lesson-one.md`, `2-lesson-two.md` and `3-lesson-three.md`. 
