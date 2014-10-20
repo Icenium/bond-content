@@ -1,22 +1,22 @@
-## Lesson 3: Extend your app with a custom Cordova plugin from the Verified Plugins Marketplace
+## Lesson 3: Extend your app with a custom Cordova plugin
 
-Custom plugins allow you to tap into native device features that you normally wouldn't be able to do with the core functionality of Cordova. In this lesson you will learn how to find and install two custom plugins: "Native Page Transitions", which allows you to use native device animations to seamlessly transition between views, and "Toast" which allows you to show a native alert dialog. Let's get started!
+Custom plugins allow you to tap into native device features that you cannot normally access via the core functionality of Cordova. In this lesson you will learn how to find and install two custom plugins: "Native Page Transitions", which allows you to use native device animations to seamlessly transition between views, and "Toast" which allows you to show a native alert dialog. Let's get started!
 
-### Step 1: Discover the AppBuilder package manager
+### Step 7: Discover the AppBuilder package manager
 
-The AppBuilder package manager is your central hub for discovering and installing new frameworks, libraries, and plugins for your app. This lesson focuses on the **Verified Plugins Marketplace**, which is a curated list of Cordova plugins that have been fully tested and verified to empower hybrid mobile developers to build bigger and better mobile apps.
+The AppBuilder package manager is your central hub for discovering and installing new frameworks, libraries, and Cordova plugins for your app. This lesson focuses on the **Verified Plugins Marketplace**, which is a curated list of Cordova plugins that have been fully tested and verified to empower hybrid mobile developers to build better mobile apps.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. In your `Project Navigator`, right-click on your project name and choose `Manage Packages`. This will open the AppBuilder package manager which you can use to switch between versions of **Kendo UI**, find and install new libraries with **Bower**, and install custom Cordova plugins from the **Verified Plugins Marketplace**.
+* **a**. In your **Project Navigator**, right-click on your project name and choose **Manage Packages**. This will open the AppBuilder package manager which you may use to install new versions of **Kendo UI**, install libraries and frameworks with **Bower**, and install custom Cordova plugins from the **Verified Plugins Marketplace**.
 
 * **b**. Click on the **Plugins Marketplace** tab. Here you will find all of the custom Cordova plugins that are available as part of the Verified Plugins Marketplace. Scroll through the list to get some ideas of other ways to extend your app.
 
 <hr data-action="end" />
 
-### Step 2: Setup and configure the Native Page Transitions plugin
+### Step 8: Setup and configure the Native Page Transitions plugin
 
 Let's install the "Native Page Transitions" plugin. As previously mentioned, this plugin allows you to tap into the native animations available on your device to move your users between views. This makes your app feel more native than by using the default CSS-based transitions.
 
@@ -24,38 +24,38 @@ Let's install the "Native Page Transitions" plugin. As previously mentioned, thi
 
 #### Action
 
-* **a**. In the provided search box type "native page transitions". Highlight the plugin and click the `Install` button.
+* **a**. In the provided search box, type "native page transitions". Highlight the plugin and click the `Install` button.
 
-* **b**. With the plugin installed, go back to your `app.js` file and add a new navigation function:
+* **b**. <a href="https://raw.githubusercontent.com/Telerik-Verified-Plugins/NativePageTransitions/master/adapters/NativePageTransitionsKendoAdapter.js" target="_blank">Download the Kendo UI adapter file</a> for Native Page Transitions.
 
-`js`
+* **c**. Add the `NativePageTransitionsKendoAdapter.js` file to your `scripts` directory.
 
-We will call this function whenever we want to navigate between our views. This function calls the Native Page Transition plugin to perform fully native transitions.
+* **d**. Add a reference to this file at the top of your `index.html` file, right underneath where you load Kendo UI (`kendo.mobile.min.js`):
 
-* **c**. In our Kendo UI template, let's change the `href` to call our new JavaScript function instead, like so: `href=''`. Your complete Kendo UI template should look like this now:
+	<script src="scripts/NativePageTransitionsKendoAdapter.js"></script>
 
-`template`
+* **e**. The adapter file will automatically convert any of your Kendo UI transitions to native!
 
-* **d**. Likewise, let's change the default behavior of our `back` button on the contact detail view to use a native page transition as well. TBD.
-
-`code`
+> Tip: If you want to play around with the type of transitions or with how quickly transitions are invoked, <a href="http://plugins.telerik.com/plugin/native-page-transitions" target="_blank">check out the plugin documentation</a> for a full list of settings you may specify.
 
 <hr data-action="end" />
 
-### Step 3: Setup and configure the Toast plugin
+### Step 9: Setup and configure the Toast plugin
 
-Let's next install the "Toast" plugin. Again, this plugin allows you to display a "toast" (a.k.a. native alert dialog) in your apps that fade away on their own without user intervention. You'll use this to show a notification after you have used your device's camera.
+Your final plugin to install is the "Toast" plugin. Again, this plugin allows you to display a "toast" (a.k.a. native alert dialog) in your app that fades away on its own without user intervention. You'll use this to show a notification after you have used your device's camera to populate a profile picture.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. In the provided search box type "toast". Highlight the plugin and click the `Install` button.
+* **a**. In the provided search box, type "toast". Highlight the plugin and click the `Install` button.
 
-* **b**. Let's customize the `onCameraSuccess` and `onCameraFailure` functions to use Toasts instead of standard alerts:
+* **b**. Customize the `onPhotoSuccess` function to use a toast alert by adding this code:
 
-`js` 
+    if (window.plugins && window.plugins.toast) {
+        window.plugins.toast.showShortCenter("The profile picture has been updated!");
+    }
 
 <hr data-action="end" />
 
-Currently custom Cordova plugins cannot be used with the device simulator. However, we can now create a build of our app and learn how to run it on a real mobile device. In the final lesson you'll learn how to create a build and run it on your iOS, Android, or Windows Phone device.
+Note that custom Cordova plugins cannot (yet) be tested in the Companion Apps. However, you may now create a build of your app and run it on a real mobile device! In the final lesson you'll learn how to create a build of your mobile app and run it on an iOS, Android, or Windows Phone device.

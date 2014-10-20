@@ -1,84 +1,135 @@
-## Lesson 1: Accessing native device features with Cordova
+## Lesson 1: Access device contacts with a Cordova plugin
 
-Hybrid mobile apps built with AppBuilder use Apache Cordova as a bridge between your HTML5 application and native device features. You use simple JavaScript commands to access these "core" Cordova plugins such as the camera, stored contacts, geolocation data, and more. In this lesson we will create an app that interacts with these native device features and displays your contacts and lets you assign a picture to each contact using the camera. Let's get started!
+Hybrid mobile apps built with AppBuilder use Apache Cordova as the bridge between your HTML5 application and native device features. You use simple JavaScript commands to access these "core" Cordova plugins such as the camera, stored contacts, geolocation data, and more. In this lesson you will create an app that interacts with native device features, displays your contacts, and lets you assign a picture to each contact using the camera. Let's get started!
 
-### Step 1: Build a screen to list your device contacts
+### Step 1: Build a screen to list device contacts
 
-Before you begin, make sure your `index.html` is open. You'll notice we have two Kendo UI Mobile views set up for you (`<div>` and `<div>`). These views have been pre-populated with `data-title` properties to give each view it's own distinguishing title. Each view also has a Kendo UI Mobile navbar (`<div data-role="navbar">`) which gives you a header navigation bar to display the view title in the header. Let's start by building a screen to display the contacts from your device.
+Before you begin, make sure your `index.html` file is open. We have two Kendo UI Mobile views set up for you (`<div id="all-contacts">` and `<div id="view-contact">`). These views have been pre-populated with `data-title` properties to give each view its own distinguishing title. Each view also has a Kendo UI Mobile header (`<header data-role="header">`) which provides a navigation bar to display the view title.
 
-<hr data-action="start" />
-
-#### Action
-
-* **a**. Add a `<ul>` element with an id="contacts" inside of your first Kendo UI Mobile view (`<div>`) like so:
-
-`<div><ul id="contacts"></ul></div>`
-
-This will become a Kendo UI Mobile ListView element, where you will populate all of the contacts from your phone.
-
-* **b**. Now let's create a new Kendo UI template. Templates allow you to create HTML chunks that can be merged with JavaScript data. So the template you create will be merged with your contact data to provide a repeating list of your contacts in that ListView. Copy and paste this Kendo UI template into your page (outside of your Kendo UI views):
-
-`template`
-
-* **c**. Finally, let's wire up your device contact data with the markup you just created. This is where some of the magic of Cordova shines through. Paste the following JavaScript code into your `app.js` file (located in the `scripts` directory):
-
-`js`
-
-This code queries your local device contact database to load all of your contacts and binds that set of data to the ListView element you created earlier. Using Kendo UI, you are taking advantage of a JavaScript template to format each row of data in the ListView.
-
-Now before we continue, let's quickly take a look at how you manage your Cordova plugins.
-
-* **d**. Double click your project **Properties** in the **Project Navigator**.
-
-* **e**. In the window provided, choose **Plugins**.
-
-The plugin management screen is broken up into **Core Plugins** and **Custom Plugins**. By default all core Cordova plugins are enabled (you can disable individual plugins if you desire - doing so you will speed up your app builds. We will talk about custom Cordova plugins in a future lesson.
-
-<hr data-action="end" />
-
-### Step 2: Run the app in the AppBuilder device simulator
-
-It's fun to see the fruits of our labor, even if we have only just begun the lesson! Let's learn a little bit about the AppBuilder device simulator - which is a built-in way to simulate how your app will look on a real mobile device. The simulator lets you pick and choose from a variety of pre-defined devices, including iOS, Android, and Windows Phone platforms. You can even customize the appearance of the simulator based on a specific OS version that you choose.
+This first step focuses on the first view (`<div id="all-contacts">`). This view contains a `<ul id="contacts-list">` element which will become a Kendo UI Mobile ListView due to the added `data-role="listview"` property. A ListView is a great way to display a list of items.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Click the `Run` button and choose any of the provided simulator options (note: we are using the "flat" Kendo UI theme so our app will have a consistent UI across all platforms).
+* **a**. Your first action is to create a Kendo UI template. Templates allow you to create chunks of HTML that will be merged with data - these "chunks" are repeated for each data element in your data source. The template you create will be bound to your contacts to provide a repeating list of items (contacts) in your ListView. Copy and paste this Kendo UI template into your page (outside of your Kendo UI views but within the `<body>` tags):
 
-* **b**. With the simulator open, bring up your browser's developer tools by hitting the F12 key. Notice that you can use the dev tools to inspect your app's elements, profile your app performance, check for any network latency issues, view the console log, and more.
+	<script id="contacts-template" type="text/x-kendo-template">
+		<li>
+			# if (name.givenName) { #
+				${name.givenName}
+			# } #
 
-* **c**. Leave the simulator open, but let's go back to your code and change the title of the view that is visible in the simulator. Change the `data-title` property in the `id` view to something new and save your change. Now return to your simulator window. Notice anything different? This is what we call LiveSync - it's the ability to automatically view changes you make to ANY part of your code in the simulator (or any connected devices!) without reloading the page.
+			# if (name.familyName) { #
+				${name.familyName}
+			# } #
+		</li>
+	</script>
+
+* **b**. Next, let's wire up your contacts database to the template you just created. Paste the following JavaScript functions in your `app.js` file (located in the `scripts` directory):
+
+	window.getAllContacts = function() {
+	    var options = new ContactFindOptions();
+	    options.filter = "";           
+	    options.multiple = true;       
+	    var fields = ["*"];  
+	    navigator.contacts.find(fields, onContactSuccess, onError, options);
+	}
+	
+	function onContactSuccess(contacts) {  
+	    var template = kendo.template($("#contacts-template").html());
+	    var dataSource = new kendo.data.DataSource({ data: contacts });
+	    dataSource.bind("change", function () {
+	        $("#contacts-list").html(kendo.render(template, dataSource.view()));
+	    });
+	    dataSource.read();
+	}
+
+The `getAllContacts` function queries your local contact database to load all of your contacts. The `navigator.contacts.find` function has a callback function, `onContactSuccess`, which is called when your device successfully retrieves your contacts. It is in this function that your contacts are bound to your ListView element (`<ul id="contacts-list">`) via the Kendo UI template. 
 
 <hr data-action="end" />
 
-*Did you know the device simulator is available in our other IDE options as well? You can choose from our native Windows client, Visual Studio extension, Command Line Interface, or a Sublime Text package.*
+### Step 2: Run the app in the AppBuilder Companion App
+
+It's fun to see the fruits of your labor, even if you have only just begun the lesson! As you learned in a previous lesson, the AppBuilder Companion App lets you run your app on a real device without going through the hassle of installing and configuring SDKs or provisioning profiles.
+
+<hr data-action="start" />
+
+#### Action
+
+* **a**. Download the appropriate AppBuilder Companion App on your device, using your device's app store (search for **AppBuilder**).
+
+[![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/us/app/telerik-appbuilder/id527547398?mt=8)
+[![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.AppBuilder&hl=en)
+[![Windows Phone Store](images/windows-phone-store-icon.png)](https://www.windowsphone.com/en-us/store/app/appbuilder/0171d46b-b5f2-43d9-a36b-0a78c9692aab?signin=true)
+
+* **b**. Back in AppBuilder, select **Run** --> **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
+
+* **c**. Scan the provided QR code on your device and play with the app you just created!
+
+<hr data-action="end" />
 
 ### Step 3: Build a screen to display contact details
 
-You have a nice list of all of your device contacts, so the natural next step is to create a screen that displays more detailed information about a selected contact.
+You now have a nice list of all of your device contacts, so the natural next step is to create a screen that displays more detailed information about a single selected contact.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. (something about replacing our listview items with an href)
+* **a**. In your Kendo UI template that you created earlier, inside of the `<li>` element, add an anchor tag that will serve as a link from your list of all contacts to the contact detail view: `<a href="\#view-contact?id=${id}" class="expand">`. Your updated Kendo UI template should look like this:
 
-* **b**. Add the following markup to your second Kendo UI Mobile view (`<div id="?">`):
+	<script id="contacts-template" type="text/x-kendo-template">
+		<li>
+			<a href="\#view-contact?id=${id}" class="expand">
+				# if (name.givenName) { #
+					${name.givenName}
+				# } #
+	
+				# if (name.familyName) { #
+					${name.familyName}
+				# } #
+			</a>
+		</li>
+	</script>
 
-`html`
+* **b**. Let's shift focus to your second view (`<div id="view-contact">`) and add a `data-show` property to this view. The `data-show` property tells your app to run a JavaScript function every time this view is displayed (or shown). Go ahead and add `data-show="window.getContactDetails"` - the start of your markup for this should now look like this:
 
-* **b**. Next, let's add a `data-show` property to this view. The `data-show` property tells your app to run the JavaScript function that is listed every time the app is displayed. Go ahead and add `data-show="?"` - your markup should look like this:
+	<div id="view-contact" data-role="view" data-title="Contact Details" data-show="window.getContactDetails">
 
-`html`
+* **c**. Now you need to define what that `data-show` JavaScript function is, so paste these two functions into your `app.js` file:
 
-* **c**. Now we need to specify what that `data-show` JavaScript function is, so paste this function into your `app.js` file:
+	window.getContactDetails = function(e) {
+	    selectedContactId = e.view.params.id;
+	    var options = new ContactFindOptions();
+	    options.filter = e.view.params.id;           
+	    options.multiple = true;       
+	    var fields = ["*"];   
+	    navigator.contacts.find(fields, onContactDetailSuccess, onError, options);
+	}
+	
+	function onContactDetailSuccess(contacts) {
+		for (var i = 0; i < contacts.length; i++) {  
+	        if (contacts[i].id == selectedContactId)
+	        {
+	            $("#contact-name").text(getName(contacts[i]));
+	            
+	            if (contacts[i].phoneNumbers) {
+	                $("#contact-phone").text(contacts[i].phoneNumbers[0].value);
+	            } else {
+	                $("#contact-phone").text("");
+	            }
+	            
+	            selectedContact = contacts[i];
+	            
+	            break;
+	        }
+	    }  
+	}
 
-`js`
+There is a fair amount going on inside these functions. In `window.getContactDetails` you are filtering your contacts by the id passed in the query string from your first view. Since we can't trust that this is an accurate filter (it's doing a string comparison, so the id "1" would also return "10"), in the `onContactDetailSuccess` callback function we loop through the returned contacts until we find one that matches your selected id exactly. It is within this function that your contact details are bound to your detail view.
 
-There is a fair amount going on inside this function. You are retrieving the details of the contact based on the id that you are sending in the querystring from the first view. This contact object is then used to populate the markup that you just created in the second Kendo UI Mobile view.
-
-Go ahead and run it in the simulator again to see how it works now!
+* **d**. Back in your Companion App, do a three-finger tap to download the latest version of your app and see how it works now.
 
 <hr data-action="end" />
 

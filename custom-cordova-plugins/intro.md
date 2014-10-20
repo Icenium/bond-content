@@ -1,1 +1,1 @@
-# Using custom Cordova plugins in your hybrid mobile app
+# Using Cordova plugins in your hybrid mobile app

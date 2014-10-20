@@ -1,62 +1,124 @@
-## Lesson 2: Extending your app by integrating with the device camera
+## Lesson 2: Extend your app with the device camera
 
-The app you have created functions just great right now by consuming contacts data, but let's take a look at how we can easily integrate with another core Cordova plugin, the camera.
+The app you have created functions just fine right now by consuming your contact data, but let's take a look at how we can easily integrate another core Cordova plugin, the device camera.
 
-### Step 1: Customize your main contacts view to display an inline profile picture
+### Step 4: Customize your main contacts view to display an inline profile picture
 
-Let's do a slight customization to your Kendo UI template to retrieve and display any profile pictures you already have stored for your contacts.
+Let's do a slight customization to your Kendo UI template to retrieve and display any profile pictures you already have for your contacts.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Add the following `img` element to your Kendo UI template: `<img>`. The end result should look like this:
+* **a**. Add an image element to your Kendo UI template that accounts for a profile picture that either exists or does not exist. The end result should look like this:
 
-`template`
+    <script id="contacts-template" type="text/x-kendo-template">
+        <li>
+            <a href="\#view-contact?id=${id}" class="expand">
+                # if (photos && photos.length) { #
+                    <img class="smallProfile" src="${photos[0].value}" />
+                # } else { #
+                    <img class="smallProfile" src="styles/blankProfile.png" />
+                # } #
+        
+                # if (name.givenName) { #
+                    ${name.givenName}
+                # } #
+        
+                # if (name.familyName) { #
+                    ${name.familyName}
+                # } #
+            </a>
+        </li>
+    </script>
 
-* **b**. Now, when binding your contact data to the ListView, you'll have to make some adjustments to also now bind any photos. Go ahead and add this to your `app.js` file, tbd.
+> Tip: When we query the contacts database, we are asking for all fields (`var fields = ["*"];`). This means the profile pictures have already been included in this data set, so there is nothing more we need to do to request them!
 
-`js`
+* **b**. Use the Companion App on your device to do a three-finger tap and download the latest version of your app to see if any profile pictures load.
 
 <hr data-action="end" />
 
-### Step 2: Customize the contacts detail screen to display a profile picture
+### Step 5: Customize the contacts detail screen to display a profile picture
 
-Now, let's do the same thing to your contacts detail screen. We want to show the profile picture when the contact details are displayed.
+Let's also load profile pictures on your contacts detail screen. We want to show the profile picture when the contact details are displayed.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Add the following `img` element to the top of your second Kendo UI Mobile view (`<div>`): `<img>`. The end result should look like this:
+* **a**. Add the following image element to the top of your second Kendo UI Mobile view (`<div id="view-contact">`) and underneath the header element: `<img class="largeProfile" />`. The end result should look like this:
 
-`view`
+    <div id="view-contact" data-role="view" data-title="Contact Details" data-show="window.getContactDetails">
+        <header data-role="header">
+            <div data-role="navbar">
+                <a data-align="left" data-role="backbutton">Back</a>
+                <div data-role="view-title"></div>
+            </div>
+        </header>
+        <img class="largeProfile" />
+        <h2 id="contact-name"></h2>
+        <h4 id="contact-phone"></h4>
+    </div>
 
-* **b**. In order to actually display the photo, you'll have to add one line of JavaScript to your existing function that populates the other contact details: `js`. The final function should look like this:
+* **b**. In order to display the photo in this view, you'll have to add some code that checks if any photos exist to your existing function (`onContactDetailSuccess`). The final function should look like this:
 
-`js`
+	function onContactDetailSuccess(contacts) {
+	    for (var i = 0; i < contacts.length; i++) 
+	    {  
+	        if (contacts[i].id == selectedContactId)
+	        {
+	            $("#contact-name").text(getName(contacts[i]));
+	            
+	            if (contacts[i].phoneNumbers) {
+	                $("#contact-phone").text(contacts[i].phoneNumbers[0].value);
+	            } else {
+	                $("#contact-phone").text("");
+	            }
+	            
+	            if (contacts[i].photos && contacts[i].photos.length) {
+	                $(".largeProfile").attr("src", contacts[i].photos[0].value);
+	            } else {
+	                $(".largeProfile").attr("src", "styles/blankProfile.png");
+	            }
+	            
+	            selectedContact = contacts[i];
+	            
+	            break;
+	        }
+	    }  
+	}
 
 <hr data-action="end" />
 
-### Step 3: Use the device camera to add a profile picture
+### Step 6: Use the device camera to add a profile picture
 
-Since you have a place to display a picture, now is a good time to learn how to populate the picture with a real image.
+Since you have a place to display a picture, now is a good time to learn how to populate the image element with a picture captured from your device!
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Add a button to your contacts detail view (`<div>`) that will initiate the camera. This can be placed underneath the the existing elements which display data about your contact.
+* **a**. Add a button to your contacts detail view (`<div id="view-contact">`) that will start up the camera. This can be placed underneath the existing elements that display your selected contact.
 
-`<button>`
+	<button id="update-photo" style="width:99%" data-role="button" onclick="window.UpdatePhoto()">Update Photo</button>
 
-* **b**. The button references a JavaScript function you haven't created yet, so let's get that in there. Paste the following function into your `app.js` file:
+* **b**. This button references a JavaScript function you haven't created yet (`window.UpdatePhoto`), so let's create it and its associated callback function (`onPhotoSuccess`). Paste the following into your `app.js` file:
 
-`js`
+	window.UpdatePhoto = function() {
+	    navigator.camera.getPicture(onPhotoSuccess, onError, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+	}
+	
+	function onPhotoSuccess(imageURI) {
+	    $(".largeProfile").attr("src", imageURI);
+	    var photo=[];
+	    photo[0] = new ContactField('photo', imageURI, false)
+	    selectedContact.photos = photo;
+	    selectedContact.save();
+	}
 
-What's happening here is that once the button is pressed, Cordova finds your device camera and enables it. You may then take a picture or choose an image from your device's photo library. There are two callback functions as well, `xxx`, and `yyy`. The former is called when you successfully take or use an image, the latter is called if something goes wrong.
+Once the button is pressed, Cordova finds your device camera and enables it. You are then prompted to take a picture. The callback function `onPhotoSuccess` is called when you successfully take a picture.
 
-* **c**. Save all of your changes and run your app in the device simulator again. Another useful feature of the device simulator is that you can test out most core Cordova plugin features without using a real device!
+* **c**. Save all of your changes and do a three finger tap in your Companion App again. Try adding a profile picture to one of your contacts!
 
 <hr data-action="end" />
 
