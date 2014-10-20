@@ -32,7 +32,7 @@ Let's install the "Native Page Transitions" plugin. As previously mentioned, thi
 
 * **d**. Add a reference to this file at the top of your `index.html` file, right underneath where you load Kendo UI (`kendo.mobile.min.js`):
 
-	<script src="scripts/NativePageTransitionsKendoAdapter.js"></script>
+	`<script src="scripts/NativePageTransitionsKendoAdapter.js"></script>`
 
 * **e**. The adapter file will automatically convert any of your Kendo UI transitions to native!
 
@@ -52,9 +52,11 @@ Your final plugin to install is the "Toast" plugin. Again, this plugin allows yo
 
 * **b**. Customize the `onPhotoSuccess` function to use a toast alert by adding this code:
 
-    if (window.plugins && window.plugins.toast) {
-        window.plugins.toast.showShortCenter("The profile picture has been updated!");
-    }
+```
+if (window.plugins && window.plugins.toast) {
+    window.plugins.toast.showShortCenter("The profile picture has been updated!");
+}
+```
 
 <hr data-action="end" />
 

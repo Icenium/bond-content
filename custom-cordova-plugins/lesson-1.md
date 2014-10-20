@@ -14,36 +14,40 @@ This first step focuses on the first view (`<div id="all-contacts">`). This view
 
 * **a**. Your first action is to create a Kendo UI template. Templates allow you to create chunks of HTML that will be merged with data - these "chunks" are repeated for each data element in your data source. The template you create will be bound to your contacts to provide a repeating list of items (contacts) in your ListView. Copy and paste this Kendo UI template into your page (outside of your Kendo UI views but within the `<body>` tags):
 
-	<script id="contacts-template" type="text/x-kendo-template">
-		<li>
-			# if (name.givenName) { #
-				${name.givenName}
-			# } #
+```
+<script id="contacts-template" type="text/x-kendo-template">
+	<li>
+		# if (name.givenName) { #
+			${name.givenName}
+		# } #
 
-			# if (name.familyName) { #
-				${name.familyName}
-			# } #
-		</li>
-	</script>
+		# if (name.familyName) { #
+			${name.familyName}
+		# } #
+	</li>
+</script>
+```
 
 * **b**. Next, let's wire up your contacts database to the template you just created. Paste the following JavaScript functions in your `app.js` file (located in the `scripts` directory):
 
-	window.getAllContacts = function() {
-	    var options = new ContactFindOptions();
-	    options.filter = "";           
-	    options.multiple = true;       
-	    var fields = ["*"];  
-	    navigator.contacts.find(fields, onContactSuccess, onError, options);
-	}
-	
-	function onContactSuccess(contacts) {  
-	    var template = kendo.template($("#contacts-template").html());
-	    var dataSource = new kendo.data.DataSource({ data: contacts });
-	    dataSource.bind("change", function () {
-	        $("#contacts-list").html(kendo.render(template, dataSource.view()));
-	    });
-	    dataSource.read();
-	}
+```
+window.getAllContacts = function() {
+    var options = new ContactFindOptions();
+    options.filter = "";           
+    options.multiple = true;       
+    var fields = ["*"];  
+    navigator.contacts.find(fields, onContactSuccess, onError, options);
+}
+
+function onContactSuccess(contacts) {  
+    var template = kendo.template($("#contacts-template").html());
+    var dataSource = new kendo.data.DataSource({ data: contacts });
+    dataSource.bind("change", function () {
+        $("#contacts-list").html(kendo.render(template, dataSource.view()));
+    });
+    dataSource.read();
+}
+```
 
 The `getAllContacts` function queries your local contact database to load all of your contacts. The `navigator.contacts.find` function has a callback function, `onContactSuccess`, which is called when your device successfully retrieves your contacts. It is in this function that your contacts are bound to your ListView element (`<ul id="contacts-list">`) via the Kendo UI template. 
 
@@ -79,55 +83,59 @@ You now have a nice list of all of your device contacts, so the natural next ste
 
 * **a**. In your Kendo UI template that you created earlier, inside of the `<li>` element, add an anchor tag that will serve as a link from your list of all contacts to the contact detail view: `<a href="\#view-contact?id=${id}" class="expand">`. Your updated Kendo UI template should look like this:
 
-	<script id="contacts-template" type="text/x-kendo-template">
-		<li>
-			<a href="\#view-contact?id=${id}" class="expand">
-				# if (name.givenName) { #
-					${name.givenName}
-				# } #
-	
-				# if (name.familyName) { #
-					${name.familyName}
-				# } #
-			</a>
-		</li>
-	</script>
+```
+<script id="contacts-template" type="text/x-kendo-template">
+	<li>
+		<a href="\#view-contact?id=${id}" class="expand">
+			# if (name.givenName) { #
+				${name.givenName}
+			# } #
+
+			# if (name.familyName) { #
+				${name.familyName}
+			# } #
+		</a>
+	</li>
+</script>
+```
 
 * **b**. Let's shift focus to your second view (`<div id="view-contact">`) and add a `data-show` property to this view. The `data-show` property tells your app to run a JavaScript function every time this view is displayed (or shown). Go ahead and add `data-show="window.getContactDetails"` - the start of your markup for this should now look like this:
 
-	<div id="view-contact" data-role="view" data-title="Contact Details" data-show="window.getContactDetails">
+	`<div id="view-contact" data-role="view" data-title="Contact Details" data-show="window.getContactDetails">`
 
 * **c**. Now you need to define what that `data-show` JavaScript function is, so paste these two functions into your `app.js` file:
 
-	window.getContactDetails = function(e) {
-	    selectedContactId = e.view.params.id;
-	    var options = new ContactFindOptions();
-	    options.filter = e.view.params.id;           
-	    options.multiple = true;       
-	    var fields = ["*"];   
-	    navigator.contacts.find(fields, onContactDetailSuccess, onError, options);
-	}
-	
-	function onContactDetailSuccess(contacts) {
-		for (var i = 0; i < contacts.length; i++) {  
-	        if (contacts[i].id == selectedContactId)
-	        {
-	            $("#contact-name").text(getName(contacts[i]));
-	            
-	            if (contacts[i].phoneNumbers) {
-	                $("#contact-phone").text(contacts[i].phoneNumbers[0].value);
-	            } else {
-	                $("#contact-phone").text("");
-	            }
-	            
-	            selectedContact = contacts[i];
-	            
-	            break;
-	        }
-	    }  
-	}
+```
+window.getContactDetails = function(e) {
+    selectedContactId = e.view.params.id;
+    var options = new ContactFindOptions();
+    options.filter = e.view.params.id;           
+    options.multiple = true;       
+    var fields = ["*"];   
+    navigator.contacts.find(fields, onContactDetailSuccess, onError, options);
+}
 
-There is a fair amount going on inside these functions. In `window.getContactDetails` you are filtering your contacts by the id passed in the query string from your first view. Since we can't trust that this is an accurate filter (it's doing a string comparison, so the id "1" would also return "10"), in the `onContactDetailSuccess` callback function we loop through the returned contacts until we find one that matches your selected id exactly. It is within this function that your contact details are bound to your detail view.
+function onContactDetailSuccess(contacts) {
+	for (var i = 0; i < contacts.length; i++) {  
+        if (contacts[i].id == selectedContactId)
+        {
+            $("#contact-name").text(getName(contacts[i]));
+            
+            if (contacts[i].phoneNumbers) {
+                $("#contact-phone").text(contacts[i].phoneNumbers[0].value);
+            } else {
+                $("#contact-phone").text("");
+            }
+            
+            selectedContact = contacts[i];
+            
+            break;
+        }
+    }  
+}
+```
+
+In `window.getContactDetails` you are filtering your contacts by the id passed in the query string from your first view. Since we can't trust that this is an accurate filter (it's doing a string comparison, so the id "1" would also return "10"), in the `onContactDetailSuccess` callback function we loop through the returned contacts until we find one that matches your selected id exactly. It is within this function that your contact details are bound to your detail view.
 
 * **d**. Back in your Companion App, do a three-finger tap to download the latest version of your app and see how it works now.
 

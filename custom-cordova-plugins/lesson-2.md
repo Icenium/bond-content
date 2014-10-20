@@ -12,25 +12,27 @@ Let's do a slight customization to your Kendo UI template to retrieve and displa
 
 * **a**. Add an image element to your Kendo UI template that accounts for a profile picture that either exists or does not exist. The end result should look like this:
 
-    <script id="contacts-template" type="text/x-kendo-template">
-        <li>
-            <a href="\#view-contact?id=${id}" class="expand">
-                # if (photos && photos.length) { #
-                    <img class="smallProfile" src="${photos[0].value}" />
-                # } else { #
-                    <img class="smallProfile" src="styles/blankProfile.png" />
-                # } #
-        
-                # if (name.givenName) { #
-                    ${name.givenName}
-                # } #
-        
-                # if (name.familyName) { #
-                    ${name.familyName}
-                # } #
-            </a>
-        </li>
-    </script>
+```
+<script id="contacts-template" type="text/x-kendo-template">
+    <li>
+        <a href="\#view-contact?id=${id}" class="expand">
+            # if (photos && photos.length) { #
+                <img class="smallProfile" src="${photos[0].value}" />
+            # } else { #
+                <img class="smallProfile" src="styles/blankProfile.png" />
+            # } #
+    
+            # if (name.givenName) { #
+                ${name.givenName}
+            # } #
+    
+            # if (name.familyName) { #
+                ${name.familyName}
+            # } #
+        </a>
+    </li>
+</script>
+```
 
 > Tip: When we query the contacts database, we are asking for all fields (`var fields = ["*"];`). This means the profile pictures have already been included in this data set, so there is nothing more we need to do to request them!
 
@@ -48,45 +50,49 @@ Let's also load profile pictures on your contacts detail screen. We want to show
 
 * **a**. Add the following image element to the top of your second Kendo UI Mobile view (`<div id="view-contact">`) and underneath the header element: `<img class="largeProfile" />`. The end result should look like this:
 
-    <div id="view-contact" data-role="view" data-title="Contact Details" data-show="window.getContactDetails">
-        <header data-role="header">
-            <div data-role="navbar">
-                <a data-align="left" data-role="backbutton">Back</a>
-                <div data-role="view-title"></div>
-            </div>
-        </header>
-        <img class="largeProfile" />
-        <h2 id="contact-name"></h2>
-        <h4 id="contact-phone"></h4>
-    </div>
+```
+<div id="view-contact" data-role="view" data-title="Contact Details" data-show="window.getContactDetails">
+    <header data-role="header">
+        <div data-role="navbar">
+            <a data-align="left" data-role="backbutton">Back</a>
+            <div data-role="view-title"></div>
+        </div>
+    </header>
+    <img class="largeProfile" />
+    <h2 id="contact-name"></h2>
+    <h4 id="contact-phone"></h4>
+</div>
+```
 
 * **b**. In order to display the photo in this view, you'll have to add some code that checks if any photos exist to your existing function (`onContactDetailSuccess`). The final function should look like this:
 
-	function onContactDetailSuccess(contacts) {
-	    for (var i = 0; i < contacts.length; i++) 
-	    {  
-	        if (contacts[i].id == selectedContactId)
-	        {
-	            $("#contact-name").text(getName(contacts[i]));
-	            
-	            if (contacts[i].phoneNumbers) {
-	                $("#contact-phone").text(contacts[i].phoneNumbers[0].value);
-	            } else {
-	                $("#contact-phone").text("");
-	            }
-	            
-	            if (contacts[i].photos && contacts[i].photos.length) {
-	                $(".largeProfile").attr("src", contacts[i].photos[0].value);
-	            } else {
-	                $(".largeProfile").attr("src", "styles/blankProfile.png");
-	            }
-	            
-	            selectedContact = contacts[i];
-	            
-	            break;
-	        }
-	    }  
-	}
+```
+function onContactDetailSuccess(contacts) {
+    for (var i = 0; i < contacts.length; i++) 
+    {  
+        if (contacts[i].id == selectedContactId)
+        {
+            $("#contact-name").text(getName(contacts[i]));
+            
+            if (contacts[i].phoneNumbers) {
+                $("#contact-phone").text(contacts[i].phoneNumbers[0].value);
+            } else {
+                $("#contact-phone").text("");
+            }
+            
+            if (contacts[i].photos && contacts[i].photos.length) {
+                $(".largeProfile").attr("src", contacts[i].photos[0].value);
+            } else {
+                $(".largeProfile").attr("src", "styles/blankProfile.png");
+            }
+            
+            selectedContact = contacts[i];
+            
+            break;
+        }
+    }  
+}
+```
 
 <hr data-action="end" />
 
@@ -100,21 +106,23 @@ Since you have a place to display a picture, now is a good time to learn how to 
 
 * **a**. Add a button to your contacts detail view (`<div id="view-contact">`) that will start up the camera. This can be placed underneath the existing elements that display your selected contact.
 
-	<button id="update-photo" style="width:99%" data-role="button" onclick="window.UpdatePhoto()">Update Photo</button>
+	`<button id="update-photo" style="width:99%" data-role="button" onclick="window.UpdatePhoto()">Update Photo</button>`
 
 * **b**. This button references a JavaScript function you haven't created yet (`window.UpdatePhoto`), so let's create it and its associated callback function (`onPhotoSuccess`). Paste the following into your `app.js` file:
 
-	window.UpdatePhoto = function() {
-	    navigator.camera.getPicture(onPhotoSuccess, onError, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
-	}
-	
-	function onPhotoSuccess(imageURI) {
-	    $(".largeProfile").attr("src", imageURI);
-	    var photo=[];
-	    photo[0] = new ContactField('photo', imageURI, false)
-	    selectedContact.photos = photo;
-	    selectedContact.save();
-	}
+```
+window.UpdatePhoto = function() {
+    navigator.camera.getPicture(onPhotoSuccess, onError, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+}
+
+function onPhotoSuccess(imageURI) {
+    $(".largeProfile").attr("src", imageURI);
+    var photo=[];
+    photo[0] = new ContactField('photo', imageURI, false)
+    selectedContact.photos = photo;
+    selectedContact.save();
+}
+```
 
 Once the button is pressed, Cordova finds your device camera and enables it. You are then prompted to take a picture. The callback function `onPhotoSuccess` is called when you successfully take a picture.
 

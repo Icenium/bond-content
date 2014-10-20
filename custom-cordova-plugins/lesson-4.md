@@ -82,9 +82,11 @@ If you had to go through all of these steps each time you built a new version of
 
 * **b**. Paste in the following CSS code:
 
-	body {
-	    background-color: Red;
-	}
+```
+body {
+    background-color: Red;
+}
+```
 
 * **c**. Save the file. Go back to your device and hold down three fingers to initiate a LiveSync refresh.
 
