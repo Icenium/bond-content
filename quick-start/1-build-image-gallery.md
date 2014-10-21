@@ -79,6 +79,8 @@ The AppBuilder companion app makes it easy to test your app on real devices, wit
 * **a.** Get your iOS, Android, or Windows Phone device out.
 * **b**. Download and install the AppBuilder companion app from your device's app store—i.e. the App Store for iOS users, Google Play for Android users, or the Windows Store for Windows Phone users (search for **AppBuilder**).
 
+**Disclaimer: AppBuilder companion app for iOS is temporarily  unavailable in the App Store. Please use Android or WP8 instead until the issue is resolved.**
+
 [![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/us/app/telerik-appbuilder/id527547398?mt=8)
 [![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.AppBuilder&hl=en)
 [![Windows Phone Store](images/windows-phone-store-icon.png)](https://www.windowsphone.com/en-us/store/app/appbuilder/0171d46b-b5f2-43d9-a36b-0a78c9692aab?signin=true)
