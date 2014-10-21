@@ -1,0 +1,16 @@
+{
+	"title": "Add custom plugins to your app",
+	"description": "Learn how to add custom cordova plugins to your app for using hardware capabilities of the device.",
+	"estimateTime": "30",
+	"land": "project",
+	"workspace": {
+		"name": "Contacts app",
+		"description": "Sample app for learning how to use cordova plugins to access hardware capabilities of a device",
+		"project": { 
+			"name": "Contacts",
+			"description": "",
+			"type": "appbuilder",
+			"url": "https://github.com/rdlauer/cordova-contacts-test.git"
+		}
+	}
+}

@@ -1,8 +1,8 @@
-## Lesson 2: Extend your app with the device camera
+## Lesson 2. Extend your app with the device camera
 
 The app you have created functions just fine right now by consuming your contact data, but let's take a look at how we can easily integrate another core Cordova plugin, the device camera.
 
-### Step 4: Customize your main contacts view to display an inline profile picture
+### Step 4. Customize your main contacts view to display an inline profile picture
 
 Let's do a slight customization to your Kendo UI template to retrieve and display any profile pictures you already have for your contacts.
 
@@ -42,7 +42,7 @@ Let's do a slight customization to your Kendo UI template to retrieve and displa
 
 <hr data-action="end" />
 
-### Step 5: Customize the contacts detail screen to display a profile picture
+### Step 5. Customize the contacts detail screen to display a profile picture
 
 Let's also load profile pictures on your contacts detail screen. We want to show the profile picture when the contact details are displayed.
 
@@ -100,7 +100,7 @@ function onContactDetailSuccess(contacts) {
 
 <hr data-action="end" />
 
-### Step 6: Use the device camera to add a profile picture
+### Step 6. Use the device camera to add a profile picture
 
 Since you have a place to display a picture, now is a good time to learn how to populate the image element with a picture captured from your device!
 

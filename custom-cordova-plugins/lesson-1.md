@@ -1,8 +1,8 @@
-## Lesson 1: Access device contacts with a Cordova plugin
+## Lesson 1. Access device contacts with a Cordova plugin
 
 Hybrid mobile apps built with AppBuilder use Apache Cordova as the bridge between your HTML5 application and native device features. You use simple JavaScript commands to access these "core" Cordova plugins such as the camera, stored contacts, geolocation data, and more. In this lesson you will create an app that interacts with native device features, displays your contacts, and lets you assign a picture to each contact using the camera. Let's get started!
 
-### Step 1: Build a screen to list device contacts
+### Step 1. Build a screen to list device contacts
 
 Before you begin, make sure your `index.html` file is open. We have two Kendo UI Mobile views set up for you (`<div id="all-contacts">` and `<div id="view-contact">`). These views have been pre-populated with `data-title` properties to give each view its own distinguishing title. Each view also has a Kendo UI Mobile header (`<header data-role="header">`) which provides a navigation bar to display the view title.
 
@@ -55,7 +55,7 @@ The `getAllContacts` function queries your local contact database to load all of
 
 <hr data-action="end" />
 
-### Step 2: Run the app in the AppBuilder Companion App
+### Step 2. Run the app in the AppBuilder Companion App
 
 It's fun to see the fruits of your labor, even if you have only just begun the lesson! As you learned in a previous lesson, the AppBuilder Companion App lets you run your app on a real device without going through the hassle of installing and configuring SDKs or provisioning profiles.
 
@@ -75,7 +75,7 @@ It's fun to see the fruits of your labor, even if you have only just begun the l
 
 <hr data-action="end" />
 
-### Step 3: Build a screen to display contact details
+### Step 3. Build a screen to display contact details
 
 You now have a nice list of all of your device contacts, so the natural next step is to create a screen that displays more detailed information about a single selected contact.
 

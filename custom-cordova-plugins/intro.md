@@ -1,1 +1,0 @@
-# Using Cordova plugins in your hybrid mobile app

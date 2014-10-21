@@ -1,8 +1,8 @@
-## Lesson 3: Extend your app with a custom Cordova plugin
+## Lesson 3. Extend your app with a custom Cordova plugin
 
 Custom plugins allow you to tap into native device features that you cannot normally access via the core functionality of Cordova. In this lesson you will learn how to find and install two custom plugins: "Native Page Transitions", which allows you to use native device animations to seamlessly transition between views, and "Toast" which allows you to show a native alert dialog. Let's get started!
 
-### Step 7: Discover the AppBuilder package manager
+### Step 7. Discover the AppBuilder package manager
 
 The AppBuilder package manager is your central hub for discovering and installing new frameworks, libraries, and Cordova plugins for your app. This lesson focuses on the **Verified Plugins Marketplace**, which is a curated list of Cordova plugins that have been fully tested and verified to empower hybrid mobile developers to build better mobile apps.
 
@@ -16,7 +16,7 @@ The AppBuilder package manager is your central hub for discovering and installin
 
 <hr data-action="end" />
 
-### Step 8: Setup and configure the Native Page Transitions plugin
+### Step 8. Setup and configure the Native Page Transitions plugin
 
 Let's install the "Native Page Transitions" plugin. As previously mentioned, this plugin allows you to tap into the native animations available on your device to move your users between views. This makes your app feel more native than by using the default CSS-based transitions.
 
@@ -40,7 +40,7 @@ Let's install the "Native Page Transitions" plugin. As previously mentioned, thi
 
 <hr data-action="end" />
 
-### Step 9: Setup and configure the Toast plugin
+### Step 9. Setup and configure the Toast plugin
 
 Your final plugin to install is the "Toast" plugin. Again, this plugin allows you to display a "toast" (a.k.a. native alert dialog) in your app that fades away on its own without user intervention. You'll use this to show a notification after you have used your device's camera to populate a profile picture.
 
