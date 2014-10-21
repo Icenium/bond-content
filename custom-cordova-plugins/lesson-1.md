@@ -49,7 +49,9 @@ function onContactSuccess(contacts) {
 }
 ```
 
-The `getAllContacts` function queries your local contact database to load all of your contacts. The `navigator.contacts.find` function has a callback function, `onContactSuccess`, which is called when your device successfully retrieves your contacts. It is in this function that your contacts are bound to your ListView element (`<ul id="contacts-list">`) via the Kendo UI template. 
+The `getAllContacts` function queries your local contact database to load all of your contacts. The `navigator.contacts.find` function has a callback function, `onContactSuccess`, which is called when your device successfully retrieves your contacts. It is in this function that your contacts are bound to your ListView element (`<ul id="contacts-list">`) via the Kendo UI template.
+
+* **c**. Save your changes.
 
 <hr data-action="end" />
 
@@ -137,7 +139,11 @@ function onContactDetailSuccess(contacts) {
 
 In `window.getContactDetails` you are filtering your contacts by the id passed in the query string from your first view. Since we can't trust that this is an accurate filter (it's doing a string comparison, so the id "1" would also return "10"), in the `onContactDetailSuccess` callback function we loop through the returned contacts until we find one that matches your selected id exactly. It is within this function that your contact details are bound to your detail view.
 
-* **d**. Back in your Companion App, do a three-finger tap to download the latest version of your app and see how it works now.
+* **d**. Save your changes.
+
+* **e**. Back in your Companion App, do a three-finger tap in your app to download the latest version of your app and see how it works now.
+
+![three finger tap](images/three-finger-tap.png)
 
 <hr data-action="end" />
 
