@@ -1,6 +1,8 @@
 {  
    "orderedActiveTutorials":[  
       "quick-start",
-      "layout-and-navigation"
+      "layout-and-navigation",
+      "grocery-list",
+      "custom-cordova-plugins"
    ]
 }
