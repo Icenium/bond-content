@@ -36,7 +36,9 @@ Let's do a slight customization to your Kendo UI template to retrieve and displa
 
 > Tip: When we query the contacts database, we are asking for all fields (`var fields = ["*"];`). This means the profile pictures have already been included in this data set, so there is nothing more we need to do to request them!
 
-* **b**. Use the Companion App on your device to do a three-finger tap and download the latest version of your app to see if any profile pictures load.
+* **b**. Save your changes.
+
+* **c**. Use the Companion App on your device to do a three-finger tap and download the latest version of your app to see if any profile pictures load.
 
 <hr data-action="end" />
 
@@ -94,6 +96,8 @@ function onContactDetailSuccess(contacts) {
 }
 ```
 
+* **c**. Save your changes.
+
 <hr data-action="end" />
 
 ### Step 6: Use the device camera to add a profile picture
@@ -106,9 +110,9 @@ Since you have a place to display a picture, now is a good time to learn how to 
 
 * **a**. Add a button to your contacts detail view (`<div id="view-contact">`) that will start up the camera. This can be placed underneath the existing elements that display your selected contact.
 
-	`<button id="update-photo" style="width:99%" data-role="button" onclick="window.UpdatePhoto()">Update Photo</button>`
+	`<button id="update-photo" data-role="button" onclick="window.updatePhoto()">Update Photo</button>`
 
-* **b**. This button references a JavaScript function you haven't created yet (`window.UpdatePhoto`), so let's create it and its associated callback function (`onPhotoSuccess`). Paste the following into your `app.js` file:
+* **b**. This button references a JavaScript function you haven't created yet (`window.updatePhoto`), so let's create it and its associated callback function (`onPhotoSuccess`). Paste the following into your `app.js` file:
 
 ```
 window.UpdatePhoto = function() {

@@ -58,6 +58,8 @@ if (window.plugins && window.plugins.toast) {
 }
 ```
 
+* **c**. Save all of your changes.
+
 <hr data-action="end" />
 
 Note that custom Cordova plugins cannot (yet) be tested in the Companion Apps. However, you may now create a build of your app and run it on a real mobile device! In the final lesson you'll learn how to create a build of your mobile app and run it on an iOS, Android, or Windows Phone device.
