@@ -26,15 +26,13 @@ Let's install the "Native Page Transitions" plugin. As previously mentioned, thi
 
 * **a**. In the provided search box, type "native page transitions". Highlight the plugin and click the `Install` button.
 
-* **b**. <a href="https://raw.githubusercontent.com/Telerik-Verified-Plugins/NativePageTransitions/master/adapters/NativePageTransitionsKendoAdapter.js" target="_blank">Download the Kendo UI adapter file</a> for Native Page Transitions.
-
-* **c**. Add the `NativePageTransitionsKendoAdapter.js` file to your `scripts` directory.
-
-* **d**. Add a reference to this file at the top of your `index.html` file, right underneath where you load Kendo UI (`kendo.mobile.min.js`):
+* **b**. Add a reference to the Kendo UI adapter file for Native Page Transitions at the top of your `index.html` file, right underneath where you load Kendo UI (`kendo.mobile.min.js`):
 
 	`<script src="scripts/NativePageTransitionsKendoAdapter.js"></script>`
 
-* **e**. The adapter file will automatically convert any of your Kendo UI transitions to native!
+> Tip: This adapter file is always available in the <a href="https://raw.githubusercontent.com/Telerik-Verified-Plugins/NativePageTransitions/master/adapters/NativePageTransitionsKendoAdapter.js" target="_blank">GitHub repository</a>.
+
+* **c**. The adapter file will automatically convert any of your Kendo UI transitions to native!
 
 > Tip: If you want to play around with the type of transitions or with how quickly transitions are invoked, <a href="http://plugins.telerik.com/plugin/native-page-transitions" target="_blank">check out the plugin documentation</a> for a full list of settings you may specify.
 
