@@ -1,0 +1,16 @@
+{
+	"title": "Add data and authentication",
+	"description": "Learn how to read and write data from web services by leveraging KendoUI DataSource.",
+	"estimateTime": "30",
+	"land": "workspace",
+	"workspace": {
+		"name": "Grocery List app",
+		"description": "Sample app for learning how to connect your project with data and web services",
+		"project": { 
+			"name": "Grocery List",
+			"description": "",
+			"type": "appbuilder",
+			"url": "https://github.com/tjvantoll/bond-grocery-list.git"
+		}
+	}
+}
