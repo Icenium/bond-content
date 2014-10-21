@@ -1,4 +1,4 @@
-## Lesson 2: Managing users and authorization
+## Lesson 2. Managing users and authorization
 
 ### Step 4. Configure permissions
 

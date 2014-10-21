@@ -1,4 +1,4 @@
-## Lesson 3: Adding a registration screen
+## Lesson 3. Adding a registration screen
 
 ### Step 6. Build a registration screen
 
