@@ -26,7 +26,7 @@ Let's install the "Native Page Transitions" plugin. As previously mentioned, thi
 
 * **a**. In the provided search box, type "native page transitions". Highlight the plugin and click the `Install` button.
 
-* **b**. Add a reference to the Kendo UI adapter file for Native Page Transitions at the top of your `index.html` file, right underneath where you load Kendo UI (`kendo.mobile.min.js`):
+* **b**. Add the following reference to the Kendo UI adapter file for Native Page Transitions at the top of your `index.html` file, right underneath where you load Kendo UI (`kendo.mobile.min.js`):
 
 	`<script src="scripts/NativePageTransitionsKendoAdapter.js"></script>`
 
