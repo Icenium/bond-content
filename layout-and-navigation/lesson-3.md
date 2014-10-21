@@ -6,7 +6,7 @@ So far in this tutorial, you've learned how to work with layouts, how to leverag
 
 <hr data-action="start" />
 
-As you've worked through this tutorial so far, you may have noticed that Kendo UI provides some nice built-in transitions between views and when open and closing the Drawer menu. 
+As you've worked through this tutorial so far, you may have noticed that Kendo UI provides some nice built-in transitions between views as well as for the Drawer menu. 
 
 #### Action
 
@@ -56,7 +56,7 @@ Now let's look a little bit more at navigation. As with many other features in K
 <div data-role="layout" data-id="main-layout">
 	<div data-role="header">
 		<div data-role="navbar">
-			<a href="#app-drawer" data-rel="drawer" data-role="button">Menu</a>
+			<a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>
 	    	<span data-role="view-title"></span>
 	    	<a data-click="Books.settings" data-role="button" data-align="right" data-icon="settings"></a>
 	    </div>
@@ -73,7 +73,7 @@ app.navigate('views/settings.html');
 
 <hr data-action="end" />
 
-As noted above, Kendo UI allows you to perform navigation with code or declaratively, primarially though the `href` attribute on links and the use of urls or fragments starting with the pound or hash character (#).
+As noted above, Kendo UI allows you to perform navigation with code or declaratively, primarially though the `href` attribute on links and the use of urls or fragments starting with the pound or hash character (#). We used the code approach in the last step, but we can make this even simpler.
 
 <hr data-action="start" />
 

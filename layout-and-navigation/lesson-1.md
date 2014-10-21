@@ -89,7 +89,7 @@ While the TabStrip has been a common navigation pattern since the early days of 
 
 #### Action
 
-* **a**. To add a Drawer widget, add the following markup to the index.html file:
+* **a**. To add a Drawer widget, add the following markup to the index.html file before the closing `<body>` tag:
 ```
 <div data-role="drawer" id="app-drawer">
     <div data-role="header">

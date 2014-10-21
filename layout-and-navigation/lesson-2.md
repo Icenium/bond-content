@@ -4,7 +4,7 @@
 
 In the last lesson, you may have noticed that you were able to add a good amount of structure and interactivity to your app without having to write much JavaScript. This is because Kendo UI allows you to use the MVVM pattern to declaratively (meaning, using HTML markup instead of JavaScript code) wire up your apps.
 
-In this lesson, we'll look at how Kendo UI allows you to leverage a declaritive style for a variety of common tasks, including defining layouts, binding to data sources and wiring up events.
+In this lesson, we'll look at how Kendo UI allows you to leverage a declaritive style for a variety of common tasks, like defining layouts, binding to data sources and wiring up events.
 
 <hr data-action="start" />
 
@@ -70,7 +70,7 @@ app.navigate("#:back");
 </div>
 ```
 
-* **c**. Save the index.html and app.js files and re-open the iPhone simulator. Navigate back to the details view and click on the back button, which should take you right back to the main screen.
+* **c**. Save the index.html and app.js files and re-open the iPhone simulator. Navigate back to the details view by clicking on a book in the list on the home screen and click on the back button, which should take you right back to the main screen.
 
 <hr data-action="end" />
 
@@ -97,7 +97,7 @@ Another big time-saver for MVVM comes when working with data, which we'll look a
 
 <hr data-action="end" />
 
-The `data-show` and `data-hide` attributes tell Kendo UI which methods to call when the view is navigated to or away from by the user. We're using these methods in order to work with our shared Kendo UI DataSource and filter by only the record we want to display. Now let's add the meat of the view.
+The `data-show` and `data-hide` attributes tell Kendo UI which methods to call when the user navigates to or away from the view. We're using these methods in order to work with our shared Kendo UI DataSource and filter by only the record we want to display. Now let's add the meat of the view.
 
 <hr data-action="start" />
 
@@ -149,13 +149,13 @@ if (currentBook.is_favorite) {
 
 <hr data-action="end" />
 
-The code before this snippet provides a filtered view of our Books DartaSource based on the selected item. With that in hand, we create a model for the book and call `kendo.bind` to wire up the declarative markup we added to the view in the last step.
+The code before this snippet provides a filtered view of our Books DataSource based on the selected item. With that in hand, we create a model for the book and call `kendo.bind` to wire up the declarative markup we added to the view in the last step.
 
 <hr data-action="start" />
 
 #### Action
 
-* **e**. Save the details.html and details.js files and re-open, the iPhone simulator and navigate to the details page by clicking on an item in the list.
+* **e**. Save the details.html and details.js files and re-open the iPhone simulator. Navigate to the details page by clicking on an item in the list and you should see the book details on the screen.
 
 <hr data-action="end" />
 
