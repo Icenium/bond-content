@@ -1,6 +1,6 @@
 {
 	"title": "Create app layout and navigation",
-	"description": "Learn how to create your app layout and navigation using key concepts such as TabStrip, Drawer, Bindings and MVVM.",
+	"description": "Learn how to create your app layout with the TabStrip and Drawer, and the fundamentals of app navigation using concepts such as MVVM and binding.",
 	"estimateTime": "25",
 	"land": "project",
 	"workspace": {
