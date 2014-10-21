@@ -18,7 +18,7 @@ When creating views with Kendo UI, you'll often find yourself using common eleme
 
 * **b**. Add a `data-title="Books"` attribute to the first view in index.html.
 
-* **c**. Remove the full NavBar div (`<div data-role="navbar">`) from the first view in index.html and copy it into the div with `data-role="header"`. Your layout should now look like this:
+* **c**. Remove the full header div (`<div data-role="header">`) from the first view in index.html and copy the NavBar it into the div with `data-role="header"`. Your layout should now look like this:
 ```
 <div data-role="layout" data-id="main-layout">
 	<div data-role="header">
