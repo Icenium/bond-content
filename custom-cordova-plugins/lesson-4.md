@@ -4,7 +4,7 @@ The AppBuilder device simulator and Companion Apps are great, but nothing substi
 
 The first step in this lesson is to do a one-time configuration of your device to make sure you can easily install apps yourself. Please follow the step appropriate to your device.
 
-### Step 10. **Android:** Learn about installing apps from unknown sources
+### Step 1. **Android:** Learn about installing apps from unknown sources
 
 Before you may manually deploy apps to your Android device, you have to make sure that you're able to install apps from unknown sources. This Android security setting allows you to deploy apps to your device outside of the Google Play store.
 
@@ -18,13 +18,13 @@ Before you may manually deploy apps to your Android device, you have to make sur
 
 <hr data-action="end" />
 
-### Step 11. **iOS:** Learn about provisioning profiles
+### Step 1. **iOS:** Learn about provisioning profiles
 
 If you are planning on deploying to an iOS device, you need to know a little bit about device provisioning. Apple is restrictive when it comes to installing apps that don't come from their app store (even for testing purposes). In order to deploy an iOS app, you need to assign one or more device ids to a "provisioning profile" that is configured on Apple's developer web site. Once your provisioning profile is created, you then merge that profile with your app when creating a build in AppBuilder. Any devices registered in that profile will be able to install and run your app.
 
 The detailed instructions for how to do this are outside the scope of this tutorial (because it's a rather lengthy process). However, we do have resources for you, such as a [step-by-step video](https://www.youtube.com/watch?v=Y1umDPO4Ly4) and [extensive information in our docs](http://docs.telerik.com/platform/appbuilder/code-signing-your-app/code-signing).
 
-### Step 12. **Windows Phone:** Learn about registering your device for development
+### Step 2. **Windows Phone:** Learn about registering your device for development
 
 Microsoft requires that all Windows Phone 8/8.1 devices be registered as "development devices" before you may manually deploy an app to them.
 
@@ -42,7 +42,7 @@ Microsoft requires that all Windows Phone 8/8.1 devices be registered as "develo
 
 <hr data-action="end" />
 
-### Step 13. Deploy your app to an iOS, Android, or Windows Phone device
+### Step 3. Deploy your app to an iOS, Android, or Windows Phone device
 
 Now that you've learned how to properly set up your device, let's create a build and deploy it!
 
@@ -70,7 +70,7 @@ Now that you've learned how to properly set up your device, let's create a build
 
 > Tip: If you use another AppBuilder IDE such as our Windows client, Visual Studio extension, Command Line Interface, or Sublime Text package, you can deploy directly to any connected device without going through the process of scanning QR codes or downloading and manually installing the app!*
 
-### Step 14. Use LiveSync to see your changes without re-building
+### Step 4. Use LiveSync to see your changes without re-building
 
 If you had to go through all of these steps each time you built a new version of your app, that might get a little painful. Luckily with LiveSync enabled in your app, all you have to do is a three finger tap in your app to trigger a download of the latest version. No re-building and re-deploying necessary!
 
