@@ -1,16 +1,16 @@
 {
-	"title": "Working with app layout and navigation",
-	"description": "",
-	"estimateTime": "0",
+	"title": "Create app layout and navigation",
+	"description": "Learn how to create your app layout and navigation using key concepts such as TabStrip, Drawer, Bindings and MVVM.",
+	"estimateTime": "25",
 	"land": "project",
 	"workspace": {
-		"name": "Working with app layout and navigation",
-		"description": "Sample app for learning how to work with the layout and navigation of the Telerik Platform",
+		"name": "Great Books app",
+		"description": "Sample app for learning about layout and navigation",
 		"project": { 
-			"name": "Working with app layout and navigation",
+			"name": "Great Books",
 			"description": "",
 			"type": "appbuilder",
-			"url": "https://github.com/icenium/bond-app-template.git"
+			"url": "https://github.com/bsatrom/great-books.git"
 		}
 	}
 }
