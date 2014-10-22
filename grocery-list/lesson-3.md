@@ -76,13 +76,13 @@ window.registerView = kendo.observable({
 
 <hr data-action="end" />
 
-That's all it takes to create a functional registration screen, which is pretty cool. The actual registration happens during the `el.Users.register()` call, which adds the user to your Backend Services project. After you create a user, if you'd like, head back to the Users view to see the user you created through your app.
+That's all it takes to create a functional registration screen, which is pretty cool. The actual registration happens during the `el.Users.register()` call, which adds the user to your Backend Services project. After you create a user, if you'd like, head back your Backend Services project to see the user you created through your app.
 
 With the registration screen in place, there's one last piece of functionality we need to add to have a completely functional user management process: password resets.
 
 ### Step 7. Adding password reset functionality
 
-Users forget their passwords all the time, so any app that uses accounts must provide a way for users to reset their password. But actually implementing a password reset has traditionally been tricky, or at the very least time consuming to get right. But this is another area where Backend Services shines, as implementing a password reset is as simple as a single API call. Let's see how it works.
+Users forget their passwords all the time, so any app with user accounts needs to provide a way for users to reset their password. Unfortunately, actually implementing a password reset has traditionally been tricky, or at the very least time consuming to get right. Fortunately this is another area where Backend Services shines, as implementing a password reset is as simple as a single API call. Let's see how it works.
 
 <hr data-action="start" />
 
@@ -138,8 +138,8 @@ window.passwordView = kendo.observable({
     }
 });
 ```
-* **d**. Save your index.html and app.js files, and open the app up in the simulator.
-* **e**. Use the new reset password functionality to reset the password of an existing user. Make sure to use a user that uses a valid email address you can check. If you don't have such a user use the register screen to create one.
+* **d**. Save your index.html and app.js files, and open your app in the simulator.
+* **e**. Use the new reset password functionality to reset the password of an existing user. Make sure to use a user with valid email address that you can check. If you don't have such a user, use the register screen to create one.
 
 <hr data-action="end" />
 
@@ -147,4 +147,4 @@ When users reset their password they're automatically sent a link to input a new
 
 But that doesn't have to be the case. If you want to build these interfaces yourself, and not rely on an email workflow, you can do so with the Backend Services APIs. You can also do a lot of things we didn't have time to cover today—such as logging in with social accounts (Facebook, Google, Twitter, and so forth), integrating with Active Directory, and a lot more.
 
-What you did do today is build an app from scratch with a comprehensive user management system—all in about a half hour. And that's something worth celebrating. Congrats!
+What you *did* do today was build an app from scratch with a comprehensive user management system—all in about a half hour. And that's something worth celebrating. Congrats!
