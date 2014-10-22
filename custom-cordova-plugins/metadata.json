@@ -7,7 +7,7 @@
 		"name": "Contacts app",
 		"description": "Sample app for learning how to use cordova plugins to access hardware capabilities of a device",
 		"project": { 
-			"name": "Contacts",
+			"name": "Cordova Contacts",
 			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/rdlauer/cordova-contacts-test.git"
