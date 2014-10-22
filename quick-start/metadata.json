@@ -2,7 +2,6 @@
 	"title": "Quick Start Tutorial",
 	"description": "This tutorial is essential for understanding key concepts related to the Telerik Platform. It's a prerequisite to all other tutorials.",
 	"estimateTime": "20",
-	"land": "home",
 	"workspace": {
 		"name": "Photo Album app",
 		"description": "Sample app for learning how to develop hybrid apps using the Telerik Platform",
