@@ -36,7 +36,7 @@ Now you have a backend configured and some data ready to go. Next, let's see how
 
 ### Step 2. Read from an endpoint
 
-The true power of Backend Services is how easy it makes complex data interactions. In this step you'll learn how to read data from the content type you just configured. A boilerplate AppBuilder project has already been setup for you, so you're next task is to add data to it. You'll start by opening up the AppBuilder project.
+The true power of Backend Services is how easy it makes complex data interactions. In this step you'll learn how to read data from the content type you just configured. A boilerplate AppBuilder project has already been setup for you, so your next task is to add data to it. You'll start by opening up the AppBuilder project.
 
 <hr data-action="start" />
 
@@ -48,7 +48,7 @@ The true power of Backend Services is how easy it makes complex data interaction
 
 <hr data-action="end" />
 
-As you can see, this project has a basic UI, but no data. If you look in this project's index.html you'll see a `<script>` tag that imports everlive.all.min.js, which is the Backend Services JavaScript SDK. Next, you're going to use the SDK to read the grocery data from your Backend Services_blank project. Your first step is to plug in your new project's API key.
+As you can see, this project has a basic UI, but no data. If you look in this project's index.html file you'll see a `<script>` tag that imports everlive.all.min.js, which is the Backend Services JavaScript SDK. Next, you're going to use the SDK to read the grocery data from your Backend Services project. Your first step is to plug in your new project's API key.
 
 <blockquote>Tip: You can also download the Backend Services SDK, or any other Telerik Platform resources you may need from <a href="https://platform.telerik.com/#downloads" target="_blank">https://platform.telerik.com/#downloads</a></blockquote>
 
@@ -56,7 +56,7 @@ As you can see, this project has a basic UI, but no data. If you look in this pr
 
 #### Action
 
-* **d**. Find and click the “Data” link on the very right-hand side of the screen.
+* **d**. Find and click the “Data” link on the right-hand side of the screen.
 * **e**. In the Data Navigator (the panel on the right-hand side of the screen), expand “Backend Services”, and then right click on “Grocery List Backend” (or whatever you named your Backend Services project). Select “Properties” from the context menu.
 * **f**. In the Properties menu (bottom right-hand side of the screen), find the project's API key and copy it.
 * **g**. Click the “Project” link on the right-hand side of the screen to switch back to this project's files.
@@ -168,7 +168,7 @@ var groceryDataSource = new kendo.data.DataSource({
 
 When you use a `type` of `"everlive"`, Kendo UI takes care of most of the DataSource configuration for you. You still need to provide a `typeName` so Kendo UI knows which content type to request from the Backend Services project.
 
-And with this change you now have a functioning grocery list. When you add groceries through the UI they're added to the backend and the list refreshes automatically. How does the list know to refresh? When you call the `sync()` method on a Kendo UI DataSource, it intelligently makes the calls needed to sync the backend data. All Kendo UI widgets that are driven by that data then know to refresh their views to reflect the updates.
+And with this change you now have a functioning grocery list. When you add groceries through the UI they're added to the backend and the list refreshes automatically. How does the list know to refresh? When you call the `sync()` method on a Kendo UI DataSource, it intelligently makes the calls needed to sync the backend data. All Kendo UI widgets driven by that data then know to refresh their views to reflect the updates.
 
 Using the DataSource as an abstraction makes all sorts of things possible. For example, suppose you wanted to sort the groceries by their name? You can get that behavior with the `sort` option:
 
@@ -182,4 +182,4 @@ var groceryDataSource = new kendo.data.DataSource({
 });
 ```
 
-Now that you have a functioning grocery list, your next problem to tackle is user management, as your app's users probably don't want to all edit the same list. As it turns out, Backend Services offers an elegant solution to this problem as well.
+Now that you have a functioning grocery list, your next problem to tackle is user management, as your app's users probably don't want to edit the same grocery list. As it turns out, Backend Services offers an elegant solution to this problem as well.

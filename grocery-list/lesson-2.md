@@ -16,7 +16,7 @@ Backend Services automates the tricky process of registering and managing user a
 
 <hr data-action="end" />
 
-You can have a dummy user that you can use to test your app with. Before we head back to your app though, we have to make one tweak to the Groceries content type you created in the last lesson.
+Now you have a dummy user account to test your app with. Before we head back to your app though, we have to make one tweak to the Groceries content type you created in the last lesson.
 
 <hr data-action="start" />
 
@@ -24,12 +24,12 @@ You can have a dummy user that you can use to test your app with. Before we head
 
 * **e**. Click the “Types” link in the menu on the left-hand side of the screen.
 * **f**. Click on the “Groceries” row to enter the Groceries content type you setup earlier.
-* **g**. Click the “Permissions” link in the top-right corner of the screen.
+* **g**. Click the “Permissions” link in the top-right corner of the screen (look for a lock icon).
 * **h**. Change the permission dropdown to “Private”, and then click the green “Save” button on the bottom of the screen.
 
 <hr data-action="end" />
 
-By changing the Groceries content type to private, you prevent access to the content type for unauthenticated users. You also implicitly associate the Groceries content type to user account. This means that each authenticated user will get their own grocery list to manage. Let's see how you have to change your app to accommodate this change.
+By changing the Groceries content type to private, you prevent access to the content type for unauthenticated users. You also implicitly associate the Groceries content type to user accounts. This means that each authenticated user will get their own grocery list to manage. Let's see how to change your app to accommodate this change.
 
 <hr data-action="start" />
 
@@ -115,9 +115,9 @@ window.loginView = kendo.observable({
 
 <hr data-action="end" />
 
-Your app now opens to a login screen that authenticates users before they see a list of groceries. A couple cool things happened here. The first is that your app now opens to the login screen rather than the list screen. This happens because Kendo UI starts on the first view (`<div data-role="view">`) that it finds in the DOM. You can also configure this by setting the `initial` option when you configure your `kendo.mobile.Application`.
+A couple cool things happened here. The first is that your app now opens to the login screen rather than the list screen. This happens because Kendo UI starts on the first view (`<div data-role="view">`) that it finds in the DOM. You can also configure this by setting the `initial` option when you configure your `kendo.mobile.Application`.
 
-The other cool thing is the user of Kendo UI's MVVM data binding functionality. Note that in the `loginView` code you have direct access to the form's values with simple `this.username` and `this.password` references. This happens because those `<input>` elements use `data-bind` attributes to tie their value to properties in the `loginView` object. The same `data-bind` attribute ties the click event of the login button to the `submit` function that starts the login process.
+The other cool thing is the use of Kendo UI's MVVM data binding functionality. Note that in the `loginView` code you have direct access to the form's values with simple `this.username` and `this.password` references. This happens because those `<input>` elements use `data-bind` attributes to tie their value to properties in the `loginView` object. The same `data-bind` attribute ties the click event of the login button to the `submit` function that starts the login process.
 
 Now that you have a login in place, it's time to add the opposite functionality: the ability to logoff.
 
