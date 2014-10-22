@@ -1,11 +1,11 @@
 {
-	"title": "Add custom plugins to your app",
-	"description": "Learn how to add custom cordova plugins to your app for using hardware capabilities of the device.",
+	"title": "Add device plugins to your app",
+	"description": "Learn how to add cordova plugins to your app for accessing hardware capabilities of the device.",
 	"estimateTime": "30",
 	"land": "project",
 	"workspace": {
 		"name": "Contacts app",
-		"description": "Sample app for learning how to use cordova plugins to access hardware capabilities of a device",
+		"description": "Sample app for learning how to use cordova plugins to access hardware capabilities of the device",
 		"project": { 
 			"name": "Cordova Contacts",
 			"description": "",
