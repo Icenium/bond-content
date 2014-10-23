@@ -2,9 +2,9 @@
 
 ### Step 4. Working with simple bindings
 
-In the last lesson, you may have noticed that you were able to add a good amount of structure and interactivity to your app without having to write much JavaScript. This is because Kendo UI allows you to use the MVVM pattern to declaratively (meaning, using HTML markup instead of JavaScript code) wire up your apps.
+In the last lesson, you were able to add a good amount of structure and interactivity to your app without having to write much JavaScript. This is because Kendo UI allows you to use the MVVM pattern to declaratively (meaning, using HTML markup instead of JavaScript code) wire up your apps.
 
-In this lesson, we'll look at how Kendo UI allows you to leverage a declaritive style for a variety of common tasks, like defining layouts, binding to data sources and wiring up events.
+In this lesson, we'll look at how Kendo UI allows you to leverage a declarative style for a variety of common tasks, like defining layouts, binding to data sources and wiring up events.
 
 <hr data-action="start" />
 
@@ -15,12 +15,12 @@ Let's start by using MVVM to define a layout for certain views. In the last less
 * **a**. In the index.html file, add a new layout just before the closing `<body>` tag with the following markup:
 ```
 <div data-role="layout" data-id="back-layout">
-	<div data-role="header">
-		<div data-role="navbar">
-	    	<a data-role="button" data-align="left" data-icon="rewind">Back</a>
-	    	<span data-role="view-title"></span>
-	    </div>
-	</div>
+    <div data-role="header">
+        <div data-role="navbar">
+            <a data-role="button" data-align="left" data-icon="rewind">Back</a>
+            <span data-role="view-title"></span>
+        </div>
+    </div>
 </div>
 ```
 
@@ -61,38 +61,39 @@ app.navigate("#:back");
 * **b**. Now, open index.html, find the new layout you created earlier in this lesson, and add a `data-click` attribute that points to the function you just created. The layout should now look like this:
 ```
 <div data-role="layout" data-id="back-layout">
-	<div data-role="header">
-		<div data-role="navbar">
-	    	<a data-click="Books.back" data-role="button" data-align="left" data-icon="rewind">Back</a>
-	    	<span data-role="view-title"></span>
-	    </div>
-	</div>
+    <div data-role="header">
+        <div data-role="navbar">
+            <a data-click="Books.back" data-role="button" data-align="left" data-icon="rewind">Back</a>
+            <span data-role="view-title"></span>
+        </div>
+    </div>
 </div>
 ```
 
-* **c**. Save the index.html and app.js files and re-open the iPhone simulator. Navigate back to the details view by clicking on a book in the list on the home screen and click on the back button, which should take you right back to the main screen.
+* **c**. Save the index.html and app.js files and re-open the iPhone simulator. Navigate back to the details view by clicking on a book in the list on the home screen and click on the back button, which now takes you back to the main screen.
 
 <hr data-action="end" />
 
 MVVM can be used to declaratively wire-up every event supported by a Kendo UI widget, which saves you from having to create your own event listeners in code. 
 
-At this point, we have an empty details screen, which isn't very useful, so let's use a bit more data-binding to show more information about a selected book.
+At this point, we have an empty details screen, which isn't very useful, so let's use a bit more data binding to show more information about a selected book.
 
 ### Step 6. Binding to data
 
-Another big time-saver for MVVM comes when working with data, which we'll look at now. For our current app, you've probably noticed that we've started with a ListView with data on the initial screen. In this step, we'll use MVVM-style data-binding to show details for a single selected record.
+Another big time-saver for MVVM comes when working with data. For our current app, you've probably noticed that we've started with a ListView with data on the initial screen. In this step, we'll use MVVM-style data binding to show details for a single selected record.
 
 <hr data-action="start" />
 
 #### Action
 
 * **a**. Open the app.js file in the js folder. Notice that we have a Kendo UI DataSource already defined, and that this source points to a JSON file local to the project. Normally, we'd be working with remote data, but we'll keep things simple for now.
-* **b**. Open the details.html file and add the following markup inside to replace the current view placeholder:
+* **b**. Open the details.html file and replace its contents with the following code:
 ```
 <div data-role="view" data-title="Book Details" 
      data-show="BookDetail.show"
      data-hide="BookDetail.hide"
      data-layout="back-layout" data-reload="true">
+</div>
 ```
 
 <hr data-action="end" />
@@ -106,23 +107,23 @@ The `data-show` and `data-hide` attributes tell Kendo UI which methods to call w
 * **c**. Add the following markup to the main `<div>` of details.html:
 ```
 <div id="bookContent">
-	<div class="title" data-bind="text: title"></div>
-	<div class="bigImage">
-	  <img data-bind="attr: { src: image_url }" />
-	</div>
-	<div>
-	  <label for="favorite">Favorite?</label>
-	  <input id="favorite" type="checkbox" data-role="switch" data-checked=false />
-	</div>
-	<div>
-	  <p><a data-role="button" id="amazonLink" data-click="BookDetail.openLink">Order from Amazon</a></p>
-	</div>
+    <div class="title" data-bind="text: title"></div>
+    <div class="bigImage">
+        <img data-bind="attr: { src: image_url }" />
+    </div>
+    <div>
+        <label for="favorite">Favorite?</label>
+        <input id="favorite" type="checkbox" data-role="switch" data-checked=false />
+    </div>
+    <div>
+        <p><a data-role="button" id="amazonLink" data-click="BookDetail.openLink">Order from Amazon</a></p>
+    </div>
 </div>
 ```
 
 <hr data-action="end" />
 
-In the snippet above, you'll notice the use of `data-bind` in a couple of places. This is Kendo UI's way to allowing the developer to specify values--at runtime--for widgets, forms and other UI elements. With this syntax, we're telling Kendo UI to set the text of a `<div>` and the source of a image based on values from this view's model.
+In the snippet above, you'll notice the use of `data-bind` in a couple of places. This is Kendo UI's way to allowing the developer to specify values—at runtime—for widgets, forms and other UI elements. With this syntax, we're telling Kendo UI to set the text of a `<div>` and the source of an image based on values from this view's model.
 
 Now that we've defined the view and our bindings, let's configure the model and wire up our details page.
 
@@ -159,6 +160,6 @@ The code before this snippet provides a filtered view of our Books DataSource ba
 
 <hr data-action="end" />
 
-MVVM is a powerful pattern, and is particularly useful when building mobile apps. Instead of littering your JavaScript with a lot of plumbing code, Kendo UI MVVM allows you to tie this code declararively to your views. The end result is cleaner code, focused on app data and logic. 
+MVVM is a powerful pattern, and is particularly useful when building mobile apps. Instead of littering your JavaScript with a lot of plumbing code, Kendo UI MVVM allows you to tie this code declaratively to your views. The end result is cleaner code, focused on app data and logic. 
 
 With layouts and MVVM in hand, let's turn to the final pillar in the mobile app basics trio: app navigation.
