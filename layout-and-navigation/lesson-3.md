@@ -39,7 +39,7 @@ If you clicked on the drawer menu during simulation, you probably noticed that i
      data-layout="back-layout" data-reload="true" data-transition="fade">
 ```
 
-* **f**. Open the iPhone simulator back up and click on one of the items in the ListView. Notice the fade transition, even as the rest of the app uses the app-level transiton you specificed above.
+* **f**. Open the iPhone simulator back up and click on one of the items in the ListView. Notice the fade transition, even as the rest of the app uses the app-level transiton you specified above.
 
 <hr data-action="end" />
 
@@ -54,26 +54,26 @@ Now let's look a little bit more at navigation. As with many other features in K
 * **a**. Open the index.html file and find the `main-layout` `<div>` that we defined back in the first lesson. Inside of the NavBar for that layout, add another button for a settings view:
 ```
 <div data-role="layout" data-id="main-layout">
-	<div data-role="header">
-		<div data-role="navbar">
-			<a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>
-	    	<span data-role="view-title"></span>
-	    	<a data-click="Books.settings" data-role="button" data-align="right" data-icon="settings"></a>
-	    </div>
-	</div>
+    <div data-role="header">
+        <div data-role="navbar">
+            <a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>
+            <span data-role="view-title"></span>
+            <a data-click="Books.settings" data-role="button" data-align="right" data-icon="settings"></a>
+        </div>
+    </div>
 </div>
 ```
 
 * **b**. Open the app.js file and, inside of the empty settings function, add the following navigation code:
 ```
-app.navigate('views/settings.html');
+app.navigate("views/settings.html");
 ```
 
 * **c**. Open the iPhone simulator and click the settings button to see your navigation code in action. 
 
 <hr data-action="end" />
 
-As noted above, Kendo UI allows you to perform navigation with code or declaratively, primarially though the `href` attribute on links and the use of urls or fragments starting with the pound or hash character (#). We used the code approach in the last step, but we can make this even simpler.
+As noted above, Kendo UI allows you to perform navigation with code or declaratively, primarily though the `href` attribute on links and the use of URLs or fragments starting with the pound or hash character (#). We used the code approach in the last step, but we can make this even simpler.
 
 <hr data-action="start" />
 
