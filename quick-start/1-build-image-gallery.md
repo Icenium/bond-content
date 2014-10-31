@@ -84,11 +84,13 @@ The AppBuilder companion app makes it easy to test your app on real devices, wit
 [![Windows Phone Store](images/windows-phone-store-icon.png)](https://www.windowsphone.com/en-us/store/app/appbuilder/0171d46b-b5f2-43d9-a36b-0a78c9692aab?signin=true)
 
 * **c**. In the browser, select **Run** --> **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
-* **d**. Scan the resulting QR code on your device.
+* **d**. **iOS/Android**: Open the AppBuilder app on your device, and then use a two-finger swipe to reveal the companion app's menu. Click the “QR Scanner” option in the menu and use the integrated scanner to scan the QR code displayed in the browser.
+![Using a two-finger swipe on your device](images/swipe.png)
+* **e**. **Windows Phone**: Use a third-party QR reader on your Windows Phone device to scan the QR code.
 
 <hr data-action="end" />
 
-When scanned, the QR code launches the AppBuilder companion app on your device, and shows the image gallery app you just built. Now that you have the app on your device, let's make some changes.
+When scanned, the QR code loads your image gallery app in the AppBuilder companion app. Now that you have the app on your device, let's make some changes.
 
 <hr data-action="start" />
 
