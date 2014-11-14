@@ -59,7 +59,7 @@ As you can see, this project has a basic UI, but no data. If you look in this pr
 * **d**. Find and click the “Data” link on the right-hand side of the screen.
 * **e**. In the Data Navigator (the panel on the right-hand side of the screen), expand “Backend Services”, and then right click on “Grocery List Backend” (or whatever you named your Backend Services project). Select “Properties” from the context menu.
 * **f**. In the Properties menu (bottom right-hand side of the screen), find the project's API key and copy it.
-* **g**. Click the “Project” link on the right-hand side of the screen to switch back to this project's files.
+* **g**. Click the “Solution” link on the right-hand side of the screen to switch back to this project's files.
 * **h**. Open app.js in the scripts folder.
 * **g**. Replace the `YOUR API KEY` string with your project's API key that you copied to the clipboard.
 * **h**. Paste the following code in the `initialize()` function (after the `var app = ...;` line).
