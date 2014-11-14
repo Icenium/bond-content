@@ -79,7 +79,7 @@ As noted above, Kendo UI allows you to perform navigation with code or declarati
 
 * **d**. In the index.html file, remove the `data-click` attribute from the settings button and replace it with an `href` attribute so that the link looks like this:
 ```
-<a href="views/settings.html" data-role="button" data-align="right" data-icon="settings"></a>
+<a href="views/settings.html" data-role="button" data-align="right" data-icon="settings">Settings</a>
 ```
 * **e**. Reload the iPhone simulator and click the settings button again. Things should still work just fine, and you've saved yourself a few lines of JavaScript to boot!
 

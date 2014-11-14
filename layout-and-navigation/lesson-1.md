@@ -20,19 +20,21 @@ When creating views with Kendo UI, you'll often find yourself using common eleme
 
 * **c**. Remove the full header div (`<div data-role="header">`) from the first view and copy the NavBar into the div with `data-role="header"`. Your layout should now look like this:
 ```
-<div data-role="layout" data-id="main-layout">
+<div data-role="layout" 
+    data-id="main-layout">
     <div data-role="header">
         <div data-role="navbar">
-            <span data-role="view-title"></span>
+            <span data-role="view-title">
+            </span>
         </div>
     </div>
-    <div data-role="footer">Footer</div>
+    <div data-role="footer"></div>
 </div>
 ``` 
 
 * **d**. Save the index.html file.
 
-* **e**. Open the app.js file in the scripts folder and modify the Kendo UI application constructor to include your layout:
+* **e**. Open the app.js file in the `js` folder and modify the Kendo UI application constructor to include your layout:
 ```
 app = new kendo.mobile.Application(document.body, { layout: "main-layout" });
 ```
@@ -111,7 +113,8 @@ While the TabStrip has been a common navigation pattern since the early days of 
 <div data-role="layout" data-id="main-layout">
     <div data-role="header">
         <div data-role="navbar">
-            <span data-role="view-title"></span>
+            <span data-role="view-title">
+            </span>
         </div>
     </div>
 </div>
@@ -123,7 +126,7 @@ Users can activate the Drawer by swiping in from the left by default, but most a
 
 <hr data-action="start" />
 
-* **c**. Add a button to invoke the drawer by adding the following markup inside of the `data-role="navbar"` div of your layout. (It can go before or after the `<span data-role="title">` element.)
+* **c**. Add a button to invoke the drawer by adding the following markup inside of the `data-role="navbar"` div of your layout. (It can go before or after the `<span data-role="view-title">` element.)
 ```
 <a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>
 ```
