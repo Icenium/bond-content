@@ -40,7 +40,7 @@ app = new kendo.mobile.Application(document.body, { layout: "main-layout" });
 ```
 
 * **f**. Save the app.js file.
-* **g**. Open the iPhone 5 simulator (select **Run** --> **iPhone 5**) to see your new layout in action.
+* **g**. Open the iPhone simulator (select **Run** --> **iPhone**) to see your new layout in action.
 
 <hr data-action="end" />
 
@@ -78,7 +78,7 @@ The TabStrip, as the name indicates, provides a tab menu at the base or top of y
 
 > Tip: The `data-icon` attribute allows you to specify the image that will accompany a tab or drawer item. You can learn more about icons, including how to create your own, in [this article](http://docs.telerik.com/kendo-ui/mobile/icons).
 
-* **c**. Save the index.html file and re-open the iPhone 5 simulator. Click each tab and notice how the layout is preserved, even as the main content changes.
+* **c**. Save the index.html file and re-open the iPhone simulator. Click each tab and notice how the layout is preserved, even as the main content changes.
 * **d**. Close the iPhone simulator and open an Android phone simulator. Notice how Kendo UI automatically adapts to an Android style by moving the TabStrip to the top of the screen.
 
 <hr data-action="end" />
