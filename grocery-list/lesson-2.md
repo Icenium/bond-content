@@ -36,7 +36,7 @@ By changing the Groceries content type to private, you prevent access to the con
 #### Action
 
 * **i**. Return to your AppBuilder project by returning to your workspace (click the “Grocery List app” link in the top-right corner of the screen), and then clicking the “Grocery List” box.
-* **j**. Open your app.js file from the scripts folder, and add the following code as the very first thing in the `initialize()` function. Substitute the “username” and “password” strings with the values you used to configure your dummy user in Backend Services.
+* **j**. Open your app.js file from the scripts folder, and add the following code as the very first thing in the `initialize()` function:
 ```
 el.Users.login("username", "password",
     function(data) {
@@ -44,7 +44,8 @@ el.Users.login("username", "password",
     }
 );
 ```
-* **k**. Save app.js and open your app in the simulator.
+* **k**. In the `login()` call you just added, substitute the “username” and “password” strings with the values you used to configure your dummy user in Backend Services.
+* **l**. Save app.js and open your app in the simulator.
 
 <hr data-action="end" />
 
