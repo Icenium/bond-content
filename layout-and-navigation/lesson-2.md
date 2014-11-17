@@ -135,15 +135,15 @@ Now that we've defined the view and our bindings, let's configure the model and 
 ```
 // Create a model for the page and bind it to the view
 var book = {
-  title: currentBook.name + " by " + currentBook.author,
-  image_url: currentBook.image_url,
-  amazon_url: currentBook.amazon_url,
-  is_favorite: currentBook.is_favorite
+    title: currentBook.name + " by " + currentBook.author,
+    image_url: currentBook.image_url,
+    amazon_url: currentBook.amazon_url,
+    is_favorite: currentBook.is_favorite
 };
 kendo.bind($('#bookContent'), book, kendo.mobile.ui);
 // If the current book is a favorited item, toggle the switch on the view
 if (currentBook.is_favorite) {
-  $('#favorite').data('kendoMobileSwitch').toggle();
+    $('#favorite').data('kendoMobileSwitch').toggle();
 }
 ```
 
