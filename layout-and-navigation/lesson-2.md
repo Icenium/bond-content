@@ -141,7 +141,6 @@ var book = {
   is_favorite: currentBook.is_favorite
 };
 kendo.bind($('#bookContent'), book, kendo.mobile.ui);
-
 // If the current book is a favorited item, toggle the switch on the view
 if (currentBook.is_favorite) {
   $('#favorite').data('kendoMobileSwitch').toggle();
