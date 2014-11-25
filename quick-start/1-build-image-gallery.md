@@ -57,7 +57,7 @@ Your next step is to show some photos in your album, and you'll use the Kendo UI
 ```
 * **b**. Save the index.html file.
 * **c**. Open the project's app.js file, located in the scripts folder.
-* **d**. In your app.js, use the code below to select the `<ul>` with jQuery and convert it into a ListView widget. Place this code directly after the `kendo.mobile.Application()` call, as the Kendo UI Mobile app needs to exist before you initialize widgets.
+* **d**. In your app.js, use the code below to select the `<ul>` with jQuery and convert it into a ListView widget. Place this code directly *after* the `kendo.mobile.Application()` call, as the Kendo UI Mobile app needs to exist before you initialize widgets.
 ```
 $("#images").kendoMobileListView({
     dataSource: ["images/01.jpg", "images/02.jpg", "images/03.jpg", "images/04.jpg", "images/05.jpg", "images/06.jpg", "images/07.jpg"],

@@ -27,17 +27,18 @@ The next step is to listen for clicks on the button, and then add a photo to the
 
 #### Action
 
-* **c**. Paste the following code into your app.js file, directly *before* the `kendo.mobile.Application` call.
+* **c**. Find the line of code that declares the `kendo.mobile.Application` (`var app = new kendo.mobile.Application(...)`). Replace that line with the code below. This gives the app access to the `window.listview` object.
 ```
-window.listView = kendo.observable({
+window.listview = kendo.observable({
     addImage: function() {
         $("#images")
             .data("kendoMobileListView")
             .prepend([ "images/08.jpg" ]);
     }
 });
+var app = new kendo.mobile.Application(document.body, { skin: "flat" });
 ```
-* **d**. Bind the view to the `listView` object by adding a `data-model="listView"` attribute to the `<div data-role="view">` element (`<div data-role="view" data-model="listView">`).
+* **d**. Bind the view to the `listview` object by adding a `data-model="listview"` attribute to the `<div data-role="view">` element (`<div data-role="view" data-model="listview">`).
 * **e**. Add a `data-bind` attribute to the add button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`). This tells Kendo UI Mobile to invoke the `addImage` method when you click the add button.
 * **f**. Save your index.html and app.js files.
 * **g**. Test out the button in the simulator.
