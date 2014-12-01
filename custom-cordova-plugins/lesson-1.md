@@ -141,7 +141,7 @@ In `window.getContactDetails` you are filtering your contacts by the id passed i
 
 * **d**. Save your changes.
 
-* **e**. Back in your Companion App, do a three-finger tap in your app to download the latest version of your app and see how it works now.
+* **e**. Back in your Companion App, do a three-finger tap and hold in your app to download the latest version of your app and see how it works now.
 
 ![three finger tap](images/three-finger-tap.png)
 

@@ -93,7 +93,7 @@ loadPhotos();
 ```
 
 * **g**. Save your app.js and index.html files.
-* **h**. Use a three-finger tap to refresh the app on your device.
+* **h**. Use a three-finger tap and hold to refresh the app on your device.
 * **i**. Click the add button on your device.
 * **j**. Put your photography skills to use. You've always wanted an artistic picture of your mouse, keyboard, or laptop haven't you?
 

@@ -79,7 +79,7 @@ addImage: function() {
 }
 ```
 * **b**. Save your app.js file.
-* **c**. Use a three-finger tap to refresh the app on your device.
+* **c**. Use a three-finger tap and hold to refresh the app on your device.
 * **d**. Click the add button on your device.
 * **e**. Take a picture! It can be of you, your keyboard, or that stress ball you got at some conference three years ago. If everyone went right, you should see the picture appear at the top of the list.
 

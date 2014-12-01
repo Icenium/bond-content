@@ -38,7 +38,7 @@ Let's do a slight customization to your Kendo UI template to retrieve and displa
 
 * **b**. Save your changes.
 
-* **c**. Use the Companion App on your device to do a three-finger tap and download the latest version of your app to see if any profile pictures load.
+* **c**. Use the Companion App on your device to do a three-finger tap and hold to download the latest version of your app to see if any profile pictures load.
 
 <hr data-action="end" />
 
