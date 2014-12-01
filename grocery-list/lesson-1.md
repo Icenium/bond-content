@@ -12,11 +12,12 @@ Before you interact with data you need to setup a structure for your data to liv
 
 * **a**. Click the green “Create Backend Services project” to create a new project.
 * **b**. Give your project a name — for instance “Grocery List Backend” — and then click the green “Create project” button.
-* **c**. Click the “Types” option in the menu on the left-hand side of the screen.
-* **d**. Click the blue “Create a Content Type” button.
-* **e**. Type “Groceries” in the “Type name” input box.
-* **f**. Under “Add a field”, type “Name”, leave the dropdown set to “Text”, and then click the blue “Add” button.
-* **g**. Click the green “Save” button.
+* **c**. Find the “Cloud Data” box and click its "Add to project" button to enable cloud data for your Backend Services project.
+* **d**. Click the “Types” option in the menu on the left-hand side of the screen.
+* **e**. Click the blue “Create a Content Type” button.
+* **f**. Type “Groceries” in the “Type name” input box.
+* **g**. Under “Add a field”, type “Name”, leave the dropdown set to “Text”, and then click the blue “Add” button.
+* **h**. Click the green “Save” button.
 
 <hr data-action="end" />
 
@@ -26,9 +27,9 @@ With this you now have a “Groceries” content type (which you can think of li
 
 #### Action
 
-* **h**. Click the blue “Add an item” button.
-* **i**. In the right pane, enter a grocery into the text box (e.g. Bananas, Apples, and so forth), and then press the green “Save” button.
-* **j**. Repeat steps **h** and **i** so that you have at least 5 groceries in the list.
+* **i**. Click the blue “Add an item” button.
+* **j**. In the right pane, enter a grocery into the text box (e.g. Bananas, Apples, and so forth), and then press the green “Save” button.
+* **k**. Repeat steps **i** and **j** so that you have at least 5 groceries in the list.
 
 <hr data-action="end" />
 

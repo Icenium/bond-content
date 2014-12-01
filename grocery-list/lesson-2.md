@@ -10,9 +10,11 @@ Backend Services automates the tricky process of registering and managing user a
 
 * **a**. Click the “Grocery List app” link in the top-left corner to return to your workspace.
 * **b**. Click the “Grocery List Backend” box to enter your Backend Services project.
-* **c**. Click the “Users” link in the menu on the left-hand side of the screen.
-* **d**. Click the blue “Add a user” button.
-* **e**. Use the pane on the right-hand side of the screen to configure a dummy user to use for testing. Feel free to use fake data, but make sure to remember the username and password you use, as you'll need them later in this step.
+* **c**. Click the “Services” option in the menu on the left-hand side of the screen.
+* **d**. Find the “User Management”  box and click its "Add to project" button to enable user management for your Backend Services project.
+* **e**. Click the “Users Browser” link in the menu on the left-hand side of the screen.
+* **f**. Click the blue “Add a user” button.
+* **g**. Use the pane on the right-hand side of the screen to configure a dummy user to use for testing. Feel free to use fake data, but make sure to remember the username and password you use, as you'll need them later in this step.
 
 <hr data-action="end" />
 
@@ -22,10 +24,8 @@ Now you have a dummy user account to test your app with. Before we head back to 
 
 #### Action
 
-* **e**. Click the “Types” link in the menu on the left-hand side of the screen.
-* **f**. Click on the “Groceries” row to enter the Groceries content type you setup earlier.
-* **g**. Click the “Permissions” link in the top-right corner of the screen (look for a lock icon).
-* **h**. Change the permission dropdown to “Private”, and then click the green “Save” button on the bottom of the screen.
+* **h**. Click the “Permissions” link in the menu on the left-hand side of the screen.
+* **i**. Change the Groceries permission dropdown from “Public” to “Private”, and then click the green “Save” button on the bottom of the screen.
 
 <hr data-action="end" />
 
@@ -35,8 +35,8 @@ By changing the Groceries content type to private, you prevent access to the con
 
 #### Action
 
-* **i**. Return to your AppBuilder project by returning to your workspace (click the “Grocery List app” link in the top-right corner of the screen), and then clicking the “Grocery List” box.
-* **j**. Open your app.js file from the scripts folder, and add the following code as the very first thing in the `initialize()` function:
+* **j**. Return to your AppBuilder project by returning to your workspace (click the “Grocery List app” link in the top-right corner of the screen), and then clicking the “Grocery List” box.
+* **k**. Open your app.js file from the scripts folder, and add the following code as the very first thing in the `initialize()` function:
 ```
 el.Users.login("username", "password",
     function(data) {
@@ -44,8 +44,8 @@ el.Users.login("username", "password",
     }
 );
 ```
-* **k**. In the `login()` call you just added, substitute the “username” and “password” strings with the values you used to configure your dummy user in Backend Services.
-* **l**. Save app.js and open your app in the simulator.
+* **l**. In the `login()` call you just added, substitute the “username” and “password” strings with the values you used to configure your dummy user in Backend Services.
+* **m**. Save app.js and open your app in the simulator.
 
 <hr data-action="end" />
 
