@@ -70,7 +70,7 @@ The TabStrip, as the name indicates, provides a tab menu at the base or top of y
 </div>
 ```
 
-* **b**. Tabs in the TabStrip are simply anchor (`<a>`) elements, so let's add two of those now, inside the `data-role="tabstrip"` div:
+* **b**. Tabs in the TabStrip are simply anchor (`<a>`) elements, so let's add three of those now, inside the `data-role="tabstrip"` div:
 ```
 <a href="#index" data-icon="home">Home</a>
 <a href="views/about.html" data-icon="globe">About</a>
