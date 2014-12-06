@@ -67,7 +67,7 @@ window.registerView = kendo.observable({
                 window.location.href = "#login";
             },
             function() {
-                alert("Unfortunately we were unable to create your account.");
+                navigator.notification.alert("Unfortunately we were unable to create your account.");
             });
     }
 });
