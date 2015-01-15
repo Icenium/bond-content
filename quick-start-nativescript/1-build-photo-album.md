@@ -22,7 +22,8 @@ This newly created project is automatically checked into the integrated AppBuild
 * **app** The app folder contains the entire app functionality.
 * **bootstrap.js** This file contains the code that initializes your project as a native app.
 * **app.js** The app.js module contains application specific code. Here is the place where you can set application-specific code, such as which page is the starting page of the application. 
-* **main.js** This is the first JavaScript file where we can implement our UI and business logic.
+* **main.js** This is the first JavaScript file used to implement the business logic.
+* **main.xml** This is the file used to implement the UI of this first page.
 * **App_Resources** The App_Resources folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
 * **tns_modules** The tns_modules folder contains the NativeScript libraries for accessing the native device platform functionality. Libraries might consist of platform-specific and common files and an index.js that exports the module. Platform-specific files contain platform-specific NativeScript code. When you build your app for iOS or Android, AppBuilder automatically picks up the needed platform-specific files. 
 
@@ -30,7 +31,7 @@ We will focus on the app folder to create the logic of our application. You can 
 
 ### Define the User Interface
 
-We are now going to create a page containing a button and a listview. The button will be positioned at the bottom and the listview will fill the remaining screen area. This layout will be arranged by a grid layout panel. The whole layout definition can happen in the code-behind. However, the much quicker and recommended way is to do that in xml and this is what we will demonstrate now.
+We are now going to create a page containing a button and a listview. The button will be positioned at the bottom and the listview will fill the remaining screen area. This layout will be arranged by a grid layout panel. Use the XML file to declare the UI of the page.
 
 <hr data-action="start" />
 
@@ -39,9 +40,9 @@ We are now going to create a page containing a button and a listview. The button
 ```
 ` ```
 
-
+// TODO - fix these steps
 * **a.** Right-click the Photo Album Native project from the project navigation and choose **Add** --> **New File**. This will be our xml file containing the controls and layout declarations.
-* **b.** Name the file after its corresponding JavaScript file. It the current case, the JavaScript file is the main application file named `main.js`, so we should name our xml file `main.xml`.
+* **a.** Name the file after its corresponding JavaScript file. It the current case, the JavaScript file is the main application file named `main.js`, so we should name our xml file `main.xml`.
 * **c.** We should start our xml declaration with a simple page:
 ```<Page>
 </Page>
@@ -63,6 +64,7 @@ We are now going to create a page containing a button and a listview. The button
 
 The whole xml declaration looks like this:
 ```
+// remove this first XML line.
 <?xml version="1.0" encoding="UTF-8" ?>
 <Page>
     <GridPanel>                
@@ -101,7 +103,7 @@ The AppBuilder NativeScript companion app makes it easy to test your app on real
 * **f.** **iOS:** Open the Telerik Native Script app on your device and then use a two-finger swipe to reveal the companion app's menu. Click the “QR Scanner” option in the menu and use the integrated scanner to scan the QR code displayed in the browser.
 ![Using a two-finger swipe on your device](images/swipe.png)
 
-* **e.** Windows Phone: Windows Phone compation app is not supported at this time.
+* **e.** Windows Phone: Windows Phone companion app is not available at this time.
 
 <hr data-action="end" />
 
@@ -182,7 +184,7 @@ var PhotoAlbumModel = (function (_super) {
 })(observable.Observable);
 ```
 
-* **d.** As you can see, we are descending the PhotoAlbumModel from Observable(). This will allow us to bind controls’ properties from the main page to properties in the view model. In order to get all the functionality that Observable (or any other parent type) gives, we should add the following code before the PhotoAlbumModel implementation:
+* **d.** As you can see, we are inheriting the PhotoAlbumModel from Observable(). This will allow us to bind controls’ properties from the main page to properties in the view model. In order to get all the functionality that Observable (or any other parent type) gives, we should add the following code before the PhotoAlbumModel implementation:
 ```
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -237,6 +239,7 @@ function onPageLoaded(args) {
 ```
 * **n.** In order to give the Image object an image from `photoItems` to show, we can handle the `itemLoading` event which is executed whenever and a `ListView` item is going to be shown. Here is how this function can be realized in `main.js`:
 ```
+/// TODO: see if we can bind the image source
 function listViewItemLoading(args) {
     var image = args.view._children[0];
     image.source = args.object.items.getItem(args.index);
@@ -251,7 +254,7 @@ function listViewItemLoading(args) {
 
 <hr data-action="end" />
 
-Now the ListView is filled with 6 images. If you use the LiveSync feature of the Telerik NativeScript compation app, you will see them. Let’s now add two more images on a button click and put some style in the button.
+Now the ListView is filled with 6 images. If you use the LiveSync feature of the Telerik NativeScript companion app, you will see them. Let’s now add two more images on a button click and put some style in the button.
 
 
 ### Respond to actions and put some style
@@ -288,7 +291,7 @@ function buttonClick(args) {
 
 <hr data-action="end" />
 
-Finally, let’s beautify the button. NativeScript provides several different ways for styling a UI control with CSS depending on your development preferences. We will now show how this can be done with a dedicated CSS file.
+Finally, let’s beautify the button. NativeScript uses standards based CSS syntax to style the UI elements.
 
 <hr data-action="start>
 
@@ -296,7 +299,7 @@ Finally, let’s beautify the button. NativeScript provides several different wa
 
 * **a.** Right-click the app folder and choose **Add** --> **New File**.
 * **b.** Name the file after the file that contains the UI objects to be styled. In our case, the name should be `main.css`.
-* **c.** In order to change the fore color, back color and font properties of the `Button` type, set the following CSS. The button will grasp this style automatically:
+* **c.** In order to change the foreground color, background color and font properties of the `Button` type, set the following CSS:
 ```
 Button {
     background-color: gray;
