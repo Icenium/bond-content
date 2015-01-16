@@ -254,7 +254,7 @@ function listViewItemLoading(args) {
 Now the ListView is filled with 6 images. If you use the LiveSync feature of the Telerik NativeScript companion app, you will see them. Let’s now add two more images on a button click and put some style in the button.
 
 
-### Respond to actions and put some style
+### Step 5. Respond to actions and put some style
 
 The ListView is already filled with images. But let’s see how we can add more images on a button click and how we can put some style in the button.
 
