@@ -2,7 +2,7 @@
 
 Throughout this QuickStart tutorial, you will learn how to load data in a UI control, how to bind UI properties to a view-model and how to define the style of the UI with CSS. As a result you will have a native Photo Album application written all in xml and JavaScript.
 
-### Create a new project. Project structure.
+### Step 1. Create a new project. Project structure.
 
 We are now going to create our first NativeScript project. The fours steps below do just that. You can skip them and directly open the Photo Album Native workspace and then Photo Album Native project.
 
@@ -29,16 +29,13 @@ This newly created project is automatically checked into the integrated AppBuild
 
 We will focus on the app folder to create the logic of our application. You can also quickly check the tns_modules to get a better idea of what components the NativeScript framework offers.
 
-### Define the User Interface
+### Step 2. Define the User Interface
 
 We are now going to create a page containing a button and a listview. The button will be positioned at the bottom and the listview will fill the remaining screen area. This layout will be arranged by a grid layout panel. Use the XML file to declare the UI of the page.
 
 <hr data-action="start" />
 
 #### Action 
-
-```
-` ```
 
 // TODO - fix these steps
 * **a.** Right-click the Photo Album Native project from the project navigation and choose **Add** --> **New File**. This will be our xml file containing the controls and layout declarations.
@@ -82,7 +79,7 @@ The whole xml declaration looks like this:
 
 Regadless of the small amount of UI and settings that we have put on the page, I am sure you will want to try the result on a real device now. So, in the next step, let’s see how easy it is to deploy this native app.
 
-### Deploy your app on a device using the companion app
+### Step 3. Deploy your app on a device using the companion app
 
 The AppBuilder NativeScript companion app makes it easy to test your app on real devices, without the need to manage SDKs or deal with complex provisioning options.
 
@@ -125,7 +122,7 @@ Your updated app will be downloaded on the device and you will immediately see t
 This process is known as LiveSync, and it makes updating your apps as easy as a quick tap. Now that you have an app, and can test it on your device, let's fill the ListView with items.
 
 
-#### Fill a ListView with images, respond to events and put some style
+### Step 4. Fill a ListView with images, respond to events and put some style
 
 Let’s first fill our ListView with items. For our demo purposes, we will add a few images to the project and will set them to be the items source of the ListView. The items source definition will be created in a view-model file and will be then consumed by the ListView from the main js/xml files.
 
