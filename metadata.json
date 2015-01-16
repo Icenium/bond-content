@@ -3,6 +3,8 @@
       "quick-start",
       "layout-and-navigation",
       "grocery-list",
-      "quick-start-nativescript"
+      "quick-start-nativescript",
+      "navigation-nativescript",
+      "layout-nativescript"
    ]
 }
