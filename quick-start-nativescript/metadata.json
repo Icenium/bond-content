@@ -1,16 +1,16 @@
 {
 	"title": "Quick start",
-	"description": "This tutorial is essential for understanding key concepts related to the Telerik Platform. It's a prerequisite to all other tutorials.",
+	"description": "This tutorial is essential for understanding key concepts related to the Telerik Platform. It's a prerequisite to all other tutorials.",	
 	"estimateTime": "15",
 	"land": "project",
 	"workspace": {
-		"name": "Photo Album app",
-		"description": "Sample app for learning how to develop native apps using the Telerik Platform",
+		"name": "Photo Album Native",
+		"description": "A sample Photo Album app for learning how to develop native apps using the Telerik Platform",
 		"project": { 
 			"name": "Photo Album",
 			"description": "",
-			"type": "nativescript",
-			"url": "https://github.com/icenium/bond-app-template.git"
+			"type": "appbuilder",
+			"url": "https://github.com/telerik/quick-start-nativescript-template.git"
 		}
 	}
 }

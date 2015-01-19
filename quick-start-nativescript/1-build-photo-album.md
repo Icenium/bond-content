@@ -1,8 +1,8 @@
 ## Lesson 1. Build a photo album
 
-Throughout this QuickStart tutorial, you will learn how to load data in a UI control, how to bind UI properties to a view-model and how to define the style of the UI with CSS. As a result you will have a native Photo Album application written all in xml and JavaScript.
-
 ### Step 1. Create a new project. Project structure.
+
+Throughout this QuickStart tutorial, you will learn how to load data in a UI control, how to bind UI properties to a view-model and how to define the style of the UI with CSS. As a result you will have a native Photo Album application written all in xml and JavaScript.
 
 We are now going to create our first NativeScript project. The fours steps below do just that. You can skip them and directly open the Photo Album Native workspace and then Photo Album Native project.
 
@@ -146,7 +146,8 @@ var observable = require("data/observable");
 var imageSourceModule = require("image-source");
 var fileSystemModule = require("file-system");
 ```
-We need the first one in order for the changes that happen in the view-model to be reflected in the UI. The other two we need in order to load the image files that we have just added to the project. * * **b.** Create an ObservableArray() and add the images there using the push method:
+We need the first one in order for the changes that happen in the view-model to be reflected in the UI. The other two we need in order to load the image files that we have just added to the project.
+* **b.** Create an ObservableArray() and add the images there using the push method:
 ```
 var array = new observableArrayModule.ObservableArray();
 var directory = "/res/";
@@ -163,7 +164,6 @@ array.push([item1, item2, item3, item4, item5, item6]);
 var item7 = {source: imageFromSource("07.jpg")}; 
 var item8 = {source: imageFromSource("08.jpg")}; 
 ```
-
 You can notice that two images are not added to the array. This is because we are going to add them later on a button click.
 * **c.** Create the view-model implementation, let’s call it PhotoAlbumModel. The basic implementation of the model looks like this: 
 ```
@@ -186,7 +186,9 @@ var __extends = this.__extends || function (d, b) {
 };
 ```
 * **e.** In the PhotoAlbumCollection’s constructor add the following line:
-'this.set("message", "Added new images");'
+```
+this.set("message", "Added new images");
+```
 
 We will bind the button’s text property to the PhotoAlbumCollection’s message property later, and every change we apply to the message property will be reflected on the button’s text.
 
@@ -201,7 +203,9 @@ Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
   })
 ```
 * **g.** Finally, we should not forget to declare the PhotoAlbumModel in the module exports, to make this model accessible from the UI.
-`exports.PhotoAlbumModel = PhotoAlbumModel;`
+```
+exports.PhotoAlbumModel = PhotoAlbumModel;
+```
 * **h.** With the view-model created, let’s get back to our main.js/xml to fill ListView with data.
 Load the view-model specifying its location in the project folder structure and then create an instance of the PhotoAlbumModel.
 ```
@@ -218,9 +222,13 @@ function onPageLoaded(args) {
 * **j.** Set the exports.onPageLoaded at the end of main.js to make the onPageLoaded function accessible from the UI:
 `exports.onPageLoaded = onPageLoaded;`
 * **k.** In order to call the onPageLoaded method when the page loads, add the loaded attribute with value "onPageLoaded" in the Page tag in `main.xml`:
-`<Page loaded="onPageLoaded">`
-* **l.** We now should bind the ListView to the photoItems collection of the PhotoAlbumModel. To do this, add set the `items` attribute of the `ListView` tag to `{{ photoItems }}`. 
-```<ListView items="{{ photoItems }}" itemLoading="listViewItemLoading" row="0">```
+```
+<Page loaded="onPageLoaded">
+```
+* **l.** We now should bind the ListView to the photoItems collection of the PhotoAlbumModel. To do this, add set the `items` attribute of the `ListView` tag to `{{ photoItems }}`:
+```
+<ListView items="{{ photoItems }}" itemLoading="listViewItemLoading" row="0">
+```
 * **m.** The ListView is not bound to the collection of images. But in order to show the images, we should set the appropriate template consisting of a `GridPanel` with an `Image` object inside. Note that we are binding the image to the photoItemImage property of the photoItems objects:
 ```
 <ListView.itemTemplate>                
