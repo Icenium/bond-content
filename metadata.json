@@ -2,6 +2,9 @@
    "orderedActiveTutorials":[  
       "quick-start",
       "layout-and-navigation",
-      "grocery-list"
+      "grocery-list",
+      "quick-start-nativescript",
+      "navigation-nativescript",
+      "layout-nativescript"
    ]
 }
