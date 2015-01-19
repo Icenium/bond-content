@@ -11,7 +11,7 @@ Before you interact with data you need to setup a structure for your data to liv
 #### Action
 
 * **a**. Click the green “Create Backend Services project” to create a new project.
-* **b**. Give your project a name — for instance “Grocery List Backend” — and then click the green “Create project” button.
+* **b**. Give your project a name — for instance “Groceries Backend” — and then click the green “Create project” button.
 * **c**. Find the “Cloud Data” box and click its "Add to project" button to enable cloud data for your Backend Services project.
 * **d**. Click the “Types” option in the menu on the left-hand side of the screen.
 * **e**. Click the blue “Create a Content Type” button.
@@ -45,21 +45,21 @@ The true power of Backend Services is how easy it makes complex data interaction
 
 #### Action
 
-* **a**. Click the “Grocery List app” link in the upper-left corner of the screen to return to this project's workspace.
-* **b**. Click the “Grocery List” box to enter the AppBuilder project for this tutorial.
+* **a**. Click the “Groceries App” link in the upper-left corner of the screen to return to this project's workspace.
+* **b**. Click the “Groceries” box to enter the AppBuilder project for this tutorial.
 * **c**. Click the **Run** menu and then select **Build**. Choose your device's platform (iOS, Android, or Windows Phone), make sure the “AppBuilder companion app” radio button is selected, and then click **Next**.
 * **d**. Scan the resulting QR code using your device's QR reader to open the app in the NativeScript companion app.
 
 <hr data-action="end" />
 
-As you can see, this project has a basic list UI, but no data. Next, you're going to use the SDK to read the grocery data from your Backend Services project. Your first step is to plug in your new project's API key.
+As you can see, in its current state, this project has a basic list UI but no data. Your next step is to use NativeScript to read the grocery data from your Backend Services project. Your first step is to plug in the API key from your Backend Services project.
 
 <hr data-action="start" />
 
 #### Action
 
 * **e**. Find and click the “Data” link on the right-hand side of the screen.
-* **f**. In the Data Navigator (the panel on the right-hand side of the screen), expand “Backend Services”, and then right click on “Grocery List Backend” (or whatever you named your Backend Services project). Select “Properties” from the context menu.
+* **f**. In the Data Navigator (the panel on the right-hand side of the screen), expand “Backend Services”, and then right click on “Groceries Backend” (or whatever you named your Backend Services project). Select “Properties” from the context menu.
 * **g**. In the Properties menu (bottom right-hand side of the screen), find the project's API key and copy it.
 * **h**. Click the “Solution” link on the right-hand side of the screen to switch back to this project's files.
 * **i**. Open config.js in the app/models folder.
@@ -69,7 +69,7 @@ As you can see, this project has a basic list UI, but no data. Next, you're goin
 ```
 function loadGroceries() {
     httpModule.getJSON({
-        url: config.backendUrl + "/Groceries",
+        url: "http://api.everlive.com/v1/" + config.apiKey + "/Groceries",
         method: "GET"
     }).then( function( result ) {
         result.Result.forEach(function( grocery ) {

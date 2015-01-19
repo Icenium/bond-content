@@ -4,10 +4,10 @@
 	"estimateTime": "30",
 	"land": "workspace",
 	"workspace": {
-		"name": "Grocery List app",
-		"description": "Sample app for learning how to connect your project with data and web services",
+		"name": "Groceries App",
+		"description": "Sample app for learning how to connect your NativeScript app with data and web services",
 		"project": { 
-			"name": "Grocery List",
+			"name": "Groceries",
 			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/tjvantoll/grocery-list.git"
