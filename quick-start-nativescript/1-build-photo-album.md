@@ -279,7 +279,7 @@ function buttonClick(args) {
 
 Finally, let’s beautify the button. NativeScript uses standards based CSS syntax to style the UI elements.
 
-<hr data-action="start>
+<hr data-action="start">
 
 #### Action
 
