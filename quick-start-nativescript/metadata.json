@@ -7,8 +7,8 @@
 		"name": "Photo Album Native",
 		"description": "A sample Photo Album app for learning how to develop native apps using the Telerik Platform",
 		"project": { 
-			"name": "Photo Album",
-			"description": "",
+			"name": "Photo Album Native",
+			"description": "TEST",
 			"type": "appbuilder",
 			"url": "https://github.com/telerik/quick-start-nativescript-template.git"
 		}
