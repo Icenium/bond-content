@@ -4,11 +4,11 @@
 	"estimateTime": "15",
 	"land": "project",
 	"workspace": {
-		"name": "Photo Album1",
+		"name": "Photo Album Native app",
 		"description": "A sample Photo Album app for learning how to develop native apps using the Telerik Platform",
 		"project": { 
-			"name": "Photo Album1",
-			"description": "TEST",
+			"name": "Photo Album Native",
+			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/telerik/quick-start-nativescript-template.git"
 		}
