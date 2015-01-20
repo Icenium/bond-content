@@ -1,4 +1,4 @@
-## Lesson 3. Stores the images in the cloud
+## Lesson 2. Store the images in the cloud
 
 ### Step 6. Create a Backend Services project
 
