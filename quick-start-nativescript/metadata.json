@@ -9,7 +9,7 @@
 		"project": { 
 			"name": "Photo Album1",
 			"description": "TEST",
-			"type": "appbuilder",
+			"type": "nativescript",
 			"url": "https://github.com/telerik/quick-start-nativescript-template.git"
 		}
 	}
