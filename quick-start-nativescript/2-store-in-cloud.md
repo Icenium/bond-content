@@ -18,16 +18,16 @@ You are now looking at your Telerik Platform home screen, which lists all worksp
 
 #### Action
 
-* **b**. Click on the “Photo Album Native app workspace to enter it.
-* **c**. Within the “Photo Album Native app” workspace, click the green “Create Backend Services project” button.
-* **d**. Give your project a name — for instance “Photo Album Native Backend” — and then click “Create project”.
-* **e**. Find the “Cloud Files” box and click its "Add to project" button to enable file storage for your Backend Services project.
-* **f**. Click the “API Keys” option from the menu on the left-hand side of the screen.
-* **g**. Copy the API key shown under the “API Key” heading and paste it somewhere convenient; you'll need it to complete the next step.
+* **b**. Click on the `Photo Album Native app` workspace to enter it.
+* **c**. Within the `Photo Album Native app` workspace, click the green **Create Backend Services project** button.
+* **d**. Give your project a name — for instance `Photo Album Native Backend` — and then click **Create project**.
+* **e**. Find the **Cloud Files** box and click its **Add to project** button to enable file storage for your Backend Services project.
+* **f**. Click the **API Keys** option from the menu on the left-hand side of the screen.
+* **g**. Copy the API key shown under the **API Key** heading and paste it somewhere convenient; you'll need it to complete the next step.
 
 <hr data-action="end" />
 
-Within your Backend Services project you can see all the things Backend Services makes possible, such as user management, push notifications, email messaging, and more. For your photo uploader you're interested in the “Files” menu option. You'll see how to use it in the next step.
+Within your Backend Services project you can see all the things Backend Services makes possible, such as user management, push notifications, email messaging, and more. For your photo uploader you're interested in the **Files** menu option. You'll see how to use it in the next step.
 
 ### Step 7. Upload images to your backend
 
