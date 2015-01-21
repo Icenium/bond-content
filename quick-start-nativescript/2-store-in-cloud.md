@@ -90,23 +90,18 @@ Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
 After:
 ```
 var backendArray = new observableArrayModule.ObservableArray();
+
 Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
     get: function () {
-        var tempArray = [];
-        var imgURL;
-        everlive.Files.get().then(function (data) {               
+        everlive.Files.get().then(function (data) {
                 data.result.forEach(function (fileMetadata) {
-                    tempArray.push(fileMetadata.Uri);
-                });
-                for (i = 0; i < tempArray.length; i++) {
-                    imgURL = tempArray[i];
-                    imageSourceModule.fromUrl(imgURL).then(function (result) {
+                    imageSourceModule.fromUrl(fileMetadata.Uri).then(function (result) {
                         var item = {
                             photoItemImage: result
                         };
                         backendArray.push(item);
                     });
-                }
+                });
             },
             function (error) {});
 
