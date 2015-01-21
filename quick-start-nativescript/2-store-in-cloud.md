@@ -99,7 +99,7 @@ Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
                     tempArray.push(fileMetadata.Uri);
                 });
                 for (i = 0; i < tempArray.length; i++) {
-                    imgURL = tempArray[i].replace("https", "http");
+                    imgURL = tempArray[i];
                     imageSourceModule.fromUrl(imgURL).then(function (result) {
                         var item = {
                             photoItemImage: result
