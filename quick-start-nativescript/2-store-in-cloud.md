@@ -77,9 +77,6 @@ for (i = 0; i < array.length; i++) {
 ```
 This code gets all images loaded in the ListView and asynchronously uploads them to the Telerik Backend Services.
 * **f**. Next, make the following change to change how the NativeScript ListView gets the data it needs.
-
-//TODO: Finish this part when its ready!
-
 Before:
 ```
 Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
@@ -92,28 +89,37 @@ Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
 ```
 After:
 ```
-function loadPhotos() {
-    everlive.Files.get().then(function(data) {
-        var files = [];
-        data.result.forEach(function(image) {
-            files.push(image.Uri);
-        });
-        $("#images").kendoMobileListView({
-            dataSource: files,
-            template: "<img src='#: data #'>"
-        });
-    });
-}
-loadPhotos();
-```
+var backendArray = new observableArrayModule.ObservableArray();
+Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
+    get: function () {
+        var tempArray = [];
+        var imgURL;
+        everlive.Files.get().then(function (data) {               
+                data.result.forEach(function (fileMetadata) {
+                    tempArray.push(fileMetadata.Uri);
+                });
+                for (i = 0; i < tempArray.length; i++) {
+                    imgURL = tempArray[i].replace("https", "http");
+                    imageSourceModule.fromUrl(imgURL).then(function (result) {
+                        var item = {
+                            photoItemImage: result
+                        };
+                        backendArray.push(item);
+                    });
+                }
+            },
+            function (error) {});
 
-* **g**. Save your `view-model.js` file.
-* **h**. Use the LiveSync feature to update the application on your iOS/Android device.
-* **i**. Click the "Add more images" button on your device.
-* **j**. Put your photography skills to use. You've always wanted an artistic picture of your mouse, keyboard, or laptop haven't you?
+        return backendArray;
+    },
+    enumerable: true,
+    configurable: true
+});
+```
+* **g**. Save your `view-model.js` file and use the LiveSync feature to update the application on your iOS/Android.
 
 <hr data-action="end" />
 
-The `create()` method asynchronously uploads a picture to your Backend Services project and the `get()` method retrieves all pictures currently stored there. After the upload to Backend Services completes your call to `loadPhotos()` (and subsequently `everlive.Files.get()`) reloads your list of photos — there's no need to manually append content! After you have taken a few pictures, go to the “Files” menu in your Backend Services project to see a list of photos you are storing.
+The `create()` method asynchronously uploads a picture to your Backend Services project and the `get()` method retrieves all pictures currently stored there. After you store a few pictures following the demonstrated approach, go to the “Files” menu in your Backend Services project to see a list of photos you are storing.
 
 And that's all there is to it, which is pretty cool if you think about it — you just built a native mobile app that gets and uploads pictures in the cloud!
