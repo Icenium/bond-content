@@ -90,7 +90,6 @@ Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
 After:
 ```
 var backendArray = new observableArrayModule.ObservableArray();
-
 Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
     get: function () {
         everlive.Files.get().then(function (data) {
