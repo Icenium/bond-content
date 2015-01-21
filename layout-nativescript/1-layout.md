@@ -14,7 +14,7 @@ In a dynamic layout, the user interface automatically sizes to match the availab
 
 **Layout Panels**
 
-The built-in layout panels in NativeScript are **CanvasPanel**, **StackPanel**, **GridPanel** and **WrapPanel**.
+The built-in layout panels in NativeScript are **Canvaspanel**, **StackPanel**, **GridPanel** and **WrapPanel**.
 
 ### Step 1. Create a canvas layout
 
