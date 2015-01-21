@@ -65,7 +65,7 @@ for (i = 0; i < array.length; i++) {
     var file = {
         "Filename": Math.random().toString(36).substring(2, 15) + ".jpg",
         "ContentType": "image/png",
-        "base64": array.getItem(i).photoItemImage.toBase64String(1, 100)
+        "base64": array.getItem(i).itemImage.toBase64String(1, 100)
     };
 
     everlive.Files.create(file,
@@ -96,7 +96,7 @@ Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
                 data.result.forEach(function (fileMetadata) {
                     imageSourceModule.fromUrl(fileMetadata.Uri).then(function (result) {
                         var item = {
-                            photoItemImage: result
+                            itemImage: result
                         };
                         backendArray.push(item);
                     });
