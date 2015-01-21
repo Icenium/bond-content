@@ -4,16 +4,16 @@
 
 Throughout this QuickStart tutorial, you will learn how to load data in a UI control, how to bind UI properties to a view-model and how to define the style of the UI with CSS. As a result you will have a native Photo Album application written all in xml and JavaScript.
 
-We are now going to create our first NativeScript project. The fours steps below do just that. You can skip them and directly open the Photo Album Native workspace and then Photo Album Native project.
+We are now going to create our first NativeScript project. The fours steps below do just that. You can skip them and directly use the Photo Album Native workspace with the Photo Album Native project that have been created for you.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a.** Click the Create Workspace button. Name your workspace “Photo Album Native app”
-* **b.** Create a new AppBuilder Native project
-* **c.** Choose a NativeScript Blank (JavaScript) project
-* **d.** Name the project Photo Album Native UI app
+* **a.** Click the blue **Create Workspace** button at the top-left. Name your workspace `Photo Album Native app` and click the green **Create Workspace** button.
+* **b.** Click the **Create AppBuilder Native Project** to create a new NativeScript project.
+* **c.** Choose a **NativeScript Blank (JavaScript)** project.
+* **d.** Name the project `Photo Album Native app` and click the green **Create Project** button.
 
 <hr data-action="end" />
 
@@ -21,13 +21,13 @@ This newly created project is automatically checked into the integrated AppBuild
 
 * **app** The app folder contains the entire app functionality.
 * **bootstrap.js** This file contains the code that initializes your project as a native app.
-* **app.js** The app.js module contains application specific code. Here is the place where you can set application-specific code, such as which page is the starting page of the application. 
-* **main.js** This is the first JavaScript file used to implement the business logic of the first page.
+* **app.js** The app.js module contains application specific code, such as which page is the starting page of the application. 
+* **main.js** This is the JavaScript file used to implement the business logic of the first page.
 * **main.xml** This is the file used to implement the UI of this first page.
 * **App_Resources** The App_Resources folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
 * **tns_modules** The tns_modules folder contains the NativeScript libraries for accessing the native device platform functionality. Libraries might consist of platform-specific and common files and an index.js that exports the module. Platform-specific files contain platform-specific NativeScript code. When you build your app for iOS or Android, AppBuilder automatically picks up the needed platform-specific files. 
 
-We will focus on the app folder to create the logic of our application. You can also quickly check the tns_modules to get a better idea of what components the NativeScript framework offers.
+We will focus on the `app` folder to create the logic of our application. You can also quickly check the `tns_modules` to get a better idea of what components the NativeScript framework offers.
 
 ### Step 2. Define the User Interface
 
@@ -51,7 +51,7 @@ We are now going to create a page containing a button and a listview. The button
 	</GridPanel.rowDefinitions>  
 </GridPanel>
 ```
-* **c.** Now it’s time for the controls that we want to arrange with the GridPanel. The declarations of the controls should be placed right after the enclosing tag for the GridPanel.rowDefinitions. The controls declaration are as simple as:
+* **c.** Now it’s time for the controls that we want to arrange with the GridPanel. The declarations of the controls should be placed right after the end tag of ```GridPanel.rowDefinitions```. The controls declaration are as simple as:
 ```
 <ListView row="0" />         
 <Button row="1"/>
@@ -91,9 +91,9 @@ The AppBuilder NativeScript companion app makes it easy to test your app on real
 [![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/bg/app/nativescript/id882561588?mt=8)
 [![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.NativeScript&hl=en)
 
-* **c.** In the browser, select **Run** --> **Build**, select your device's platform (iOS/Android), choose "AppBuilder companion app", and click Next. You will see a QR code pointing to the application. 
-* **e.** **Android:** Open the Telerik NativeScript app on your device. With the NativeScript app opened, open the notification drawer. Tap the Scan button and use the integrated scanner to scan the QR code displayed in the browser.
-* **f.** **iOS:** Open the Telerik Native Script app on your device and then use a two-finger swipe to reveal the companion app's menu. Click the “QR Scanner” option in the menu and use the integrated scanner to scan the QR code displayed in the browser.
+* **c.** In the browser, select **Run** --> **Build**, select your device's platform (iOS/Android), choose **AppBuilder companion app**, and click Next. You will see a QR code pointing to the application. 
+* **e.** **Android:** Open the Telerik NativeScript app on your device. With the NativeScript app opened, open the notification drawer. Tap the **Scan** button and use the integrated scanner to scan the QR code displayed in the browser.
+* **f.** **iOS:** Open the Telerik Native Script app on your device and then use a two-finger swipe to reveal the companion app's menu. Click the **QR Scanner** option in the menu and use the integrated scanner to scan the QR code displayed in the browser.
 ![Using a two-finger swipe on your device](images/swipe.png)
 
 * **e.** Windows Phone: Windows Phone companion app is not available at this time.
@@ -106,9 +106,9 @@ When scanned, the QR code loads your app in the Telerik NativeScript companion a
 
 #### Action
 
-* **a.** Set the text attribute in the Button declaration. The result should look like this:
+* **a.** Set the `text` attribute in the Button declaration. The result should look like this:
 `<Button text=”Test Message" row="1"/>`
-* **b.** **Android:** With the NativeScript application opened, open the notification drawer and tap the Sync button. 
+* **b.** **Android:** With the NativeScript application opened, open the notification drawer and tap the **Sync** button. 
 * **c.** **iOS:** On your device, within the companion app, tap with three fingers and hold until a popup appears. 
 
 <hr data-action="end" />
@@ -120,9 +120,9 @@ This process is known as LiveSync, and it makes updating your apps as easy as a 
 
 ### Step 4. Fill a ListView with images
 
-Let’s first fill our ListView with items. For our demo purposes, we will add a few images to the project and will set them to be the items source of the ListView. The items source definition will be created in a view-model file and will be then consumed by the ListView from the main js/xml files.
+Let’s now fill our ListView with items. For our demo purposes, we will add a few images to the project and will set them to be the items source of the ListView. The items source definition will be created in a view-model file and will be then consumed by the ListView from the main js/xml files.
 
-If you have started following this tutorial from the Photo Album Native application the three steps below have already been done for you.
+If you have started following this tutorial from the ready-made Photo Album Native application, the three steps below have already been done for you.
 
 <hr data-action="start" />
 
@@ -143,26 +143,27 @@ Now, it’s time to define the data source in the view model.
 * **a.** Open the `view-model.js` file that we have just created and add the following declarations, that load appropriate modules from the `tns_modules` folder: 
 ```
 var observable = require("data/observable");
+var observableArrayModule = require("data/observable-array");
 var imageSourceModule = require("image-source");
 var fileSystemModule = require("file-system");
 ```
-We need the first one in order for the changes that happen in the view-model to be reflected in the UI. The other two we need in order to load the image files that we have just added to the project.
-* **b.** Create an ObservableArray() and add the images there using the push method:
+We need the first one in order for the changes that happen in the view-model to be reflected in the UI. The second we need for the collection where we are going to store the image objects. The other two we need in order to load the image files that we have just added to the project.
+* **b.** Create an `ObservableArray()` and add the images there using the `push` method:
 ```
 var array = new observableArrayModule.ObservableArray();
 var directory = "/res/";
-function imageFromSource(data) {
-    return imageSourceModule.fromFile(fileSystemModule.path.join(__dirname, directory + data));
+function imageFromSource(imageName) {
+    return imageSourceModule.fromFile(fileSystemModule.path.join(__dirname, directory + imageName));
 };
-var item1 = {source: imageFromSource("01.jpg")}; 
-var item2 = {source: imageFromSource("02.jpg")}; 
-var item3 = {source: imageFromSource("03.jpg")}; 
-var item4 = {source: imageFromSource("04.jpg")}; 
-var item5 = {source: imageFromSource("05.jpg")}; 
-var item6 = {source: imageFromSource("06.jpg")}; 
+var item1 = {itemImage: imageFromSource("01.jpg")}; 
+var item2 = {itemImage: imageFromSource("02.jpg")}; 
+var item3 = {itemImage: imageFromSource("03.jpg")}; 
+var item4 = {itemImage: imageFromSource("04.jpg")}; 
+var item5 = {itemImage: imageFromSource("05.jpg")}; 
+var item6 = {itemImage: imageFromSource("06.jpg")}; 
 array.push([item1, item2, item3, item4, item5, item6]);
-var item7 = {source: imageFromSource("07.jpg")}; 
-var item8 = {source: imageFromSource("08.jpg")}; 
+var item7 = {itemImage: imageFromSource("07.jpg")}; 
+var item8 = {itemImage: imageFromSource("08.jpg")}; 
 ```
 You can notice that two images are not added to the array. This is because we are going to add them later on a button click.
 * **c.** Create the view-model implementation, let’s call it PhotoAlbumModel. The basic implementation of the model looks like this: 
@@ -187,10 +188,12 @@ var __extends = this.__extends || function (d, b) {
 ```
 * **e.** In the PhotoAlbumCollection’s constructor add the following line:
 ```
-this.set("message", "Added new images");
+this.set("message", "Add new images");
 ```
 
-We will bind the button’s text property to the PhotoAlbumCollection’s message property later, and every change we apply to the message property will be reflected on the button’s text.
+We will bind the button’s `text` property to the PhotoAlbumCollection’s message property later, and every change we apply to the `message` property will be reflected on the button’s `text`.
+
+> Tip: Keyboard shortcut `Ctrl` + `Alt` + `F` cleans up indentation and formatting for you. Try using it after you paste in code throughout these lessons.
 
 * **f.** Expose an `photoItems` property at the PhotoViewModel that returns the ObservableArray containing the images:
 ```
@@ -202,7 +205,7 @@ Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
       configurable: true
   })
 ```
-* **g.** Finally, we should not forget to declare the PhotoAlbumModel in the module exports, to make this model accessible from the UI.
+* **g.** At the bottom of the `view-model.js` declare the PhotoAlbumModel in the module `exports` to make this model accessible from the UI.
 ```
 exports.PhotoAlbumModel = PhotoAlbumModel;
 ```
@@ -220,22 +223,26 @@ function onPageLoaded(args) {
 }
 ```
 * **j.** Set the exports.onPageLoaded at the end of main.js to make the onPageLoaded function accessible from the UI:
-`exports.onPageLoaded = onPageLoaded;`
-* **k.** In order to call the onPageLoaded method when the page loads, add the loaded attribute with value "onPageLoaded" in the Page tag in `main.xml`:
+```
+exports.onPageLoaded = onPageLoaded;
+```
+* **k.** In order to call the onPageLoaded method when the page loads, add the `loaded` attribute with value `onPageLoaded` in the Page tag in `main.xml`:
 ```
 <Page loaded="onPageLoaded">
 ```
 * **l.** We now should bind the ListView to the photoItems collection of the PhotoAlbumModel. To do this, add set the `items` attribute of the `ListView` tag to `{{ photoItems }}`:
 ```
-<ListView items="{{ photoItems }}" itemLoading="listViewItemLoading" row="0">
+<ListView items="{{ photoItems }}" row="0">
 ```
-* **m.** The ListView is not bound to the collection of images. But in order to show the images, we should set the appropriate template consisting of a `GridPanel` with an `Image` object inside. Note that we are binding the image to the photoItemImage property of the photoItems objects:
+* **m.** The ListView is now bound to the collection of images. But in order to show the images, we should set the appropriate template consisting of a `GridPanel` with an `Image` object inside. Note that we are binding the Image source to the `itemImage` property of the `photoItems` objects, and that we are placing the template between the ListView start and end tags:
 ```
-<ListView.itemTemplate>                
-	<GridPanel>
-		<Image source="{{ photoItemImage }}" row="0"/>
-	</GridPanel>               
-</ListView.itemTemplate>
+<ListView items="{{ photoItems }}" row="0" >
+	<ListView.itemTemplate>                
+		<GridPanel>
+			<Image source="{{ itemImage }}" row="0"/>
+		</GridPanel>               
+	</ListView.itemTemplate>
+</ListView>
 ```
 
 <hr data-action="end" />
@@ -254,10 +261,10 @@ The ListView is already filled with images. But let’s see how we can add more 
 * **a.** In the PhotoAlbumModel create a function called `tapAction`. In this function we add two more images to the `ObservableArray` instance. We also change the PhotoAlbumModel’s message property value.
 ```
 PhotoAlbumModel.prototype.tapAction = function () {
-	array.push(img7);
-	array.push(img8);
+	array.push(item7);
+	array.push(item8);
         
-	this.set("message", "Images added");
+	this.set("message", "Images added. Total images:" + array.length);
 };
 ```
 * **b.** In the `main.js` create a function that we will call then the button is tapped:
@@ -266,7 +273,11 @@ function buttonClick(args) {
     model.tapAction();
 }
 ```
-* **c.** In the `main.xml` file, set the `click` attribute of the `Button` tag to `buttonClick`. This will call the `buttonClick` function when the button is tapped:
+* **c.** At the bottom of the `main.js` declare the buttonClick function in the module exports to make it accessible from the UI.
+```
+exports.buttonClick = buttonClick;
+```
+* **d.** In the `main.xml` file, set the `click` attribute of the `Button` tag to `buttonClick`. This will call the `buttonClick` function when the button is tapped:
 ```
 <Button click="buttonClick" row="1"/>
 ```
@@ -293,7 +304,7 @@ Button {
     color: #3BB9FF; 
 }
 ```
-<hr data-action="end>
+<hr data-action="end">
 
 This is it! Now you know how to load data in a UI control, how to bind UI properties to a view-model and how define the style of the UI with CSS.
 
