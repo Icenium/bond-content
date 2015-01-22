@@ -1,5 +1,7 @@
 ## Lesson 1. Layout
 
+### Step 1. Create a canvas layout
+
 NativeScript provides a flexible layout system that enables you to specify how controls are positioned and shown on the screen. This tutorial goes through the various layout options and demonstrates how to design a user interface that automatically sizes to various screen resolutions.
 
 The NativeScript layout system supports both absolute and dynamic layouts.
@@ -15,8 +17,6 @@ In a dynamic layout, the user interface automatically sizes to match the availab
 **Layout Panels**
 
 The built-in layout panels in NativeScript are **Canvas**, **StackPanel**, **GridPanel** and **WrapPanel**.
-
-### Step 1. Create a canvas layout
 
 The CanvasPanel is the most basic layout panel in NativeScript. It allows you to position child elements by specifying x/y coordinates relative to the CanvasPanel. Тhe **left**, **top**, **bottom** and **right** properties allow you to set the position of a child element relative to any side of the CanvasPanel. The CanvasPanel is useful for scenarios where the child elements contained within require little to no movement. 
 
