@@ -1,6 +1,6 @@
 {
-	"title": "Layout",
-	"description": "This tutorial is essential to understanding key concepts related to the NativeScript layout system.",
-	"estimateTime": "20",
+	"title": "Create app layout and navigation",
+	"description": "Learn how to create your app layout using Canvas, Stack, Table and Wrap panels. Also explore the fundamentals of in-app page navigation.",
+	"estimateTime": "25",
 	"land": "project"
 }
