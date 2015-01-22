@@ -1,6 +1,6 @@
-## Lesson 1. Layout
+## Lesson 1. Working with app layouts
 
-### Step 1. Create a canvas layout
+### Step 1. Common app layout
 
 NativeScript provides a flexible layout system that enables you to specify how controls are positioned and shown on the screen. This tutorial goes through the various layout options and demonstrates how to design a user interface that automatically sizes to various screen resolutions.
 
@@ -16,7 +16,9 @@ In a dynamic layout, the user interface automatically sizes to match the availab
 
 **Layout Panels**
 
-The built-in layout panels in NativeScript are **Canvas**, **StackPanel**, **GridPanel** and **WrapPanel**.
+The built-in layout panels in NativeScript are **CanvasPanel**, **StackPanel**, **GridPanel** and **WrapPanel**.
+
+### Step 2. Add canvas layout
 
 The CanvasPanel is the most basic layout panel in NativeScript. It allows you to position child elements by specifying x/y coordinates relative to the CanvasPanel. Тhe **left**, **top**, **bottom** and **right** properties allow you to set the position of a child element relative to any side of the CanvasPanel. The CanvasPanel is useful for scenarios where the child elements contained within require little to no movement. 
 
@@ -42,7 +44,7 @@ The CanvasPanel is the most basic layout panel in NativeScript. It allows you to
 
 ![CanvasPanel](images/canvas-01.png)
 
-### Step 2. Create a stack layout
+### Step 3. Create a stack layout
 
 The StackPanel arranges its child elements into a single line. It supports both horizontal and vertical orientation. The default value for the orientation property is vertical. StackPanel is typically used in scenarios where you want to arrange a small subsection of the UI on your page.
 
@@ -88,7 +90,7 @@ The StackPanel arranges its child elements into a single line. It supports both 
 
 ![StackPanel](images/stackpanel-02.png)
 
-### Step 3. Create a table layout
+### Step 4. Create a table layout
 
 To achieve table layout you use use the GrapPanel. The Grid panel arranges its children in multi-row and multi-column layouts. You can set the number of rows and columns by using the rowDefinitions and columnDefinitions properties. These properties must be declared immediately within the GridPanel, before adding the child elements. 
 
@@ -160,7 +162,7 @@ To position an object in a specific cell the col and row properties must be used
 
 ![GridPanel](images/grid-02.png)
 
-### Step 4. Create a wrap layout
+### Step 5. Create a wrap layout
 
 The WrapPanel is similar to the StackPanel. It starts by arranging the child elements one next to the other and wraps them to new lines if no space is available. The Orientation can be set to Horizontal or Vertical.
 
@@ -200,7 +202,7 @@ The orientation property can be used to specify the direction in which the WrapP
 
 ![WrapPanel](images/wrap-01.png)
 
-### Step 5. Create a nested layout
+### Step 6. Create a nested layout
 
 The layout system of NativeScript allows you to create complex UIs by nesting panels.
 
