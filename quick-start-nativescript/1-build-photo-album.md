@@ -108,7 +108,7 @@ When scanned, the QR code loads your app in the Telerik NativeScript companion a
 
 * **a.** Set the `text` attribute in the Button declaration. The result should look like this:
 `<Button text=”Test Message" row="1"/>`
-* **b.** **Android:** With the NativeScript application opened, open the notification drawer and tap the **Sync** button. 
+* **b.** **Android:** With the NativeScript application opened, open the notification center and tap the **Sync** button. 
 * **c.** **iOS:** On your device, within the companion app, tap with three fingers and hold until a popup appears. 
 
 <hr data-action="end" />
