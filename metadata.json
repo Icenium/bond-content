@@ -5,5 +5,26 @@
       "grocery-list",
       "quick-start-nativescript",
       "layout-and-navigation-nativescript",
+   ],
+   "types":[
+      {
+         "id": "hybrid",
+         "shortName": "Hybrid",
+         "longName": "Hybrid",
+         "orderedTutorials": [
+            "quick-start",
+            "layout-and-navigation",
+            "grocery-list"
+         ]
+      },
+      {
+         "id": "nativescript",
+         "shortName": "Native",
+         "longName": "Native Script",
+         "orderedTutorials": [
+            "quick-start-nativescript",
+            "layout-and-navigation-nativescript"
+         ]
+      }
    ]
 }
