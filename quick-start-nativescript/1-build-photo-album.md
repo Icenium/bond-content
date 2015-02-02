@@ -73,7 +73,7 @@ The whole xml declaration looks like this:
 
 <hr data-action="end" />
 
-Regadless of the small amount of UI and settings that we have put on the page, I am sure you will want to try the result on a real device now. So, in the next step, let’s see how easy it is to deploy this native app.
+Regardless of the small amount of UI and settings that we have put on the page, I am sure you will want to try the result on a real device now. So, in the next step, let’s see how easy it is to deploy this native app.
 
 ### Step 3. Deploy your app on a device using the companion app
 
