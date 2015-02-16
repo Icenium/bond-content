@@ -4,10 +4,10 @@
 	"estimateTime": "30",
 	"land": "workspace",
 	"workspace": {
-		"name": "Groceries App",
+		"name": "Groceries",
 		"description": "Sample app for learning how to connect your NativeScript app with data and web services",
 		"project": { 
-			"name": "Groceries",
+			"name": "Groceries Code",
 			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/tjvantoll/bond-grocery-list-native.git"
