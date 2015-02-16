@@ -45,7 +45,7 @@ The true power of Backend Services is how easy it makes complex data interaction
 
 #### Action
 
-* **a**. Click the “Groceries App” link in the upper-left corner of the screen to return to this project's workspace.
+* **a**. Click the “Groceries” link in the upper-left corner of the screen to return to this app's homepage.
 * **b**. Click the “Groceries” box to enter the AppBuilder project for this tutorial.
 * **c**. Click the **Run** menu and then select **Build**. Choose your device's platform (iOS, Android, or Windows Phone), make sure the “AppBuilder companion app” radio button is selected, and then click **Next**.
 * **d**. Scan the resulting QR code using your device's QR reader to open the app in the NativeScript companion app.

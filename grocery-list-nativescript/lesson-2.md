@@ -8,7 +8,7 @@ Backend Services automates the tricky process of registering and managing user a
 
 #### Action
 
-* **a**. Click the “Groceries App” link in the top-left corner to return to your workspace.
+* **a**. Click the “Groceries” link in the top-left corner to return to your app's homepage.
 * **b**. Click the “Groceries Backend” box to enter your Backend Services project.
 * **c**. Click the “Services” option in the menu on the left-hand side of the screen.
 * **d**. Find the “User Management”  box and click its "Add to project" button to enable user management for your Backend Services project.
@@ -41,7 +41,7 @@ A login screen is the single most used UI component in mobile apps. Almost every
 
 #### Action
 
-* **a**. Return to your AppBuilder project by returning to your workspace (click the “Groceries App” link in the top-right corner of the screen), and then clicking the “Groceries” box.
+* **a**. Return to your AppBuilder project by returning to your app's homepage (click the “Groceries” link in the top-right corner of the screen), and then clicking the “Groceries Code” box.
 * **b**. Open your app's empty views/login.xml file and place the following code in it:
 ```
 <Page loaded="load">
