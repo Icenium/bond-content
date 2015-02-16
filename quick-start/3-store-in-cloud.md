@@ -12,14 +12,14 @@ The Telerik Platform provides tools for the entire app building experience. In t
 
 <hr data-action="end" />
 
-You are now looking at your Telerik Platform home screen, which lists all workspaces on your account. Workspaces are a way of organizing your projects. You can use them to manage team members, permissions, and more. For now you have a single “Photo Album app” workspace that contains the AppBuilder project you've been working on. Your next step is to create a Backend Services Project and incorporate it into your project.
+You are now looking at your Telerik Platform home screen, which lists all apps on your account. In the Telerik Platform, “apps” are how you organize your projects. You can use them to manage team members, permissions, and more. For now you have a single “Photo Album” app that contains the AppBuilder project you've been working on. Your next step is to create a Backend Services project and incorporate it into your project.
 
 <hr data-action="start" />
 
 #### Action
 
-* **b**. Click on the “Photo Album app workspace to enter it.
-* **c**. Within the “Photo Album app” workspace, click the green “Create Backend Services project” button.
+* **b**. Click on the “Photo Album” app to enter it.
+* **c**. Within the “Photo Album” app, click the green “Create Backend Services project” button.
 * **d**. Give your project a name — for instance “Photo Album Backend” — and then click “Create project”.
 * **e**. Find the “Cloud Files” box and click its "Add to project" button to enable file storage for your Backend Services project.
 * **f**. Click the “API Keys” option from the menu on the left-hand side of the screen.
@@ -37,7 +37,7 @@ With a Backend Services project in place, your next step is to add data to it. B
 
 #### Action
 
-* **a**. Navigate back to your “Photo Album” AppBuilder project that is part of your workspace. 
+* **a**. Navigate back to your “Photo Album Code” AppBuilder project that is part of your app. 
 * **b**. In your index.html file, insert the following `<script>` tag to import the Backend Services SDK (which is code named Everlive). Place it directly after the `<script>` that imports kendo.mobile.min.js:
 ```
 <script src="https://bs-static.cdn.telerik.com/1.2.5/everlive.all.min.js"></script>
