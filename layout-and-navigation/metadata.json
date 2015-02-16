@@ -4,10 +4,10 @@
 	"estimateTime": "25",
 	"land": "project",
 	"workspace": {
-		"name": "Great Books app",
+		"name": "Great Books",
 		"description": "Sample app for learning about layout and navigation",
 		"project": { 
-			"name": "Great Books",
+			"name": "Great Books Code",
 			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/bsatrom/great-books.git"

@@ -43,8 +43,8 @@ The true power of Backend Services is how easy it makes complex data interaction
 
 #### Action
 
-* **a**. Click the “Grocery List app” link in the upper-left corner of the screen to return to this project's workspace.
-* **b**. Click the “Grocery List” box to enter the AppBuilder project for this tutorial.
+* **a**. Click the “Grocery List link in the upper-left corner of the screen to return to this project's app homepage.
+* **b**. Click the “Grocery List Code” box to enter the AppBuilder project for this tutorial.
 * **c**. Run this project in the simulator by clicking **Run** --> **iPhone** in the menu at the top of the screen.
 
 <hr data-action="end" />

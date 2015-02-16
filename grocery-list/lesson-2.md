@@ -8,7 +8,7 @@ Backend Services automates the tricky process of registering and managing user a
 
 #### Action
 
-* **a**. Click the “Grocery List app” link in the top-left corner to return to your workspace.
+* **a**. Click the “Grocery List link in the top-left corner to return to your app's homepage.
 * **b**. Click the “Grocery List Backend” box to enter your Backend Services project.
 * **c**. Click the “Services” option in the menu on the left-hand side of the screen.
 * **d**. Find the “User Management”  box and click its "Add to project" button to enable user management for your Backend Services project.
@@ -35,7 +35,7 @@ By changing the Groceries content type to private, you prevent access to the con
 
 #### Action
 
-* **j**. Return to your AppBuilder project by returning to your workspace (click the “Grocery List app” link in the top-right corner of the screen), and then clicking the “Grocery List” box.
+* **j**. Return to your AppBuilder project by returning to your app's homepage (click the “Grocery List” link in the top-right corner of the screen), and then clicking the “Grocery List Code” box.
 * **k**. Open your app.js file from the scripts folder, and add the following code as the very first thing in the `initialize()` function:
 ```
 el.Users.login("username", "password",

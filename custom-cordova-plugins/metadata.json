@@ -4,10 +4,10 @@
 	"estimateTime": "30",
 	"land": "project",
 	"workspace": {
-		"name": "Contacts app",
+		"name": "Contacts",
 		"description": "Sample app for learning how to use cordova plugins to access hardware capabilities of the device",
 		"project": { 
-			"name": "Cordova Contacts",
+			"name": "Contacts Code",
 			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/rdlauer/cordova-contacts-test.git"
