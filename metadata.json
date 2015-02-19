@@ -16,6 +16,16 @@
             "layout-and-navigation",
             "grocery-list"
          ]
+      },
+      {
+         "id": "native",
+         "shortName": "Native",
+         "longName": "Native Script",
+         "orderedTutorials": [
+            "quick-start-nativescript",
+            "layout-and-navigation-nativescript",
+            "grocery-list-nativescript"
+         ]
       }
    ]
 }
