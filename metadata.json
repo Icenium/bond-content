@@ -20,7 +20,7 @@
       {
          "id": "native",
          "shortName": "Native",
-         "longName": "Native Script",
+         "longName": "NativeScript",
          "orderedTutorials": [
             "quick-start-nativescript",
             "layout-and-navigation-nativescript",
