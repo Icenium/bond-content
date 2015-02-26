@@ -1,6 +1,6 @@
 ## Lesson 1. Build a photo album
 
-### Step 1. Create a new project. Project structure.
+### Step 1. Create a new project
 
 In this tutorial, you will learn how to load data in a UI control, how to bind UI properties to a view model and how to define the style of the UI with CSS. As a result you will have a native Photo Album application written entirely in XML and JavaScript.
 
@@ -42,32 +42,24 @@ We are now going to create a page that contains a button at the bottom and a lis
 <Page>
 </Page>
 ```
-* **b.** Next, inside the `Page`, create a `GridPanel` instance and set up its layout. The grid consists of two rows - the first row will take up all the available space the `GridPanel` provides and the second row will be sized based on its content:
+* **b.** Next, inside the `Page`, create a `GridLayout` instance and set up its layout. The grid consists of two rows - the first row will take up all the available space the `GridLayout` provides and the second row will be sized based on its content:
 ```
-<GridPanel>                
-	<GridPanel.rowDefinitions>
-		<RowDefinition height="*" />
-		<RowDefinition height="auto" />
-	</GridPanel.rowDefinitions>  
-</GridPanel>
+<GridLayout rows="*, auto">
+</GridLayout>
 ```
-* **c.** Now, it's time for the controls that we want to arrange with the `GridPanel`. The declarations of the controls should be placed right after the closing tag for the `GridPanel.rowDefinitions`. The controls declarations are as simple as:
+* **c.** Now, it's time for the controls that we want to arrange with the `GridLayout`. The declarations of the controls should be placed right after the closing tag for the `GridLayout`. The controls declarations are as simple as:
 ```
-<ListView row="0" />         
-<Button row="1"/>
+<ListView row="0" />  
+<Button row="1" />
 ```
 
 The complete XML declaration looks like this:
 ```
 <Page>
-    <GridPanel>                
-        <GridPanel.rowDefinitions>
-            <RowDefinition height="*" />
-            <RowDefinition height="auto" />
-        </GridPanel.rowDefinitions>  
-        <ListView row="0"/>
-		<Button row="1"/>
-    </GridPanel>
+    <GridLayout rows="*, auto">
+        <ListView row="0" />
+        <Button row="1" />
+    </GridLayout>
 </Page>
 ```
 
@@ -236,13 +228,13 @@ exports.onPageLoaded = onPageLoaded;
 ```
 <ListView items="{{ photoItems }}" row="0">
 ```
-* **m.** The `ListView` is now bound to the collection of images. But in order to show the images, we should set the appropriate template consisting of a `GridPanel` with an `Image` object inside. Note that we are binding the image source to the `itemImage` property of the `photoItems` objects, and that we are placing the template between the `ListView` start and end tags:
+* **m.** The `ListView` is now bound to the collection of images. But in order to show the images, we should set the appropriate template consisting of a `GridLayout` with an `Image` object inside. Note that we are binding the image source to the `itemImage` property of the `photoItems` objects, and that we are placing the template between the `ListView` start and end tags:
 ```
 <ListView items="{{ photoItems }}" row="0" >
 	<ListView.itemTemplate>                
-		<GridPanel>
+		<GridLayout>
 			<Image source="{{ itemImage }}" row="0"/>
-		</GridPanel>               
+		</GridLayout>               
 	</ListView.itemTemplate>
 </ListView>
 ```
