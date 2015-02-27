@@ -28,10 +28,10 @@ exports.onPageLoaded = onPageLoaded;
 **main.xml**
 ```
 <Page>
-  <StackPanel>
+  <StackLayout>
     <Label text="Hello, this is Main!" />
     <Button text="Go to Page1" tap="buttonForwardTap" />
-  </StackPanel>
+  </StackLayout>
 </Page>
 ```
 
@@ -50,11 +50,11 @@ exports.buttonForwardTap = buttonForwardTap;
 **page1.xml**
 ```
 <Page>
-  <StackPanel>
+  <StackLayout>
     <Label text="Hello, this is Page1!" />
     <Button text="Go to Page2" tap="buttonForwardTap" />
     <Button text="Go back to MainPage" tap="buttonBackTap" />
-  </StackPanel>
+  </StackLayout>
 </Page>
 ```
 
@@ -76,10 +76,10 @@ exports.buttonBackTap = buttonBackTap;
 **page2.xml**
 ```
 <Page>
-  <StackPanel>
+  <StackLayout>
     <Label text="Hello, this is Page2!" />
     <Button text="Go back to Page1" tap="buttonBackTap" />
-  </StackPanel>
+  </StackLayout>
 </Page>
 ```
 
@@ -105,7 +105,7 @@ In case you want to pass some state information, i.e. some kind of context, to t
 
 #### Action
 
-* **a**. Modify buttonForwardTap in main.js to pass information to Page1.
+* **a**. Modify **buttonForwardTap** in **main.js** to pass information to Page1.
 
 ```
 function buttonForwardTap(args) {
@@ -125,10 +125,10 @@ function buttonForwardTap(args) {
 exports.buttonForwardTap = buttonForwardTap;
 ```
 
-* **b**. Open page1.xml and subscribe for the navigatedTo event of the page.
+* **b**. Open **page1.xml** and subscribe for the **navigatedTo** event of the page.
 
 ```
-<Page loaded="onPageLoaded" navigatedTo="pageNavigatedTo">
+<Page navigatedTo="pageNavigatedTo">
   ...
 </Page>
 ```
@@ -145,6 +145,9 @@ function pageNavigatedTo(navigationEntry) {
 exports.pageNavigatedTo = pageNavigatedTo;
 ```
 
+![GridPanel](images/navigation-with-parameters.png)
+
 <hr data-action="end" />
+
 
 Great job! In just a few minutes, you've mastered some of the critical basics to building native apps with NativeScript and the Telerik Platform. With these skills in hand, creating the navigation, layout and major views in your next mobile app should be a breeze!
