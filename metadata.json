@@ -1,11 +1,4 @@
 {  
-   "orderedActiveTutorials":[  
-      "quick-start",
-      "layout-and-navigation",
-      "grocery-list",
-      "quick-start-nativescript",
-      "layout-and-navigation-nativescript",
-   ],
    "types":[
       {
          "id": "hybrid",
