@@ -4,50 +4,48 @@
 
 In this tutorial, you will learn how to load data in a UI control, how to bind UI properties to a view model and how to define the style of the UI with CSS. As a result you will have a native Photo Album application written entirely in XML and JavaScript.
 
-We are now going to create our first NativeScript project. The four steps below do just that. You can skip them and directly open the Photo Album Native app and then the Photo Album Native project.
+You will now create your first NativeScript project. The four steps below do just that. You can skip them and directly open the Photo Album Native app and then the Photo Album Native project.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a.** Click the blue **Create app** button at the top-left. Name your app `Photo Album Native app` and click the green **Create app** button.
-* **b.** Create a new **AppBuilder Native project**. 
-* **c.** Choose the NativeScript Blank (JavaScript) template.
-* **d.** Name the project `Photo Album Native app` and click the green **Create Project** button.
+* **a.** Click the blue **Create app** button at the top-left. 
+* **b.** Select **Start from a blank app**.
+* **c.** Name your app `Photo Album Native` and click the green **Create app** button.
+* **d.** Click the **Create AppBuilder Native project** button.
+* **e.** Select **Choose project template** and then select the  **NativeScript Blank (JavaScript)** template.
+* **f.** Name the project `Photo Album Native Code` and click the green **Create Project** button.
 
 <hr data-action="end" />
 
 This newly created project is automatically checked into the integrated AppBuilder version control. AppBuilder opens your new project and lists all project files in the Project Navigator. There you can see the following items:
 
-* **app** The app folder contains the entire app functionality.
+* **app** The `app` folder contains the entire app functionality.
 * **bootstrap.js** This file contains the code that initializes your project as a native app.
 * **app.js** The app.js module contains application specific code, such as which page is the starting page of the application. 
-* **main.js** This is the main JavaScript file used to implement the business logic of the home page.
-* **main.xml** This is the file used to implement the UI of this first page.
+* **main-page.js** This is the main JavaScript file used to implement the business logic of the initial page.
+* **main-page.xml** This is the file used to implement the UI of the initial page.
 * **App_Resources** The App_Resources folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
 * **tns_modules** The tns_modules folder contains the NativeScript libraries for accessing the native device platform functionality. Libraries might consist of platform-specific and common files and an index.js that exports the module. Platform-specific files contain platform-specific NativeScript code. When you build your app for iOS or Android, AppBuilder automatically picks up the needed platform-specific files. 
 
-We will focus on the `app` folder to create the logic of our application. You can also quickly check the `tns_modules` to get a better idea of what components the NativeScript framework provides.
+You will focus on the `app` folder to create the logic of our application. You can also quickly check the `tns_modules` to get a better idea of what components the NativeScript framework provides.
 
 ### Step 2. Define the user interface
 
-We are now going to create a page that contains a button at the bottom and a listview that spans over the remaining screen area. We will implement this layout with a grid panel. We will use the `main.xml` file to declare the UI of the page.
+You are now going to create a page that contains a button at the bottom and a listview that spans over the remaining screen area. You will implement this layout with a grid panel. You will declare the UI of the page in `main-page.xml`.
 
 <hr data-action="start" />
 
 #### Action 
 
-* **a.** Open the `main.xml` file and add a declaration for a simple page:
-```
-<Page>
-</Page>
-```
-* **b.** Next, inside the `Page`, create a `GridLayout` instance and set up its layout. The grid consists of two rows - the first row will take up all the available space the `GridLayout` provides and the second row will be sized based on its content:
+* **a.** Open the `app --> main-page.xml` file.
+* **b.** Between the `Page` start and end tags, create a `GridLayout` instance and set up its layout. For the purposes of the application, the grid should consist of two rows - the first row will take up all the available space the `GridLayout` provides and the second row will be sized based on its content:
 ```
 <GridLayout rows="*, auto">
 </GridLayout>
 ```
-* **c.** Now, it's time for the controls that we want to arrange with the `GridLayout`. The declarations of the controls should be placed right after the closing tag for the `GridLayout`. The controls declarations are as simple as:
+* **c.** Now, it's time to add a `Button` and `ListView` to the `GridLayout`. The declarations of the controls should be placed right after the closing tag for the `GridLayout`. These declarations are as simple as:
 ```
 <ListView row="0" />  
 <Button row="1" />
@@ -55,7 +53,7 @@ We are now going to create a page that contains a button at the bottom and a lis
 
 The complete XML declaration looks like this:
 ```
-<Page>
+<Page xmlns="http://www.nativescript.org/tns.xsd" >
     <GridLayout rows="*, auto">
         <ListView row="0" />
         <Button row="1" />
@@ -69,7 +67,7 @@ Regardless of the small amount of UI and settings that we have put on the page, 
 
 ### Step 3. Deploy your app on a device using the companion app
 
-The NativeScript companion app makes it easy to test your app on real devices, without the need to manage SDKs or deal with complex provisioning options.
+The NativeScript companion app makes it easy for you to test your app on real devices, without the need to manage SDKs or deal with complex provisioning options.
 
 ![iOS app store](images/native-script-app.png)
 
