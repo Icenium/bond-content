@@ -12,7 +12,7 @@ In an absolute layout, controls are positioned using explicit x/y coordinates.
 
 **Dynamic Layout**
 
-In a dynamic layout, the user interface automatically sizes to match the available screen space.
+In dynamic layout, the user interface automatically sizes to match the available screen space.
 
 **Layout Panels**
 
