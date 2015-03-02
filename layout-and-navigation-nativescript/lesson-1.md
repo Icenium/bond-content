@@ -16,7 +16,7 @@ In dynamic layout, the user interface automatically sizes to match the available
 
 **Layout Panels**
 
-The built-in layout panels in NativeScript are **AbsoluteLayout**, **StackLayout**, **GridLayout**, **DockLayout** and **WrapLayout**.
+The built-in layouts in NativeScript are **AbsoluteLayout**, **StackLayout**, **GridLayout**, **DockLayout** and **WrapLayout**.
 
 ### Step 2. Add absolute layout
 
