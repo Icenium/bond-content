@@ -127,7 +127,7 @@ To position an object in a specific cell the **col** and **row** properties must
 
 <hr data-action="end" />
 
-![GridPanel](images/grid-layout-01.png)
+![GridLayout](images/grid-layout-01.png)
 
 <hr data-action="start" />
 
@@ -148,7 +148,7 @@ To position an object in a specific cell the **col** and **row** properties must
 
 <hr data-action="end" />
 
-![GridPanel](images/grid-layout-02.png)
+![GridLayout](images/grid-layout-02.png)
 
 ### Step 5. Create a wrap layout
 
@@ -188,9 +188,64 @@ The orientation property can be used to specify the direction in which the WrapL
 
 <hr data-action="end" />
 
-![WrapPanel](images/wrap-layout-01.png)
+![WrapLayout](images/wrap-layout-01.png)
 
-### Step 6. Create a nested layout
+### Step 6. Create a dock layout
+
+The DockLayout arranges its child elements by positioning them alongside its four sides. To specify a docking side you can set the dock property of each child element.
+
+<hr data-action="start" />
+
+#### Action
+
+* **a**. Add the following markup to create a DockLayout with 4 child elements where each child is docked to a specific side.
+
+```
+<Page>
+  <DockLayout>
+    <Button text="Top!" dock="top"/>
+    <Button text="Left!" dock="left"/>
+    <Button text="Right!" dock="right"/>
+    <Button text="Bottom!" dock="bottom"/>
+  </DockLayout>
+</Page>
+```
+
+* **b**. Save the xml file and sync your app.
+
+<hr data-action="end" />
+
+![DockLayout](images/dock-layout-01.png)
+
+The **stretchLastChild** attribute of the DockLayout allows you to specify whether the last child element of the DockLayout should take the entire remaining space.
+
+> Tip: The default value of **stretchLastChild** is **true**.
+
+<hr data-action="start" />
+
+#### Action
+
+* **a**. Add the following markup to create a DockLayout with 5 child elements where the first four elements are docked to a side and the last one takes the remaining space.
+
+```
+<Page>
+  <DockLayout stretchLastChild="true">
+    <Button text="Top!" dock="top"/>
+    <Button text="Left!" dock="left"/>
+    <Button text="Right!" dock="right"/>
+    <Button text="Bottom!" dock="bottom"/>
+    <Button text="Center!" />
+  </DockLayout>
+</Page>
+```
+
+* **b**. Save the xml file and sync your app.
+
+<hr data-action="end" />
+
+![DockLayout](images/dock-layout-02.png)
+
+### Step 7. Create a nested layout
 
 The layout system of NativeScript allows you to create complex UIs by nesting panels.
 
