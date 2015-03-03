@@ -280,7 +280,7 @@ this.set("message", "Add new images");
 ```
 * **b.** In the `tapAction` function, add the following line to inform the user about the new images and the total count of images in the ListView:
 ```
-this.set("message", "Images added. Total images:" + array.length);
+this.set("message", "Images added. Total images: " + array.length);
 ```
 * **c.** In `main-page.xml`, set the `text` attribute of the `Button` tag to `{{ message }}`. This will bind the `Button`'s `text` property to the `message` property of the `PhotoAlbumModel`. So, initially, the button will show `Add new images` and after you tap it, it will show `Images added. Total images: 8`.
 ```
