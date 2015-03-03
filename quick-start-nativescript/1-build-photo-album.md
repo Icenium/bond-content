@@ -83,7 +83,7 @@ The NativeScript companion app makes it easy for you to test your app on real de
 
 * **c.** In the browser, select **Run** --> **Build**, select your platform (iOS/Android), choose **AppBuilder companion app**, and click **Next**. You will see a QR code pointing to the application. 
 * **e.** **Android:** Open the NativeScript app on your device. With the NativeScript app running, open the notification drawer. Tap **Scan** and use the integrated scanner to scan the QR code displayed in the browser.
-* **f.** **iOS:** Open the NativeScript app on your device and with a two-finger left-to-right swipe reveal the companion app menu. Tap **QR Scanner** in the menu and use the integrated scanner to scan the QR code displayed in the browser.
+* **f.** **iOS:** Open the NativeScript app on your device and with a two-finger left-to-right swipe from far left reveal the companion app menu. Tap **QR Scanner** in the menu and use the integrated scanner to scan the QR code displayed in the browser.
 ![Using a two-finger swipe on your device](images/swipe.png)
 
 * **e.** **Windows Phone:** A companion app for Windows Phone is not yet available.
@@ -179,7 +179,7 @@ var __extends = this.__extends || function (d, b) {
 };
 ```
 
-> Tip: Keyboard shortcut `Ctrl` + `Alt` + `F` cleans up indentation and formatting for you. Try using it after you paste in code throughout these lessons.
+> Tip: Keyboard shortcut `Ctrl` + `Alt` + `F` cleans up the JavaScript indentation and formatting for you. Try using it after you paste in code throughout these lessons.
 
 * **f.** Expose a `photoItems` property at the `PhotoViewModel` that returns the `ObservableArray` containing the images:
 ```
@@ -263,7 +263,7 @@ exports.buttonClick = buttonClick;
 ```
 * **d.** In the `main-page.xml` file, set the `click` attribute of the `Button` tag to the `buttonClick` function. This will call the function when the button is tapped:
 ```
-<Button text="Test Message" click="buttonClick" row="1"/>
+<Button text="Test Message" tap="buttonClick" row="1"/>
 ```
 
 <hr data-action="end" />
@@ -284,7 +284,7 @@ this.set("message", "Images added. Total images:" + array.length);
 ```
 * **c.** In `main-page.xml`, set the `text` attribute of the `Button` tag to `{{ message }}`. This will bind the `Button`'s `text` property to the `message` property of the `PhotoAlbumModel`. So, initially, the button will show `Add new images` and after you tap it, it will show `Images added. Total images: 8`.
 ```
-<Button text="{{ message }}" click="buttonClick" row="1"/>
+<Button text="{{ message }}" tap="buttonClick" row="1"/>
 ```
 
 <hr data-action="end" />
