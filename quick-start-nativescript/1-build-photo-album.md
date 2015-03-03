@@ -157,7 +157,7 @@ array.push([item1, item2, item3, item4, item5, item6]);
 var item7 = {itemImage: imageFromSource("07.jpg")}; 
 var item8 = {itemImage: imageFromSource("08.jpg")}; 
 ```
-Note that two images are not pushed to the array. This is because you will add them later on a button click.
+Note that two images are not pushed to the array. This is because you will add them later on a button tap.
 * **c.** Create the view model implementation, let's call it `PhotoAlbumModel`. The basic implementation of the model looks like this: 
 ```
 var PhotoAlbumModel = (function (_super) {
@@ -233,10 +233,10 @@ exports.onPageLoaded = onPageLoaded;
 
 <hr data-action="end" />
 
-As a result, the `ListView` is populated with images. Use the `LiveSync` feature of the NativeScript companion app to see them. Let's now add two more images on a button click and style the button.
+As a result, the `ListView` is populated with images. Use the `LiveSync` feature of the NativeScript companion app to see them. Let's now add two more images on a button tap and style the button.
 
 
-### Step 5. Respond to actions and add some style
+### Step 5. Respond to events and add some style
 
 The `ListView` is already populated with a few images. You will now add a few more images on a button tap. Then, you will learn how to bind the Button's `text` property to a property of the PhotoAlbumModel, thus informing the end-user about the successful tap action. Finally, you will understand how to put some style to the button.
 
@@ -251,19 +251,19 @@ PhotoAlbumModel.prototype.tapAction = function () {
 	array.push(item8);
 };
 ```
-* **b.** In `main-page.js` create an event handler function for the `click` event of the button. There, call the `tapAction` function of the `PhotoAlbumModel`:
+* **b.** In `main-page.js` create an event handler function for the `tap` event of the button. There, call the `tapAction` function of the `PhotoAlbumModel`:
 ```
-function buttonClick(args) {
+function buttonTap(args) {
     model.tapAction();
 }
 ```
-* **c.** At the bottom of the `main-page.js` declare the `buttonClick` function in the module exports to make it accessible from the UI.
+* **c.** At the bottom of the `main-page.js` declare the `buttonTap` function in the module exports to make it accessible from the UI.
 ```
-exports.buttonClick = buttonClick;
+exports.buttonTap = buttonTap;
 ```
-* **d.** In the `main-page.xml` file, set the `click` attribute of the `Button` tag to the `buttonClick` function. This will call the function when the button is tapped:
+* **d.** In the `main-page.xml` file, set the `tap` attribute of the `Button` tag to the `buttonTap` function. This will call the function when the button is tapped:
 ```
-<Button text="Test Message" tap="buttonClick" row="1"/>
+<Button text="Test Message" tap="buttonTap" row="1"/>
 ```
 
 <hr data-action="end" />
@@ -284,7 +284,7 @@ this.set("message", "Images added. Total images:" + array.length);
 ```
 * **c.** In `main-page.xml`, set the `text` attribute of the `Button` tag to `{{ message }}`. This will bind the `Button`'s `text` property to the `message` property of the `PhotoAlbumModel`. So, initially, the button will show `Add new images` and after you tap it, it will show `Images added. Total images: 8`.
 ```
-<Button text="{{ message }}" tap="buttonClick" row="1"/>
+<Button text="{{ message }}" tap="buttonTap" row="1"/>
 ```
 
 <hr data-action="end" />
