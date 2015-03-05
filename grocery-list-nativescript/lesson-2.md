@@ -45,8 +45,8 @@ A login screen is the single most used UI component in mobile apps. Almost every
 * **b**. Open your app's empty views/login.xml file and place the following code in it:
 ```
 <Page loaded="load">
-    <StackPanel>
-        <Image url="http://bs2.cdn.telerik.com/v1/GWfRtXi1Lwt4jcqK/28d417c0-9ccb-11e4-ad75-053ddcb57c52" />
+    <StackLayout>
+        <Image source="{{ logoSource }}" />
 
         <Label text="Username:" />
         <TextField width="200" text="{{ username }}" id="username" hint="Username" />
@@ -54,8 +54,9 @@ A login screen is the single most used UI component in mobile apps. Almost every
         <Label text="Password:" />
         <TextField width="200" secure="true" text="{{ password }}" hint="Password" />
 
-        <Button text="Sign In" click="signIn" cssClass="first-button" />
-    </StackPanel>
+        <Button text="Sign In" tap="signIn" />
+        <Button text="Sign up for Groceries" tap="register" />
+    </StackLayout>
 </Page>
 ```
 * **b**. Open the app.js file, and change the `application.mainModule = "app/views/list";` line to `application.mainModule = "app/views/login";`. This changes the starting page of your app from the list screen to the login screen.
@@ -71,32 +72,53 @@ Your app now opens up to a login screen rather than a list of groceries. Your ne
 
 * **d**. Open your app's views/login.js file and paste in the following code:
 ```
-var frameModule = require( "ui/frame" ),
-    userCredentials = require( "../models/userCredentials" ),
-    el = require( "../models/el" );
+var dialogs = require("ui/dialogs");
+var el = require("../shared/models/el");
+var frameModule = require("ui/frame");
+var images = require("../shared/utils/images");
+var pageData = require("../shared/models/userCredentials");
+var viewModule = require("ui/core/view");
 
-exports.load = function( args ) {
+exports.load = function(args) {
     var page = args.object;
-    page.bindingContext = userCredentials;
+    var username = viewModule.getViewById(page, "username");
+
+    pageData.set("logoSource", images.logo);
+    page.bindingContext = pageData;
+
+    // Turn off autocorrect and autocapitalization for iOS
+    if (username.ios) {
+        username.ios.autocapitalizationType =
+            UITextAutocapitalizationType.UITextAutocapitalizationTypeNone;
+        username.ios.autocorrectionType =
+            UITextAutocorrectionType.UITextAutocorrectionTypeNo;
+    }
 };
 
-exports.signIn = function( args ) {
+exports.signIn = function(args) {
     el.Users.login(
-        userCredentials.get( "username" ),
-        userCredentials.get( "password" ),
+        pageData.get("username"),
+        pageData.get("password"),
         function() {
-            frameModule.topmost().navigate( "app/views/list" );
+            frameModule.topmost().navigate("app/views/list");
+        },
+        function() {
+            dialogs.alert({
+                message: "Unfortunately we could not find your account.",
+                okButtonText: "OK"
+            });
         }
     );
 };
+
 ```
 * **e**. Save login.js.
 
 <hr data-action="end" />
 
-The actual SDK is defined by the `el` module retrieved from the `require( "../models/el" )` call. That module is defined in models/el.js, which uses the config module you placed your Backend Services project's API key in earlier.
+The actual SDK is defined by the `el` module retrieved from the `require("../models/el")` call. That module is defined in models/el.js, which uses the config module you placed your Backend Services project's API key in earlier.
 
-With the Backend Services SDK a login call is as simple as `el.Users.login()`. The call returns a token that can be used on subsequent requests, and the SDK automatically stores that token so you don't have to do it yourself. The only thing you explicitly do is call `frameModule.topmost().navigate( "app/views/list" )` after a successful login to take the user to the list page.
+With the Backend Services SDK a login call is as simple as `el.Users.login()`. The call returns a token that can be used on subsequent requests, and the SDK automatically stores that token so you don't have to do it yourself. The only thing you explicitly do is call `frameModule.topmost().navigate("app/views/list")` after a successful login to take the user to the list page.
 
 To get this app functioning again you have one final thing to do: change the list page to use the authentication token from the login process.
 
@@ -107,18 +129,18 @@ To get this app functioning again you have one final thing to do: change the lis
 * **f**. Open views/list.js file, remove the existing `loadGroceries()` and `addGrocery()` functions, and replace them with the following:
 ```
 function loadGroceries() {
-    el.data( "Groceries" ).get().then(function( data ) {
-        data.result.forEach(function( grocery ) {
-            groceries.push( grocery.Name );
+    el.data("Groceries").get().then(function(data) {
+        data.result.forEach(function(grocery) {
+            groceries.push({ name: grocery.Name });
         });
     });
 }
 
-function addGrocery( grocery ) {
-    el.data( "Groceries" ).create({
+function addGrocery(grocery) {
+    el.data("Groceries").create({
         Name: grocery
-    }).then( function( result ) {
-        groceries.push( grocery );
+    }).then( function(result) {
+        groceries.push({ name: grocery });
     });
 }
 ```
