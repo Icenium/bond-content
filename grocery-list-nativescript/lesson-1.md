@@ -62,8 +62,8 @@ As you can see, in its current state, this project has a basic list UI but no da
 * **f**. In the Data Navigator (the panel on the right-hand side of the screen), expand “Backend Services”, and then right click on “Groceries Backend” (or whatever you named your Backend Services project). Select “Properties” from the context menu.
 * **g**. In the Properties menu (bottom right-hand side of the screen), find the project's API key and copy it.
 * **h**. Click the “Solution” link on the right-hand side of the screen to switch back to this project's files.
-* **i**. Open config.js in the app/models folder.
-* **j**. Replace the `YOUR API KEY` string with your project's API key that you copied to the clipboard.
+* **i**. Open config.js in the app/shared/models folder.
+* **j**. Replace the `API KEY` string with your project's API key that you copied to the clipboard.
 * **k**. Open app/views/list.js. This is the file that controls the list page that the app opens into.
 * **l**. Paste the following function at the end of list.js file:
 ```
@@ -71,9 +71,9 @@ function loadGroceries() {
     httpModule.getJSON({
         url: "http://api.everlive.com/v1/" + config.apiKey + "/Groceries",
         method: "GET"
-    }).then( function( result ) {
-        result.Result.forEach(function( grocery ) {
-            groceries.push( grocery.Name );
+    }).then(function(result) {
+        result.Result.forEach(function(grocery) {
+            groceries.push({ name: grocery.Name });
         });
     });
 };
@@ -97,26 +97,29 @@ A grocery list app isn't all that useful if you can't add to the list, so that's
 
 #### Action
 
-* **a**. Open the project's list.xml file, and add a `<Button>` element. The file should contain this code:
+* **a**. Add a `<TextField>` and a `<Button>` to your page by pasting the code below into your project's list.xml file:
 ```
 <Page navigatedTo="load">
-    <GridPanel>
-        <GridPanel.rowDefinitions>
-            <RowDefinition height="auto" />
-            <RowDefinition height="*" />
-        </GridPanel.rowDefinitions>
-        <Button text="Add a Grocery" click="add" row="0" />
-        <ListView id="grocery-list" items="{{ groceries }}" row="1" />
-    </GridPanel>
+    <GridLayout rows="auto, *">
+        <StackLayout orientation="horizontal" row="0">
+            <TextField id="grocery" width="200" text="{{ grocery }}" hint="Enter a grocery" />
+            <Button text="Add" tap="add"></Button>
+        </StackLayout>
+        <ListView items="{{ groceries }}" row="1">
+            <ListView.itemTemplate>
+                <Label text="{{ name }}" />
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
 </Page>
 ```
-* **b**. Save list.xml and perform a LiveSync to see how the new button looks.
+* **b**. Save list.xml and perform a LiveSync to see how the new textfield and button look.
 
 <hr data-action="end" />
 
-The `<GridPanel.rowDefinitions>` element defines two rows for the `<GridPanel>` on this page. The `row` attribute applied to subsequent elements is zero-based, the the `row="0"` attribute on the `<Button>` places it in the top row, and the `row="1"` attribute on the `<ListView>` places it in the bottom row. You can try placing around with attributes to see how you can rearrange the elements on the screen.
+The `<GridLayout>` element's `rows` attribute defines two rows for this page. The `row` attribute applied to subsequent elements is zero-based, so the `row="0"` attribute on the `<StackLayout>` places it in the top row, and the `row="1"` attribute on the `<ListView>` places it in the bottom row. You can try placing around with attributes to see how you can rearrange the elements on the screen.
 
-The other new attribute is the `click` attribute on the `<Button>` element. Your next task is defining the `add` function that the `click` attribute refers to.
+The other new attribute is the `tap` attribute on the `<Button>` element. Your next task is defining the `add` function that the `tap` attribute refers to.
 
 <hr data-action="start" />
 
@@ -125,22 +128,21 @@ The other new attribute is the `click` attribute on the `<Button>` element. Your
 * **c**. Add the following function to your list.js file, directly after the existing `exports.load` function:
 ```
 exports.add = function() {
-    dialogModule.prompt( "Grocery to add:", "", {
-        cancelButtonText: "Cancel",
-        neutralButtonText: "OK"
-    }).then(function( results ) {
-        if ( !results.result ) {
-            addGrocery( results.text );
-        }
-    });
+    // Dismiss the keyboard before adding to the list
+    viewModule.getViewById(page, "grocery").dismissSoftInput();
+
+    addGrocery(pageData.get("grocery"));
+
+    // Clear the text field
+    pageData.set("grocery", "");
 };
 ```
 
 <hr data-action="end" />
 
-This `add()` function corresponds with the `click="add"` attribute you place on the `<Button>` element. When you click the new button NativeScript invokes this function.
+This `add()` function corresponds with the `tap="add"` attribute you place on the `<Button>` element. When you click the new button NativeScript invokes this function.
 
-The function itself uses another NativeScript module, dialog, to show a platform-specific prompt to collect a string from the user. When the user completes the prompt, and if they click the OK button rather than the Cancel button, you invoke an `addGrocery()` function that is not yet defined. Let's add that function.
+The function itself retrieves the user-typed grocery from the data model (`pageData.get("grocery")`), and then calls the `addGrocery()` function with that value. Let's define `addGrocery()` to see how you can add this value to your backend.
 
 <hr data-action="start" />
 
@@ -150,14 +152,14 @@ The function itself uses another NativeScript module, dialog, to show a platform
 ```
 function addGrocery( grocery ) {
     httpModule.request({
-        url: config.backendUrl + "/Groceries",
+        url: "http://api.everlive.com/v1/" + config.apiKey + "/Groceries",
         method: "POST",
         content: JSON.stringify({ Name: grocery }),
         headers: {
             "Content-Type": "application/json"
         }
     }).then( function( result ) {
-        groceries.push( grocery );
+        groceries.push({ name: grocery });
     });
 };
 ```
