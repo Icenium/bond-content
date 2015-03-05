@@ -55,7 +55,6 @@ A login screen is the single most used UI component in mobile apps. Almost every
         <TextField width="200" secure="true" text="{{ password }}" hint="Password" />
 
         <Button text="Sign In" tap="signIn" />
-        <Button text="Sign up for Groceries" tap="register" />
     </StackLayout>
 </Page>
 ```
