@@ -251,7 +251,7 @@ PhotoAlbumModel.prototype.tapAction = function () {
 	array.push(item8);
 };
 ```
-* **d.** In the `main-page.xml` file, set the `tap` attribute of the `Button` tag to the `tapAction` function of the `PhotoAlbumModel`. This will call the function when the button is tapped:
+* **b.** In the `main-page.xml` file, set the `tap` attribute of the `Button` tag to the `tapAction` function of the `PhotoAlbumModel`. This will call the function when the button is tapped:
 ```
 <Button text="Test Message" tap="{{ tapAction }}" row="1"/>
 ```
