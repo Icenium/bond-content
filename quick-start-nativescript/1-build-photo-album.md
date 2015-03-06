@@ -33,7 +33,7 @@ You will focus on the `app` folder to create the logic of our application. You c
 
 ### Step 2. Define the user interface
 
-You are now going to create a page that contains a button at the bottom and a listview that spans over the remaining screen area. You will implement this layout with a grid panel. You will declare the UI of the page in `main-page.xml`.
+You are now going to create a page that contains a button at the bottom and a listview that spans over the remaining screen area. These two controls will be arranged thanks to a grid layout. You will declare the UI of the page in `main-page.xml`.
 
 <hr data-action="start" />
 
@@ -114,25 +114,25 @@ This process is known as LiveSync and makes updating your apps as easy as a quic
 
 First, let's populate the `ListView` with items. You will add a few images to the project and will set them to be the items source of the `ListView`. The items source definition will be created in a view model file and will be then consumed by the `ListView` from the `main-page.js/main-page.xml` files.
 
-If you have started this tutorial from the ready-made Photo Album Native application, the three steps below have already been done for you.
+If you have started this tutorial from the ready-made Photo Album Native application, the two steps below have already been done for you.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a.** Right-click the `app` folder and choose **Add** --> **New File**. Name the file `view-model.js`. We will define the model here.
-* **b.** Right-click the `app` folder and choose **Add** --> **New Folder**. Name the folder `res`. We will store the images here.
-* **c.** Right-click the `res` folder and choose **Add** --> **Existing Files**. Browse your machine and add six images. 
+* **a.** Right-click the `app` folder and choose **Add** --> **New Folder**. Name the folder `res`. We will store the images here.
+* **b.** Right-click the `res` folder and choose **Add** --> **Existing Files**. Browse your machine and add six images. 
 
 <hr data-action="end" />
 
-Now, it's time to define the data source in the view model.
+Now, it's time to define the data source in a view model.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a.** Open the `view-model.js` file that we have just created and add the following declarations that load the required modules from the `tns_modules` folder: 
+* **a.** Right-click the `app` folder and choose **Add** --> **New File**. Name the file `view-model.js`. This is the place you will define the model.
+* **a.** In the `view-model.js` add the following declarations to load the necessary modules from the `tns_modules` folder: 
 ```
 var observable = require("data/observable");
 var observableArrayModule = require("data/observable-array");
@@ -251,19 +251,9 @@ PhotoAlbumModel.prototype.tapAction = function () {
 	array.push(item8);
 };
 ```
-* **b.** In `main-page.js` create an event handler function for the `tap` event of the button. There, call the `tapAction` function of the `PhotoAlbumModel`:
+* **d.** In the `main-page.xml` file, set the `tap` attribute of the `Button` tag to the `tapAction` function of the `PhotoAlbumModel`. This will call the function when the button is tapped:
 ```
-function buttonTap(args) {
-    model.tapAction();
-}
-```
-* **c.** At the bottom of the `main-page.js` declare the `buttonTap` function in the module exports to make it accessible from the UI.
-```
-exports.buttonTap = buttonTap;
-```
-* **d.** In the `main-page.xml` file, set the `tap` attribute of the `Button` tag to the `buttonTap` function. This will call the function when the button is tapped:
-```
-<Button text="Test Message" tap="buttonTap" row="1"/>
+<Button text="Test Message" tap="{{ tapAction }}" row="1"/>
 ```
 
 <hr data-action="end" />
@@ -284,7 +274,7 @@ this.set("message", "Images added. Total images: " + array.length);
 ```
 * **c.** In `main-page.xml`, set the `text` attribute of the `Button` tag to `{{ message }}`. This will bind the `Button`'s `text` property to the `message` property of the `PhotoAlbumModel`. So, initially, the button will show `Add new images` and after you tap it, it will show `Images added. Total images: 8`.
 ```
-<Button text="{{ message }}" tap="buttonTap" row="1"/>
+<Button text="{{ message }}" tap="{{ tapAction }}" row="1"/>
 ```
 
 <hr data-action="end" />
