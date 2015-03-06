@@ -124,3 +124,5 @@ Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
 The `get()` method retrieves all pictures currently stored in the Telerik Backend Services. After you store a few pictures following the demonstrated approach, go to the “Files” menu in your Backend Services project to see a list of the photos you are storing.
 
 And that's all there is to it, which is pretty cool if you think about it — you have just built a native mobile app that gets and uploads pictures in the cloud!
+
+You can find the complete [Photo Album project at GitHub](https://github.com/NativeScript/sample-PhotoAlbum).
