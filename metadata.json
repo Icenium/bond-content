@@ -15,7 +15,8 @@
          "shortName": "Native",
          "longName": "NativeScript",
          "orderedTutorials": [
-            "quick-start-nativescript"
+            "quick-start-nativescript",
+            "grocery-list-nativescript"
          ]
       }
    ]
