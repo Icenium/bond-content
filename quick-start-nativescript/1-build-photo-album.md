@@ -45,7 +45,7 @@ You are now going to create a page that contains a button at the bottom and a li
 <GridLayout rows="*, auto">
 </GridLayout>
 ```
-* **c.** Now, it's time to add a `Button` and `ListView` to the `GridLayout`. The declarations of the controls should be placed right after the closing tag for the `GridLayout`. These declarations are as simple as:
+* **c.** Now, it's time to add a `Button` and `ListView` to the `GridLayout`. The declarations of the controls should be placed right before the closing tag for the `GridLayout`. These declarations are as simple as:
 ```
 <ListView row="0" />  
 <Button row="1" />
@@ -208,7 +208,7 @@ function onPageLoaded(args) {
     page.bindingContext = model;
 }
 ```
-* **j.** Set the `exports.onPageLoaded` at the end of `main.js` to make the `onPageLoaded` function accessible from the UI:
+* **j.** Set the `exports.onPageLoaded` at the end of `main-page.js` to make the `onPageLoaded` function accessible from the UI:
 ```
 exports.onPageLoaded = onPageLoaded;
 ```
@@ -237,7 +237,6 @@ As a result, the `ListView` is populated with images. Use the `LiveSync` feature
 
 
 ### Step 5. Respond to events and add some style
-
 The `ListView` is already populated with a few images. You will now add a few more images on a button tap. Then, you will learn how to bind the Button's `text` property to a property of the PhotoAlbumModel, thus informing the end-user about the successful tap action. Finally, you will understand how to put some style to the button.
 
 <hr data-action="start" />
@@ -264,10 +263,27 @@ Tapping the Button will now add two more images to the ListView. But let's make 
 
 #### Action
 
-* **a.** In the `PhotoAlbumCollection` constructor, add the following line to prompt the user to add more images:
+* **a.** In the `PhotoAlbumModel` constructor in `view-model.js`, add the following line to prompt the user to add more images:
 ```
 this.set("message", "Add new images");
 ```
+
+The constructor now looks like:
+
+```
+var PhotoAlbumModel = (function(_super) {
+    __extends(PhotoAlbumModel, _super);
+
+    function PhotoAlbumModel() {
+        _super.call(this);
+
+        this.set("message", "Add new images");
+    }
+
+    return PhotoAlbumModel;
+})(observable.Observable);
+```
+
 * **b.** In the `tapAction` function, add the following line to inform the user about the new images and the total count of images in the ListView:
 ```
 this.set("message", "Images added. Total images: " + array.length);
