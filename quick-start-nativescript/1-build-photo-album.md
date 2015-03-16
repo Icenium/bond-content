@@ -82,7 +82,7 @@ The NativeScript companion app makes it easy for you to test your app on real de
 [![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/bg/app/nativescript/id882561588?mt=8)
 [![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.NativeScript&hl=en)
 
-* **c.** In the browser, select **Run** --> **Build**, select your platform (iOS/Android), choose **AppBuilder companion app**, and click **Next**. You will see a QR code pointing to the application. 
+* **c.** In the browser, select **Run** --> **Build**, select your platform (iOS/Android), choose **NativeScript companion app**, and click **Next**. You will see a QR code pointing to the application. 
 * **e.** **Android:** Open the NativeScript app on your device. With the NativeScript app running, open the notification drawer. Tap **Scan** and use the integrated scanner to scan the QR code displayed in the browser.
 * **f.** **iOS:** Open the NativeScript app on your device and with a two-finger left-to-right swipe from far left reveal the companion app menu. Tap **QR Scanner** in the menu and use the integrated scanner to scan the QR code displayed in the browser.
 ![Using a two-finger swipe on your device](images/swipe.png)
