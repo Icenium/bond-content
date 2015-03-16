@@ -66,7 +66,7 @@ for (i = 0; i < array.length; i++) {
     var file = {
         "Filename": Math.random().toString(36).substring(2, 15) + ".jpg",
         "ContentType": "image/jpeg",
-        "base64": array.getItem(i).itemImage.toBase64String("JPEG", 100)
+        "base64": array.getItem(i).itemImage.toBase64String(imageSourceModule.ImageFormat.JPEG, 100)
     };
 
     everlive.Files.create(file,
