@@ -4,7 +4,7 @@
 
 In this tutorial, you will learn how to load data in a UI control, how to bind UI properties to a view model and how to define the style of the UI with CSS. As a result you will have a native Photo Album application written entirely in XML and JavaScript.
 
-You will now create your first NativeScript project. The four steps below do just that. You can skip them and directly open the Photo Album Native app and then the Photo Album Native project.
+You will now create your first NativeScript project. The four steps below do just that. You can skip them and directly open the Photo Album Native Code app and then the Photo Album Native project.
 
 <hr data-action="start" />
 
@@ -24,7 +24,7 @@ This newly created project is automatically checked into the integrated AppBuild
 * **app** The `app` folder contains the entire app functionality.
 * **bootstrap.js** This file contains the code that initializes your project as a native app.
 * **app.js** The app.js module contains application specific code, such as which page is the starting page of the application. 
-* **app.css** The main CSS file of the application. The styles you define here are be applied to the content of all pages.
+* **app.css** The main CSS file of the application. The styles you define here are applied to the content of all pages.
 * **main-page.js** This is the main JavaScript file used to implement the business logic of the initial page.
 * **main-page.xml** This is the file used to implement the UI of the initial page.
 * **App_Resources** The App_Resources folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
@@ -260,7 +260,7 @@ Tapping the Button will now add two more images to the ListView. But let's make 
 
 #### Action
 
-* **a.** In the `view-model.js` file, add the following line right after the line where we create the `photoAlbumModel` instance. This line will prompt the user to add more images:
+* **a.** In the `view-model.js` file, add the following line right after the line where the `photoAlbumModel` instance was created. This line will prompt the user to add more images:
 ```
 photoAlbumModel.set("message", "Add new images");
 ```
@@ -282,7 +282,8 @@ Finally, let's beautify the button. NativeScript uses standards-based CSS syntax
 #### Action
 
 * **a.** Open the `app.css` file.
-* **b.** After the style for the `page` objects, add a block for the `Button` that determines the foreground color, background color and font properties of the `Button` type. The complete code in `app.css` looks like this:
+* **b.** After the block for the `page` objects, add a block for the `Button` that determines the foreground color, background color and font properties of the `Button` type. The complete code in `app.css` looks like this:
+
 ```
 page {
     /* CSS styles */
