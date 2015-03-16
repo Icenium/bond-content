@@ -39,7 +39,7 @@ With a Backend Services project in place, your next step is to add data to it. B
 #### Action
 
 * **a**. Download the JavaScript SDK from: [https://bs-static.cdn.telerik.com/latest/everlive.all.min.js](https://bs-static.cdn.telerik.com/latest/everlive.all.min.js "https://bs-static.cdn.telerik.com/latest/everlive.all.min.js")
-* **b**. Navigate back to your “Photo Album Native” AppBuilder project that is part of your application. 
+* **b**. Navigate back to your `Photo Album Native Code` AppBuilder project that is part of your application. 
 * **c**. Right-click your `app` folder and select **Add** --> **Existing Files**. 
 * **d**. Browse to the downloaded SDK file and click **Upload**.
 * **e**. Add the following line to the top of your `view-model.js` file to load the SDK module:
@@ -85,6 +85,7 @@ This code gets all images loaded in the ListView and then using the `create()` m
 
 * **f**. Next, make the following code snippet replacement to change how the NativeScript ListView gets the data it needs.
 Before:
+
 ```
 Object.defineProperty(photoAlbumModel, "photoItems", {
     get: function () {
@@ -95,6 +96,7 @@ Object.defineProperty(photoAlbumModel, "photoItems", {
 });
 ```
 After:
+
 ```
 var backendArray = new observableArrayModule.ObservableArray();
 
@@ -118,6 +120,7 @@ Object.defineProperty(PhotoAlbumModel, "photoItems", {
     configurable: true
 });
 ```
+
 * **g**. Save your `view-model.js` file and use the `LiveSync` feature to update the application. Your images will now be loaded from the Telerik Backend Services into the ListView.
 
 <hr data-action="end" />
