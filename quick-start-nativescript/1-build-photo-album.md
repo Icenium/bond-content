@@ -24,6 +24,7 @@ This newly created project is automatically checked into the integrated AppBuild
 * **app** The `app` folder contains the entire app functionality.
 * **bootstrap.js** This file contains the code that initializes your project as a native app.
 * **app.js** The app.js module contains application specific code, such as which page is the starting page of the application. 
+* **app.css** The main CSS file of the application. The styles you define here are be applied to the content of all pages.
 * **main-page.js** This is the main JavaScript file used to implement the business logic of the initial page.
 * **main-page.xml** This is the file used to implement the UI of the initial page.
 * **App_Resources** The App_Resources folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
@@ -158,32 +159,21 @@ var item7 = {itemImage: imageFromSource("07.jpg")};
 var item8 = {itemImage: imageFromSource("08.jpg")}; 
 ```
 Note that two images are not pushed to the array. This is because you will add them later on a button tap.
-* **c.** Create the view model implementation, let's call it `PhotoAlbumModel`. The basic implementation of the model looks like this: 
+* **c.** Create the view model as an instance of type `Observable()`. Let's call this instance `photoAlbumModel`:
 ```
-var PhotoAlbumModel = (function (_super) {
-    __extends(PhotoAlbumModel, _super);
-    function PhotoAlbumModel() {
-        _super.call(this);
-    }
-    return PhotoAlbumModel;
-})(observable.Observable);
+var photoAlbumModel = new observable.Observable();
 ```
+<hr data-action="end" />
 
-* **d.** Inheriting the `PhotoAlbumModel` from `Observable()` lets you bind controls properties from the main page to properties in the view model. To get all the functionality that `Observable` (or any other parent type) provides, you should add the following code before the `PhotoAlbumModel` implementation:
-```
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-```
+Using the `Observable()` type of our view model lets you bind controls properties from the main page to properties in the view model.
 
 > Tip: Keyboard shortcut `Ctrl` + `Alt` + `F` cleans up the JavaScript indentation and formatting for you. Try using it after you paste in code throughout these lessons.
 
-* **f.** Expose a `photoItems` property at the `PhotoViewModel` that returns the `ObservableArray` containing the images:
+<hr data-action="start" />
+
+* **d.** Expose a `photoItems` property at the `photoViewModel` that returns the `ObservableArray` containing the images:
 ```
-Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
+Object.defineProperty(photoAlbumModel, "photoItems", {
       get: function () {
           return array;
       },
@@ -191,36 +181,42 @@ Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
       configurable: true
   })
 ```
-* **g.** At the bottom of the `view-model.js`, outside the `PhotoAlbumModel` implementation, declare the `PhotoAlbumModel` in the module `exports` to make this model accessible from the UI.
+* **e.** At the bottom of the `view-model.js` file declare `photoAlbumModel` in the module `exports` to make this model accessible from the UI.
 ```
-exports.PhotoAlbumModel = PhotoAlbumModel;
+exports.photoAlbumModel = photoAlbumModel;
 ```
-* **h.** With the view model created, let's get back to our `main-page.js/main-page.xml` files to populate `ListView` with data.
-In the `main-page.js` file, load the view model specifying its location in the project folder structure and then create an instance of the `PhotoAlbumModel`.
+
+<hr data-action="end" />
+
+With the view model created, let's get back to our `main-page.js/main-page.xml` files to populate `ListView` with data.
+
+<hr data-action="start" />
+
+* **f.** In the `main-page.js` file, load the view model specifying its location in the project folder structure and then load the pre-created instance of `photoAlbumModel`. 
 ```
 var modelModule = require("./view-model");
-var model = new modelModule.PhotoAlbumModel();
+var model = modelModule.photoAlbumModel;
 ```
-* **i.** Create a function called `onPageLoaded`. In this function you will set the `bindingContext` of the page to be our view model:
+* **g.** Create a function called `onPageLoaded`. In this function you will set the `bindingContext` of the page to be our view model:
 ```
 function onPageLoaded(args) {
     var page = args.object;
     page.bindingContext = model;
 }
 ```
-* **j.** Set the `exports.onPageLoaded` at the end of `main.js` to make the `onPageLoaded` function accessible from the UI:
+* **h.** Set the `exports.onPageLoaded` at the end of `main-page.js` to make the `onPageLoaded` function accessible from the UI:
 ```
 exports.onPageLoaded = onPageLoaded;
 ```
-* **k.** To call the `onPageLoaded` method when the page loads, add the loaded attribute with value `onPageLoaded` in the `Page` tag in `main-page.xml`:
+* **i.** To call the `onPageLoaded` method when the page loads, add the loaded attribute with value `onPageLoaded` in the `Page` tag in `main-page.xml`:
 ```
 <Page loaded="onPageLoaded" xmlns="http://www.nativescript.org/tns.xsd" >
 ```
-* **l.** You now should bind the `ListView` to the `photoItems` collection of the `PhotoAlbumModel`. To do this, set the `items` attribute of the `ListView` tag to `{{ photoItems }}`:
+* **j.** You now should bind the `ListView` to the `photoItems` collection of the `PhotoAlbumModel`. To do this, set the `items` attribute of the `ListView` tag to `{{ photoItems }}`:
 ```
 <ListView items="{{ photoItems }}" row="0">
 ```
-* **m.** The `ListView` is now bound to the collection of images. But in order to display the images, you should set the appropriate template consisting of a `GridLayout` with an `Image` object inside. Place the template declaration between the `ListView` start and end tags and bind the `Image`'s `source` property to the `itemImage` property of the `photoItems` objects:
+* **k.** The `ListView` is now bound to the collection of images. But in order to display the images, you should set the appropriate template consisting of a `GridLayout` with an `Image` object inside. Place the template declaration between the `ListView` start and end tags and bind the `Image`'s `source` property to the `itemImage` property of the `photoItems` objects:
 ```
 <ListView items="{{ photoItems }}" row="0" >
 	<ListView.itemTemplate>                
@@ -244,37 +240,37 @@ The `ListView` is already populated with a few images. You will now add a few mo
 
 #### Action
 
-* **a.** In the `PhotoAlbumModel`, create a function called `tapAction`. In the body of this function add two more images to the `ObservableArray` instance.
+* **a.** Create a function called `tapAction` at `photoAlbumModel`. In the body of this function add two more images to the `ObservableArray` instance.
 ```
-PhotoAlbumModel.prototype.tapAction = function () {
+photoAlbumModel.tapAction = function () {
 	array.push(item7);
 	array.push(item8);
 };
 ```
-* **b.** In the `main-page.xml` file, set the `tap` attribute of the `Button` tag to the `tapAction` function of the `PhotoAlbumModel`. This will call the function when the button is tapped:
+* **b.** In the `main-page.xml` file, set the `tap` attribute of the `Button` tag to the `tapAction` function of the `photoAlbumModel`. This will call the function when the button is tapped:
 ```
-<Button text="Test Message" tap="{{ tapAction }}" row="1"/>
+<Button text="Test Message" row="1" tap="{{ tapAction }}"/>
 ```
 
 <hr data-action="end" />
 
-Tapping the Button will now add two more images to the ListView. But let's make the text of the Button reflect the action that happened. To do so, you can bind the `text` property of the Button to the `message` property of the `PhotoAlbumModel`.
+Tapping the Button will now add two more images to the ListView. But let's make the text of the Button reflect the action that happened. To do so, you can bind the `text` property of the Button to the `message` property of the `photoAlbumModel`.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a.** In the `PhotoAlbumCollection` constructor, add the following line to prompt the user to add more images:
+* **a.** In the `view-model.js` file, add the following line right after the line where we create the `photoAlbumModel` instance. This line will prompt the user to add more images:
 ```
-this.set("message", "Add new images");
+photoAlbumModel.set("message", "Add new images");
 ```
 * **b.** In the `tapAction` function, add the following line to inform the user about the new images and the total count of images in the ListView:
 ```
-this.set("message", "Images added. Total images: " + array.length);
+photoAlbumModel.set("message", "Images added. Total images: " + array.length);
 ```
-* **c.** In `main-page.xml`, set the `text` attribute of the `Button` tag to `{{ message }}`. This will bind the `Button`'s `text` property to the `message` property of the `PhotoAlbumModel`. So, initially, the button will show `Add new images` and after you tap it, it will show `Images added. Total images: 8`.
+* **c.** In `main-page.xml`, set the `text` attribute of the `Button` tag to `{{ message }}`. This will bind the `Button`'s `text` property to the `message` property of the `photoAlbumModel`. So, initially, the button will show `Add new images` and after you tap it, it will show `Images added. Total images: 8`.
 ```
-<Button text="{{ message }}" tap="{{ tapAction }}" row="1"/>
+<Button text="{{ message }}" row="1" tap="{{ tapAction }}"/>
 ```
 
 <hr data-action="end" />
@@ -285,14 +281,17 @@ Finally, let's beautify the button. NativeScript uses standards-based CSS syntax
 
 #### Action
 
-* **a.** Right-click the `app` folder and choose **Add** --> **New File**.
-* **b.** Name the file after the file that contains the UI objects that need styling. In our case, the name should be `main-page.css`.
-* **c.** In order to change the foreground color, background color and font properties of the `Button` type, set the following CSS:
+* **a.** Open the `app.css` file.
+* **b.** After the style for the `page` objects, add a block for the `Button` that determines the foreground color, background color and font properties of the `Button` type. The complete code in `app.css` looks like this:
 ```
+page {
+    /* CSS styles */
+}
+
 Button {
-    background-color: gray;
-    font-size: 20;
-    color: #3BB9FF; 
+  background-color: gray;
+  font-size: 20;
+  color: #3BB9FF; 
 }
 ```
 <hr data-action="end">

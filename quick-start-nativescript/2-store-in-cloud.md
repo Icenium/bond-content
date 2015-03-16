@@ -60,7 +60,7 @@ The `everlive` object now contains an Everlive instance you can use to interact 
 
 #### Action
 
-* **e**. Add the following code to the bottom of the `PhotoAlbumModel`'s `tapAction`:
+* **e**. Add the following code to the bottom of the `photoAlbumModel`'s `tapAction`:
 ```
 for (i = 0; i < array.length; i++) {
     var file = {
@@ -86,7 +86,7 @@ This code gets all images loaded in the ListView and then using the `create()` m
 * **f**. Next, make the following code snippet replacement to change how the NativeScript ListView gets the data it needs.
 Before:
 ```
-Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
+Object.defineProperty(photoAlbumModel, "photoItems", {
     get: function () {
         return array;
     },
@@ -97,7 +97,8 @@ Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
 After:
 ```
 var backendArray = new observableArrayModule.ObservableArray();
-Object.defineProperty(PhotoAlbumModel.prototype, "photoItems", {
+
+Object.defineProperty(PhotoAlbumModel, "photoItems", {
     get: function () {
         everlive.Files.get().then(function (data) {
                 data.result.forEach(function (fileMetadata) {
