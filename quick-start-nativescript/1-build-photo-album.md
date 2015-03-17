@@ -46,7 +46,7 @@ You are now going to create a page that contains a button at the bottom and a li
 <GridLayout rows="*, auto">
 </GridLayout>
 ```
-* **c.** Now, it's time to add a `Button` and `ListView` to the `GridLayout`. The declarations of the controls should be placed right after the closing tag for the `GridLayout`. These declarations are as simple as:
+* **c.** Now, it's time to add a `Button` and `ListView` to the `GridLayout`. The declarations of the controls should be placed right before the closing tag for the `GridLayout`. These declarations are as simple as:
 ```
 <ListView row="0" />  
 <Button row="1" />
