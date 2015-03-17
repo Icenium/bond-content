@@ -100,7 +100,7 @@ After:
 ```
 var backendArray = new observableArrayModule.ObservableArray();
 
-Object.defineProperty(PhotoAlbumModel, "photoItems", {
+Object.defineProperty(photoAlbumModel, "photoItems", {
     get: function () {
         everlive.Files.get().then(function (data) {
                 data.result.forEach(function (fileMetadata) {
