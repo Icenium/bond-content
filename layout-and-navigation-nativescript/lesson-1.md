@@ -14,9 +14,9 @@ In an absolute layout, controls are positioned using explicit x/y coordinates.
 
 In dynamic layout, the user interface automatically sizes to match the available screen space.
 
-**Layout Panels**
+**Layouts**
 
-The built-in layouts in NativeScript are **AbsoluteLayout**, **StackLayout**, **GridLayout**, **DockLayout** and **WrapLayout**.
+NativeScript has the following built-in layouts: **AbsoluteLayout**, **StackLayout**, **GridLayout**, **DockLayout** and **WrapLayout**.
 
 ### Step 2. Create absolute layout
 
