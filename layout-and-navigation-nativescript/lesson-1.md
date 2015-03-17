@@ -14,11 +14,11 @@ In an absolute layout, controls are positioned using explicit x/y coordinates.
 
 In dynamic layout, the user interface automatically sizes to match the available screen space.
 
-**Layout Panels**
+**Layouts**
 
-The built-in layouts in NativeScript are **AbsoluteLayout**, **StackLayout**, **GridLayout**, **DockLayout** and **WrapLayout**.
+NativeScript has the following built-in layouts: **AbsoluteLayout**, **StackLayout**, **GridLayout**, **DockLayout** and **WrapLayout**.
 
-### Step 2. Add absolute layout
+### Step 2. Create absolute layout
 
 The AbsoluteLayout is the most basic layout in NativeScript. It allows you to position child elements by specifying x/y coordinates relative to the AbsoluteLayout. Тhe **left** / **top** properties allow you to set the position of a child element relative to the top-left corner of the AbsoluteLayout container. The AbsoluteLayout is useful for scenarios where the child elements contained within require little to no movement. 
 
@@ -44,7 +44,7 @@ The AbsoluteLayout is the most basic layout in NativeScript. It allows you to po
 
 ![AbsoluteLayout](images/absolute-layout-01.png)
 
-### Step 3. Create a stack layout
+### Step 3. Create stacked layout
 
 The StackLayout arranges its child elements into a single line. It supports both horizontal and vertical orientation. The default value for the orientation property is vertical. StackLayout is typically used in scenarios where you want to arrange a small subsection of the UI on your page.
 
@@ -90,7 +90,7 @@ The StackLayout arranges its child elements into a single line. It supports both
 
 ![StackLayout](images/stack-layout-02.png)
 
-### Step 4. Create a table layout
+### Step 4. Create table layout
 
 To achieve table layout you use use the GridLayout. The GridLayout arranges its children in multi-row and multi-column layouts. You use the **rows** and **columns** attributes to set the number of rows and columns.
 
@@ -150,7 +150,7 @@ To position an object in a specific cell the **col** and **row** properties must
 
 ![GridLayout](images/grid-layout-02.png)
 
-### Step 5. Create a wrap layout
+### Step 5. Create wrapped layout
 
 The WrapLayout is similar to the StackLayout. It starts by arranging the child elements one next to the other and wraps them to new lines if no space is available. The orientation can be set to horizontal or vertical.
 
@@ -190,7 +190,7 @@ The orientation property can be used to specify the direction in which the WrapL
 
 ![WrapLayout](images/wrap-layout-01.png)
 
-### Step 6. Create a dock layout
+### Step 6. Create docking layout
 
 The DockLayout arranges its child elements by positioning them alongside its four sides. To specify a docking side you can set the dock property of each child element.
 
@@ -245,7 +245,7 @@ The **stretchLastChild** attribute of the DockLayout allows you to specify wheth
 
 ![DockLayout](images/dock-layout-02.png)
 
-### Step 7. Create a nested layout
+### Step 7. Create nested layouts
 
 The layout system of NativeScript allows you to create complex UIs by nesting panels.
 
