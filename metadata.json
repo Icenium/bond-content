@@ -16,7 +16,8 @@
          "longName": "NativeScript",
          "orderedTutorials": [
             "quick-start-nativescript",
-            "layout-and-navigation-nativescript"
+            "layout-and-navigation-nativescript",
+            "grocery-list-nativescript"
          ]
       }
    ]
