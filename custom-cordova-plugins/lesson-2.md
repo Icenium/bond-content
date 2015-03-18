@@ -115,7 +115,7 @@ Since you have a place to display a picture, now is a good time to learn how to 
 * **b**. This button references a JavaScript function you haven't created yet (`window.updatePhoto`), so let's create it and its associated callback function (`onPhotoSuccess`). Paste the following into your `app.js` file:
 
 ```
-window.UpdatePhoto = function() {
+window.updatePhoto = function() {
     navigator.camera.getPicture(onPhotoSuccess, onError, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
 }
 

@@ -14,7 +14,7 @@ Before you may manually deploy apps to your Android device, you have to make sur
 
 * On Android 3.x and earlier devices, go to `Settings -> Applications` and verify that `Unknown sources` is selected.
 
-* On Android 4.x devices, go to `Settings -> Security -> Device administration` and verify that `Unknown sources` is selected.
+* On Android 4.x and 5.x devices, go to `Settings -> Security -> Device administration` and verify that `Unknown sources` is selected.
 
 <hr data-action="end" />
 
@@ -54,13 +54,13 @@ Now that you've learned how to properly set up your device, let's create a build
 
 * **b**. Choose the platform you are targeting and make sure the `App package` option is selected.
 
-> Tip: You'll notice that we are leaving the `Configure LiveSync` option "on". By enabling LiveSync we can view changes made to our app immediately on our device (even after it's been deployed!).
+> Tip: You'll notice that we are leaving the app in `debug` mode. By doing so, we enable LiveSync - which allows us to view changes made to our app immediately on our device (even after it's been deployed!).
 
 * **c**. Click the `Next` button to generate your build in the cloud. Note that this build process may take a minute.
 
 * **d**. **Android:** Either scan the provided code with a QR code reader, type the provided URL into your Android browser, or download and manually install the app on your device. Any of these will let you install the app on your Android device.
 
-* **e**. **iOS:** Before the build commences, you must choose the iOS provisioning profile and certificate you created already after reading step 11 above. Click `Next` to generate your build, and when it's done, download your app. Connect your device to your computer, double-click the downloaded IPA file to add it to iTunes, select the app in iTunes, and click `Install`.
+* **e**. **iOS:** Before the build commences, you must choose the iOS provisioning profile and certificate you created already after reading step 11 above. Click `Next` to generate your build, and when it's done, download your app. Connect your device to your computer, double-click the downloaded IPA file to add it to iTunes, select the app in iTunes (after navigating to your device), click `Install`, and finally `Apply`.
 
 * **f**. **Windows Phone:** Either scan the provided code with a QR code reader or type the provided URL into IE on your device. Either of these will let you install the app on your Windows Phone device.
 
