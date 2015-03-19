@@ -51,10 +51,6 @@ function onContactSuccess(contacts) {
 
 The `getAllContacts` function queries your local contact database to load all of your contacts. The `navigator.contacts.find` function has a callback function, `onContactSuccess`, which is called when your device successfully retrieves your contacts. It's in this function that your contacts are bound to your ListView element (`<ul id="contacts-list">`) via the Kendo UI template.
 
-> TJ: Might want to note that you won't see any contacts in the simulator so people aren't confused at this point.
-
-> TJ: Suggestion: sort the contacts in alphabetical order. I had a hard time later in the tutorial when I wanted to find a contact to add a picture for.
-
 * **c**. Save your changes.
 
 <hr data-action="end" />
@@ -62,6 +58,8 @@ The `getAllContacts` function queries your local contact database to load all of
 ### Step 2. Run the app in the AppBuilder Companion App
 
 It's fun to see the fruits of your labor, even if you have only just begun the lesson! As you learned in a previous lesson, the AppBuilder Companion App lets you run your app on a real device without going through the hassle of installing and configuring SDKs or provisioning profiles.
+
+*Note that some Cordova plugins don't work in the device simulator, but do work with the Companion App and on your own device.*
 
 <hr data-action="start" />
 
@@ -76,8 +74,6 @@ It's fun to see the fruits of your labor, even if you have only just begun the l
 * **b**. Back in AppBuilder, select **Run** --> **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
 
 * **c**. Scan the provided QR code on your device and play with the app you just created!
-
-> TJ: Unfortunately the app doesn't work for me on the Android/iOS companion apps. navigator.contacts.find just does nothing.
 
 <hr data-action="end" />
 

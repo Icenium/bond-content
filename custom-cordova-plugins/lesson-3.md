@@ -1,6 +1,10 @@
 ## Lesson 3. Extend your app with a custom Cordova plugin
 
+Custom plugins allow you to tap into native device features that you cannot normally access via the core functionality of Cordova. In this lesson you will learn how to find and install a custom plugin called "Toast" which allows you to show a native alert dialog. Let's get started!
+
+<!--
 Custom plugins allow you to tap into native device features that you cannot normally access via the core functionality of Cordova. In this lesson you will learn how to find and install two custom plugins: "Native Page Transitions", which allows you to use native device animations to seamlessly transition between views, and "Toast" which allows you to show a native alert dialog. Let's get started!
+-->
 
 ### Step 7. Discover the AppBuilder package manager
 
@@ -16,6 +20,7 @@ The AppBuilder package manager is your central hub for discovering and installin
 
 <hr data-action="end" />
 
+<!--
 ### Step 8. Setup and configure the Native Page Transitions plugin
 
 Let's install the "Native Page Transitions" plugin. As previously mentioned, this plugin allows you to tap into the native animations available on your device to move your users between views. This makes your app feel more native than by using the default CSS-based transitions.
@@ -25,8 +30,6 @@ Let's install the "Native Page Transitions" plugin. As previously mentioned, thi
 #### Action
 
 * **a**. In the provided search box, type "native page transitions". Highlight the plugin and click the `Install` button.
-
-> TJ: Your blank branch already has the plugin installed. Probably want to reset that to a blank slate.
 
 * **b**. Add the following reference to the Kendo UI adapter file for Native Page Transitions at the top of your `index.html` file, right underneath where you load Kendo UI (`kendo.mobile.min.js`):
 
@@ -39,10 +42,15 @@ Let's install the "Native Page Transitions" plugin. As previously mentioned, thi
 > Tip: If you want to play around with the type of transitions or with how quickly transitions are invoked, <a href="http://plugins.telerik.com/plugin/native-page-transitions" target="_blank">check out the plugin documentation</a> for a full list of settings you may specify.
 
 <hr data-action="end" />
+-->
 
-### Step 9. Setup and configure the Toast plugin
+### Step 8. Setup and configure the Toast plugin
 
+Let's install the "Toast" plugin. Again, this plugin allows you to display a "toast" (a.k.a. native alert dialog) in your app that fades away on its own without user intervention. You'll use this to show a notification after you have used your device's camera to populate a profile picture.
+
+<!--
 Your final plugin to install is the "Toast" plugin. Again, this plugin allows you to display a "toast" (a.k.a. native alert dialog) in your app that fades away on its own without user intervention. You'll use this to show a notification after you have used your device's camera to populate a profile picture.
+-->
 
 <hr data-action="start" />
 

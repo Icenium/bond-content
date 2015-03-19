@@ -132,8 +132,6 @@ Once the button is pressed, Cordova finds your device camera and enables it. You
 
 * **c**. Save all of your changes and do a three finger tap in your Companion App again. Try adding a profile picture to one of your contacts!
 
-> TJ: Strange, but after I click the Update Photo button the camera launches again (but the save itself works fine).
-
 <hr data-action="end" />
 
 Your next step is learn how to use custom Cordova plugins from the Verified Plugins Marketplace to add even more native functionality to your app. Finally, you will learn how to run your app on a real mobile device.
