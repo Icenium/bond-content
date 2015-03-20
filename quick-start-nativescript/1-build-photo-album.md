@@ -158,7 +158,7 @@ array.push([item1, item2, item3, item4, item5, item6]);
 var item7 = {itemImage: imageFromSource("07.jpg")}; 
 var item8 = {itemImage: imageFromSource("08.jpg")}; 
 ```
-Note that two images are not pushed to the array. This is because you will add them later on a button tap.
+Note that two of the images are not pushed to the array. This is because you will add them later on a button tap.
 * **c.** Create the view model as an instance of type `Observable()`. Let's call this instance `photoAlbumModel`:
 ```
 var photoAlbumModel = new observable.Observable();
