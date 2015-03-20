@@ -29,7 +29,7 @@ Now you have a dummy user account to test your app with. Before we head back to 
 
 <hr data-action="end" />
 
-By changing the Groceries content type to private, you prevent access to the content type for unauthenticated users. You also implicitly associate the Groceries content type to user accounts. This means that each authenticated user will get their own grocery list to manage. This also means that the code in your existing will no longer work, as the Backend Services REST API now requires user credentials in order to read from and write to the Groceries content type.
+By changing the Groceries content type to private, you prevent access to the content type for unauthenticated users. You also implicitly associate the Groceries content type to user accounts. This means that each authenticated user will get their own grocery list to manage. This also means that the code in your existing app will no longer work, as the Backend Services REST API now requires user credentials in order to read from and write to the Groceries content type.
 
 Let's head back to your app and add a way to get those credentials with a login screen.
 
