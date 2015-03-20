@@ -6,13 +6,13 @@ Hybrid mobile apps built with AppBuilder use Apache Cordova as the bridge betwee
 
 Before you begin, make sure your `index.html` file is open. We have two Kendo UI Mobile views set up for you (`<div id="all-contacts">` and `<div id="view-contact">`). These views have been pre-populated with `data-title` properties to give each view its own distinguishing title. Each view also has a Kendo UI Mobile header (`<header data-role="header">`) which provides a navigation bar to display the view title.
 
-This first step focuses on the first view (`<div id="all-contacts">`). This view contains a `<ul id="contacts-list">` element which will become a Kendo UI Mobile ListView due to the added `data-role="listview"` property. A ListView is a great way to display a list of items.
+This first step focuses on the first view (`<div id="all-contacts">`). This view contains a `<ul id="contacts-list">` element which will become a Kendo UI Mobile ListView due to the added `data-role="listview"` attribute. A ListView is a great way to display a list of items.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Your first action is to create a Kendo UI template. Templates allow you to create chunks of HTML that will be merged with data - these "chunks" are repeated for each data element in your data source. The template you create will be bound to your contacts to provide a repeating list of items (contacts) in your ListView. Copy and paste this Kendo UI template into your page (outside of your Kendo UI views but within the `<body>` tags):
+* **a**. Your first action is to create a Kendo UI template. Templates allow you to create chunks of HTML that will be merged with data. These "chunks" are repeated for each data element in your data source. The template you create will be bound to your contacts to provide a repeating list of items (contacts) in your ListView. Copy and paste this Kendo UI template into your page (outside of your Kendo UI views but within the `<body>` tags):
 
 ```
 <script id="contacts-template" type="text/x-kendo-template">
@@ -49,7 +49,7 @@ function onContactSuccess(contacts) {
 }
 ```
 
-The `getAllContacts` function queries your local contact database to load all of your contacts. The `navigator.contacts.find` function has a callback function, `onContactSuccess`, which is called when your device successfully retrieves your contacts. It is in this function that your contacts are bound to your ListView element (`<ul id="contacts-list">`) via the Kendo UI template.
+The `getAllContacts` function queries your local contact database to load all of your contacts. The `navigator.contacts.find` function has a callback function, `onContactSuccess`, which is called when your device successfully retrieves your contacts. It's in this function that your contacts are bound to your ListView element (`<ul id="contacts-list">`) via the Kendo UI template.
 
 * **c**. Save your changes.
 
@@ -58,6 +58,8 @@ The `getAllContacts` function queries your local contact database to load all of
 ### Step 2. Run the app in the AppBuilder Companion App
 
 It's fun to see the fruits of your labor, even if you have only just begun the lesson! As you learned in a previous lesson, the AppBuilder Companion App lets you run your app on a real device without going through the hassle of installing and configuring SDKs or provisioning profiles.
+
+*Note that some Cordova plugins don't work in the device simulator, but do work with the Companion App and on your own device.*
 
 <hr data-action="start" />
 
