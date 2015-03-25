@@ -7,8 +7,7 @@
          "orderedTutorials": [
             "quick-start",
             "layout-and-navigation",
-            "grocery-list",
-            "custom-cordova-plugins"
+            "grocery-list"
          ]
       },
       {
