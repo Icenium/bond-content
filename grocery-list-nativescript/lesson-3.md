@@ -91,7 +91,7 @@ exports.register = function() {
     );
 };
 ```
-* **d**. Save login.xml, login.js, register.xml, and register.js, and then perform a LiveSync to test out the registration process in your app.
+* **e**. Save login.xml, login.js, register.xml, and register.js, and then perform a LiveSync to test out the registration process in your app.
 
 <hr data-action="end" />
 
