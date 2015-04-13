@@ -41,12 +41,12 @@ You are now going to create a page that contains a button at the bottom and a li
 #### Action 
 
 * **a.** Open the `app --> main-page.xml` file.
-* **b.** Between the `Page` start and end tags, create a `GridLayout` instance and set up its layout. For the purposes of the application, the grid should consist of two rows - the first row will take up all the available space the `GridLayout` provides and the second row will be sized based on its content:
+* **b.** Between the `Page` start and end tags, create a `GridLayout` instance and set up its layout. For the purposes of the application, the grid should consist of two rows - the first row will take the available space the `GridLayout` provides and the second row will be sized according to its own content:
 ```
 <GridLayout rows="*, auto">
 </GridLayout>
 ```
-* **c.** Now, it's time to add a `Button` and `ListView` to the `GridLayout`. The declarations of the controls should be placed right before the closing tag for the `GridLayout`. These declarations are as simple as:
+* **c.** Now, it's time to add a `Button` and a `ListView` to the `GridLayout`. The declarations of the controls should be placed right before the closing tag for the `GridLayout`. These declarations are as simple as:
 ```
 <ListView row="0" />  
 <Button row="1" />
@@ -122,7 +122,7 @@ If you have started this tutorial from the ready-made Photo Album Native applica
 #### Action
 
 * **a.** Right-click the `app` folder and choose **Add** --> **New Folder**. Name the folder `res`. We will store the images here.
-* **b.** Right-click the `res` folder and choose **Add** --> **Existing Files**. Browse your machine and add six images. 
+* **b.** Right-click the `res` folder and choose **Add** --> **Existing Files**. Browse your machine and add eight images. 
 
 <hr data-action="end" />
 
@@ -141,7 +141,7 @@ var imageSourceModule = require("image-source");
 var fileSystemModule = require("file-system");
 ```
 You need the first one to reflect the changes that happen in the view model in the UI. The second is needed for the collection where the image objects will be stored. The other two are needed to load the image files that you have just added to the project.
-* **b.** Create an `ObservableArray()` and add the images there using the push method:
+* **b.** Create an `ObservableArray()` and add the images there using the `push` method:
 ```
 var array = new observableArrayModule.ObservableArray();
 var directory = "/res/";
@@ -158,7 +158,7 @@ array.push([item1, item2, item3, item4, item5, item6]);
 var item7 = {itemImage: imageFromSource("07.jpg")}; 
 var item8 = {itemImage: imageFromSource("08.jpg")}; 
 ```
-Note that two images are not pushed to the array. This is because you will add them later on a button tap.
+Note that two of the images are not pushed to the array. This is because you will add them later on a button tap.
 * **c.** Create the view model as an instance of type `Observable()`. Let's call this instance `photoAlbumModel`:
 ```
 var photoAlbumModel = new observable.Observable();

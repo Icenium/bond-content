@@ -16,26 +16,7 @@ Each tutorial folder should contains the following items:
 		- `project` (*object*, *optional*) - object describing a project that should be created in the specified workspace along with the tutorial.
 			- `type` - the service type of the project (e.g. appbuilder) 
 			- the other properties are depending on the service type (appBuilder, backendServices, analytics etc.). They can be found in the **metadata-serviceType.json files**.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
 	> Each tutorial should have **only one metadata file** named `metadata.json`. The metadata files in this folder are examples for the structure of the project object depending on the service type.
 
 - `lesson` files - the tutorial content is split on multiple parts (lessons) that should be executed successively. This folder contains 3 sample lessons - `1-lesson-one.md`, `2-lesson-two.md` and `3-lesson-three.md`. 
@@ -51,5 +32,7 @@ Each tutorial folder should contains the following items:
 		- `actions` - each step is split on multiple parts (actions) that should be executed  successively.
 		- `summary`  (*string*, *optional*) - more information about the achieved goals and a conclusion
 	- `summary` (*string*, *optional*) - more information about the achieved goals and a conclusion. 
+
+- `images` folder - containing the image files used in the tutorial.
 
 > Please follow [these steps](http://tap.telerik.com/process/tutorials#sync-tutorials "Update Telerik Platform tutorials based on the repository") in order to get the **Telerik Platform tutorials updated** after a **repository change**.
