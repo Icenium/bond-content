@@ -58,8 +58,8 @@ A login screen is the single most used UI component in mobile apps. Almost every
     </StackLayout>
 </Page>
 ```
-* **b**. Open the app.js file, and change the `application.mainModule = "app/views/list";` line to `application.mainModule = "app/views/login";`. This changes the starting page of your app from the list screen to the login screen.
-* **c**. Save your login.xml and app.js files, and then perform a LiveSync to see the changes.
+* **c**. Open the app.js file, and change the `application.mainModule = "app/views/list";` line to `application.mainModule = "app/views/login";`. This changes the starting page of your app from the list screen to the login screen.
+* **d**. Save your login.xml and app.js files, and then perform a LiveSync to see the changes.
 
 <hr data-action="end" />
 
@@ -69,7 +69,7 @@ Your app now opens up to a login screen rather than a list of groceries. Your ne
 
 #### Action
 
-* **d**. Open your app's views/login.js file and paste in the following code:
+* **e**. Open your app's views/login.js file and paste in the following code:
 ```
 var dialogs = require("ui/dialogs");
 var el = require("../shared/models/el");
@@ -111,7 +111,7 @@ exports.signIn = function(args) {
 };
 
 ```
-* **e**. Save login.js.
+* **f**. Save login.js.
 
 <hr data-action="end" />
 
@@ -125,7 +125,7 @@ To get this app functioning again you have one final thing to do: change the lis
 
 #### Action
 
-* **f**. Open views/list.js file, remove the existing `loadGroceries()` and `addGrocery()` functions, and replace them with the following:
+* **g**. Open views/list.js file, remove the existing `loadGroceries()` and `addGrocery()` functions, and replace them with the following:
 ```
 function loadGroceries() {
     el.data("Groceries").get().then(function(data) {
@@ -143,8 +143,8 @@ function addGrocery(grocery) {
     });
 }
 ```
-* **g**. Save list.js and perform a LiveSync to see the updated app on your device.
-* **h**. Login with the account you created earlier and add a few items to the list.
+* **h**. Save list.js and perform a LiveSync to see the updated app on your device.
+* **i**. Login with the account you created earlier and add a few items to the list.
 
 <hr data-action="end" />
 
