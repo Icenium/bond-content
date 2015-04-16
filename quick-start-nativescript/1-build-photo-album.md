@@ -4,22 +4,7 @@
 
 In this tutorial, you will learn how to load data in a UI control, how to bind UI properties to a view model and how to define the style of the UI with CSS. As a result you will have a native Photo Album application written entirely in XML and JavaScript.
 
-You will now create your first NativeScript project. The four steps below do just that. You can skip them and directly open the Photo Album Native Code app and then the Photo Album Native project.
-
-<hr data-action="start" />
-
-#### Action
-
-* **a.** Click the blue **Create app** button at the top-left. 
-* **b.** Select **Start from a blank app**.
-* **c.** Name your app `Photo Album Native` and click the green **Create app** button.
-* **d.** Click the **Create AppBuilder Native project** button.
-* **e.** Select **Choose project template** and then select the  **NativeScript Blank (JavaScript)** template.
-* **f.** Name the project `Photo Album Native Code` and click the green **Create Project** button.
-
-<hr data-action="end" />
-
-This newly created project is automatically checked into the integrated AppBuilder version control. AppBuilder opens your new project and lists all project files in the Project Navigator. There you can see the following items:
+An app project named `Photo Album Native` has already been created for you. This app project contains a NativeScript project named `Photo Album Native Code` where you will store all the core logic of your application. The NativeScript project is provisioned with a few images and an SDK which you will need later on. The `Photo Album Native Code` project is now opened, and let's first quickly examine its structure: 
 
 * **app** The `app` folder contains the entire app functionality.
 * **bootstrap.js** This file contains the code that initializes your project as a native app.
@@ -113,20 +98,7 @@ This process is known as LiveSync and makes updating your apps as easy as a quic
 
 ### Step 4. Populate a ListView with images
 
-First, let's populate the `ListView` with items. You will add a few images to the project and will set them to be the items source of the `ListView`. The items source definition will be created in a view model file and will be then consumed by the `ListView` from the `main-page.js/main-page.xml` files.
-
-If you have started this tutorial from the ready-made Photo Album Native application, the two steps below have already been done for you.
-
-<hr data-action="start" />
-
-#### Action
-
-* **a.** Right-click the `app` folder and choose **Add** --> **New Folder**. Name the folder `res`. We will store the images here.
-* **b.** Right-click the `res` folder and choose **Add** --> **Existing Files**. Browse your machine and add eight images. 
-
-<hr data-action="end" />
-
-Now, it's time to define the data source in a view model.
+It's time to populate the ListView with images. For that purpose, the `Photo Album Native Code` project has already been provisioned with eight images. They are located in the `app --> res` folder. These images should be set as the items source of the `ListView`. The items source definition should be created in a view model file and then consumed by the `ListView` from the `main-page.js/main-page.xml` files.
 
 <hr data-action="start" />
 
