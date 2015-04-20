@@ -257,30 +257,30 @@ The layout system of NativeScript allows you to create complex UIs by nesting pa
 
 ```
 <Page>
-  <GridLayout rows="*, *" columns="*, 2*">
+  <GridLayout rows="auto, auto" columns="*, *">
     <StackLayout row="0" col="0">
-      <Label text="StackLayout" horizontalAlignment="center"/>
-      <Button text="Button 1" />
-      <Button text="Button 2" />
-      <Button text="Button 3" />
-      <Button text="Button 4" />
+      <Label text="Vertical Stacked Layout" horizontalAlignment="center"/>
+      <Button text="VS-01" />
+      <Button text="VS-02" />
+      <Button text="VS-03" />
     </StackLayout>
     <GridLayout rows="auto, *" row="0" col="1">
-      <Label text="WrapLayout" horizontalAlignment="center" />
-      <WrapLayout row="1" itemWidth="100" itemHeight="50">
-        <Button text="Button 1" />
-        <Button text="Button 2" />
-        <Button text="Button 3" />
-        <Button text="Button 4" />
+      <Label text="Wrapped Layout" horizontalAlignment="center" />
+      <WrapLayout row="1" >
+        <Button text="W-01" />
+        <Button text="W-02" />
+		<Button text="W-03" />
+		<Button text="W-04" />
+		<Button text="W-05" />
       </WrapLayout>
     </GridLayout>
     <GridLayout rows="*, auto" row="1" colSpan="2">
-      <Label text="Nested layouts" horizontalAlignment="center" verticalAlignment="center"/>
+      <Label text="Horizontal Stacked Layout" horizontalAlignment="center"/>
       <StackLayout orientation="horizontal" row="1">
-        <Button text="Button 1" />
-        <Button text="Button 2" />
-        <Button text="Button 3" />
-        <Button text="Button 4" />
+       <Button text="HS-01" />
+	   <Button text="HS-02" />
+	   <Button text="HS-03" />
+	   <Button text="HS-04" />
       </StackLayout>
     </GridLayout>
   </GridLayout>
