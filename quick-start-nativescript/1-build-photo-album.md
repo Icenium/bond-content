@@ -4,18 +4,15 @@
 
 In this tutorial, you will learn how to load data in a UI control, how to bind UI properties to a view model and how to define the style of the UI with CSS. As a result you will have a native Photo Album application written entirely in XML and JavaScript.
 
-An app project named `Photo Album Native` has already been created for you. This app project contains a NativeScript project named `Photo Album Native Code` where you will store all the core logic of your application. The NativeScript project is provisioned with a few images and an SDK which you will need later on. The `Photo Album Native Code` project is now opened, and let's first quickly examine its structure: 
+An app project named `Photo Album Native` has already been created for you. This app project contains a NativeScript project named `Photo Album Native Code` where you will implement the core logic of your application. The NativeScript project is provisioned with a few images and an SDK which you will need later on. The `Photo Album Native Code` project is now opened, and let's first quickly examine its structure: 
 
-* **app** This folder contains the entire app functionality.
-* **bootstrap.js** This file contains the code that initializes your project as a native app.
-* **app.js** This module contains application specific code, such as which page is the starting page of the application. 
-* **app.css** This is the main CSS file of the application. The styles you define here are applied to the content of all pages.
+* **App_Resources** This folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
+* **tns_modules** The tns_modules folder contains the NativeScript libraries for accessing the native device platform functionality. Libraries might consist of platform-specific and common files. When you build your app for iOS or Android, AppBuilder automatically picks up the needed platform-specific files.
+* * **app.css** This is the main CSS file of the application. The styles you define here are applied to the content of all pages. 
+* * **app.js** This module contains application specific code, such as which page is the starting page of the application. 
 * **main-page.js** This is the main JavaScript file used to implement the business logic of the initial page.
 * **main-page.xml** This is the file used to implement the UI of the initial page.
-* **App_Resources** This folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
-* **tns_modules** The tns_modules folder contains the NativeScript libraries for accessing the native device platform functionality. Libraries might consist of platform-specific and common files and an index.js that exports the module. Platform-specific files contain platform-specific NativeScript code. When you build your app for iOS or Android, AppBuilder automatically picks up the needed platform-specific files. 
-
-You will focus on the `app` folder to create the logic of our application. You can also quickly check the `tns_modules` to get a better idea of what components the NativeScript framework provides.
+* **package.json** This file contains meta information for your project such as name, author, version.
 
 ### Step 2. Define the user interface
 
@@ -25,7 +22,7 @@ You are now going to create a page that contains a button at the bottom and a li
 
 #### Action 
 
-* **a.** Open the `app --> main-page.xml` file.
+* **a.** Open the `main-page.xml` file.
 * **b.** Between the `Page` start and end tags, create a `GridLayout` instance and set up its layout. For the purposes of the application, the grid should consist of two rows - the first row will take the available space the `GridLayout` provides and the second row will be sized according to its own content:
 ```
 <GridLayout rows="*, auto">
