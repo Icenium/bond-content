@@ -202,11 +202,11 @@ The DockLayout arranges its child elements by positioning them alongside its fou
 
 ```
 <Page>
-  <DockLayout>
+  <DockLayout stretchLastChild="false">
     <Button text="Top!" dock="top"/>
     <Button text="Left!" dock="left"/>
     <Button text="Right!" dock="right"/>
-    <Button text="Bottom!" dock="bottom"/>
+	<Button text="Bottom!" dock="bottom"/>
   </DockLayout>
 </Page>
 ```
@@ -292,5 +292,45 @@ The layout system of NativeScript allows you to create complex UIs by nesting pa
 <hr data-action="end" />
 
 ![Nested Layouts](images/nested-layout-01.png)
+
+### Step 8. Create adaptive layouts
+
+The layout system of NativeScript also allows you to load resolution specific XML files and provide different layout files for the different screen sizes.
+
+NativeScript supports three types of qualifiers that allow you to control how the system selects your alternative resources based on the characteristics of the current device screen. 
+
+The XML file names should follow the format below.
+
+*[file-name].[qualifier].[extension]*
+
+#### **Screen Size Qualifiers** ####
+
+Screen size qualifiers allow you to load different XML files based on specific dimensions in dp (density independent pixels). 
+
+**main-page.xml** - This is the default file and will be loaded if no other layout files have been specified in the file structure of the project.
+
+**main-page.minWH600.xml** - This file will be loaded when at least 600 dp are available both for Width and Height.
+
+**main-page.minW600.xml** - This file will be loaded when at least 600 dp are available for Width. The Height attribute is not taken into consideration.
+
+**main-page.minH600.xml** - This file will be loaded when at least 600 dp are available for Height. The Width attribute is not taken into consideration.
+
+#### **Platform Qualifiers** ####
+
+Platform qualifiers can be used if you want to load platform specific layout.
+
+**main-page.android.xml** - This file will be loaded if the app is running on an Android device.
+
+**main-page.ios.xml** - This file will be loaded if the app is running on an iOS device.
+
+**main-page.windows.xml** - This file will be loaded if the app is running on a Windows device.
+
+#### **Orientation Qualifiers** ####
+
+Orientation qualifiers can be used if you want to load orientation specific layout.
+
+**main-page.land.xml** - This file will be loaded if the orientation of the app is in landscape mode.
+
+**main-page.port.xml** - This file will be loaded if the orientation of the app is in portrain mode.
 
 Great job! In just a few minutes, you've mastered some of the critical basics to building native apps with NativeScript and the Telerik Platform. With these skills in hand, creating the navigation, layout and major views in your next mobile app should be a breeze!
