@@ -295,15 +295,13 @@ The layout system of NativeScript allows you to create complex UIs by nesting pa
 
 ### Step 8. Create adaptive layouts
 
-The layout system of NativeScript also allows you to load resolution specific XML files and provide different layout files for the different screen sizes.
-
-NativeScript supports three types of qualifiers that allow you to control how the system selects your alternative resources based on the characteristics of the current device screen. 
+The layout system of NativeScript also allows you to load resolution specific XML files and provide different layout files for the different screen sizes. This is done through three types of qualifiers that allow you to control how the system selects your alternative resources based on the characteristics of the current device screen. 
 
 The XML file names should follow the format below.
 
 *[file-name].[qualifier].[extension]*
 
-#### **Screen Size Qualifiers** ####
+- **Screen Size Qualifiers**
 
 Screen size qualifiers allow you to load different XML files based on specific dimensions in dp (density independent pixels). 
 
@@ -315,7 +313,7 @@ Screen size qualifiers allow you to load different XML files based on specific d
 
 **main-page.minH600.xml** - This file will be loaded when at least 600 dp are available for Height. The Width attribute is not taken into consideration.
 
-#### **Platform Qualifiers** ####
+- **Platform Qualifiers**
 
 Platform qualifiers can be used if you want to load platform specific layout.
 
@@ -325,7 +323,7 @@ Platform qualifiers can be used if you want to load platform specific layout.
 
 **main-page.windows.xml** - This file will be loaded if the app is running on a Windows device.
 
-#### **Orientation Qualifiers** ####
+- **Orientation Qualifiers**
 
 Orientation qualifiers can be used if you want to load orientation specific layout.
 
