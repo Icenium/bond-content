@@ -46,18 +46,15 @@ var frameModule = require( "ui/frame" );
 var images = require( "../shared/utils/images" );
 var pageData = require( "../shared/models/userCredentials" );
 var viewModule = require( "ui/core/view" );
-
 exports.load = function(args) {
     var page = args.object;
     var email = viewModule.getViewById(page, "email");
     var username = viewModule.getViewById(page, "username");
-
     pageData.set("email_address", "");
     pageData.set("username", "");
     pageData.set("password", "");
     pageData.set("logoSource", images.logo);
     page.bindingContext = pageData;
-
     // Turn off autocorrect and autocapitalization for iOS
     if (username.ios) {
         email.ios.autocapitalizationType =
