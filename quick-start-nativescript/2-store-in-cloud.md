@@ -32,41 +32,41 @@ Within your Backend Services project you can see all the things Backend Services
 
 ### Step 7. Upload images to your backend
 
-With a Backend Services project in place, your next step is to add data to it. Backend Services provides SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a NativeScript app you're interested in the JavaScript SDK. In this step you'll add the Backend Services JavaScript SDK to your project, and use it to store your images in the cloud.
+With a Backend Services project in place, your next step is to add data to it. Backend Services provides SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a NativeScript app you're interested in the JavaScript SDK. The `Photo Album Native Code` project has already been provisioned with the appropriate JavaScript SDK in the form of the `everlive.all.min.js` file. You should now get back to your `Photo Album Native Code` project and load the JavaScript SDK implementation following the steps below.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Download the JavaScript SDK from: [https://bs-static.cdn.telerik.com/latest/everlive.all.min.js](https://bs-static.cdn.telerik.com/latest/everlive.all.min.js "https://bs-static.cdn.telerik.com/latest/everlive.all.min.js")
-* **b**. Navigate back to your `Photo Album Native Code` AppBuilder project that is part of your application. 
-* **c**. Right-click your `app` folder and select **Add** --> **Existing Files**. 
-* **d**. Browse to the downloaded SDK file and click **Upload**.
-* **e**. Add the following line to the top of your `view-model.js` file to load the SDK module:
+* **a**. Click on your account name in the top-left corner of the screen.
+* **b**. Click on the `Photo Album Native` application to enter it.
+* **c**. Open the `view-model.js` file and add the following line at the top to load the SDK module:
 ```
 var Everlive = require('./everlive.all.min');
 ```
-* **f**. Right after loading the module declare an `everlive` object:
+* **d**. Right after loading the module declare an `everlive` object:
 ```
 var everlive = new Everlive("YOUR API KEY");
 ```
-* **d.** Replace the `"YOUR API KEY"` string with the API key you saved off in the previous step.
+* **e.** Replace the `"YOUR API KEY"` string with the API key you saved off in the previous step.
 
 <hr data-action="end" />
 
 The `everlive` object now contains an Everlive instance you can use to interact with your Backend Services project. Let's return to our photo management code to see how to use it.
 
+> Tip: The latest versions of the JavaScript SDKs can be downloaded from [this documentation article](http://docs.telerik.com/platform/backend-services/development/javascript-sdk/introduction). 
+
 <hr data-action="start" />
 
 #### Action
 
-* **e**. Add the following code to the bottom of the `photoAlbumModel`'s `tapAction`:
+* **f**. Add the following code to the bottom of the `photoAlbumModel`'s `tapAction`:
 ```
 for (i = 0; i < array.length; i++) {
     var file = {
         "Filename": Math.random().toString(36).substring(2, 15) + ".jpg",
         "ContentType": "image/jpeg",
-        "base64": array.getItem(i).itemImage.toBase64String(imageSourceModule.ImageFormat.JPEG, 100)
+        "base64": array.getItem(i).itemImage.toBase64String(enums.ImageFormat.jpeg, 100)
     };
 
     everlive.Files.create(file,
@@ -77,13 +77,11 @@ for (i = 0; i < array.length; i++) {
 }
 ```
 
-<hr data-action="end" />
+This code gets all images loaded in the ListView and then using the `create()` method asynchronously uploads them to the Telerik Backend Services. 
 
-This code gets all images loaded in the ListView and then using the `create()` method asynchronously uploads them to the Telerik Backend Services. Use the `LiveSync` feature and tap the Button to upload the images to the cloud.
+* **g**. Use the `LiveSync` feature to update the application on the device and tap the Button to upload the images to the cloud.
+* **h**. Next, make the following code snippet replacement to change how the NativeScript ListView gets the data it needs.
 
-<hr data-action="start" />
-
-* **f**. Next, make the following code snippet replacement to change how the NativeScript ListView gets the data it needs.
 Before:
 
 ```
@@ -121,7 +119,7 @@ Object.defineProperty(photoAlbumModel, "photoItems", {
 });
 ```
 
-* **g**. Save your `view-model.js` file and use the `LiveSync` feature to update the application. Your images will now be loaded from the Telerik Backend Services into the ListView.
+* **i**. Save your `view-model.js` file and use the `LiveSync` feature to update the application. Your images will now be loaded from the Telerik Backend Services into the ListView.
 
 <hr data-action="end" />
 

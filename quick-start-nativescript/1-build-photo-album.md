@@ -4,33 +4,17 @@
 
 In this tutorial, you will learn how to load data in a UI control, how to bind UI properties to a view model and how to define the style of the UI with CSS. As a result you will have a native Photo Album application written entirely in XML and JavaScript.
 
-You will now create your first NativeScript project. The four steps below do just that. You can skip them and directly open the Photo Album Native Code app and then the Photo Album Native project.
+An app project named `Photo Album Native` has already been created for you. This app project contains a NativeScript project named `Photo Album Native Code` where you will implement the core logic of your application. The NativeScript project is provisioned with a few images and an SDK which you will need later on. The `Photo Album Native Code` project is now opened, and let's first quickly examine its structure: 
 
-<hr data-action="start" />
-
-#### Action
-
-* **a.** Click the blue **Create app** button at the top-left. 
-* **b.** Select **Start from a blank app**.
-* **c.** Name your app `Photo Album Native` and click the green **Create app** button.
-* **d.** Click the **Create AppBuilder Native project** button.
-* **e.** Select **Choose project template** and then select the  **NativeScript Blank (JavaScript)** template.
-* **f.** Name the project `Photo Album Native Code` and click the green **Create Project** button.
-
-<hr data-action="end" />
-
-This newly created project is automatically checked into the integrated AppBuilder version control. AppBuilder opens your new project and lists all project files in the Project Navigator. There you can see the following items:
-
-* **app** The `app` folder contains the entire app functionality.
-* **bootstrap.js** This file contains the code that initializes your project as a native app.
-* **app.js** The app.js module contains application specific code, such as which page is the starting page of the application. 
-* **app.css** The main CSS file of the application. The styles you define here are applied to the content of all pages.
+* **app** This folder contains the entire app functionality.
+* * **app.css** This is the main CSS file of the application. The styles you define here are applied to the content of all pages. 
+* * **app.js** This module contains application specific code, such as which page is the starting page of the application. 
+* **LICENSE** This file describes the license which protects the application's code.
 * **main-page.js** This is the main JavaScript file used to implement the business logic of the initial page.
 * **main-page.xml** This is the file used to implement the UI of the initial page.
-* **App_Resources** The App_Resources folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
-* **tns_modules** The tns_modules folder contains the NativeScript libraries for accessing the native device platform functionality. Libraries might consist of platform-specific and common files and an index.js that exports the module. Platform-specific files contain platform-specific NativeScript code. When you build your app for iOS or Android, AppBuilder automatically picks up the needed platform-specific files. 
-
-You will focus on the `app` folder to create the logic of our application. You can also quickly check the `tns_modules` to get a better idea of what components the NativeScript framework provides.
+* **package.json** This file contains meta information for your project such as name, author, version.
+* **App_Resources** This folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
+* **tns_modules** The tns_modules folder contains the NativeScript libraries for accessing the native device platform functionality. Libraries might consist of platform-specific and common files. When you build your app for iOS or Android, AppBuilder automatically picks up the needed platform-specific files.
 
 ### Step 2. Define the user interface
 
@@ -40,7 +24,7 @@ You are now going to create a page that contains a button at the bottom and a li
 
 #### Action 
 
-* **a.** Open the `app --> main-page.xml` file.
+* **a.** Open the `main-page.xml` file.
 * **b.** Between the `Page` start and end tags, create a `GridLayout` instance and set up its layout. For the purposes of the application, the grid should consist of two rows - the first row will take the available space the `GridLayout` provides and the second row will be sized according to its own content:
 ```
 <GridLayout rows="*, auto">
@@ -64,7 +48,7 @@ The complete XML declaration looks like this:
 
 <hr data-action="end" />
 
-Regardless of the small amount of UI and settings that you have put on the page, you probably want to try the result on a real device now. So, in the next step, let's see how easy it is to deploy this native app.
+Regardless of the small amount of UI and settings that you have put on the page, you probably want to try the result on a real device as soon as possible. So, in the next step, let's see how easy it is to deploy this native app.
 
 ### Step 3. Deploy your app on a device using the companion app
 
@@ -113,26 +97,13 @@ This process is known as LiveSync and makes updating your apps as easy as a quic
 
 ### Step 4. Populate a ListView with images
 
-First, let's populate the `ListView` with items. You will add a few images to the project and will set them to be the items source of the `ListView`. The items source definition will be created in a view model file and will be then consumed by the `ListView` from the `main-page.js/main-page.xml` files.
-
-If you have started this tutorial from the ready-made Photo Album Native application, the two steps below have already been done for you.
+It's time to populate the `ListView` with images. For that purpose, the `Photo Album Native Code` project has already been provisioned with eight images. They are located in the `app --> res` folder. These images should be set as the items source of the `ListView`. The items source definition should be created in a view model file and then consumed by the `ListView` in the `main-page.js/main-page.xml` files.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a.** Right-click the `app` folder and choose **Add** --> **New Folder**. Name the folder `res`. We will store the images here.
-* **b.** Right-click the `res` folder and choose **Add** --> **Existing Files**. Browse your machine and add eight images. 
-
-<hr data-action="end" />
-
-Now, it's time to define the data source in a view model.
-
-<hr data-action="start" />
-
-#### Action
-
-* **a.** Right-click the `app` folder and choose **Add** --> **New File**. Name the file `view-model.js`. This is the place you will define the model.
+* **a.** Right-click the `app` folder and choose **Add** --> **New File**. Select `JavaScript` for the file type and  name the file `view-model.js`. This is the place you will define the data model.
 * **a.** In the `view-model.js` add the following declarations to load the necessary modules from the `tns_modules` folder: 
 ```
 var observable = require("data/observable");
@@ -214,14 +185,14 @@ exports.onPageLoaded = onPageLoaded;
 ```
 * **j.** You now should bind the `ListView` to the `photoItems` collection of the `PhotoAlbumModel`. To do this, set the `items` attribute of the `ListView` tag to `{{ photoItems }}`:
 ```
+<ListView items="{{ photoItems }}" row="0"/>
+```
+* **k.** The `ListView` is now bound to the collection of images. But in order to display the images, you should set the appropriate template consisting of a `GridLayout` with an `Image` object inside. Place the template declaration between the `ListView` start and end tags and bind the `Image`'s `imageSource` property to the `itemImage` property of the `photoItems` objects:
+```
 <ListView items="{{ photoItems }}" row="0">
-```
-* **k.** The `ListView` is now bound to the collection of images. But in order to display the images, you should set the appropriate template consisting of a `GridLayout` with an `Image` object inside. Place the template declaration between the `ListView` start and end tags and bind the `Image`'s `source` property to the `itemImage` property of the `photoItems` objects:
-```
-<ListView items="{{ photoItems }}" row="0" >
 	<ListView.itemTemplate>                
 		<GridLayout>
-			<Image source="{{ itemImage }}" row="0"/>
+			<Image imageSource="{{ itemImage }}" row="0"/>
 		</GridLayout>               
 	</ListView.itemTemplate>
 </ListView>
@@ -240,7 +211,7 @@ The `ListView` is already populated with a few images. You will now add a few mo
 
 #### Action
 
-* **a.** Create a function called `tapAction` at `photoAlbumModel`. In the body of this function add two more images to the `ObservableArray` instance.
+* **a.** Open the `view-model.js` file and create a function called `tapAction` at `photoAlbumModel`. In the body of this function add two more images to the `ObservableArray` instance.
 ```
 photoAlbumModel.tapAction = function () {
 	array.push(item7);
