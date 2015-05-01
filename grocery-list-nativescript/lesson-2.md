@@ -58,7 +58,7 @@ A login screen is the single most used UI component in mobile apps. Almost every
     </StackLayout>
 </Page>
 ```
-* **c**. Open the app.js file, and change the `application.mainModule = "app/views/list";` line to `application.mainModule = "app/views/login";`. This changes the starting page of your app from the list screen to the login screen.
+* **c**. Open the app.js file, and change the `application.mainModule = "./views/list";` line to `application.mainModule = "./views/login";`. This changes the starting page of your app from the list screen to the login screen.
 * **d**. Save your login.xml and app.js files, and then perform a LiveSync to see the changes.
 
 <hr data-action="end" />
@@ -99,7 +99,7 @@ exports.signIn = function(args) {
         pageData.get("username"),
         pageData.get("password"),
         function() {
-            frameModule.topmost().navigate("app/views/list");
+            frameModule.topmost().navigate("./views/list");
         },
         function() {
             dialogs.alert({
@@ -117,7 +117,7 @@ exports.signIn = function(args) {
 
 The actual SDK is defined by the `el` module retrieved from the `require("../models/el")` call. That module is defined in models/el.js, which uses the config module you placed your Backend Services project's API key in earlier.
 
-With the Backend Services SDK a login call is as simple as `el.Users.login()`. The call returns a token that can be used on subsequent requests, and the SDK automatically stores that token so you don't have to do it yourself. The only thing you explicitly do is call `frameModule.topmost().navigate("app/views/list")` after a successful login to take the user to the list page.
+With the Backend Services SDK a login call is as simple as `el.Users.login()`. The call returns a token that can be used on subsequent requests, and the SDK automatically stores that token so you don't have to do it yourself. The only thing you explicitly do is call `frameModule.topmost().navigate("./views/list")` after a successful login to take the user to the list page.
 
 To get this app functioning again you have one final thing to do: change the list page to use the authentication token from the login process.
 
