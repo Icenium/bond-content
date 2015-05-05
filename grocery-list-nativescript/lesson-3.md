@@ -16,7 +16,7 @@ You're getting pretty close to a completely functional grocery list app. You hav
 ```
 exports.register = function(args) {
     var topmost = frameModule.topmost();
-    topmost.navigate("app/views/register");
+    topmost.navigate("./views/register");
 };
 ```
 * **c**. The login page now links to a register page which is defined by views/register.xml. Open up that file and paste in the following code:
@@ -76,7 +76,7 @@ exports.register = function() {
             dialogs
                 .alert("Your account was successfully created.")
                 .then(function() {
-                    frameModule.topmost().navigate("app/views/login");
+                    frameModule.topmost().navigate("./views/login");
                 });
         },
         function(error) {
