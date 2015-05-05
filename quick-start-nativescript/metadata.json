@@ -10,7 +10,7 @@
 			"name": "Photo Album Native Code",
 			"description": "",
 			"type": "appbuilder",
-			"url": "https://github.com/nikolay-diyanov/ns-qs.git"
+			"url": "https://github.com/telerik/quick-start-nativescript-template.git"
 		}
 	}
 }

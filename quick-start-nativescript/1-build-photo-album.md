@@ -110,8 +110,9 @@ var observable = require("data/observable");
 var observableArrayModule = require("data/observable-array");
 var imageSourceModule = require("image-source");
 var fileSystemModule = require("file-system");
+var enums = require("ui/enums");
 ```
-You need the first one to reflect the changes that happen in the view model in the UI. The second is needed for the collection where the image objects will be stored. The other two are needed to load the image files that you have just added to the project.
+You need the first one to reflect the changes that happen in the view model in the UI. The second is needed for the collection where the image objects will be stored. The next two are needed to load the image files that you have just added to the project. The last one gives access to the image encoding enumeration that will be needed when we upload images to the cloud in Lesson 2.
 * **b.** Create an `ObservableArray()` and add the images there using the `push` method:
 ```
 var array = new observableArrayModule.ObservableArray();
