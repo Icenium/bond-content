@@ -73,8 +73,7 @@ addImage: function() {
     var config = {
         destinationType: Camera.DestinationType.DATA_URL,
         targetHeight: 400,
-        targetWidth: 400,
-        encodingType: Camera.EncodingType.PNG
+        targetWidth: 400
     };
     navigator.camera.getPicture(success, error, config);
 }
