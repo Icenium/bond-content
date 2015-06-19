@@ -116,7 +116,7 @@ var enums = require("ui/enums");
 You need the first one to reflect the view model changes in the UI. The next two are needed to load the image files into the app as image objects. The fourth one is needed for the collection where the image objects will be stored. The last one gives access to the image encoding enumeration that will be needed when you upload images to the cloud in Lesson 2.
 * **b.** Create an `ObservableArray()` and add the images there using the `push` method:
 ```
-var array = new observableArrayModule.ObservableArray();
+var localImagesArray = new observableArrayModule.ObservableArray();
 var directory = "/res/";
 function imageFromSource(imageName) {
     return imageSourceModule.fromFile(fileSystemModule.path.join(__dirname, directory + imageName));
@@ -127,7 +127,7 @@ var item3 = {itemImage: imageFromSource("03.jpg")};
 var item4 = {itemImage: imageFromSource("04.jpg")}; 
 var item5 = {itemImage: imageFromSource("05.jpg")}; 
 var item6 = {itemImage: imageFromSource("06.jpg")}; 
-array.push([item1, item2, item3, item4, item5, item6]);
+localImagesArray.push([item1, item2, item3, item4, item5, item6]);
 var item7 = {itemImage: imageFromSource("07.jpg")}; 
 var item8 = {itemImage: imageFromSource("08.jpg")}; 
 ```
@@ -148,7 +148,7 @@ Using the `Observable()` type of our view model lets you bind controls propertie
 ```
 Object.defineProperty(photoAlbumModel, "photoItems", {
       get: function () {
-          return array;
+          return localImagesArray;
       },
       enumerable: true,
       configurable: true
@@ -185,7 +185,7 @@ exports.onPageLoaded = onPageLoaded;
 ```
 <Page loaded="onPageLoaded" xmlns="http://www.nativescript.org/tns.xsd" >
 ```
-* **j.** You now should bind the `ListView` to the `photoItems` collection of the `PhotoAlbumModel`. To do this, set the `items` attribute of the `ListView` tag to `{{ photoItems }}`:
+* **j.** You now should bind the `ListView` to the `photoItems` collection of the `photoAlbumModel`. To do this, set the `items` attribute of the `ListView` tag to `{{ photoItems }}`:
 ```
 <ListView items="{{ photoItems }}" row="0"/>
 ```
@@ -207,7 +207,7 @@ As a result, the `ListView` is populated with images. Use the `LiveSync` feature
 
 ### Step 5. Respond to events and add some style
 
-The `ListView` is already populated with a few images. You will now add a few more images on a button tap. Then, you will learn how to bind the Button's `text` property to a property of the PhotoAlbumModel, thus informing the end-user about the successful tap action. Finally, you will understand how to put some style to the button.
+The `ListView` is already populated with a few images. You will now add a few more images on a button tap. Then, you will learn how to bind the Button's `text` property to a property of the `photoAlbumModel`, thus informing the end-user about the successful tap action. Finally, you will understand how to put some style to the button.
 
 <hr data-action="start" />
 
@@ -216,8 +216,8 @@ The `ListView` is already populated with a few images. You will now add a few mo
 * **a.** Open the `view-model.js` file and create a function called `tapAction` at `photoAlbumModel`. In the body of this function add two more images to the `ObservableArray` instance.
 ```
 photoAlbumModel.tapAction = function () {
-	array.push(item7);
-	array.push(item8);
+	localImagesArray.push(item7);
+	localImagesArray.push(item8);
 };
 ```
 * **b.** In the `main-page.xml` file, set the `tap` attribute of the `Button` tag to the `tapAction` function of the `photoAlbumModel`. This will call the function when the button is tapped:
@@ -235,11 +235,11 @@ Tapping the Button will now add two more images to the ListView. But let's make 
 
 * **a.** In the `view-model.js` file, add the following line right after the line where the `photoAlbumModel` instance was created. This line will prompt the user to add more images:
 ```
-photoAlbumModel.set("message", "Add new images");
+photoAlbumModel.set("message", "Add new photos");
 ```
 * **b.** In the `tapAction` function, add the following line to inform the user about the new images and the total count of images in the ListView:
 ```
-photoAlbumModel.set("message", "Images added. Total images: " + array.length);
+photoAlbumModel.set("message", "Images added. Total images: " + localImagesArray.length);
 ```
 * **c.** In `main-page.xml`, set the `text` attribute of the `Button` tag to `{{ message }}`. This will bind the `Button`'s `text` property to the `message` property of the `photoAlbumModel`. So, initially, the button will show `Add new images` and after you tap it, it will show `Images added. Total images: 8`.
 ```
