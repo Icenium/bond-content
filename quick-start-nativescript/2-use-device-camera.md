@@ -31,7 +31,11 @@ cameraModule.takePicture({
 
 The above code snippet will start the native platform camera application. After taking the picture and tapping the button Save (Android) or Use Image (iOS) the promise will return the image object that you can add to the ListView
 
+<hr data-action="end" />
+
 > Tip: Remember that keyboard shortcut `Ctrl` + `Alt` + `F` can format the code that you paste in. You can also view all keyboard shortcuts using `Ctrl` + `Shift` + `/`.
+
+<hr data-action="start" />
 
 * **c**. Save the `view-model.js` file and use the `LiveSync` feature to deploy the updated app to the device.
 * **d**. Tap the `Add new photos` button on your device.
