@@ -153,4 +153,4 @@ This code displays the images you take in the ListView (using the `backendArray`
 
 And that's all there is to it, which is pretty cool if you think about it — you have just built a native mobile app that gets and uploads pictures in the cloud!
 
-You can find the complete [Photo Album project at GitHub](https://github.com/NativeScript/sample-PhotoAlbum).
+You can find the complete [Photo Album project at GitHub](https://github.com/Icenium/nativescript-sample-PhotoAlbum).
