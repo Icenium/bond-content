@@ -40,9 +40,9 @@ With a Backend Services project in place, your next step is to add data to it. B
 * **a**. Navigate back to your “Photo Album Code” AppBuilder project that is part of your app. 
 * **b**. In your index.html file, insert the following `<script>` tag to import the Backend Services SDK (which is code named Everlive). Place it directly after the `<script>` that imports kendo.mobile.min.js:
 ```
-<script src="https://bs-static.cdn.telerik.com/1.2.5/everlive.all.min.js"></script>
+<script src="https://bs-static.cdn.telerik.com/1.4.1/everlive.all.min.js"></script>
 ```
-* **c**. Add the following to the top of your app.js file, right *before* the `window.listview` definition:
+* **c**. Add the following to the top of your app.js file, right *before* the `document.addEventListener()` call:
 ```
 var everlive = new Everlive("YOUR API KEY");
 ```
@@ -80,9 +80,10 @@ After:
 function loadPhotos() {
     everlive.Files.get().then(function(data) {
         var files = [];
-        data.result.forEach(function(image) {
+        for (var i = data.result.length - 1; i >= 0; i--) {
+            var image = data.result[i];
             files.push(image.Uri);
-        });
+        }
         $("#images").kendoMobileListView({
             dataSource: files,
             template: "<img src='#: data #'>"

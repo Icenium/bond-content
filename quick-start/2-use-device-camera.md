@@ -36,7 +36,7 @@ window.listview = kendo.observable({
             .prepend([ "images/08.jpg" ]);
     }
 });
-var app = new kendo.mobile.Application(document.body, { skin: "flat" });
+var app = new kendo.mobile.Application(document.body, { skin: "nova" });
 ```
 * **d**. Bind the view to the `listview` object by adding a `data-model="listview"` attribute to the `<div data-role="view">` element (`<div data-role="view" data-model="listview">`).
 * **e**. Add a `data-bind` attribute to the add button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`). This tells Kendo UI Mobile to invoke the `addImage` method when you click the add button.

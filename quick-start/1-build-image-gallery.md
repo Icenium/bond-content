@@ -2,7 +2,7 @@
 
 ### Step 1. Add a navbar
 
-Kendo UI Mobile apps are made up of views, and a basic one has already been created for you (`<div data-role="view">`). To liven up this view, you'll start by adding a Kendo UI NavBar widget to display the view's title.
+Kendo UI Mobile apps are made up of views, and a basic one has already been created for you (`<div data-role="view">`). To liven up this view, you'll start by adding a Kendo UI header and NavBar widget to display the view's title.
 
 <hr data-action="start" />
 
@@ -10,10 +10,12 @@ Kendo UI Mobile apps are made up of views, and a basic one has already been crea
 
 * **a**. Add markup to the view so that it looks this:
 ```
-<div data-role="view">
-    <div data-role="navbar">
-        <span data-role="view-title"></span>
-    </div>
+<div data-role="view" data-title="Photos">
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+        </div>
+    </header>
 </div>
 ```
 
@@ -49,9 +51,11 @@ Your next step is to show some photos in your album, and you'll use the Kendo UI
 * **a**. Add a `<ul>` element underneath the navbar with an `id` of `"images"` (`<ul id="images"></ul>`). The view should look like this:
 ```
 <div data-role="view" data-title="Photos">
-    <div data-role="navbar">
-        <span data-role="view-title"></span>
-    </div>
+    <header data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title"></span>
+        </div>
+    </header>
     <ul id="images"></ul>
 </div>
 ```
