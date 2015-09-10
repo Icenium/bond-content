@@ -25,7 +25,7 @@ exports.onPageLoaded = onPageLoaded;
 
 * **a**. Modify the main page of your app.
 
-**main.xml**
+**main-page.xml**
 ```
 <Page>
   <StackLayout>
@@ -35,12 +35,12 @@ exports.onPageLoaded = onPageLoaded;
 </Page>
 ```
 
-**main.js**
+**main-page.js**
 ```
 var frameModule = require("ui/frame");
 function buttonForwardTap(args) {
     var topmost = frameModule.topmost();
-    topmost.navigate("app/page1");
+    topmost.navigate("./page1");
 }
 exports.buttonForwardTap = buttonForwardTap;
 ```
@@ -63,7 +63,7 @@ exports.buttonForwardTap = buttonForwardTap;
 var frameModule = require("ui/frame");
 function buttonForwardTap(args) {
     var topmost = frameModule.topmost();
-    topmost.navigate("app/page2");
+    topmost.navigate("./page2");
 }
 exports.buttonForwardTap = buttonForwardTap;
 function buttonBackTap(args) {
@@ -105,13 +105,13 @@ In case you want to pass some state information, i.e. some kind of context, to t
 
 #### Action
 
-* **a**. Modify **buttonForwardTap** in **main.js** to pass information to Page1.
+* **a**. Modify **buttonForwardTap** in **main-page.js** to pass information to Page1.
 
 ```
 function buttonForwardTap(args) {
     var topmost = frameModule.topmost();
     var navigationEntry = {
-        moduleName: "app/tutorials/navigation/page1",
+        moduleName: "./page1",
         context: {
             info: {
                     name: "John",
