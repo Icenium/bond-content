@@ -8,7 +8,7 @@ Kendo UI Mobile apps are made up of views, and a basic one has already been crea
 
 #### Action
 
-* **a**. Add markup to the view so that it looks this:
+* **a**. Add markup to the view so that it looks like this:
 ```
 <div data-role="view" data-title="Photos">
     <header data-role="header">
