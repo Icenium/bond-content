@@ -1,5 +1,26 @@
 {
-	"title": "New Tutorial Template",
-	"description": "A template used as a start point for creating new tutorials",
-	"estimateTime": "60"
+	"title": "Tutorial Title",
+	"description": "Tutorial description",
+	"estimateTime": "48",
+	"land": "project",
+	"targetPage": "Code",
+	"workspace": {
+		"name": "Tutorial Application",
+		"description": "Tutorial application description",
+		"project": { 
+			"name": "Tutorial AppBuilder Project.",
+			"description": "Tutorial AppBuilder project description.",
+			"type": "appbuilder",
+			"url": "https://github.com/...template.git"
+		}
+	},
+	"app": {
+		"name": "Tutorial Application",
+		"description": "Tutorial application description",
+		"content": { 
+			"appbuilder": {
+				"repoUrl": "https://github.com/...template.git"
+			}
+		}
+	}
 }

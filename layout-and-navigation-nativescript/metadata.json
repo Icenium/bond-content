@@ -3,6 +3,7 @@
 	"description": "Learn how to improve the user interface of your app using Absolute, Stack, Table and Wrap layouts. The tutorial also explores the fundamentals of navigation between page within your app.",
 	"estimateTime": "25",
 	"land": "project",
+	"targetPage": "Code",
 	"workspace": {
 		"name": "NativeScript Layouts",
 		"description": "A sample for learning how use NativeScript layouts and how to navigate between views",
@@ -11,6 +12,15 @@
 			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/telerik/quick-start-nativescript-template.git"
+		}
+	},
+	"app": {
+		"name": "NativeScript Layouts",
+		"description": "A sample for learning how use NativeScript layouts and how to navigate between views",
+		"content": { 
+			"appbuilder": {
+				"repoUrl": "https://github.com/telerik/quick-start-nativescript-template.git"
+			}
 		}
 	}
 }

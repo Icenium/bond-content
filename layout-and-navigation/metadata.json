@@ -3,6 +3,7 @@
 	"description": "Learn how to create your app layout with the TabStrip and Drawer, and the fundamentals of app navigation using concepts such as MVVM and binding.",
 	"estimateTime": "25",
 	"land": "project",
+	"targetPage": "Code",
 	"workspace": {
 		"name": "Great Books",
 		"description": "Sample app for learning about layout and navigation",
@@ -11,6 +12,15 @@
 			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/bsatrom/great-books.git"
+		}
+	},
+	"app": {
+		"name": "Great Books",
+		"description": "Sample app for learning about layout and navigation",
+		"content": { 
+			"appbuilder": {
+				"repoUrl": "https://github.com/bsatrom/great-books.git"
+			}
 		}
 	}
 }

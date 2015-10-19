@@ -3,6 +3,7 @@
 	"description": "Learn how to read and write data from web services by leveraging KendoUI DataSource.",
 	"estimateTime": "30",
 	"land": "workspace",
+	"targetPage": "Code",
 	"workspace": {
 		"name": "Grocery List",
 		"description": "Sample app for learning how to connect your project with data and web services",
@@ -11,6 +12,15 @@
 			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/tjvantoll/bond-grocery-list.git"
+		}
+	},
+	"app": {
+		"name": "Grocery List",
+		"description": "Sample app for learning how to connect your project with data and web services",
+		"content": { 
+			"appbuilder": {
+				"repoUrl": "https://github.com/tjvantoll/bond-grocery-list.git"
+			}
 		}
 	}
 }

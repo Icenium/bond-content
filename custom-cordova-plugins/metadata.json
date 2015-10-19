@@ -3,6 +3,7 @@
 	"description": "Learn how to add cordova plugins to your app for accessing hardware capabilities of the device.",
 	"estimateTime": "30",
 	"land": "project",
+	"targetPage": "Code",
 	"workspace": {
 		"name": "Contacts",
 		"description": "Sample app for learning how to use cordova plugins to access hardware capabilities of the device",
@@ -11,6 +12,15 @@
 			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/rdlauer/cordova-contacts-test.git"
+		}
+	},
+	"app": {
+		"name": "Contacts",
+		"description": "Sample app for learning how to use cordova plugins to access hardware capabilities of the device",
+		"content": { 
+			"appbuilder": {
+				"repoUrl": "https://github.com/rdlauer/cordova-contacts-test.git"
+			}
 		}
 	}
 }

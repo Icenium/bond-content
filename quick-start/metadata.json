@@ -3,6 +3,7 @@
 	"description": "This tutorial is essential for understanding key concepts related to the Telerik Platform. It's a prerequisite to all other tutorials.",
 	"estimateTime": "15",
 	"land": "project",
+	"targetPage": "Code",
 	"workspace": {
 		"name": "Photo Album",
 		"description": "Sample app for learning how to develop hybrid apps using the Telerik Platform",
@@ -11,6 +12,15 @@
 			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/icenium/bond-app-template.git"
+		}
+	},
+	"app": {
+		"name": "Photo Album",
+		"description": "Sample app for learning how to develop hybrid apps using the Telerik Platform",
+		"content": { 
+			"appbuilder": {
+				"repoUrl": "https://github.com/icenium/bond-app-template.git"
+			}
 		}
 	}
 }
