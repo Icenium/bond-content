@@ -3,6 +3,7 @@
 	"description": "This tutorial is essential for understanding key concepts related to the Telerik Platform. It's a prerequisite to all other tutorials.",
 	"estimateTime": "15",
 	"land": "project",
+	"targetPage": "Code",
 	"workspace": {
 		"name": "Photo Album Native",
 		"description": "A sample Photo Album app for learning how to develop native apps using the Telerik Platform",
@@ -11,6 +12,15 @@
 			"description": "",
 			"type": "appbuilder",
 			"url": "https://github.com/telerik/quick-start-nativescript-template.git"
+		}
+	},
+	"app": {
+		"name": "Photo Album Native",
+		"description": "A sample Photo Album app for learning how to develop native apps using the Telerik Platform",
+		"content": { 
+			"appbuilder": {
+				"repoUrl": "https://github.com/telerik/quick-start-nativescript-template.git"
+			}
 		}
 	}
 }

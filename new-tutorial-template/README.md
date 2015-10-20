@@ -6,16 +6,25 @@ Each tutorial folder should contains the following items:
 	- `title` (*string*) - the title of the tutorial.
 	- `description` (*string*) - the description of the tutorial.
 	- `estimateTime` (*number*) - the estimate time for completing the tutorial.
-	- `land` (*string*, *optional*) - specifies the first page that should be loaded after starting the tutorial. The available values are:
+	- `land` (*string*, *optional*) - specifies the first page that should be loaded after starting the tutorial with the old workspace like apps. The available values are:
 		- **`home`** (*default*) - the default page of the Telerik Platform will be loaded (the workspaces one).
 		- **`workspace`** - available for tutorials creating a workspace. The newly created workspace will be loaded.
 		- **`project`** - available for tutorials creating a project. The default page of the newly created project will be loaded.
+	- `targetPage` (*string*, *optional*) - specifies the first page that should be loaded after starting the tutorial with the new unified apps. The available values are:
+		- **`Apps`** (*default*) - the default page of the Telerik Platform will be loaded (the Apps one).
+		- **`Code`** - available for tutorials having AppBuilder configuration. The Code menu item will be opened in the newly created App.
 	- `workspace` (*object*, *optional*) - object describing a workspace that should be created along with the tutorial.
 		- `name` (*string*) - the name of the workspace.
 		- `description` (*string*) - the description of the workspace.
 		- `project` (*object*, *optional*) - object describing a project that should be created in the specified workspace along with the tutorial.
 			- `type` - the service type of the project (e.g. appbuilder) 
 			- the other properties are depending on the service type (appBuilder, backendServices, analytics etc.). They can be found in the **metadata-serviceType.json files**.
+	- `app` (*object*, *optional*) - object describing a workspace that should be created along with the tutorial.
+		- `name` (*string*) - the name of the App.
+		- `description` (*string*) - the description of the App.
+		- `content` (*object*, *optional*) - object containing details about each service that should be enabled for the newly created tutorial App.
+			- `appbuilder` - object containing AppBuilder related details 
+				- `repoUrl` - public and valid AppBuilder hybrid/native repository URL
 	
 	> Each tutorial should have **only one metadata file** named `metadata.json`. The metadata files in this folder are examples for the structure of the project object depending on the service type.
 
