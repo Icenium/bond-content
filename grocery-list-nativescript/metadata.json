@@ -2,10 +2,8 @@
 	"title": "Add data and authentication",
 	"description": "Learn how to read and write data with NativeScript and Telerik Backend Services.",
 	"estimateTime": "30",
-	"land": "workspace",
-	"targetPage": "Code",
 	"workspace": {
-		"name": "Groceries",
+		"name": "Groceries2",
 		"description": "Sample app for learning how to connect your NativeScript app with data and web services",
 		"project": { 
 			"name": "Groceries Code",
@@ -14,13 +12,5 @@
 			"url": "https://github.com/tjvantoll/bond-grocery-list-native.git"
 		}
 	},
-	"app": {
-		"name": "Groceries2",
-		"description": "Sample app for learning how to connect your NativeScript app with data and web services",
-		"content": { 
-			"appbuilder": {
-				"repoUrl": "https://github.com/tjvantoll/bond-grocery-list-native.git"
-			}
-		}
-	}
+	"app": {}
 }
