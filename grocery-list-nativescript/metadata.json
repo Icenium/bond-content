@@ -12,5 +12,7 @@
 			"url": "https://github.com/tjvantoll/bond-grocery-list-native.git"
 		}
 	},
-	"app": {}
+	"app": {
+		"type":"Native"
+	}
 }
