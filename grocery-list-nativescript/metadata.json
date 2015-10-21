@@ -15,12 +15,13 @@
 		}
 	},
 	"app": {
-		"name": "Groceries",
+		"name": "Groceries2",
 		"description": "Sample app for learning how to connect your NativeScript app with data and web services",
 		"content": { 
 			"appbuilder": {
 				"repoUrl": "https://github.com/tjvantoll/bond-grocery-list-native.git"
 			}
 		}
+		"type": "Native"
 	}
 }
