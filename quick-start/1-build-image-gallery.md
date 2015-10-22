@@ -10,7 +10,7 @@ Kendo UI Mobile apps are made up of views, and a basic one has already been crea
 
 * **a**. Add markup to the view so that it looks this:
 ```
-<div data-role="view" data-title="Photos">
+<div data-role="view">
     <header data-role="header">
         <div data-role="navbar">
             <span data-role="view-title"></span>
