@@ -6,6 +6,8 @@
 
 When creating views with Kendo UI, you'll often find yourself using common elements like headers and footers throughout your app. With layouts, we can define those elements in a single place, and reuse them throughout.
 
+> Tip:The default CSS rules provided with Kendo UI Mobile are included in the **kendo.mobile.all.min.css**. It is referred to ensure the platform-adaptive (layout specific to particular platform) styling to work as expected. 
+
 #### Action
 
 * **a**. In the index.html file, add the following markup just before the closing `<body>` tag:
@@ -40,7 +42,9 @@ app = new kendo.mobile.Application(document.body, { layout: "main-layout" });
 ```
 
 * **f**. Save the app.js file.
-* **g**. Open the iPhone simulator (select **Run** --> **iPhone**) to see your new layout in action.
+* **g**. Open the iPhone simulator (select **Run** --> **iPhone**) to see your new layout in action. Please note the defined layout will appear specific to the particular platform. 
+
+> Tip: Depending on the project requirements, the mobile application may be styled in several different ways. Check out the documentation on [Kendo UI Mobile CSS Dependencies](http://docs.telerik.com/kendo-ui/mobile/styling#kendo-ui-mobile-css-dependencies) for full configuration options on styling in different ways.
 
 <hr data-action="end" />
 
