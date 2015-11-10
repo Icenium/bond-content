@@ -14,7 +14,6 @@ An app project named `Photo Album Native` has already been created for you. This
 * **main-page.xml** This is the file used to implement the UI of the initial page.
 * **package.json** This file contains meta information for your project such as name, author, version.
 * **App_Resources** This folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
-* **tns_modules** The tns_modules folder contains the NativeScript libraries for accessing the native device platform functionality. Libraries might consist of platform-specific and common files. When you build your app for iOS or Android, AppBuilder automatically picks up the needed platform-specific files.
 
 ### Step 2. Define the user interface
 
