@@ -19,7 +19,7 @@ You are now looking at your Telerik Platform home screen, which lists all apps o
 #### Action
 
 * **b**. Click on the “Photo Album” app to enter it.
-* **c**. Within the “Photo Album” app, click the green “Create Backend Services project” button.
+* **c**. Click on the “Create project” button and select “Backend Services Project” from the list. 
 * **d**. Give your project a name — for instance “Photo Album Backend” — and then click “Create project”.
 * **e**. Find the “Cloud Files” box and click its "Add to project" button to enable file storage for your Backend Services project.
 * **f**. Click the “API Keys” option from the menu on the left-hand side of the screen.
