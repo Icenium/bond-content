@@ -7,13 +7,17 @@ In this tutorial, you will learn how to load data in a UI control, how to bind U
 An app project named `Photo Album Native` has already been created for you. This app project contains a NativeScript project named `Photo Album Native Code` where you will implement the core logic of your application. The NativeScript project is provisioned with a few images and an SDK which you will need later on. The `Photo Album Native Code` project is now opened, and let's first quickly examine its structure: 
 
 * **app** This folder contains the entire app functionality.
-* * **app.css** This is the main CSS file of the application. The styles you define here are applied to the content of all pages. 
-* * **app.js** This module contains application specific code, such as which page is the starting page of the application. 
+* **App_Resources** This folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
+* **res** This folder contains a few preloaded images for the purposes of the quick-start tutorial.
+* **app.css** This is the main CSS file of the application. The styles you define here are applied to the content of all pages. 
+* **app.js** This module contains application specific code, such as which page is the starting page of the application. 
+* **everlive.all.min.js** This is the JavaScript SDK for the Telerik Backend Services that we will use later in this tutorial.
 * **LICENSE** This file describes the license which protects the application's code.
 * **main-page.js** This is the main JavaScript file used to implement the business logic of the initial page.
 * **main-page.xml** This is the file used to implement the UI of the initial page.
 * **package.json** This file contains meta information for your project such as name, author, version.
-* **App_Resources** This folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
+* **package.json** This file describes what modules (a.k.a widgets or components) you have loaded for your projects. All NativeScript projects start with a default set of modules known as `tns-core-modules`.
+
 
 ### Step 2. Define the user interface
 
@@ -97,14 +101,14 @@ This process is known as LiveSync and makes updating your apps as easy as a quic
 
 ### Step 4. Populate a ListView with images
 
-It's time to populate the `ListView` with images. For that purpose, the `Photo Album Native Code` project has already been provisioned with eight images. They are located in the `app --> res` folder. These images should be set as the items source of the `ListView`. The items source definition should be created in a view model file and then consumed by the `ListView` in the `main-page.js/main-page.xml` files.
+It's time to populate the `ListView` with images. For that purpose, the `Photo Album Native Code` project has already been provisioned with eight images. As discussed earlier, they are located in the `app --> res` folder. These images should be set as the items source of the `ListView`. The items source definition should be created in a view model file and then consumed by the `ListView` in the `main-page.js/main-page.xml` files.
 
 <hr data-action="start" />
 
 #### Action
 
 * **a.** Right-click the `app` folder and choose **Add** --> **New File**. Select `JavaScript` for the file type and  name the file `view-model.js`. This is the place you will define the data model.
-* **a.** In the `view-model.js` add the following declarations to load the necessary modules from the `tns_modules` folder: 
+* **a.** In the `view-model.js` add the following declarations to load the necessary modules from the `tns-core-modules`: 
 ```
 var observable = require("data/observable");
 var imageSourceModule = require("image-source");
