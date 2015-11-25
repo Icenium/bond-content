@@ -2,7 +2,7 @@
 
 ### Step 4. Configure permissions
 
-Backend Services automates the tricky process of registering and managing user accounts. In this lesson you'll create user accounts, configure your backend to use them, and add a login screen to your application. To start, let's add a new user to your Backend Services project.
+Backend Services automates the tricky process of registering and managing user accounts. In this lesson you'll create user accounts, configure your backend to use them, and add a login screen to your application. To start, let's add a new user to your app.
 
 <hr data-action="start" />
 

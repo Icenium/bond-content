@@ -2,19 +2,16 @@
 
 ### Step 4. Configure permissions
 
-Backend Services automates the tricky process of registering and managing user accounts. In this lesson you'll create user accounts, configure your backend to use them, and add a login screen to your application. To start, let's add a new user to your Backend Services project.
+Backend Services automates the tricky process of registering and managing user accounts. In this lesson you'll create user accounts, configure your backend to use them, and add a login screen to your application. To start, let's add a new user to your app.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Click the “Groceries” link in the top-left corner to return to your app's homepage.
-* **b**. Click the “Groceries Backend” box to enter your Backend Services project.
-* **c**. Click the “Services” option in the menu on the left-hand side of the screen.
-* **d**. Find the “User Management”  box and click its "Add to project" button to enable user management for your Backend Services project.
-* **e**. Click the “Users Browser” link in the menu on the left-hand side of the screen.
-* **f**. Click the blue “Add a user” button.
-* **g**. Use the pane on the right-hand side of the screen to configure a dummy user to use for testing. Feel free to use fake data, but make sure to remember the username and password you use, as you'll need them later in this step.
+* **a**. Click the “Users” tab on the left-hand side of the screen.
+* **b**. Click the blue “Enable Users” button to enable user management for your app.
+* **c**. Click the “Add a user” button.
+* **d**. Use the pane on the right-hand side of the screen to configure a dummy user to use for testing. Feel free to use fake data, but make sure to remember the username and password you use, as you'll need them later in this step.
 
 <hr data-action="end" />
 
@@ -24,8 +21,9 @@ Now you have a dummy user account to test your app with. Before we head back to 
 
 #### Action
 
-* **h**. Click the “Permissions” link in the menu on the left-hand side of the screen.
-* **i**. Change the Groceries permission dropdown from “Public” to “Private”, and then click the green “Save” button on the bottom of the screen.
+* **e**. Click the “Data” tab on the left-hand side of the screen.
+* **f**. Click the “Permissions” link.
+* **g**. Change the Groceries permission dropdown from “Public” to “Private”, and then click the green “Save” button on the bottom of the screen.
 
 <hr data-action="end" />
 
@@ -41,7 +39,7 @@ A login screen is the single most used UI component in mobile apps. Almost every
 
 #### Action
 
-* **a**. Return to your AppBuilder project by returning to your app's homepage (click the “Groceries” link in the top-right corner of the screen), and then clicking the “Groceries Code” box.
+* **a**. Click the “Code” tab to return to your app’s code.
 * **b**. Open your app's empty views/login.xml file and place the following code in it:
 ```
 <Page loaded="load">
@@ -110,7 +108,7 @@ exports.signIn = function(args) {
 
 <hr data-action="end" />
 
-The actual SDK is defined by the `el` module retrieved from the `require("../models/el")` call. That module is defined in models/el.js, which uses the config module you placed your Backend Services project's API key in earlier.
+The actual SDK is defined by the `el` module retrieved from the `require("../models/el")` call. That module is defined in models/el.js, which uses the config module you placed your App ID in earlier.
 
 With the Backend Services SDK a login call is as simple as `el.Users.login()`. The call returns a token that can be used on subsequent requests, and the SDK automatically stores that token so you don't have to do it yourself. The only thing you explicitly do is call `frameModule.topmost().navigate("./views/list")` after a successful login to take the user to the list page.
 

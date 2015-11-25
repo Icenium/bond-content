@@ -1,8 +1,8 @@
 ## Lesson 1. Add data services to your app
 
-Data is an important component of most applications. The Telerik Platform contains a Backend Services solution that makes it simple to configure and interact with a backend that lives in the cloud. In this lesson you'll create a backend structure for managing grocery lists. Within a few minutes you'll have a complete data service, a UI that reads and writes to it, a login screen, and even a screen for user registration. Let's get started.
-
 ### Step 1. Configure an endpoint
+
+Data is an important component of most applications. The Telerik Platform contains a Backend Services solution that makes it simple to configure and interact with a backend that lives in the cloud. In this lesson you'll create a backend structure for managing grocery lists. Within a few minutes you'll have a complete data service, a UI that reads and writes to it, a login screen, and even a screen for user registration. Let's get started.
 
 Before you interact with data you need to setup a structure for your data to live in. Although you're free to store your data wherever you'd like, the Telerik Platform provides a Backend Services offering that integrates with AppBuilder and NativeScript apps. To start, you're going to create a Backend Services project to serve as the backend of your grocery list app.
 
@@ -10,14 +10,12 @@ Before you interact with data you need to setup a structure for your data to liv
 
 #### Action
 
-* **a**. Click the green “Create Backend Services project” to create a new project.
-* **b**. Give your project a name — for instance “Groceries Backend” — and then click the green “Create project” button.
-* **c**. Find the “Cloud Data” box and click its "Add to project" button to enable cloud data for your Backend Services project.
-* **d**. Click the “Types” option in the menu on the left-hand side of the screen.
-* **e**. Click the blue “Create a Content Type” button.
-* **f**. Type “Groceries” in the “Type name” input box.
-* **g**. Under “Add a field”, type “Name”, leave the dropdown set to “Text”, and then click the blue “Add” button.
-* **h**. Click the green “Save” button.
+* **a**. Click the “Data” tab on the left-hand side of the screen.
+* **b**. Click the blue “Enable Data” button.
+* **c**. Click the “Create a Content Type” button.
+* **d**. Type “Groceries” in the “Type name” input box.
+* **e**. Under “Add a field”, type “Name”, leave the dropdown set to “Text”, and then click the “Add” button.
+* **f**. Click the blue “Save” button.
 
 <hr data-action="end" />
 
@@ -27,9 +25,9 @@ With this you now have a “Groceries” content type (which you can think of li
 
 #### Action
 
-* **i**. Click the blue “Add an item” button.
-* **j**. In the right pane, enter a grocery into the text box (e.g. Bananas, Apples, and so forth), and then press the green “Save” button.
-* **k**. Repeat steps **i** and **j** so that you have at least 5 groceries in the list.
+* **g**. Click the “Add an item” button.
+* **h**. In the right pane, enter a grocery into the text box (e.g. Bananas, Apples, and so forth), and then press the blue “Save” button.
+* **i**. Repeat steps **g** and **h** so that you have at least 5 groceries in the list.
 
 <hr data-action="end" />
 
@@ -37,35 +35,33 @@ Now you have a backend configured and some data ready to go. Next, let's see how
 
 ### Step 2. Read from an endpoint
 
-The true power of Backend Services is how easy it makes complex data interactions. In this step you'll learn how to read data from the content type you just configured. A boilerplate AppBuilder project has already been setup for you, so your next task is to add data to it. You'll start by opening up the AppBuilder project.
+The true power of the Telerik Platform’s Backend Services is how easy it makes complex data interactions. In this step you'll learn how to read data from the content type you just configured. Some boilerplate code has already been setup for you, so your next task is to connect the app to the backend you just setup.
 
-<blockquote>Note: This step requires you to have the NativeScript companion app installed on your device and to use LiveSync to push code updates. If you haven't already, complete the NativeScript quick start tutorial for a guided walkthrough of these features. You can access the NativeScript quick start tutorial by clicking the <b>Getting started</b> menu on the top of the screen, and then selecting <b>Interactive tutorials</b>.</blockquote>
+**Note**: This step requires you to have the NativeScript companion app installed on your device and to use LiveSync to push code updates. If you haven't already, complete the NativeScript quick start tutorial for a guided walkthrough of these features. You can access the NativeScript quick start tutorial by clicking the **Getting started** menu on the top of the screen, and then selecting **Interactive tutorials**.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Click the “Groceries” link in the upper-left corner of the screen to return to this app's homepage.
-* **b**. Click the “Groceries” box to enter the AppBuilder project for this tutorial.
-* **c**. Click the **Run** menu and then select **Build**. Choose your device's platform (iOS, Android, or Windows Phone), make sure the “AppBuilder companion app” radio button is selected, and then click **Next**.
-* **d**. Scan the resulting QR code using your device's QR reader to open the app in the NativeScript companion app.
+* **a**. Click the “Code” tab on the left-hand side of the screen.
+* **b**. Click the **Run** menu and then select **Build**. Choose your device's platform (iOS, Android, or Windows Phone), make sure the “AppBuilder companion app” radio button is selected, and then click **Next**.
+* **c**. Scan the resulting QR code using your device's QR reader to open the app in the NativeScript companion app.
 
 <hr data-action="end" />
 
-As you can see, in its current state, this project has a basic list UI but no data. Your next step is to use NativeScript to read the grocery data from your Backend Services project. Your first step is to plug in the API key from your Backend Services project.
+As you can see, in its current state, this project has a basic list UI but no data. Your next step is to use NativeScript to read the grocery data from your backend.
 
 <hr data-action="start" />
 
 #### Action
 
-* **e**. Find and click the “Data” link on the right-hand side of the screen.
-* **f**. In the Data Navigator (the panel on the right-hand side of the screen), expand “Backend Services”, and then right click on “Groceries Backend” (or whatever you named your Backend Services project). Select “Properties” from the context menu.
-* **g**. In the Properties menu (bottom right-hand side of the screen), find the project's API key and copy it.
-* **h**. Click the “Solution” link on the right-hand side of the screen to switch back to this project's files.
-* **i**. Open config.js in the app/shared/models folder.
-* **j**. Replace the `API KEY` string with your project's API key that you copied to the clipboard.
-* **k**. Open app/views/list.js. This is the file that controls the list page that the app opens into.
-* **l**. Paste the following function at the end of list.js file:
+* **d**. Click the “Settings” tab on the left-hand side of the screen.
+* **e**. Copy the App ID that appears under the “App ID” heading to your clipboard.
+* **f**. Click the “Code” tab to return to your app’s code.
+* **g**. Open config.js in the app/shared/models folder.
+* **h**. Replace the `API KEY` string with your project's API key that you copied to the clipboard.
+* **i**. Open app/views/list.js. This is the file that controls the list page that the app opens into.
+* **j**. Paste the following function at the end of list.js file:
 ```
 function loadGroceries() {
     httpModule.getJSON({
@@ -79,13 +75,13 @@ function loadGroceries() {
 };
 ```
 * **m**. Add a call to `loadGroceries()` as the last line in the existing `exports.load` function.
-* **n**. Save list.js and config.js, and then perform a LiveSync to see the changes to your app. You should see the list of groceries you added in your Backend Services project.
+* **n**. Save list.js and config.js, and then perform a LiveSync to see the changes to your app. You should see the list of groceries you added to your backend.
 
 <hr data-action="end" />
 
 Why did this work? Note how the callback of the JSON GET call does nothing more than add each grocery returned to a `groceries` array. If you open the XML file for the list page (app/views/list.xml) you'll see a line that looks like this `<ListView items="{{ groceries }}" />`. This, along with the `page.bindingContext = pageData` statement in list.js, binds the grocery array to the `<ListView>` element—meaning, if you update the array, the `<ListView>` rerenders automatically. Cool right?
 
-This example also shows how NativeScript modules can be used to abstract you from platform-specific iOS, Android, and Windows Phone code. All you need to know is that the NativeScript http module has a `getJSON()` method, not how to retrieve a JSON file in three different languages.
+This example also shows how NativeScript modules can be used to abstract you from platform-specific iOS and Android code. All you need to know is that the NativeScript http module has a `getJSON()` method, not how to retrieve a JSON file in three different languages.
 
 Next let's use the same http module to POST new data, and see how to integrate some new UI elements.
 
@@ -169,4 +165,4 @@ function addGrocery( grocery ) {
 
 This `addGrocery()` function uses the same http module to send a POST request to your Backend Services backend, and then adds the grocery to the `groceries` array that's bound to the page's `<ListView>` element.
 
-With this change in place you now have a functioning grocery list, so let's move onto another problem: user management. As is your app uses one list for all its users, which isn't very practical. Don't worry though; as it turns out, Backend Services offers an elegant solution to user management as well. Let's see how it works.
+With this change in place you now have a functioning grocery list, so let's move onto another problem: user management. As is your app uses one list for all its users, which isn't very practical. Don't worry though; as it turns out, the Telerik Platform offers an elegant solution to user management as well. Let's see how it works.
