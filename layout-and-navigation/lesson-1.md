@@ -6,7 +6,7 @@
 
 When creating views with Kendo UI, you'll often find yourself using common elements like headers and footers throughout your app. With layouts, we can define those elements in a single place, and reuse them throughout.
 
-> Tip:The default CSS rules provided with Kendo UI Mobile are included in the **kendo.mobile.all.min.css**. It is referred to ensure the platform-adaptive (layout specific to particular platform) styling to work as expected. 
+> Tip: The default CSS rules provided in Kendo UI Mobile are included in the **kendo.mobile.all.min.css** file.
 
 #### Action
 
