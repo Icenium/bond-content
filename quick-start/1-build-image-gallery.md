@@ -8,7 +8,8 @@ Kendo UI Mobile apps are made up of views, and a basic one has already been crea
 
 #### Action
 
-* **a**. Add markup to the view so that it looks this:
+* **a**. Open this project’s index.html file by double clicking it in the Project Navigator on the right-hand side of the screen.
+* **b**. Find the file’s existing view, and add markup so that the view looks this:
 ```
 <div data-role="view">
     <header data-role="header">
@@ -19,10 +20,10 @@ Kendo UI Mobile apps are made up of views, and a basic one has already been crea
 </div>
 ```
 
-> Tip: Keyboard shortcut `Ctrl` + `Alt` + `F` cleans up indentation and formatting for you. Try using it after you paste in code throughout these lessons.
+> Tip: The keyboard shortcut `Ctrl` + `Alt` + `F` cleans up indentation and formatting for you. Try using it after you paste in code throughout these lessons.
 
-* **b**. Add a `data-title` attribute to the view, e.g. `<div data-role="view" data-title="Photos">`.
-* **c**. Save the index.html file.
+* **c**. Add a `data-title` attribute to the view, e.g. `<div data-role="view" data-title="Photos">`.
+* **d**. Save the index.html file.
 
 <hr data-action="end" />
 
@@ -32,9 +33,9 @@ Kendo UI Mobile automatically styles the navbar to look great on each platform. 
 
 #### Action
 
-* **d**. Open the iPhone simulator by selecting **Run** --> **iPhone**.
-* **e**. With the simulator open, change the title of the view by updating its `data-title` attribute—for instance `<div data-role="view" data-title="My Cool Photos">`.
-* **f**. Save your index.html file and note how the simulator updates automatically.
+* **e**. Open the iPhone simulator by selecting **Run** --> **iPhone**.
+* **f**. With the simulator open, change the title of the view by updating its `data-title` attribute—for instance `<div data-role="view" data-title="My Cool Photos">`.
+* **g**. Save your index.html file and note how the simulator updates automatically.
 
 <hr data-action="end" />
 

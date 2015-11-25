@@ -2,42 +2,39 @@
 
 ### Step 6. Create a Backend Services project
 
-The Telerik Platform provides tools for the entire app building experience. In this lesson, you'll use create a new Backend Services project to store your data.
+The Telerik Platform provides tools for the entire app building experience. In this lesson, you'll setup a complete backend for storing your photos in the cloud.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Click on your account name in the top-left corner of the screen.
+* **a**. Click on the “Data” tab on the left-hand side of the screen.
+* **b**. Click the blue “Enable Data” button to enable data storage for your project.
 
 <hr data-action="end" />
 
-You are now looking at your Telerik Platform home screen, which lists all apps on your account. In the Telerik Platform, “apps” are how you organize your projects. You can use them to manage team members, permissions, and more. For now you have a single “Photo Album” app that contains the AppBuilder project you've been working on. Your next step is to create a Backend Services project and incorporate it into your project.
+The Data tab is where you manage your application’s data. You can connect to an existing database, or use the Telerik Platform’s own secure backend storage system. Regardless of which approach you use, the Telerik Platform provides a simple RESTful API for accessing your data.
+
+On this tab you’ll see a “Files” menu, which is where you’re going to store your app’s photos. When you clicked “Enable Data”, the Telerik Platform automatically created a RESTful API for you to upload files to this backend system. Before using the API though, you need to grab your App ID.
 
 <hr data-action="start" />
 
 #### Action
 
-* **b**. Click on the “Photo Album” app to enter it.
-* **c**. Within the “Photo Album” app, click the green “Create Backend Services project” button.
-* **d**. Give your project a name — for instance “Photo Album Backend” — and then click “Create project”.
-* **e**. Find the “Cloud Files” box and click its "Add to project" button to enable file storage for your Backend Services project.
-* **f**. Click the “API Keys” option from the menu on the left-hand side of the screen.
-* **g**. Copy the API key shown under the “API Key” heading and paste it somewhere convenient; you'll need it to complete the next step.
+* **c**. Click the “Settings” tab in the menu on the left-hand side of the screen.
+* **d**. Copy the App ID shown under the “App ID” heading and paste it somewhere convenient; you'll need it to complete the next step.
 
 <hr data-action="end" />
-
-Within your Backend Services project you can see all the things Backend Services makes possible, such as user management, push notifications, email messaging, and more. For your photo uploader you're interested in the “Files” menu option. You'll see how to use it in the next step.
 
 ### Step 7. Upload images to your backend
 
-With a Backend Services project in place, your next step is to add data to it. Backend Services provides SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a Cordova app you're interested in the JavaScript SDK. In this step you'll add the Backend Services JavaScript SDK to your project, and use it to store your images in the cloud.
+With your backend system ready to go, your final step is to upload data to it. The Telerik Platform provides backend SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a Cordova app you're interested in the JavaScript SDK. In this step you'll add the Backend Services JavaScript SDK to your project, and use it to store your images in the cloud.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Navigate back to your “Photo Album Code” AppBuilder project that is part of your app. 
+* **a**. Navigate back to your code by clicking on the “Code” tab on the left-hand side of the screen.
 * **b**. In your index.html file, insert the following `<script>` tag to import the Backend Services SDK (which is code named Everlive). Place it directly after the `<script>` that imports kendo.mobile.min.js:
 ```
 <script src="https://bs-static.cdn.telerik.com/1.4.1/everlive.all.min.js"></script>
