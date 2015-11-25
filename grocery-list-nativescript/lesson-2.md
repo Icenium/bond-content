@@ -119,6 +119,7 @@ To get this app functioning again you have one final thing to do: change the lis
 #### Action
 
 * **g**. Open views/list.js file, remove the existing `loadGroceries()` and `addGrocery()` functions, and replace them with the following:
+
 ```
 function loadGroceries() {
     el.data("Groceries").get().then(function(data) {
