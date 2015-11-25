@@ -37,7 +37,7 @@ With your backend system ready to go, your final step is to upload data to it. T
 * **a**. Navigate back to your code by clicking on the “Code” tab on the left-hand side of the screen.
 * **b**. In your index.html file, insert the following `<script>` tag to import the Backend Services SDK (which is code named Everlive). Place it directly after the `<script>` that imports kendo.mobile.min.js:
 ```
-<script src="https://bs-static.cdn.telerik.com/1.4.1/everlive.all.min.js"></script>
+<script src="https://bs-static.cdn.telerik.com/1.5.8/everlive.all.min.js"></script>
 ```
 * **c**. Add the following to the top of your app.js file, right *before* the `document.addEventListener()` call:
 ```
