@@ -97,6 +97,7 @@ Object.defineProperty(photoAlbumModel, "photoItems", {
 The `get()` method retrieves all pictures stored in your backend. If you now deploy the Photo Album app using `LiveSync` feature, the ListView will appear empty, because there are no images in your backend yet. But don't worry, we will soon add a few.
 
 * **f**. Add the following code to the bottom of the `cameraModule.takePicture` promise:
+
 ```
 var file = {
     "Filename": Math.random().toString(36).substring(2, 15) + ".jpg",
@@ -109,7 +110,7 @@ everlive.Files.create(file,
     function (error) {});
 ```
 
-Here is what the tapAction implementation should look like:
+Here is what the `tapAction` implementation should look like:
 
 ```
 photoAlbumModel.tapAction = function () {

@@ -149,12 +149,12 @@ Using the `Observable()` type of our view model lets you bind controls propertie
 * **d.** Expose a `photoItems` property at the `photoViewModel` that returns the `ObservableArray` containing the images:
 ```
 Object.defineProperty(photoAlbumModel, "photoItems", {
-      get: function () {
-          return localImagesArray;
-      },
-      enumerable: true,
-      configurable: true
-  })
+    get: function () {
+        return localImagesArray;
+    },
+    enumerable: true,
+    configurable: true
+});
 ```
 * **e.** At the bottom of the `view-model.js` file declare `photoAlbumModel` in the module `exports` to make this model accessible from the UI.
 ```
