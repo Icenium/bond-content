@@ -1,6 +1,6 @@
 ## Lesson 3. Stores the images in the cloud
 
-### Step 6. Create a Backend Services project
+### Step 6. Create a backend
 
 The Telerik Platform provides tools for the entire app building experience. In this lesson, you'll setup a complete backend for storing your photos in the cloud.
 
@@ -47,7 +47,7 @@ var everlive = new Everlive("YOUR API KEY");
 
 <hr data-action="end" />
 
-The `everlive` object now contains an Everlive instance you can use to interact with your Backend Services project. Let's return to our photo management code to see how to use it.
+The `everlive` object now contains an Everlive instance you can use to interact with your backend. Let's return to our photo management code to see how to use it.
 
 <hr data-action="start" />
 
@@ -97,6 +97,6 @@ loadPhotos();
 
 <hr data-action="end" />
 
-The `create()` method uploads a picture to your Backend Services project and the `get()` method retrieves all pictures currently stored there. After the upload to Backend Services completes your call to `loadPhotos()` (and subsequently `everlive.Files.get()`) reloads your list of photos — there's no need to manually append content! After you have taken a few pictures, go to the “Files” menu in your Backend Services project to see a list of photos you are storing.
+The `create()` method uploads a picture to your backend and the `get()` method retrieves all pictures currently stored there. After the upload to your backend completes your call to `loadPhotos()` (and subsequently `everlive.Files.get()`) reloads your list of photos — there's no need to manually append content! After you have taken a few pictures, go to the “Files” menu on the “Data” tab to see a list of photos you are storing.
 
 And that's all there is to it, which is pretty cool if you think about it — you just built a mobile app that takes pictures and stores them in the cloud!
