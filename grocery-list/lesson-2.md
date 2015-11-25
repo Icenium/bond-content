@@ -8,13 +8,10 @@ Backend Services automates the tricky process of registering and managing user a
 
 #### Action
 
-* **a**. Click the “Grocery List link in the top-left corner to return to your app's homepage.
-* **b**. Click the “Grocery List Backend” box to enter your Backend Services project.
-* **c**. Click the “Services” option in the menu on the left-hand side of the screen.
-* **d**. Find the “User Management”  box and click its "Add to project" button to enable user management for your Backend Services project.
-* **e**. Click the “Users Browser” link in the menu on the left-hand side of the screen.
-* **f**. Click the blue “Add a user” button.
-* **g**. Use the pane on the right-hand side of the screen to configure a dummy user to use for testing. Feel free to use fake data, but make sure to remember the username and password you use, as you'll need them later in this step.
+* **a**. Click the “Users” tab on the left-hand side of the screen.
+* **b**. Click the blue “Enable Users” button to enable user management for your app.
+* **c**. Click the “Add a user” button.
+* **d**. Use the pane on the right-hand side of the screen to configure a dummy user to use for testing. Feel free to use fake data, but make sure to remember the username and password you use, as you'll need them later in this step.
 
 <hr data-action="end" />
 
@@ -24,8 +21,9 @@ Now you have a dummy user account to test your app with. Before we head back to 
 
 #### Action
 
-* **h**. Click the “Permissions” link in the menu on the left-hand side of the screen.
-* **i**. Change the Groceries permission dropdown from “Public” to “Private”, and then click the green “Save” button on the bottom of the screen.
+* **e**. Click the “Data” tab on the left-hand side of the screen.
+* **f**. Click the “Permissions” link.
+* **g**. Change the Groceries permission dropdown from “Public” to “Private”, and then click the green “Save” button on the bottom of the screen.
 
 <hr data-action="end" />
 
@@ -35,8 +33,8 @@ By changing the Groceries content type to private, you prevent access to the con
 
 #### Action
 
-* **j**. Return to your AppBuilder project by returning to your app's homepage (click the “Grocery List” link in the top-right corner of the screen), and then clicking the “Grocery List Code” box.
-* **k**. Open your app.js file from the scripts folder, and add the following code as the very first thing in the `initialize()` function:
+* **h**. Click the “Code” tab to return to your app’s code.
+* **i**. Open your app.js file from the scripts folder, and add the following code as the very first thing in the `initialize()` function:
 ```
 el.Users.login("username", "password",
     function(data) {
@@ -44,12 +42,12 @@ el.Users.login("username", "password",
     }
 );
 ```
-* **l**. In the `login()` call you just added, substitute the “username” and “password” strings with the values you used to configure your dummy user in Backend Services.
+* **j**. In the `login()` call you just added, substitute the “username” and “password” strings with the values you used to create your dummy user on the “Data” tab.
 * **m**. Save app.js and open your app in the simulator.
 
 <hr data-action="end" />
 
-When you first open your app the grocery is empty, as none of the existing groceries are associated with your dummy user. But if you add some groceries they'll be added to your dummy user's list, and Backend Services will take care of enforcing that other users cannot access the dummy user's data automatically. Pretty cool huh?
+When you first open your app the grocery is empty, as none of the existing groceries are associated with your dummy user. But if you add some groceries they'll be added to your dummy user's list, and the Telerik Platform will take care of enforcing that other users cannot access the dummy user's data automatically. Pretty cool huh?
 
 You next step is to remove the dummy user's hardcoded credentials from your code and to build a true login screen.
 
@@ -157,6 +155,6 @@ window.listView = kendo.observable({
 
 <hr data-action="end" />
 
-And with that you have a completely functional login process! If you'd like, you can create a few more dummy accounts in your Backend Services project, and see how each user now maintains their own list.
+And with that you have a completely functional login process! If you'd like, you can create a few more dummy accounts in your backend, and see how each user now maintains their own list.
 
 Now that your data is stored, and you have a user management system in place, it's time to add the final piece of the puzzle: registration.

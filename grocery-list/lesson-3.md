@@ -76,13 +76,13 @@ window.registerView = kendo.observable({
 
 <hr data-action="end" />
 
-That's all it takes to create a functional registration screen, which is pretty cool. The actual registration happens during the `el.Users.register()` call, which adds the user to your Backend Services project. After you create a user, if you'd like, head back your Backend Services project to see the user you created through your app.
+That's all it takes to create a functional registration screen, which is pretty cool. The actual registration happens during the `el.Users.register()` call, which adds the user to your backend. After you create a user, if you'd like, head back to the “Users” tab to see the user you created through your app.
 
 With the registration screen in place, there's one last piece of functionality we need to add to have a completely functional user management process: password resets.
 
 ### Step 7. Adding password reset functionality
 
-Users forget their passwords all the time, so any app with user accounts needs to provide a way for users to reset their password. Unfortunately, actually implementing a password reset has traditionally been tricky, or at the very least time consuming to get right. Fortunately this is another area where Backend Services shines, as implementing a password reset is as simple as a single API call. Let's see how it works.
+Users forget their passwords all the time, so any app with user accounts needs to provide a way for users to reset their password. Unfortunately, actually implementing a password reset has traditionally been tricky, or at the very least time consuming to get right. Fortunately this is another area where the Telerik Platform shines, as implementing a password reset is as simple as a single API call. Let's see how it works.
 
 <hr data-action="start" />
 
