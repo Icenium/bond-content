@@ -114,12 +114,12 @@ To position an object in a specific cell the **col** and **row** properties must
 
 ```
 <Page>
-	<GridLayout rows="*, *" columns="*, *">
-        <Button text="Button 1" row="0" col="0" />
-        <Button text="Button 2" row="0" col="1" />
-        <Button text="Button 3" row="1" col="0" />
-        <Button text="Button 4" row="1" col="1" />
-	</GridLayout>
+  <GridLayout rows="*, *" columns="*, *">
+    <Button text="Button 1" row="0" col="0" />
+    <Button text="Button 2" row="0" col="1" />
+    <Button text="Button 3" row="1" col="0" />
+    <Button text="Button 4" row="1" col="1" />
+  </GridLayout>
 </Page>
 ```
 
@@ -138,9 +138,9 @@ To position an object in a specific cell the **col** and **row** properties must
 ```
 <Page>
   <GridLayout columns="*, 2*">
-		<Button text="Button 1" col="0" />
-		<Button text="Button 2" col="1" />
-	</GridLayout>
+    <Button text="Button 1" col="0" />
+    <Button text="Button 2" col="1" />
+  </GridLayout>
 </Page>
 ```
 
@@ -206,7 +206,7 @@ The DockLayout arranges its child elements by positioning them alongside its fou
     <Button text="Top!" dock="top"/>
     <Button text="Left!" dock="left"/>
     <Button text="Right!" dock="right"/>
-	<Button text="Bottom!" dock="bottom"/>
+    <Button text="Bottom!" dock="bottom"/>
   </DockLayout>
 </Page>
 ```
@@ -269,18 +269,18 @@ The layout system of NativeScript allows you to create complex UIs by nesting pa
       <WrapLayout row="1" >
         <Button text="W-01" />
         <Button text="W-02" />
-		<Button text="W-03" />
-		<Button text="W-04" />
-		<Button text="W-05" />
+        <Button text="W-03" />
+        <Button text="W-04" />
+        <Button text="W-05" />
       </WrapLayout>
     </GridLayout>
     <GridLayout rows="*, auto" row="1" colSpan="2">
       <Label text="Horizontal Stacked Layout" horizontalAlignment="center"/>
       <StackLayout orientation="horizontal" row="1">
        <Button text="HS-01" />
-	   <Button text="HS-02" />
-	   <Button text="HS-03" />
-	   <Button text="HS-04" />
+       <Button text="HS-02" />
+       <Button text="HS-03" />
+       <Button text="HS-04" />
       </StackLayout>
     </GridLayout>
   </GridLayout>

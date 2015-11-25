@@ -8,7 +8,7 @@ Pages can be defined in two ways. To separate the user interface from the logic,
 
 ```
 <Page loaded="onPageLoaded">
-  <Label text="Hello, world!"/>
+  <Label text="Hello, world!" />
 </Page>
 ```
 
