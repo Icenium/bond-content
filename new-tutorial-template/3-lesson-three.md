@@ -14,7 +14,7 @@ First Action description.
 code snippet(optional)
 ```
 
-> Tip: Tip description (optional).
+**Tip**: Tip description (optional).
 
 * **b**. ... more sub-actions
 

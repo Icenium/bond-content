@@ -28,7 +28,7 @@ The AbsoluteLayout is the most basic layout in NativeScript. It allows you to po
 
 * **a**. Add the following markup to position a single child inside a AbsoluteLayout using the top and left properties.
 
-> Tip: Keyboard shortcut `Ctrl` + `Alt` + `F` cleans up indentation and formatting for you. Try using it after you paste in code throughout these lessons.
+**Tip**: Keyboard shortcut `Ctrl` + `Alt` + `F` cleans up indentation and formatting for you. Try using it after you paste in code throughout these lessons.
 
 ```
 <Page>
@@ -219,7 +219,7 @@ The DockLayout arranges its child elements by positioning them alongside its fou
 
 The **stretchLastChild** attribute of the DockLayout allows you to specify whether the last child element of the DockLayout should take the entire remaining space.
 
-> Tip: The default value of **stretchLastChild** is **true**.
+**Tip**: The default value of **stretchLastChild** is **true**.
 
 <hr data-action="start" />
 

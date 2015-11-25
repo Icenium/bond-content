@@ -28,7 +28,7 @@ Let's start by using MVVM to define a layout for certain views. In the last less
 
 Notice the liberal use of `data-` attributes in the snippet above. These attributes form the backbone of Kendo UI's MVVM implementation and can be used extensively throughout your mobile applications.
 
-> Tip: Nearly every property and event for a Kendo UI widget can be set in JavaScript or using MVVM `data-` attributes. Check out the [Kendo UI Mobile documentation](http://docs.telerik.com/kendo-ui/mobile/mvvm) for more information.
+**Tip**: Nearly every property and event for a Kendo UI widget can be set in JavaScript or using MVVM `data-` attributes. Check out the [Kendo UI Mobile documentation](http://docs.telerik.com/kendo-ui/mobile/mvvm) for more information.
 
 Let's use this new layout in one of our existing views.
 

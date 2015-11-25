@@ -20,7 +20,7 @@ Kendo UI Mobile apps are made up of views, and a basic one has already been crea
 </div>
 ```
 
-> Tip: The keyboard shortcut `Ctrl` + `Alt` + `F` cleans up indentation and formatting for you. Try using it after you paste in code throughout these lessons.
+**Tip**: The keyboard shortcut `Ctrl` + `Alt` + `F` cleans up indentation and formatting for you. Try using it after you paste in code throughout these lessons.
 
 * **c**. Add a `data-title` attribute to the view, e.g. `<div data-role="view" data-title="Photos">`.
 * **d**. Save the index.html file.

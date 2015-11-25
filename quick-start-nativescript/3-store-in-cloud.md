@@ -1,66 +1,61 @@
 ## Lesson 3. Store the images in the cloud
 
-### Step 7. Create a Backend Services project
+### Step 7. Create a backend
 
-The Telerik Platform provides tools for the entire app building experience. In this lesson, you'll use create a new Backend Services project to store your data.
-
-<hr data-action="start" />
-
-#### Action
-
-* **a**. Click on your account name in the top-left corner of the screen.
-
-<hr data-action="end" />
-
-You are now looking at your Telerik Platform home screen, which lists all applications on your account. Applications are a way of organizing your projects. You can use them to manage team members, permissions, and more. For now you have a single “Photo Album Native” application that contains the AppBuilder project you've been working on. Your next step is to create a Backend Services Project and incorporate it into your project.
+The Telerik Platform provides tools for the entire app building experience. In this lesson, you'll setup a complete backend for storing your photos in the cloud.
 
 <hr data-action="start" />
 
 #### Action
 
-* **b**. Click on the `Photo Album Native` application to enter it.
-* **c**. Within the `Photo Album Native` application, click the green **Create Backend Services project** button.
-* **d**. Select **Start from scratch**.
-* **e**. Give your project a name — for instance `Photo Album Native Backend` — and then click **Create project**.
-* **f**. Find the **Cloud Files** box and click its **Add to project** button to enable file storage for your Backend Services project.
-* **g**. Click the **API Keys** option from the menu on the left-hand side of the screen.
-* **h**. Copy the API key shown under the **API Key** heading and paste it somewhere convenient; you'll need it to complete the next step.
+* **a**. Click on the “Data” tab on the left-hand side of the screen.
+* **b**. Click the blue “Enable Data” button to enable data storage for your project.
 
 <hr data-action="end" />
 
-Within your Backend Services project you can see all the things Backend Services makes possible, such as user management, push notifications, email messaging, and more. For your photo uploader you're interested in the **Files** menu option. You'll see how to use it in the next step.
+The Data tab is where you manage your application’s data. You can connect to an existing database, or use the Telerik Platform’s own secure backend storage system. Regardless of which approach you use, the Telerik Platform provides a simple RESTful API for accessing your data.
+
+On this tab you’ll see a “Files” menu, which is where you’re going to store your app’s photos. When you clicked “Enable Data”, the Telerik Platform automatically created a RESTful API for you to upload files to this backend system. Before using the API though, you need to grab your App ID.
+
+<hr data-action="start" />
+
+#### Action
+
+* **c**. Click the “Settings” tab in the menu on the left-hand side of the screen.
+* **d**. Copy the App ID shown under the “App ID” heading and paste it somewhere convenient; you'll need it to complete the next step.
+
+<hr data-action="end" />
 
 ### Step 8. Upload images to your backend
 
-With a Backend Services project in place, your next step is to add data to it. Backend Services provides SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a NativeScript app you're interested in the JavaScript SDK. The `Photo Album Native Code` project has already been provisioned with the appropriate JavaScript SDK in the form of the `everlive.all.min.js` file. You should now get back to your `Photo Album Native Code` project and load the JavaScript SDK implementation following the steps below.
+With a backend ready to go, your next step is to add data to it. The Telerik Platform provides backend SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a NativeScript app you're interested in the JavaScript SDK. Your app already contains the appropriate JavaScript SDK in the form of the `everlive.all.min.js` file. Let’s head back to the code to see how it all works.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a**. Click on your account name in the top-left corner of the screen.
-* **b**. Click on the `Photo Album Native` application to enter it.
-* **c**. Open the `view-model.js` file and add the following line at the top to load the SDK module:
+* **a**. Navigate back to your code by clicking on the “Code” tab on the left-hand side of the screen.
+* **b**. Open the `view-model.js` file and add the following line at the top to load the SDK module:
 ```
 var Everlive = require('./everlive.all.min');
 ```
-* **d**. Right after loading the module declare an `everlive` object:
+* **c**. Right after loading the module declare an `everlive` object:
 ```
 var everlive = new Everlive("YOUR API KEY");
 ```
-* **e.** Replace the `"YOUR API KEY"` string with the API key you saved off in the previous step.
+* **d.** Replace the `"YOUR API KEY"` string with the API key you saved off in the previous step.
 
 <hr data-action="end" />
 
-The `everlive` object now contains an Everlive instance you can use to interact with your Backend Services project. Let's return to our photo management code to see how to use it.
+The `everlive` object now contains an Everlive instance you can use to interact with your backend. Let's return to our photo management code to see how to use it.
 
-> Tip: The latest versions of the JavaScript SDKs can be downloaded from [this documentation article](http://docs.telerik.com/platform/backend-services/development/javascript-sdk/introduction). 
+**Tip**: The latest versions of the JavaScript SDKs can be downloaded from [this documentation article](http://docs.telerik.com/platform/backend-services/development/javascript-sdk/introduction). 
 
 <hr data-action="start" />
 
 #### Action
 
-* **f**. Make the following code snippet replacement to change the way the NativeScript ListView gets the data it needs.
+* **e**. Make the following code snippet replacement to change the way the NativeScript ListView gets the data it needs.
 
 Before:
 
@@ -99,9 +94,9 @@ Object.defineProperty(photoAlbumModel, "photoItems", {
 });
 ```
 
-The `get()` method retrieves all pictures stored in the Telerik Backend Services. If you now deploy the Photo Album app using `LiveSync` feature, the ListView will appear empty, because there are no images in the Telerik Backend Services project yet. But don't worry, we will soon add a few.
+The `get()` method retrieves all pictures stored in your backend. If you now deploy the Photo Album app using `LiveSync` feature, the ListView will appear empty, because there are no images in your backend yet. But don't worry, we will soon add a few.
 
-* **g**. Add the following code to the bottom of the `cameraModule.takePicture` promise:
+* **f**. Add the following code to the bottom of the `cameraModule.takePicture` promise:
 ```
 var file = {
     "Filename": Math.random().toString(36).substring(2, 15) + ".jpg",
@@ -143,11 +138,11 @@ photoAlbumModel.tapAction = function () {
 };
 ```
 
-This code displays the images you take in the ListView (using the `backendArray` instead of the `localImagesArray`) and uploads them asynchronously to the Telerik Backend Services using the `create()` method.
+This code displays the images you take in the ListView (using the `backendArray` instead of the `localImagesArray`) and uploads them asynchronously to the your backend using the `create()` method.
 
-* **g**. Save the `view-model.js` file and use the `LiveSync` feature to update the application. On the device, tap the `Add new photos` to take photos and upload the images to the cloud.
-* **h**. After you store a few pictures, go to the “Files” menu in your Backend Services project to see a list of the photos you are storing.
-* **i**. To see how the images are downloaded asynchronously from the Telerik Backend Services, close (kill) the `Photo Album Native` app on your device and reopen it. Your previously taken photos will load accordingly.
+* **g**. Save the `view-model.js` file and use the LiveSync feature to update the application. On the device, tap `Add new photos` to take photos and upload the images to the cloud.
+* **h**. After you store a few pictures, return to the “Data” tab and click “Files” to see a list of the photos you are storing.
+* **i**. To see how the images are downloaded asynchronously from your backend, close (kill) the `Photo Album Native` app on your device and reopen it. Your previously taken photos will load accordingly.
 
 <hr data-action="end" />
 

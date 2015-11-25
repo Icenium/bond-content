@@ -6,7 +6,7 @@
 
 When creating views with Kendo UI, you'll often find yourself using common elements like headers and footers throughout your app. With layouts, we can define those elements in a single place, and reuse them throughout.
 
-> Tip: The default CSS rules provided in Kendo UI Mobile are included in the **kendo.mobile.all.min.css** file.
+**Tip**: The default CSS rules provided in Kendo UI Mobile are included in the **kendo.mobile.all.min.css** file.
 
 #### Action
 
@@ -44,7 +44,7 @@ app = new kendo.mobile.Application(document.body, { layout: "main-layout" });
 * **f**. Save the app.js file.
 * **g**. Open the iPhone simulator (select **Run** --> **iPhone**) to see your new layout in action. Please note the defined layout will appear specific to the particular platform. 
 
-> Tip: Depending on the project requirements, the mobile application may be styled in several different ways. Check out the documentation on [Kendo UI Mobile CSS Dependencies](http://docs.telerik.com/kendo-ui/mobile/styling#kendo-ui-mobile-css-dependencies) for full configuration options on styling in different ways.
+**Tip**: Depending on the project requirements, the mobile application may be styled in several different ways. Check out the documentation on [Kendo UI Mobile CSS Dependencies](http://docs.telerik.com/kendo-ui/mobile/styling#kendo-ui-mobile-css-dependencies) for full configuration options on styling in different ways.
 
 <hr data-action="end" />
 
@@ -81,7 +81,7 @@ The TabStrip, as the name indicates, provides a tab menu at the base or top of y
 <a href="views/about.html" data-icon="globe">About</a>
 ```
 
-> Tip: The `data-icon` attribute allows you to specify the image that will accompany a tab or drawer item. You can learn more about icons, including how to create your own, in [this article](http://docs.telerik.com/kendo-ui/mobile/icons).
+**Tip**: The `data-icon` attribute allows you to specify the image that will accompany a tab or drawer item. You can learn more about icons, including how to create your own, in [this article](http://docs.telerik.com/kendo-ui/mobile/icons).
 
 * **c**. Save the index.html file and re-open the iPhone simulator. Click each tab and notice how the layout is preserved, even as the main content changes.
 * **d**. Close the iPhone simulator and open an Android phone simulator. Notice how Kendo UI automatically adapts to an Android style by moving the TabStrip to the top of the screen.

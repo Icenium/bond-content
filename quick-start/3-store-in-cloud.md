@@ -28,7 +28,7 @@ On this tab you’ll see a “Files” menu, which is where you’re going to st
 
 ### Step 7. Upload images to your backend
 
-With your backend system ready to go, your final step is to upload data to it. The Telerik Platform provides backend SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a Cordova app you're interested in the JavaScript SDK. In this step you'll add the Backend Services JavaScript SDK to your project, and use it to store your images in the cloud.
+With your backend ready to go, your final step is to add data to it. The Telerik Platform provides backend SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a Cordova app you're interested in the JavaScript SDK. In this step you'll add the Backend Services JavaScript SDK to your project, and use it to store your images in the cloud.
 
 <hr data-action="start" />
 

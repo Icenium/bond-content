@@ -19,7 +19,7 @@ Since apps are rarely comprised of static data, let's see how you can alter your
 
 <hr data-action="end" />
 
-> Tip: The `data-align` attribute controls which side of the navbar the button appears on. Try playing with it to see how it affects the app's layout.
+**Tip**: The `data-align` attribute controls which side of the navbar the button appears on. Try playing with it to see how it affects the app's layout.
 
 The next step is to listen for clicks on the button, and then add a photo to the listview. You'll do so using Kendo UI's MVVM data bindings, as they provide an elegant way to separate the data (or the model) from the view.
 
@@ -53,7 +53,7 @@ At this point you have a list of photos, and a mechanism for adding new photos t
 
 The Cordova library makes invoking native device methods as easy as JavaScript method calls. Let's see how to use Cordova plugins, starting with the API to take a picture using the camera: `navigator.camera.getPicture()`.
 
-> Tip: Remember that keyboard shortcut `Ctrl` + `Alt` + `F` can format the code that you paste in. You can also view all keyboard shortcuts using `Ctrl` + `Shift` + `/`.
+**Tip**: Remember that keyboard shortcut `Ctrl` + `Alt` + `F` can format the code that you paste in. You can also view all keyboard shortcuts using `Ctrl` + `Shift` + `/`.
 
 <hr data-action="start" />
 

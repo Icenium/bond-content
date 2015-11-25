@@ -54,7 +54,7 @@ Now that you've learned how to properly set up your device, let's create a build
 
 * **b**. Choose the platform you are targeting and make sure the `App package` option is selected.
 
-> Tip: You'll notice that we are leaving the app in `debug` mode. By doing so, we enable LiveSync - which allows us to view changes made to our app immediately on our device (even after it's been deployed!).
+**Tip**: You'll notice that we are leaving the app in `debug` mode. By doing so, we enable LiveSync - which allows us to view changes made to our app immediately on our device (even after it's been deployed!).
 
 * **c**. Click the `Next` button to generate your build in the cloud. Note that this build process may take a minute.
 
@@ -68,7 +68,7 @@ Now that you've learned how to properly set up your device, let's create a build
 
 <hr data-action="end" />
 
-> Tip: If you use another AppBuilder IDE such as our Windows client, Visual Studio extension, Command Line Interface, or Sublime Text package, you can deploy directly to any connected device without going through the process of scanning QR codes or downloading and manually installing the app!*
+**Tip**: If you use another AppBuilder IDE such as our Windows client, Visual Studio extension, Command Line Interface, or Sublime Text package, you can deploy directly to any connected device without going through the process of scanning QR codes or downloading and manually installing the app!*
 
 ### Step 13. Use LiveSync to see your changes without re-building
 

@@ -33,11 +33,11 @@ The above code snippet will start the native platform camera application. After 
 
 <hr data-action="end" />
 
-> Tip: Remember that keyboard shortcut `Ctrl` + `Alt` + `F` can format the code that you paste in. You can also view all keyboard shortcuts using `Ctrl` + `Shift` + `/`.
+**Tip**: Remember that keyboard shortcut `Ctrl` + `Alt` + `F` can format the code that you paste in. You can also view all keyboard shortcuts using `Ctrl` + `Shift` + `/`.
 
 <hr data-action="start" />
 
-* **c**. Save the `view-model.js` file and use the `LiveSync` feature to deploy the updated app to the device.
+* **c**. Save the `view-model.js` file and use the LiveSync feature to deploy the updated app to the device.
 * **d**. Tap the `Add new photos` button on your device.
 * **e**. Take a picture! It can be of you, your keyboard, or that stress ball you got at some conference three years ago. If everyone went right, you should see the picture appear at the top of the list.
 

@@ -4,7 +4,7 @@
 
 In this tutorial, you will learn how to load data in a UI control, how to bind UI properties to a view model and how to define the style of the UI with CSS. As a result you will have a native Photo Album application written entirely in XML and JavaScript.
 
-An app project named `Photo Album Native` has already been created for you. This app project contains a NativeScript project named `Photo Album Native Code` where you will implement the core logic of your application. The NativeScript project is provisioned with a few images and an SDK which you will need later on. The `Photo Album Native Code` project is now opened, and let's first quickly examine its structure: 
+An app named `Photo Album Native` has already been created for you. This NativeScript app contains a few images and an SDK which you will need later on. The app’s code is currently open, so let's start by examining its structure: 
 
 * **app** This folder contains the entire app functionality.
 * **App_Resources** This folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
@@ -142,7 +142,7 @@ var photoAlbumModel = new observable.Observable();
 
 Using the `Observable()` type of our view model lets you bind controls properties from the main page to properties in the view model.
 
-> Tip: Keyboard shortcut `Ctrl` + `Alt` + `F` cleans up the JavaScript indentation and formatting for you. Try using it after you paste in code throughout these lessons.
+**Tip**: Keyboard shortcut `Ctrl` + `Alt` + `F` cleans up the JavaScript indentation and formatting for you. Try using it after you paste in code throughout these lessons.
 
 <hr data-action="start" />
 
@@ -204,7 +204,7 @@ exports.onPageLoaded = onPageLoaded;
 
 <hr data-action="end" />
 
-As a result, the `ListView` is populated with images. Use the `LiveSync` feature of the NativeScript companion app to see them. Let's now add two more images on a button tap and style the button.
+As a result, the `ListView` is populated with images. Use the LiveSync feature of the NativeScript companion app to see them. Let's now add two more images on a button tap and style the button.
 
 
 ### Step 5. Respond to events and add some style
@@ -274,4 +274,4 @@ Button {
 
 This is it! Now you know how to load data in a UI control, how to bind UI properties to a view model and how to define the style of the UI with CSS.
 
-Use `LiveSync` to update the application on the device and see the results.
+Use LiveSync to update the application on the device and see the results.

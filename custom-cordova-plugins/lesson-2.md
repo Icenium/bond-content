@@ -34,7 +34,7 @@ Let's do a slight customization to your Kendo UI template to retrieve and displa
 </script>
 ```
 
-> Tip: When we query the contacts database, we are asking for all fields (`var fields = ["*"];`). This means the profile pictures have already been included in this data set, so there is nothing more we need to do to request them!
+**Tip**: When we query the contacts database, we are asking for all fields (`var fields = ["*"];`). This means the profile pictures have already been included in this data set, so there is nothing more we need to do to request them!
 
 * **b**. Save your changes.
 
