@@ -15,8 +15,7 @@ An app project named `Photo Album Native` has already been created for you. This
 * **LICENSE** This file describes the license which protects the application's code.
 * **main-page.js** This is the main JavaScript file used to implement the business logic of the initial page.
 * **main-page.xml** This is the file used to implement the UI of the initial page.
-* **package.json** This file contains meta information for your project such as name, author, version.
-* **package.json** This file describes what modules (a.k.a widgets or components) you have loaded for your projects. All NativeScript projects start with a default set of modules known as `tns-core-modules`.
+* **package.json** This file contains meta information for your project such as name, author, version. The file also describes what modules (a.k.a widgets or components) you have loaded for your projects. All NativeScript projects start with a default set of modules known as `tns-core-modules`.
 
 
 ### Step 2. Define the user interface
