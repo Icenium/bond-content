@@ -8,26 +8,32 @@ An app named `Photo Album Native` has already been created for you. This NativeS
 
 * **app** This folder contains the entire app functionality.
 * **App_Resources** This folder contains application assets such as icons, splash screens and configuration files such as Info.plist and AndroidManifest.xml.
+* **components** In this folder you can create the components for you app such as views. The Screen Builder tool (available from the Views tab on the left) will store any view that you create in this folder. The Screen Builder tool allows you to quickly create screens for your NativeScript app using a nice and friendly UI.
+* **homeView.js** In the `components` folder you will find the view the application starts with. The `homeView.js` file is the code-behind file of that view.
+* **homeView.xml** This is the file used to implement the UI of the initially loaded view.
+* **images** Helper images that you would come in handy in the process of creating views with Screen Builder.
+* **navigation** The code for the navigation that you would create using Screen Builder will be stored here.
 * **res** This folder contains a few preloaded images for the purposes of the quick-start tutorial.
+* **utils** Service utilities (widgets, components) that the Screen Builder needs when creating views and applying settings to these views.
 * **app.css** This is the main CSS file of the application. The styles you define here are applied to the content of all pages. 
 * **app.js** This module contains application specific code, such as which page is the starting page of the application. 
 * **everlive.all.min.js** This is the JavaScript SDK for the Telerik Backend Services that we will use later in this tutorial.
 * **LICENSE** This file describes the license which protects the application's code.
-* **main-page.js** This is the main JavaScript file used to implement the business logic of the initial page.
-* **main-page.xml** This is the file used to implement the UI of the initial page.
 * **package.json** This file contains meta information for your project such as name, author, version. The file also describes what modules (a.k.a widgets or components) you have loaded for your projects. All NativeScript projects start with a default set of modules known as `tns-core-modules`.
+* **.abignore**, **.app.json**, **yo-rc.json** Service files for the AppBuilder. 
 
+**Note**: Although we will work with the pre-created view available to Screen Builder, we will not use Screen Builder to modify this view. Instead, we will take the code-first approach to demonstrate the ease of use of the NativeScript API.
 
 ### Step 2. Define the user interface
 
-You are now going to create a page that contains a button at the bottom and a listview that spans over the remaining screen area. These two controls will be arranged thanks to a grid layout. You will declare the UI of the page in `main-page.xml`.
+You are now going to create a page that contains a button at the bottom and a listview that spans over the remaining screen area. These two controls will be arranged thanks to a grid layout. You will declare the UI of the page in `homeView.xml`.
 
 <hr data-action="start" />
 
 #### Action 
 
 * **a.** Open the `main-page.xml` file.
-* **b.** Between the `Page` start and end tags, create a `GridLayout` instance and set up its layout. For the purposes of the application, the grid should consist of two rows - the first row will take the available space the `GridLayout` provides and the second row will be sized according to its own content:
+* **b.** Between the `Page` start and end tags create a `GridLayout` instance and set up its layout. For the purposes of the application, the grid should consist of two rows - the first row will take the available space the `GridLayout` provides and the second row will be sized according to its own content:
 ```
 <GridLayout rows="*, auto">
 </GridLayout>
@@ -74,11 +80,11 @@ The NativeScript companion app makes it easy for you to test your app on real de
 * **f.** **iOS:** Open the NativeScript app on your device and with a two-finger left-to-right swipe from far left reveal the companion app menu. Tap **QR Scanner** in the menu and use the integrated scanner to scan the QR code displayed in the browser.
 ![Using a two-finger swipe on your device](images/swipe.png)
 
-* **e.** **Windows Phone:** A companion app for Windows Phone is not yet available.
+* **e.** **Universal Windows Platform:** A companion app for Windows Universal is not yet available.
 
 <hr data-action="end" />
 
-When scanned, the QR code loads your app in the NativeScript companion app. You should see the button at the bottom and some white space taken from the empty list view. Now that you have the app on your device, let's make some changes to see how easy it is to get application updates without rescanning the QR code.
+When scanned, the QR code loads your app in the NativeScript companion app. You should should be able to see the empty rows of the listview. The button is also there, at the bottom, but it's white, so you may not be able to recognize it immediately. Now that you have the app on your device, let's make some changes to see how easy it is to get application updates without rescanning the QR code.
 
 <hr data-action="start" />
 
@@ -100,14 +106,14 @@ This process is known as LiveSync and makes updating your apps as easy as a quic
 
 ### Step 4. Populate a ListView with images
 
-It's time to populate the `ListView` with images. For that purpose, the `Photo Album Native Code` project has already been provisioned with eight images. As discussed earlier, they are located in the `app --> res` folder. These images should be set as the items source of the `ListView`. The items source definition should be created in a view model file and then consumed by the `ListView` in the `main-page.js/main-page.xml` files.
+It's time to populate the `ListView` with images. For that purpose, the `Photo Album Native` project has already been provisioned with eight images. As discussed earlier, they are located in the `app --> res` folder. These images should be set as the items source of the `ListView`. The items source definition should be created in a view model file and then consumed by the `ListView` in the `homeView.js/homeView.xml` files.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a.** Right-click the `app` folder and choose **Add** --> **New File**. Select `JavaScript` for the file type and  name the file `view-model.js`. This is the place you will define the data model.
-* **a.** In the `view-model.js` add the following declarations to load the necessary modules from the `tns-core-modules`: 
+* **a.** Right-click the `homeView` folder and choose **Add** --> **New File**. Select `JavaScript` for the file type and  name the file `homeView-view-model.js`. This is the place you will define the data model.
+* **a.** In the `homeView-view-model.js` add the following declarations to load the necessary modules from the `tns-core-modules`: 
 ```
 var observable = require("data/observable");
 var imageSourceModule = require("image-source");
@@ -119,7 +125,7 @@ You need the first one to reflect the view model changes in the UI. The next two
 * **b.** Create an `ObservableArray()` and add the images there using the `push` method:
 ```
 var localImagesArray = new observableArrayModule.ObservableArray();
-var directory = "/res/";
+var directory = "/../../res/";
 function imageFromSource(imageName) {
     return imageSourceModule.fromFile(fileSystemModule.path.join(__dirname, directory + imageName));
 };
@@ -156,20 +162,20 @@ Object.defineProperty(photoAlbumModel, "photoItems", {
     configurable: true
 });
 ```
-* **e.** At the bottom of the `view-model.js` file declare `photoAlbumModel` in the module `exports` to make this model accessible from the UI.
+* **e.** At the bottom of the `homeView-view-model.js` file declare `photoAlbumModel` in the module `exports` to make this model accessible from the UI.
 ```
 exports.photoAlbumModel = photoAlbumModel;
 ```
 
 <hr data-action="end" />
 
-With the view model created, let's get back to our `main-page.js/main-page.xml` files to populate `ListView` with data.
+With the view model created, let's get back to our `homeView.js/homeView.xml` files to populate `ListView` with data.
 
 <hr data-action="start" />
 
-* **f.** In the `main-page.js` file, load the view model specifying its location in the project folder structure and then load the pre-created instance of `photoAlbumModel`. 
+* **f.** In the `homeView.js` file, load the view model specifying its location in the project folder structure and then load the pre-created instance of `photoAlbumModel`. 
 ```
-var modelModule = require("./view-model");
+var modelModule = require("./homeView-view-model");
 var model = modelModule.photoAlbumModel;
 ```
 * **g.** Create a function called `onPageLoaded`. In this function you will set the `bindingContext` of the page to be our view model:
@@ -183,7 +189,7 @@ function onPageLoaded(args) {
 ```
 exports.onPageLoaded = onPageLoaded;
 ```
-* **i.** To call the `onPageLoaded` method when the page loads, add the loaded attribute with value `onPageLoaded` in the `Page` tag in `main-page.xml`:
+* **i.** To call the `onPageLoaded` method when the page loads, add the loaded attribute with value `onPageLoaded` in the `Page` tag in `homeView.xml`:
 ```
 <Page loaded="onPageLoaded" xmlns="http://www.nativescript.org/tns.xsd" >
 ```
@@ -215,14 +221,14 @@ The `ListView` is already populated with a few images. You will now add a few mo
 
 #### Action
 
-* **a.** Open the `view-model.js` file and create a function called `tapAction` at `photoAlbumModel`. In the body of this function add two more images to the `ObservableArray` instance.
+* **a.** Open the `homeView-view-model.js` file and create a function called `tapAction` at `photoAlbumModel`. In the body of this function add two more images to the `ObservableArray` instance.
 ```
 photoAlbumModel.tapAction = function () {
 	localImagesArray.push(item7);
 	localImagesArray.push(item8);
 };
 ```
-* **b.** In the `main-page.xml` file, set the `tap` attribute of the `Button` tag to the `tapAction` function of the `photoAlbumModel`. This will call the function when the button is tapped:
+* **b.** In the `homeView.xml` file, set the `tap` attribute of the `Button` tag to the `tapAction` function of the `photoAlbumModel`. This will call the function when the button is tapped:
 ```
 <Button text="Test Message" row="1" tap="{{ tapAction }}"/>
 ```
@@ -235,7 +241,7 @@ Tapping the Button will now add two more images to the ListView. But let's make 
 
 #### Action
 
-* **a.** In the `view-model.js` file, add the following line right after the line where the `photoAlbumModel` instance was created. This line will prompt the user to add more images:
+* **a.** In the `homeView-view-model.js` file, add the following line right after the line where the `photoAlbumModel` instance was created. This line will prompt the user to add more images:
 ```
 photoAlbumModel.set("message", "Add new photos");
 ```
@@ -243,7 +249,7 @@ photoAlbumModel.set("message", "Add new photos");
 ```
 photoAlbumModel.set("message", "Images added. Total images: " + localImagesArray.length);
 ```
-* **c.** In `main-page.xml`, set the `text` attribute of the `Button` tag to `{{ message }}`. This will bind the `Button`'s `text` property to the `message` property of the `photoAlbumModel`. So, initially, the button will show `Add new images` and after you tap it, it will show `Images added. Total images: 8`.
+* **c.** In `homeView.xml`, set the `text` attribute of the `Button` tag to `{{ message }}`. This will bind the `Button`'s `text` property to the `message` property of the `photoAlbumModel`. So, initially, the button will show `Add new images` and after you tap it, it will show `Images added. Total images: 8`.
 ```
 <Button text="{{ message }}" row="1" tap="{{ tapAction }}"/>
 ```
@@ -257,19 +263,16 @@ Finally, let's beautify the button. NativeScript uses standards-based CSS syntax
 #### Action
 
 * **a.** Open the `app.css` file.
-* **b.** After the block for the `page` objects, add a block for the `Button` that determines the foreground color, background color and font properties of the `Button` type. The complete code in `app.css` looks like this:
+* **b.** After the block for the `page` objects, add a block for the `Button` that determines the foreground color, background color and font properties of the `Button` type. So, add the following CSS block at the end of `app.css`:
 
 ```
-page {
-    /* CSS styles */
-}
-
 Button {
   background-color: gray;
   font-size: 20;
   color: #3BB9FF; 
 }
 ```
+
 <hr data-action="end">
 
 This is it! Now you know how to load data in a UI control, how to bind UI properties to a view model and how to define the style of the UI with CSS.

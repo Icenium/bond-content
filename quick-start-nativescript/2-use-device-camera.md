@@ -10,7 +10,7 @@ The NativeScript cross-platform wrappers makes invoking native device methods as
 
 #### Action
 
-* **a**. In the `view-model.js` add the following declaration to load the module responsible for the native camera API: 
+* **a**. In the `homeView-view-model.js` add the following declaration to load the module responsible for the native camera API: 
 ```
 var cameraModule = require("camera");
 ```
@@ -37,7 +37,7 @@ The above code snippet will start the native platform camera application. After 
 
 <hr data-action="start" />
 
-* **c**. Save the `view-model.js` file and use the LiveSync feature to deploy the updated app to the device.
+* **c**. Save the `homeView-view-model.js` file and use the LiveSync feature to deploy the updated app to the device.
 * **d**. Tap the `Add new photos` button on your device.
 * **e**. Take a picture! It can be of you, your keyboard, or that stress ball you got at some conference three years ago. If everyone went right, you should see the picture appear at the top of the list.
 

@@ -35,7 +35,7 @@ With a backend ready to go, your next step is to add data to it. The Telerik Pla
 #### Action
 
 * **a**. Navigate back to your code by clicking on the “Code” tab on the left-hand side of the screen.
-* **b**. Open the `view-model.js` file and add the following line at the top to load the SDK module:
+* **b**. Open the `homeView-view-model.js` file and add the following line at the top to load the SDK module:
 ```
 var Everlive = require('./everlive.all.min');
 ```
@@ -141,7 +141,7 @@ photoAlbumModel.tapAction = function () {
 
 This code displays the images you take in the ListView (using the `backendArray` instead of the `localImagesArray`) and uploads them asynchronously to the your backend using the `create()` method.
 
-* **g**. Save the `view-model.js` file and use the LiveSync feature to update the application. On the device, tap `Add new photos` to take photos and upload the images to the cloud.
+* **g**. Save the `homeView-view-model.js` file and use the LiveSync feature to update the application. On the device, tap `Add new photos` to take photos and upload the images to the cloud.
 * **h**. After you store a few pictures, return to the “Data” tab and click “Files” to see a list of the photos you are storing.
 * **i**. To see how the images are downloaded asynchronously from your backend, close (kill) the `Photo Album Native` app on your device and reopen it. Your previously taken photos will load accordingly.
 
