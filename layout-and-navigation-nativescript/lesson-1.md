@@ -92,7 +92,7 @@ The StackLayout arranges its child elements into a single line. It supports both
 
 ### Step 4. Create table layout
 
-To achieve table layout you use use the GridLayout. The GridLayout arranges its children in multi-row and multi-column layouts. You use the **rows** and **columns** attributes to set the number of rows and columns.
+To achieve table layout you use the GridLayout. The GridLayout arranges its children in multi-row and multi-column layouts. You use the **rows** and **columns** attributes to set the number of rows and columns.
 
 **Setting size for rows and columns**
 
