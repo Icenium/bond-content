@@ -37,7 +37,7 @@ With a backend ready to go, your next step is to add data to it. The Telerik Pla
 * **a**. Navigate back to your code by clicking on the “Code” tab on the left-hand side of the screen.
 * **b**. Open the `homeView-view-model.js` file and add the following line at the top to load the SDK module:
 ```
-var Everlive = require('./everlive.all.min');
+var Everlive = require('../../everlive.all.min');
 ```
 * **c**. Right after loading the module declare an `everlive` object:
 ```
