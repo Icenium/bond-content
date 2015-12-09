@@ -185,7 +185,7 @@ function onPageLoaded(args) {
     page.bindingContext = model;
 }
 ```
-* **h.** Set the `exports.onPageLoaded` at the end of `main-page.js` to make the `onPageLoaded` function accessible from the UI:
+* **h.** Set the `exports.onPageLoaded` at the end of `homeView.js` to make the `onPageLoaded` function accessible from the UI:
 ```
 exports.onPageLoaded = onPageLoaded;
 ```
