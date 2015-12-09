@@ -32,7 +32,7 @@ You are now going to create a page that contains a button at the bottom and a li
 
 #### Action 
 
-* **a.** Open the `main-page.xml` file.
+* **a.** Open the `homeView.xml` file.
 * **b.** Between the `Page` start and end tags create a `GridLayout` instance and set up its layout. For the purposes of the application, the grid should consist of two rows - the first row will take the available space the `GridLayout` provides and the second row will be sized according to its own content:
 ```
 <GridLayout rows="*, auto">
