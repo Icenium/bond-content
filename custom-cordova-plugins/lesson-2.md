@@ -21,13 +21,13 @@ Let's do a slight customization to your Kendo UI template to retrieve and displa
             # } else { #
                 <img class="smallProfile" src="styles/blankProfile.png" />
             # } #
-    
-            # if (name.givenName) { #
-                ${name.givenName}
-            # } #
-    
-            # if (name.familyName) { #
-                ${name.familyName}
+
+            # if (name.formatted) { #
+                ${name.formatted}
+            # } else if (name.givenName) { #
+                ${name.givenName + " " + name.familyName}
+            # } else { #
+                No Name Listed
             # } #
         </a>
     </li>

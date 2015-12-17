@@ -16,15 +16,15 @@ This first step focuses on the first view (`<div id="all-contacts">`). This view
 
 ```
 <script id="contacts-template" type="text/x-kendo-template">
-	<li>
-		# if (name.givenName) { #
-			${name.givenName}
-		# } #
-
-		# if (name.familyName) { #
-			${name.familyName}
-		# } #
-	</li>
+    <li>
+        # if (name.formatted) { #
+            ${name.formatted}
+        # } else if (name.givenName) { #
+            ${name.givenName + " " + name.familyName}
+        # } else { #
+            No Name Listed
+        # } #
+    </li>
 </script>
 ```
 
@@ -89,17 +89,17 @@ You now have a nice list of all of your device contacts, so the natural next ste
 
 ```
 <script id="contacts-template" type="text/x-kendo-template">
-	<li>
-		<a href="\#view-contact?id=${id}" class="expand">
-			# if (name.givenName) { #
-				${name.givenName}
-			# } #
-
-			# if (name.familyName) { #
-				${name.familyName}
-			# } #
-		</a>
-	</li>
+    <li>
+        <a href="\#view-contact?id=${id}" class="expand">
+            # if (name.formatted) { #
+                ${name.formatted}
+            # } else if (name.givenName) { #
+                ${name.givenName + " " + name.familyName}
+            # } else { #
+                No Name Listed
+            # } #
+        </a>
+    </li>
 </script>
 ```
 

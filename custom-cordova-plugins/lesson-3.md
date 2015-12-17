@@ -10,7 +10,7 @@ The AppBuilder package manager is your central hub for discovering and installin
 
 #### Action
 
-* **a**. In your **Project Navigator**, right-click on your project name and choose **Manage Packages**. This will open the AppBuilder package manager which you may use to install new versions of **Kendo UI**, install libraries and frameworks with **Bower**, and install custom Cordova plugins from the **Verified Plugins Marketplace**.
+* **a**. In your **Project Navigator**, right-click on your project name—**Contacts**—and choose **Manage Packages**. This will open the AppBuilder package manager which you may use to install new versions of **Kendo UI**, install libraries and frameworks with **Bower**, and install custom Cordova plugins from the **Verified Plugins Marketplace**.
 
 * **b**. Click on the **Plugins Marketplace** tab. Here you will find all of the custom Cordova plugins that are available as part of the Verified Plugins Marketplace. Scroll through the list to get some ideas of other ways to extend your app.
 
