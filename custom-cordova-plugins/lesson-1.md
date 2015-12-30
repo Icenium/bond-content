@@ -113,7 +113,6 @@ You now have a nice list of all of your device contacts, so the natural next ste
 window.getContactDetails = function(e) {
     selectedContactId = e.view.params.id;
     var options = new ContactFindOptions();
-    options.filter = e.view.params.id;           
     options.multiple = true;       
     var fields = ["*"];   
     navigator.contacts.find(fields, onContactDetailSuccess, onError, options);
