@@ -10,7 +10,7 @@ When creating views with Kendo UI, you'll often find yourself using common eleme
 
 #### Action
 
-* **a**. In the index.html file, add the following markup just before the closing `<body>` tag:
+* **a**. In the index.html file, add the following markup just before the closing `</body>` tag:
 ```
 <div data-role="layout" data-id="main-layout">
     <div data-role="header">Header</div>
