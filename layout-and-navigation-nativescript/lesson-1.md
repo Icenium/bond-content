@@ -26,7 +26,7 @@ The AbsoluteLayout is the most basic layout in NativeScript. It allows you to po
 
 #### Action
 
-* **a**. Add the following markup to position a single child inside a AbsoluteLayout using the top and left properties.
+* **a**. Open `app/components/homeView/homeView.xml` and add the following markup to position a single child inside a AbsoluteLayout using the top and left properties.
 
 **Tip**: Keyboard shortcut `Ctrl` + `Alt` + `F` cleans up indentation and formatting for you. Try using it after you paste in code throughout these lessons.
 
@@ -305,30 +305,28 @@ The XML file names should follow the format below.
 
 Screen size qualifiers allow you to load different XML files based on specific dimensions in dp (density independent pixels). 
 
-- main-page.xml - This is the default file and will be loaded if no other layout files have been specified in the file structure of the project.
+- homeView.xml - This is the default file and will be loaded if no other layout files have been specified in the file structure of the project.
 
-- main-page.minWH600.xml - This file will be loaded when at least 600 dp are available both for Width and Height.
+- homeView.minWH600.xml - This file will be loaded when at least 600 dp are available both for Width and Height.
 
-- main-page.minW600.xml - This file will be loaded when at least 600 dp are available for Width. The Height attribute is not taken into consideration.
+- homeView.minW600.xml - This file will be loaded when at least 600 dp are available for Width. The Height attribute is not taken into consideration.
 
-- main-page.minH600.xml - This file will be loaded when at least 600 dp are available for Height. The Width attribute is not taken into consideration.
+- homeView.minH600.xml - This file will be loaded when at least 600 dp are available for Height. The Width attribute is not taken into consideration.
 
 **Platform Qualifiers**
 
 Platform qualifiers can be used if you want to load platform specific layout.
 
-- main-page.android.xml - This file will be loaded if the app is running on an Android device.
+- homeView.android.xml - This file will be loaded if the app is running on an Android device.
 
-- main-page.ios.xml - This file will be loaded if the app is running on an iOS device.
-
-- main-page.windows.xml - This file will be loaded if the app is running on a Windows device.
+- homeView.ios.xml - This file will be loaded if the app is running on an iOS device.
 
 **Orientation Qualifiers**
 
 Orientation qualifiers can be used if you want to load orientation specific layout.
 
-- main-page.land.xml - This file will be loaded if the orientation of the app is in landscape mode.
+- homeView.land.xml - This file will be loaded if the orientation of the app is in landscape mode.
 
-- main-page.port.xml - This file will be loaded if the orientation of the app is in portrain mode.
+- homeView.port.xml - This file will be loaded if the orientation of the app is in portrain mode.
 
 Great job! In just a few minutes, you've mastered some of the critical basics to building native apps with NativeScript and the Telerik Platform. With these skills in hand, creating the navigation, layout and major views in your next mobile app should be a breeze!

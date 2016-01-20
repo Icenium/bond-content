@@ -23,9 +23,9 @@ exports.onPageLoaded = onPageLoaded;
 
 #### Action
 
-* **a**. Modify the main page of your app.
+* **a**. Modify the home page of your app.
 
-**main-page.xml**
+**app/components/homeView/homeView.xml**
 ```
 <Page>
   <StackLayout>
@@ -35,17 +35,18 @@ exports.onPageLoaded = onPageLoaded;
 </Page>
 ```
 
-**main-page.js**
+**app/components/homeView/homeView.js**
 ```
 var frameModule = require("ui/frame");
 function buttonForwardTap(args) {
     var topmost = frameModule.topmost();
-    topmost.navigate("./page1");
+    topmost.navigate("components/page1/page1");
 }
 exports.buttonForwardTap = buttonForwardTap;
 ```
 
-* **b**. Create two additional pages - Page1 and Page2. You'd need two files per each page - one xml and one js. Then add the following markup and javascript to each page.
+* **b**. Create two new folders—`app/components/page1` and `app/components/page2`.
+* **c**. Create `page1.xml` and `page1.js` in the `page1` folder, and `page2.xml` and `page2.xml` in the `page2` folder. Next, add the following code to the appropriate files:
 
 **page1.xml**
 ```
@@ -63,7 +64,7 @@ exports.buttonForwardTap = buttonForwardTap;
 var frameModule = require("ui/frame");
 function buttonForwardTap(args) {
     var topmost = frameModule.topmost();
-    topmost.navigate("./page2");
+    topmost.navigate("components/page2/page2");
 }
 exports.buttonForwardTap = buttonForwardTap;
 function buttonBackTap(args) {
@@ -93,7 +94,7 @@ function buttonBackTap(args) {
 exports.buttonBackTap = buttonBackTap;
 ```
 
-* **b**. Sync your changes and open the app. Your main page should be the first page you see. From there you can navigate to Page1. Once on Page1, you have the option to go to Page2 or go back to the main page.
+* **d**. Sync your changes and open the app. Your main page should be the first page you see. From there you can navigate to Page1. Once on Page1, you have the option to go to Page2 or go back to the main page.
 
 <hr data-action="end" />
 
@@ -105,13 +106,13 @@ In case you want to pass some state information, i.e. some kind of context, to t
 
 #### Action
 
-* **a**. Modify **buttonForwardTap** in **main-page.js** to pass information to Page1.
+* **a**. Modify `buttonForwardTap` in `homeView.js` to pass information to Page1.
 
 ```
 function buttonForwardTap(args) {
     var topmost = frameModule.topmost();
     var navigationEntry = {
-        moduleName: "./page1",
+        moduleName: "components/page1/page1",
         context: {
             info: {
                     name: "John",
@@ -125,7 +126,7 @@ function buttonForwardTap(args) {
 exports.buttonForwardTap = buttonForwardTap;
 ```
 
-* **b**. Open **page1.xml** and subscribe for the **navigatedTo** event of the page.
+* **b**. Open `page1.xml` and subscribe to the `navigatedTo` event of the page.
 
 ```
 <Page navigatedTo="pageNavigatedTo">
@@ -133,7 +134,7 @@ exports.buttonForwardTap = buttonForwardTap;
 </Page>
 ```
 
-* **c**. Open page1.js and add a navigatedTo event handler.
+* **c**. Open `page1.js` and add a `navigatedTo` event handler.
 
 ```
 var dialogs = require("ui/dialogs");
