@@ -1,6 +1,6 @@
 ## Lesson 2. App Navigation
 
-### Step 8. Pages
+### Step 9. Pages
 
 Each NativeScript application is built upon the concept of pages (represented by the Page class). Pages are the different screens that your application shows. Each page has a content property which holds the root visual element of the page UI. Navigating between different pages is done with methods of the Frame class. The Frame class represents the logical unit that is responsible for navigation between different pages, i.e. going from one page to another, keeping a history stack for going back etc.
 
@@ -97,7 +97,7 @@ exports.buttonBackTap = buttonBackTap;
 
 <hr data-action="end" />
 
-### Step 9. Passing information between page navigation
+### Step 10. Passing information between page navigation
 
 In case you want to pass some state information, i.e. some kind of context, to the page you are navigating to, you should use the overload which accepts a NavigationEntry object. You can specify the page you want to navigate to by using the moduleName string property of the NavigationEntry class. 
 
