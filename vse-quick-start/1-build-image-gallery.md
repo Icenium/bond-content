@@ -23,6 +23,8 @@ Kendo UI Mobile apps are made up of views, and a basic one has already been crea
 * **c**. Add a `data-title` attribute to the view, e.g. `<div data-role="view" data-title="Photos">` and save the changes.
 * **d**. Save the index.html file.
 
+**Tip**: To better understand Kendo UI Mobile, please check the [documentation](http://docs.telerik.com/kendo-ui/api/javascript/mobile/application) and the guide on [Kendo UI Mobile Do's](http://www.kendouimobileguide.com/#1.-Kendo-UI-Mobile-Do's).
+
 <hr data-action="end" />
 
 Kendo UI Mobile automatically styles the navbar to look great on each platform. To see what this looks like, let's try this app out in the AppBuilder simulator by the **Start Debugging** command (default shortcut F5).
@@ -66,6 +68,8 @@ $("#images").kendoMobileListView({
 });
 ```
 * **e**. Run this in the simulator to see how the photos display.
+
+**Tip**: In case at some point you see a white screen, most probably JavaScript exception was raised. Please open the developer console by clicking the "Debug" button in the main menu to check for any errors listed. See also [Debug in the Simulator](http://docs.telerik.com/platform/appbuilder/cordova/debugging-your-code/debug-in-simulator).
 
 <hr data-action="end" />
 
