@@ -112,7 +112,7 @@ This process is known as *LiveSync*, and it makes updating your apps as easy as 
 
 ### Step 4. Deploy your app on connected device.
 
-With AppBuilder, you can directly deploy on multiple connected devices simultaneously. You can deploy apps on devices running iOS 4.3.5 and later, Android 2.2 and later, Windows Phone or on the Kindle Fire.
+With AppBuilder, you can directly deploy on multiple connected devices simultaneously. You can deploy apps on devices running iOS, Android, Windows Phone or on the Kindle Fire.
 
 <hr data-action="start" />
 
