@@ -1,0 +1,26 @@
+{
+	"title": "Quick start",
+	"description": "This tutorial is essential for understanding key concepts related to the AppBuilder extension for Visual Studio.",
+	"estimateTime": "40",
+	"land": "project",
+	"targetPage": "Code",
+	"workspace": {
+		"name": "Photo Album",
+		"description": "Sample app for learning how to develop hybrid apps using the AppBuilder extension for Visual Studio",
+		"project": { 
+			"name": "Photo Album Code",
+			"description": "",
+			"type": "appbuilder",
+			"url": "https://github.com/icenium/bond-app-template.git"
+		}
+	},
+	"app": {
+		"name": "Photo Album",
+		"description": "Sample app for learning how to develop hybrid apps using the AppBuilder extension for Visual Studio",
+		"content": { 
+			"appbuilder": {
+				"repoUrl": "https://github.com/icenium/bond-app-template.git"
+			}
+		}
+	}
+}

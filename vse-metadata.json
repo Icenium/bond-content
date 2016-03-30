@@ -1,0 +1,12 @@
+{  
+   "types":[
+      {
+         "id": "hybrid",
+         "shortName": "Hybrid",
+         "longName": "Hybrid",
+         "orderedTutorials": [
+            "vse-quick-start"
+         ]
+      }
+   ]
+}
