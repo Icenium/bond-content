@@ -9,15 +9,13 @@ Kendo UI Mobile apps are made up of views, and a basic one has already been crea
 #### Action
 
 * **a**. Open this project’s index.html file by double clicking it in the Project Navigator on the right-hand side of the screen.
-* **b**. Find the file’s existing view, and add markup so that the view looks this:
+* **b**. Find the defined view, and add the following markup inside it:
 ```
-<div data-role="view">
-    <header data-role="header">
-        <div data-role="navbar">
-            <span data-role="view-title"></span>
-        </div>
-    </header>
-</div>
+<header data-role="header">
+    <div data-role="navbar">
+        <span data-role="view-title"></span>
+    </div>
+</header>
 ```
 
 **Tip**: The keyboard shortcut `Ctrl` + `Alt` + `F` cleans up indentation and formatting for you. Try using it after you paste in code throughout these lessons.
@@ -49,14 +47,15 @@ Your next step is to show some photos in your album, and you'll use the Kendo UI
 
 #### Action
 
-* **a**. Add a `<ul>` element underneath the navbar with an `id` of `"images"` (`<ul id="images"></ul>`). The view should look like this:
+* **a**. Add a `<ul>` element with an `id` of `"images"` (`<ul id="images"></ul>`) underneath the header. The view should look like this:
 ```
-<div data-role="view" data-title="Photos">
+<div data-role="view" data-title="My Cool Photos">
     <header data-role="header">
         <div data-role="navbar">
             <span data-role="view-title"></span>
         </div>
     </header>
+
     <ul id="images"></ul>
 </div>
 ```
@@ -70,6 +69,8 @@ $("#images").kendoMobileListView({
 });
 ```
 * **e**. Run this in the simulator to see how the photos display.
+
+**Tip**: In case at some point you see a white screen, most likely a JavaScript exception occurred. Please open the developer console (**F12** key for Windows and **Command + Option + I** for OS X) and check for any errors listed under the Console tab. See also [Debug in the Simulator](http://docs.telerik.com/platform/appbuilder/cordova/debugging-your-code/debug-in-simulator).
 
 <hr data-action="end" />
 
@@ -88,9 +89,10 @@ The AppBuilder companion app makes it easy to test your app on real devices, wit
 [![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.AppBuilder&hl=en)
 [![Windows Phone Store](images/windows-phone-store-icon.png)](https://www.windowsphone.com/en-us/store/app/appbuilder/0171d46b-b5f2-43d9-a36b-0a78c9692aab?signin=true)
 
-* **c**. In the browser, select **Run** --> **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
-* **d**. Open the AppBuilder app on your device, and then use a two-finger swipe to reveal the companion app's menu. Click the “QR Scanner” option in the menu and use the integrated scanner to scan the QR code displayed in the browser.
+* **c**. Open the AppBuilder app on your device, and then use a two-finger swipe to reveal the companion app's menu. 
 ![Using a two-finger swipe on your device](images/swipe.png)
+
+* **d**. In the browser, select **Run** --> **Build**, select your device's platform, choose "AppBuilder companion app", and click Next. Once the build finishes, tap the "QR Scanner" option in the AppBuilder app's menu and use the integrated scanner to scan the generated QR code.
 
 <hr data-action="end" />
 

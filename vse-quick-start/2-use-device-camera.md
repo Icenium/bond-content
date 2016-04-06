@@ -15,7 +15,7 @@ Since apps are rarely comprised of static data, let's see how you can alter your
     <button data-role="button" data-align="right">Add</button>
 </div>
 ```
-* **b**. Save your changes and open the app in the simulator to view the new button.
+* **b**. Save the changes and open the app in the simulator to view the new button.
 
 <hr data-action="end" />
 
@@ -27,7 +27,7 @@ The next step is to listen for clicks on the button, and add a photo to the list
 
 #### Action
 
-* **c**. Find the line of code that declares the `kendo.mobile.Application` and replace it with the code below:
+* **c**. In app.js find the line of code that declares the `kendo.mobile.Application` and replace it with the code below:
 ```
 window.listview = kendo.observable({
     addImage: function() {
@@ -38,14 +38,14 @@ window.listview = kendo.observable({
 });
 var app = new kendo.mobile.Application(document.body, { skin: "nova" });
 ```
-* **d**. Bind the view to the `listview` object by adding a `data-model="listview"` attribute to the `<div data-role="view">` element (`<div data-role="view" data-model="listview">`).
-* **e**. Add a `data-bind` attribute to the add button to tell Kendo UI Mobile to invoke the `addImage` method when you click the add button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`).
+* **d**. Bind the defined view to the `listview` object by adding a `data-model="listview"` attribute (it should become `<div data-role="view" data-title="My Awesome VS Photos" data-model="listview">`).
+* **e**. Add a `data-bind` attribute to the button to tell Kendo UI Mobile to invoke the `addImage` method when you click on it (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`).
 * **f**. Save your changes and test out the result in the simulator.
 * **g**. Press F12 to have the developer console shown. This article explains how you can [debug your app while running it in the simulator](http://docs.telerik.com/platform/appbuilder/cordova/debugging-your-code/debug-in-simulator#visual-studio) when needed.
 
 <hr data-action="end" />
 
-Now, when you click the add button, the `addImage()` method runs, which calls the ListView widget's `prepend()` method to add a new image to the list.
+Now, when you click the button, the `addImage()` method runs, which calls the ListView widget's `prepend()` method to add a new image to the list.
 
 At this point you have a list of photos, and a mechanism for adding new photos to the list. Next, let's see how you can switch from adding a hardcoded image to one that uses your device's camera.
 
@@ -77,7 +77,7 @@ addImage: function() {
 }
 ```
 * **b**. Notice how the change is applied on the connected device once saved.
-* **c**. Click the add button on the device and take a picture. If everything went right, you should see the picture appear at the top of the list.
+* **c**. Click the *Add* button on the device and take a picture. If everything went right, you should see the picture appear at the top of the list.
 
 <hr data-action="end" />
 

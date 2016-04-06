@@ -15,14 +15,14 @@ The Telerik Platform provides tools for the entire app building experience. In t
 
 The Data tab is where you manage your application’s data. You can connect to an existing database, or use the Telerik Platform’s own secure backend storage system. Regardless of which approach you use, the Telerik Platform provides a simple RESTful API for accessing your data.
 
-On this tab you’ll see a “Files” menu, which is where you’re going to store your app’s photos. When you clicked “Enable Data”, the Telerik Platform automatically created a RESTful API for you to upload files to this backend system. Before using the API though, you need to grab your App ID.
+On this tab you’ll see a “Files” menu, which is where you’re going to store your app’s photos. When you clicked “Enable Data”, the Telerik Platform automatically created a RESTful API for you to upload files to this backend system. Before using the API though, you need to grab your *App ID*.
 
 <hr data-action="start" />
 
 #### Action
 
 * **c**. Click the “Settings” tab in the menu on the left-hand side of the screen.
-* **d**. Copy the App ID shown under the “App ID” heading and paste it somewhere convenient; you'll need it to complete the next step.
+* **d**. Copy the *App ID* shown under the “APP ID” heading and paste it somewhere convenient; you'll need it to complete the next step.
 
 <hr data-action="end" />
 
@@ -35,15 +35,15 @@ With your backend ready to go, your final step is to add data to it. The Telerik
 #### Action
 
 * **a**. Navigate back to your code by clicking on the “Code” tab on the left-hand side of the screen.
-* **b**. In your index.html file, insert the following `<script>` tag to import the Backend Services SDK (which is code named Everlive). Place it directly after the `<script>` that imports kendo.mobile.min.js:
+* **b**. In your index.html file, insert the following `<script>` tag to import the Backend Services SDK (code named Everlive). Place it straight before the `<script src="scripts/app.js"></script>` line:
 ```
-<script src="https://bs-static.cdn.telerik.com/1.5.8/everlive.all.min.js"></script>
+<script src="https://bs-static.cdn.telerik.com/1.6.9/everlive.all.min.js"></script>
 ```
 * **c**. Add the following to the top of your app.js file, right *before* the `document.addEventListener()` call:
 ```
-var everlive = new Everlive("YOUR API KEY");
+var everlive = new Everlive("YOUR APP ID");
 ```
-* **d.** Replace the `"YOUR API KEY"` string with the API key you saved off in the previous step.
+* **d.** Replace the `"YOUR APP ID"` string with the *APP ID* you saved off in the previous step.
 
 <hr data-action="end" />
 
@@ -60,7 +60,10 @@ var success = function(data) {
         Filename: Math.random().toString(36).substring(2, 15) + ".jpg",
         ContentType: "image/jpeg",
         base64: data
-    }).then(loadPhotos);
+    }).then(loadPhotos,
+            function (err) {
+                alert("Could not upload image" + err.message);
+            });
 };
 ```
 * **f**. Next, make the following change to change how the Kendo UI Mobile ListView gets the data it needs.
@@ -85,6 +88,10 @@ function loadPhotos() {
             dataSource: files,
             template: "<img src='#: data #'>"
         });
+    },
+    function (err) {
+        alert("Could not fetch images: " + err.message);
+
     });
 }
 loadPhotos();
