@@ -11,7 +11,7 @@
 			"name": "Grocery List Code",
 			"description": "",
 			"type": "appbuilder",
-			"url": "https://github.com/tjvantoll/bond-grocery-list.git"
+			"url": "https://github.com/Icenium/bond-grocery-list.git"
 		}
 	},
 	"app": {
@@ -19,7 +19,7 @@
 		"description": "Sample app for learning how to connect your project with data and web services",
 		"content": { 
 			"appbuilder": {
-				"repoUrl": "https://github.com/tjvantoll/bond-grocery-list.git"
+				"repoUrl": "https://github.com/Icenium/bond-grocery-list.git"
 			}
 		}
 	}

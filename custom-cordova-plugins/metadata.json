@@ -11,7 +11,7 @@
 			"name": "Contacts Code",
 			"description": "",
 			"type": "appbuilder",
-			"url": "https://github.com/rdlauer/cordova-contacts-test.git"
+			"url": "https://github.com/Icenium/cordova-contacts-test.git"
 		}
 	},
 	"app": {
@@ -19,7 +19,7 @@
 		"description": "Sample app for learning how to use cordova plugins to access hardware capabilities of the device",
 		"content": { 
 			"appbuilder": {
-				"repoUrl": "https://github.com/rdlauer/cordova-contacts-test.git"
+				"repoUrl": "https://github.com/Icenium/cordova-contacts-test.git"
 			}
 		}
 	}

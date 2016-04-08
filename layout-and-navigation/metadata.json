@@ -11,7 +11,7 @@
 			"name": "Great Books Code",
 			"description": "",
 			"type": "appbuilder",
-			"url": "https://github.com/bsatrom/great-books.git"
+			"url": "https://github.com/Icenium/great-books.git"
 		}
 	},
 	"app": {
@@ -19,7 +19,7 @@
 		"description": "Sample app for learning about layout and navigation",
 		"content": { 
 			"appbuilder": {
-				"repoUrl": "https://github.com/bsatrom/great-books.git"
+				"repoUrl": "https://github.com/Icenium/great-books.git"
 			}
 		}
 	}
