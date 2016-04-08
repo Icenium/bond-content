@@ -38,14 +38,14 @@ window.listview = kendo.observable({
 });
 var app = new kendo.mobile.Application(document.body, { skin: "nova" });
 ```
-* **d**. Bind the view to the `listview` object by adding a `data-model="listview"` attribute to the `<div data-role="view">` element (`<div data-role="view" data-model="listview">`).
-* **e**. Add a `data-bind` attribute to the add button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`). This tells Kendo UI Mobile to invoke the `addImage` method when you click the add button.
+* **d**. Bind the defined view to the `listview` object by adding a `data-model="listview"` attribute (it should become `<div data-role="view" data-title="My Awesome Photos" data-model="listview">`).
+* **e**. Add a `data-bind` attribute to the button (`<button data-role="button" data-align="right" data-bind="click: addImage">Add</button>`). This tells Kendo UI Mobile to invoke the `addImage` method when you click on it.
 * **f**. Save your index.html and app.js files.
 * **g**. Test out the button in the simulator.
 
 <hr data-action="end" />
 
-Now, when you click the add button, the `addImage()` method runs, which calls the ListView widget's `prepend()` method to add a new image to the list.
+Now, when you click the *Add* button, the `addImage()` method runs, which calls the ListView widget's `prepend()` method to add a new image to the list.
 
 At this point you have a list of photos, and a mechanism for adding new photos to the list. Next, let's see how you can switch from adding a hardcoded image to one that uses your device's camera.
 
@@ -80,7 +80,7 @@ addImage: function() {
 ```
 * **b**. Save your app.js file.
 * **c**. Use a three-finger tap and hold to refresh the app on your device.
-* **d**. Click the add button on your device.
+* **d**. Click the *Add* button on your device.
 * **e**. Take a picture! It can be of you, your keyboard, or that stress ball you got at some conference three years ago. If everyone went right, you should see the picture appear at the top of the list.
 
 <hr data-action="end" />

@@ -9,25 +9,21 @@ Kendo UI Mobile apps are made up of views, and a basic one has already been crea
 #### Action
 
 * **a**. Open this project's index.html file.
-* **b**. Find the defined view, and add the following markup:
+* **b**. Find the defined view, and add the following markup inside it:
 ```
-<div data-role="view">
-    <header data-role="header">
-        <div data-role="navbar">
-            <span data-role="view-title"></span>
-        </div>
-    </header>
-</div>
+<header data-role="header">
+    <div data-role="navbar">
+        <span data-role="view-title"></span>
+    </div>
+</header>
 ```
 
 * **c**. Add a `data-title` attribute to the view, e.g. `<div data-role="view" data-title="Photos">` and save the changes.
-* **d**. Save the index.html file.
-
-**Tip**: To better understand Kendo UI Mobile, please check the [documentation](http://docs.telerik.com/kendo-ui/api/javascript/mobile/application) and the guide on [Kendo UI Mobile Do's](http://www.kendouimobileguide.com/#1.-Kendo-UI-Mobile-Do's).
+* **d**. To see what this looks like, let's try this app out in the AppBuilder simulator by the **Start Debugging** command (default shortcut F5).
 
 <hr data-action="end" />
 
-Kendo UI Mobile automatically styles the navbar to look great on each platform. To see what this looks like, let's try this app out in the AppBuilder simulator by the **Start Debugging** command (default shortcut F5).
+**Tip**: Kendo UI Mobile automatically styles the navbar to look great on each platform. To better understand Kendo UI Mobile, please check the [documentation](http://docs.telerik.com/kendo-ui/api/javascript/mobile/application) and the guide on [Kendo UI Mobile Do's](http://www.kendouimobileguide.com/#1.-Kendo-UI-Mobile-Do's).
 
 <hr data-action="start" />
 
@@ -48,14 +44,15 @@ The next step is to show some photos in the album, using the Kendo UI ListView w
 
 #### Action
 
-* **a**. Add a `<ul>` element underneath the navbar with an `id` of `"images"` (`<ul id="images"></ul>`) and save changes. The completed view should look like this:
+* **a**. Add a `<ul>` element with an `id` of `"images"` below the header and save changes. The view should look like this:
 ```
-<div data-role="view" data-title="Photos">
+<div data-role="view" data-title="My Cool Photos">
     <header data-role="header">
         <div data-role="navbar">
             <span data-role="view-title"></span>
         </div>
     </header>
+
     <ul id="images"></ul>
 </div>
 ```
@@ -69,7 +66,7 @@ $("#images").kendoMobileListView({
 ```
 * **e**. Run this in the simulator to see how the photos display.
 
-**Tip**: In case at some point you see a white screen, most probably JavaScript exception was raised. Please open the developer console by clicking the "Debug" button in the main menu to check for any errors listed. See also [Debug in the Simulator](http://docs.telerik.com/platform/appbuilder/cordova/debugging-your-code/debug-in-simulator).
+**Tip**: In case at some point you see a white screen, most likely a JavaScript exception occurred. Please open the developer console by clicking the **Debugger** button in the main menu and check for any errors listed under the Console tab. See also [Debug in the Simulator](http://docs.telerik.com/platform/appbuilder/cordova/debugging-your-code/debug-in-simulator).
 
 <hr data-action="end" />
 
@@ -88,21 +85,23 @@ The AppBuilder companion app makes it easy to test your app on real devices, wit
 [![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.AppBuilder&hl=en)
 [![Windows Phone Store](images/windows-phone-store-icon.png)](https://www.windowsphone.com/en-us/store/app/appbuilder/0171d46b-b5f2-43d9-a36b-0a78c9692aab?signin=true)
 
-* **c**. From the VS toolbar select the APPBUILDER menu and then the **Build PhotoAlbum in Cloud** option. Having the Build wizard opened, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
-* **d**. Open the AppBuilder app on your device, and then use a two-finger swipe to reveal the companion app's menu. Click the "QR Scanner" option in the menu and use the integrated scanner to scan the QR code displayed in the browser.
+* **c**. Open the AppBuilder app on your device, and then use a two-finger swipe to reveal the companion app's menu. 
 ![Using a two-finger swipe on your device](images/swipe.png)
+
+* **d**. From the VS toolbar select the APPBUILDER menu and then the **Build PhotoAlbum in Cloud** option. Having the Build wizard opened, select your device's platform, choose "AppBuilder companion app", and click Next. Once the build finishes, tap the "QR Scanner" option in the AppBuilder app's menu and use the integrated scanner to scan the generated QR code.
 
 <hr data-action="end" />
 
-When scanned, the QR code loads your image gallery app in the AppBuilder companion app. Now that you have the app on your device, let's make some changes.
+When scanned, the QR code loads your image gallery app in the AppBuilder companion app. 
+Now that you have the app on your device, let's make some changes.
 
 <hr data-action="start" />
 
 #### Action
 
-* **e**. Change the `data-title` attribute of the app's view (for instance `<div data-role="view" data-title="My Awesome Photos">`) and save changes.
+* **e**. In index.html change the `data-title` attribute of the app's view (for instance `<div data-role="view" data-title="My Awesome Photos">`) and save changes.
 * **f.** From the VS toolbar select the APPBUILDER menu and then the **Synchronize PhotoAlbum with Cloud** option.
-* **g.** Check the Output window where output from Build is shown and wait until the "Project files uploaded to the cloud" message is logged.
+* **g.** Check the Output window where output from the Build is shown and wait until the *"Project files uploaded to the cloud"* message is logged.
 * **h**. On your device, within the companion app, tap with three fingers and hold until a popup appears.
 ![Using a three-finger refresh on your device](images/three-finger-tap.png)
 
@@ -112,7 +111,7 @@ This process is known as *LiveSync*, and it makes updating your apps as easy as 
 
 ### Step 4. Deploy your app on connected device.
 
-With AppBuilder, you can directly deploy on multiple connected devices simultaneously. You can deploy apps on devices running iOS, Android, Windows Phone or on the Kindle Fire.
+With AppBuilder, you can directly deploy on multiple connected devices simultaneously. You can deploy apps on devices running iOS, Android, Windows Phone or on the Kindle Fire. For the purpose of this tutorial, we will illustrate testing on *Android* device since it does not require any additional provisioning.
 
 <hr data-action="start" />
 
@@ -137,7 +136,7 @@ With AppBuilder, you can directly deploy on multiple connected devices simultane
 
 <hr data-action="end" />
 
-**Tip**: If you tap with three fingers and hold until a popup appears, then the changes will be live synced with the latest version synchronized with the cloud and all syncs applied over the cable will be lost. To upload the latest changes to the cloud, select the APPBUILDER menu and then the **Synchronize PhotoAlbum with Cloud** option.
+**Tip**: If you tap with three fingers and hold until a popup appears, then the changes will be LiveSynced with the latest version synchronized with the cloud and all syncs applied over the cable will be lost. To upload the latest changes to the cloud, select the APPBUILDER menu and then the **Synchronize PhotoAlbum with Cloud** option.
 
-**Tip**: You cannot LiveSync changes to connected Windows Phone devices. To be able to LiveSync changes, deploy your app via QR code and use the three-finger refresh gesture to get your latest changes from the cloud. See [Windows Phone Prerequisites](http://docs.telerik.com/platform/appbuilder/cordova/running-on-devices/running-on-connected-devices/deploy-connected#windows-phone-prerequisites).
-For the purpose of this tutorial, we will illustrate testing on Android device since it does not require any additional provisioning.
+**Tip**: Changes are not automatically reflected to connected *Windows Phone* devices. To be able to LiveSync changes, deploy your app to the cloud and use the three-finger refresh gesture to get the latest changes. See [Windows Phone Prerequisites](http://docs.telerik.com/platform/appbuilder/cordova/running-on-devices/running-on-connected-devices/deploy-connected#windows-phone-prerequisites).
+

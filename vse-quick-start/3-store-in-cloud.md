@@ -2,28 +2,29 @@
 
 ### Step 7. Connect Code with Cloud
 
-Finally, you can connect your app with the Cloud.
+Finally, you can connect your app with the Cloud. 
 
 <hr data-action="start" />
 
 #### Action
 
 * **a**. From the VS toolbar select the APPBUILDER menu and then the **Connect Code with Cloud option**.
-* **b**. Press the Connect button to upload the app in the cloud. Similarly you can **Get Code from Cloud**.
+* **b**. Press the *Connect* button to upload the app in the cloud. 
+* **c**. From the menu select the **Build Photo Album in Cloud** option. Having the Build wizard opened, choose the Android platform and "App package" option, then click Next. This is needed in order to build the latest version on the cloud and enable LiveSync for the changes to be done in the next steps.
 
 <hr data-action="end" />
 
-From **Connect Code with Cloud**, you can make your local project available for collaboration in the AppBuilder cloud apps. After you connect your project to a cloud app, any changes you make locally are automatically applied to the cloud copy. To retrieve changes from the cloud copy, you need to reload the local project or to restart Microsoft Visual Studio.
+**Tip**: From **Connect Code with Cloud**, you can make your local project available for collaboration in the AppBuilder cloud apps. After you connect your project to a cloud app, any changes you make locally are automatically applied to the cloud copy. To retrieve changes from the cloud copy, you need to reload the local project or to restart Microsoft Visual Studio.
 
-From **Disconnect from Cloud**, you can detach your local project from its cloud copy.
+**Tip**: From **Disconnect from Cloud**, you can detach your local project from its cloud copy.
 
-From **Get Code from Cloud**, you can create a new project by cloning an existing cloud app. Your local project will be automatically connected to the cloud app and all changes made locally will be applied to the cloud. To retrieve changes from the cloud copy, you need to reload the local project or to restart Microsoft Visual Studio.
+**Tip**: From **Get Code from Cloud**, you can create a new project by cloning an existing cloud app. Your local project will be automatically connected to the cloud app and all changes made locally will be applied to the cloud. To retrieve changes from the cloud copy, you need to reload the local project or to restart Microsoft Visual Studio.
 
 <hr data-action="start" />
 
 #### Action
 
-* **c**. Log in the In-Browser Client at [https://platform.telerik.com](https://platform.telerik.com) and open the Photo Album app connected with the Cloud.
+* **c**. Log in the In-Browser Client at [https://platform.telerik.com](https://platform.telerik.com) and open the **Photo Album** app connected with the Cloud.
 
 <hr data-action="end" />
 
@@ -36,43 +37,43 @@ The Telerik Platform provides tools for the entire app building experience. In t
 #### Action
 
 * **a**. Navigate to the **AppBuilder menu and select Data Navigator** option.
-* **b**. From the Options choose to **Open Telerik Platform Portal**.
-* **c**. As the In-Browser Client is loaded, open the Photo Album app and click on the "Data" tab on the left-hand side of the screen.
+* **b**. From the Options (the cogwheel icon) choose to **Open Telerik Platform Portal**.
+* **c**. As the In-Browser Client is loaded, open the Photo Album app and click on the **"Data"** tab on the left-hand side of the screen.
 * **d**. Click the blue "Enable Data" button to enable data storage for your project.
 
 <hr data-action="end" />
 
 The Data tab is where you manage your application's data. You can connect to an existing database, or use the Telerik Platform's own secure backend storage system. Regardless of which approach you use, the Telerik Platform provides a simple RESTful API for accessing your data.
 
-On this tab you'll see a "Files" menu, which is where you're going to store your app's photos. When you clicked "Enable Data", the Telerik Platform automatically created a RESTful API for you to upload files to this backend system. Before using the API though, you need to grab your App ID.
+On this tab you'll see a "Files" menu, which is where you're going to store your app's photos. When you clicked "Enable Data", the Telerik Platform automatically created a RESTful API for you to upload files to this backend system. Before using the API though, you need to grab your *App ID*.
 
 <hr data-action="start" />
 
 #### Action
 
 * **e**. Click the “Settings” tab in the menu on the left-hand side of the screen.
-* **f**. Copy the App ID shown under the “App ID” heading and paste it somewhere convenient; you'll need it to complete the next step.
+* **f**. Copy the *App ID* shown under the “APP ID” heading and paste it somewhere convenient; you'll need it to complete the next step.
 
 <hr data-action="end" />
 
 ### Step 9. Upload images to your backend
 
-With your backend ready to go, your final step is to add data to it. The Telerik Platform provides backend SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a Cordova app you're interested in the JavaScript SDK. In this step you'll add the Backend Services JavaScript SDK to your project, and use it to store your images in the cloud.
+With your backend ready to go, the final step is to add data to it. The Telerik Platform provides backend SDKs for several platforms, including .NET, iOS, Android, and Windows Phone, but for a Cordova app you're interested in the JavaScript SDK. In this step you'll add the Backend Services JavaScript SDK to your project, and use it to store your images in the cloud.
 
 <hr data-action="start" />
 
 #### Action
 
 * **a**. To synchronize the latest changes from the cloud to the solution opened in Visual Studio, you need to reload the local project or to restart Microsoft Visual Studio.
-* **b**. In your index.html file, insert the following `<script>` tag to import the Backend Services SDK (which is code named Everlive). Place it directly after the `<script>` that imports kendo.mobile.min.js:
+* **b**. In your index.html file, insert the following `<script>` tag to import the Backend Services SDK (code named Everlive). Place it straight before the `<script src="scripts/app.js"></script>` line:
 ```
-<script src="https://bs-static.cdn.telerik.com/1.5.8/everlive.all.min.js"></script>
+<script src="https://bs-static.cdn.telerik.com/1.6.9/everlive.all.min.js"></script>
 ```
 * **c**. Add the following to the top of your app.js file, right *before* the `document.addEventListener()` call:
 ```
-var everlive = new Everlive("YOUR API KEY");
+var everlive = new Everlive("YOUR APP ID");
 ```
-* **d.** Replace the `"YOUR API KEY"` string with the API key you saved off in the previous step.
+* **d.** Replace the `"YOUR APP ID"` string with the *APP ID* you saved off in the previous step.
 
 <hr data-action="end" />
 
@@ -89,7 +90,10 @@ var success = function(data) {
         Filename: Math.random().toString(36).substring(2, 15) + ".jpg",
         ContentType: "image/jpeg",
         base64: data
-    }).then(loadPhotos);
+    }).then(loadPhotos,
+            function (err) {
+                alert("Could not upload image" + err.message);
+            });
 };
 ```
 * **f**. Make the following modification to change how the Kendo UI Mobile ListView gets the data it needs and save changes.
@@ -114,15 +118,17 @@ function loadPhotos() {
             dataSource: files,
             template: "<img src='#: data #'>"
         });
+    },
+    function (err) {
+        alert("Could not fetch images: " + err.message);
+
     });
 }
 loadPhotos();
 ```
 
-* **g**. From the VS toolbar select the APPBUILDER menu and then the **Synchronize PhotoAlbum with Cloud** option.
-* **h**. Check the Output window where output from Build is shown and wait until the "Project files uploaded to the cloud" message is logged.
-* **i**. On your device, use a three-finger tap and hold to refresh the app on your device.
-* **j**. Click the add button on your device to put your photography skills to use. You've always wanted an artistic picture of your mouse, keyboard, or laptop haven't you?
+* **g**. On your device, use a three-finger tap and hold to refresh the app on your device.
+* **h**. Click the add button on your device to put your photography skills to use. You've always wanted an artistic picture of your mouse, keyboard, or laptop, haven't you?
 
 <hr data-action="end" />
 
