@@ -84,7 +84,7 @@ The NativeScript companion app makes it easy for you to test your app on real de
 
 <hr data-action="end" />
 
-When scanned, the QR code loads your app in the NativeScript companion app. You should should be able to see the empty rows of the listview. The button is also there, at the bottom, but it's white, so you may not be able to recognize it immediately. Now that you have the app on your device, let's make some changes to see how easy it is to get application updates without rescanning the QR code.
+When scanned, the QR code loads your app in the NativeScript companion app. You should be able to see the empty rows of the listview. The button is also there, at the bottom, but it's white, so you may not be able to recognize it immediately. Now that you have the app on your device, let's make some changes to see how easy it is to get application updates without rescanning the QR code.
 
 <hr data-action="start" />
 
