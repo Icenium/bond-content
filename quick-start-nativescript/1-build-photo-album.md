@@ -46,7 +46,7 @@ You are now going to create a page that contains a button at the bottom and a li
 
 The complete XML declaration looks like this:
 ```
-<Page xmlns="http://www.nativescript.org/tns.xsd" >
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" >
     <GridLayout rows="*, auto">
         <ListView row="0" />
         <Button row="1" />
