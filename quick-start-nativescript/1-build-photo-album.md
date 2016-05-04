@@ -191,7 +191,7 @@ exports.onPageLoaded = onPageLoaded;
 ```
 * **i.** To call the `onPageLoaded` method when the page loads, add the loaded attribute with value `onPageLoaded` in the `Page` tag in `homeView.xml`:
 ```
-<Page loaded="onPageLoaded" xmlns="http://www.nativescript.org/tns.xsd" >
+<Page loaded="onPageLoaded" xmlns="http://schemas.nativescript.org/tns.xsd" >
 ```
 * **j.** You now should bind the `ListView` to the `photoItems` collection of the `photoAlbumModel`. To do this, set the `items` attribute of the `ListView` tag to `{{ photoItems }}`:
 ```
