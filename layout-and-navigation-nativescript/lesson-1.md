@@ -327,6 +327,6 @@ Orientation qualifiers can be used if you want to load orientation specific layo
 
 - homeView.land.xml - This file will be loaded if the orientation of the app is in landscape mode.
 
-- homeView.port.xml - This file will be loaded if the orientation of the app is in portrain mode.
+- homeView.port.xml - This file will be loaded if the orientation of the app is in portrait mode.
 
 Great job! In just a few minutes, you've mastered some of the critical basics to building native apps with NativeScript and the Telerik Platform. With these skills in hand, creating the navigation, layout and major views in your next mobile app should be a breeze!
