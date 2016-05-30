@@ -39,7 +39,7 @@ The above code snippet will start the native platform camera application. After 
 
 * **c**. Save the `homeView-view-model.js` file and use the LiveSync feature to deploy the updated app to the device.
 * **d**. Tap the `Add new photos` button on your device.
-* **e**. Take a picture! It can be of you, your keyboard, or that stress ball you got at some conference three years ago. If everything went right, you should see the picture appear at the top of the list.
+* **e**. Take a picture! It can be of you, your keyboard, or that stress ball you got at some conference three years ago. If everything went right, you should see the picture appear at the bottom of the list.
 
 <hr data-action="end" />
 
