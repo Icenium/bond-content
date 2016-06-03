@@ -74,37 +74,37 @@ $("#images").kendoMobileListView({
 
 <hr data-action="end" />
 
-### Step 3. Deploy your app using the companion app
+### Step 3. Deploy your app using the Companion app
 
-The AppBuilder companion app makes it easy to test your app on real devices, without the need to manage SDKs or deal with complex provisioning options.
+The Telerik Platform Companion app is a dashboard app that lists the applications on your account and lets you scan QR codes. The Companion app utilizes player apps to run your applications in a sandbox environment. As such, you’ll use the Companion app to load apps on your account, and the player app to run your apps on real devices, without the need to manage SDKs or deal with complex provisioning options.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a.** Get your iOS, Android, or Windows Phone device out.
-* **b**. Download and install the AppBuilder companion app from your device's app store—i.e. the App Store for iOS users, Google Play for Android users, or the Windows Store for Windows Phone users (search for **AppBuilder**).
+* **a**. Get your iOS, Android, or Windows Phone device.
+* **b**. Download and install the Telerik Platform (AppBuilder for Windows Phone) Companion app from your device's app store — i.e. the App Store for iOS users, Google Play for Android users, or the Windows Store for Windows Phone users (search for **Platform Companion** for iOS/Android and **AppBuilder** for Windows Phone or use the links provided below).
 
-[![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/us/app/telerik-appbuilder/id527547398?mt=8)
-[![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.AppBuilder&hl=en)
+[![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/us/app/platform-companion/id1083895251?mt=8)
+[![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.PlatformCompanion&hl=en)
 [![Windows Phone Store](images/windows-phone-store-icon.png)](https://www.windowsphone.com/en-us/store/app/appbuilder/0171d46b-b5f2-43d9-a36b-0a78c9692aab?signin=true)
 
-* **c**. Open the AppBuilder app on your device, and then use a two-finger swipe to reveal the companion app's menu. 
+* **c**. **iOS or Android:** Open the Telerik Platform Companion app on your device, and tap on **Help & About**. In the newly opened page, locate the Cordova section and select **Install Dev Application**. You will be redirected to your device's app store, where you should click **Install**. This will download and install the Cordova player app, which the Telerik Platform Companion app will use to run your applications.
+* **d**. **Windows Phone:** Open the AppBuilder Companion app on your device, and then use a two-finger swipe to reveal the Companion app's menu.
 ![Using a two-finger swipe on your device](images/swipe.png)
-
-* **d**. In the browser, select **Run** --> **Build**, select your device's platform, choose "AppBuilder companion app", and click Next. Once the build finishes, tap the "QR Scanner" option in the AppBuilder app's menu and use the integrated scanner to scan the generated QR code.
+* **e**. In the browser, select **Run** --> **Build**, choose your device's platform (iOS/Android/Windows Phone), select **AppBuilder companion app**, and click **Next**. Once the build finishes, tap the **QR Scanner** option in the Companion app's menu and use the integrated scanner to scan the generated QR code.
 
 <hr data-action="end" />
 
-When scanned, the QR code loads your image gallery app in the AppBuilder companion app. Now that you have the app on your device, let's make some changes.
+When scanned, the QR code loads your image gallery application in the Companion app. Now that you have the app on your device, let's make some changes to see how easy it is to get application updates without rescanning the QR code.
 
 <hr data-action="start" />
 
 #### Action
 
-* **e**. Change the `data-title` attribute of the app's view (for instance `<div data-role="view" data-title="My Awesome Photos">`).
-* **f.** Save your index.html file.
-* **g**. On your device, within the companion app, tap with three fingers and hold until a popup appears.
+* **f**. Change the `data-title` attribute of the app's view (for instance `<div data-role="view" data-title="My Awesome Photos">`).
+* **g**. Save your index.html file.
+* **h**. On your device, within the Companion app, tap with three fingers and hold until a popup appears.
 ![Using a three-finger refresh on your device](images/three-finger-tap.png)
 
 <hr data-action="end" />
