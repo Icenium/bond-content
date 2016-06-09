@@ -60,7 +60,8 @@ Regardless of the small amount of UI and settings that you have put on the page,
 
 ### Step 3. Deploy your app on a device using the companion app
 
-The NativeScript companion app makes it easy for you to test your app on real devices, without the need to manage SDKs or deal with complex provisioning options.
+
+The Telerik Platform Companion app is a dashboard app that lists the applications on your account and lets you scan QR codes. The Companion app utilizes player apps to run your applications in a sandbox environment. As such, you’ll use the Companion app to load apps on your account, and the player app to run your apps on real devices, without the need to manage SDKs or deal with complex provisioning options.
 
 ![iOS app store](images/native-script-app.png)
 
@@ -69,22 +70,19 @@ The NativeScript companion app makes it easy for you to test your app on real de
 #### Action
 
 * **a.** Get your iOS or Android device.
-* **b.** Download and install the NativeScript companion app from the App Store or Google Play, respectively.
+* **b.** Download and install the Telerik Platform Companion app from your device's app store — i.e. the App Store for iOS users or Google Play for Android users (search for **Platform Companion** or use the links provided below).
 
-[![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/bg/app/nativescript/id882561588?mt=8)
-[![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.NativeScript&hl=en)
+[![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/us/app/platform-companion/id1083895251?mt=8)
+[![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.PlatformCompanion&hl=en)
 
-* **c.** In the browser, select **Run** --> **Build**, select your platform (iOS/Android), choose **NativeScript companion app**, and click **Next**. You will see a QR code pointing to the application. 
-* **e.** **Android:** Open the NativeScript app on your device. With the NativeScript app running, open the notification center. Tap **Scan** and use the integrated scanner to scan the QR code displayed in the browser.
-![Using the notification center of your device](images/notification-center-buttons.png)
-* **f.** **iOS:** Open the NativeScript app on your device and with a two-finger left-to-right swipe from far left reveal the companion app menu. Tap **QR Scanner** in the menu and use the integrated scanner to scan the QR code displayed in the browser.
-![Using a two-finger swipe on your device](images/swipe.png)
+* **c**. Open the Telerik Platform Companion app on your device, and tap **Help & About**. In the newly opened page, locate the NativeScript section and select **Install Dev Application**. You will be redirected to your device's app store, where you should click **Install**. This will download and install the NativeScript player app, which the Telerik Platform Companion app will use to run your applications.
 
-* **e.** **Universal Windows Platform:** A companion app for Windows Universal is not yet available.
+
+* **d.** In the browser, select **Run** --> **Build**, choose your device's platform (iOS/Android), select **NativeScript companion app**, and click **Next**. Once the build finishes, tap the **QR Scanner** option in the Companion app's menu and use the integrated scanner to scan the generated QR code.
 
 <hr data-action="end" />
 
-When scanned, the QR code loads your app in the NativeScript companion app. You should be able to see the empty rows of the listview. The button is also there, at the bottom, but it's white, so you may not be able to recognize it immediately. Now that you have the app on your device, let's make some changes to see how easy it is to get application updates without rescanning the QR code.
+When scanned, the QR code loads your app in the Companion app. You should be able to see the empty rows of the listview. The button is also there, at the bottom, but it's white, so you may not be able to recognize it immediately. Now that you have the app on your device, let's make some changes to see how easy it is to get application updates without rescanning the QR code.
 
 <hr data-action="start" />
 
@@ -94,8 +92,8 @@ When scanned, the QR code loads your app in the NativeScript companion app. You 
 ```
 <Button text="Test Message" row="1"/>
 ```
-* **b.** **Android:** With the NativeScript application running, open the notification center and tap **Sync**.
-* **c.** **iOS:** With the NativeScript application running, tap with three fingers and hold until a popup appears.
+* **b**. On your device, within the Companion app, tap with three fingers and hold until a popup appears.
+![Using a three-finger refresh on your device](images/three-finger-tap.png)
 
 <hr data-action="end" />
 
