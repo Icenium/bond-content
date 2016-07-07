@@ -23,7 +23,7 @@ Now you have a dummy user account to test your app with. Before we head back to 
 
 * **e**. Click the “Data” tab on the left-hand side of the screen.
 * **f**. Click the “Permissions” link.
-* **g**. Change the Groceries permission dropdown from “Public” to “Private”, and then click the green “Save” button on the bottom of the screen.
+* **g**. Change the Groceries permission dropdown from “Public” to “Private”, and then click the blue “Save” button on the bottom of the screen.
 
 <hr data-action="end" />
 
