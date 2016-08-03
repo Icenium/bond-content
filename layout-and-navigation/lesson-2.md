@@ -113,7 +113,7 @@ The `data-show` and `data-hide` attributes tell Kendo UI which methods to call w
     </div>
     <div>
         <label for="favorite">Favorite?</label>
-        <input id="favorite" type="checkbox" data-role="switch" data-checked=false />
+        <input id="favorite" type="checkbox" data-role="switch" data-checked=false data-change="BookDetail.setIsFavorite"/>
     </div>
     <div>
         <p><a data-role="button" id="amazonLink" data-click="BookDetail.openLink">Order from Amazon</a></p>
