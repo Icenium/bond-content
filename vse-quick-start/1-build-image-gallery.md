@@ -81,8 +81,8 @@ The Telerik Platform Companion app is a dashboard app that lists the application
 * **a.** Get your iOS, Android, or Windows Phone device out.
 * **b**. Download and install the Telerik Platform (AppBuilder for Windows Phone) Companion app from your device's app store — i.e. the App Store for iOS users, Google Play for Android users, or the Windows Store for Windows Phone users (search for **Platform Companion** for iOS/Android and **AppBuilder** for Windows Phone or use the links provided below).
 
-[![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/us/app/telerik-appbuilder/id527547398?mt=8)
-[![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.AppBuilder&hl=en)
+[![iOS app store](images/app-store-icon.png)](https://itunes.apple.com/us/app/platform-companion/id1083895251?mt=8)
+[![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.PlatformCompanion&hl=en)
 [![Windows Phone Store](images/windows-phone-store-icon.png)](https://www.windowsphone.com/en-us/store/app/appbuilder/0171d46b-b5f2-43d9-a36b-0a78c9692aab?signin=true)
 
 * **c**. **iOS or Android:** Open the Telerik Platform Companion app on your device, and tap on **Help & About**. In the newly opened page, locate the Cordova section and select **Install Dev Application**. You will be redirected to your device's app store, where you should click **Install**. This will download and install the Cordova player app, which the Telerik Platform Companion app will use to run your applications.
