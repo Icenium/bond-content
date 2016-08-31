@@ -27,22 +27,6 @@ app = new kendo.mobile.Application(document.body, { layout: "main-layout", trans
 
 If you clicked on the drawer menu during simulation, you probably noticed that it continues to use a slide transition. Much like the Drawer does by default, Kendo UI allows us to set transitions at the view level, in addition to the app level.
 
-<hr data-action="start" />
-
-#### Action
-
-* **e**. Open details.html, and add a `data-transition="fade"` property to the main view. It should now look like this:
-```
-<div data-role="view" data-title="Book Details" 
-     data-show="BookDetail.show"
-     data-hide="BookDetail.hide"
-     data-layout="back-layout" data-reload="true" data-transition="fade">
-```
-
-* **f**. Open the iPhone simulator back up and click on one of the items in the ListView. Notice the fade transition, even as the rest of the app uses the app-level transiton you specified above.
-
-<hr data-action="end" />
-
 ### Step 8. Using simple navigation
 
 Now let's look a little bit more at navigation. As with many other features in Kendo UI, you can work with navigation in one of two ways: in JavaScript code or declaratively in your markup. Let's look at both now.
@@ -82,6 +66,14 @@ As noted above, Kendo UI allows you to perform navigation with code or declarati
 <a href="views/settings.html" data-role="button" data-align="right" data-icon="settings">Settings</a>
 ```
 * **e**. Reload the iPhone simulator and click the settings button again. Things should still work just fine, and you've saved yourself a few lines of JavaScript to boot!
+
+* **f**. Open settings.html, and add a `data-transition="fade"` property to the main view. It should now look like this:
+```
+<div data-role="view" data-title="Settings"
+      data-layout="back-layout" data-transition="fade">
+```
+
+* **g**. Open the iPhone simulator back up and click the settings button. Notice the fade transition, even as the rest of the app uses the app-level transiton you specified in the previous step.
 
 <hr data-action="end" />
 
