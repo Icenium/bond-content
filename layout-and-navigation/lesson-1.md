@@ -106,9 +106,9 @@ While the TabStrip has been a common navigation pattern since the early days of 
     </div>
 
     <ul data-role="listview">
-        <li><a href="#index" data-icon="home">Home</a></li>
-        <li><a href="views/favorites.html" data-icon="favorites">Favorites</a></li>
-		<li><a href="views/about.html" data-icon="globe">About</a></li>
+        <li><a href="#index" data-icon="home" data-transition="none">Home</a></li>
+        <li><a href="views/favorites.html" data-icon="favorites" data-transition="none">Favorites</a></li>
+	<li><a href="views/about.html" data-icon="globe" data-transition="none">About</a></li>
     </ul>
 </div>
 ```
