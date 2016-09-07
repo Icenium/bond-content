@@ -23,14 +23,6 @@ app = new kendo.mobile.Application(document.body, { layout: "main-layout", trans
 
 * **d**. Now open the iPhone simulator back up and navigate within the app. Notice how the transition has changed from the last step?
 
-<hr data-action="end" />
-
-If you clicked on the drawer menu during simulation, you probably noticed that it continues to use a slide transition. Much like the Drawer does by default, Kendo UI allows us to set transitions at the view level, in addition to the app level.
-
-<hr data-action="start" />
-
-#### Action
-
 * **e**. Open details.html, and add a `data-transition="fade"` property to the main view. It should now look like this:
 ```
 <div data-role="view" data-title="Book Details" 
@@ -56,7 +48,6 @@ Now let's look a little bit more at navigation. As with many other features in K
 <div data-role="layout" data-id="main-layout">
     <div data-role="header">
         <div data-role="navbar">
-            <a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>
             <span data-role="view-title"></span>
             <a data-click="Books.settings" data-role="button" data-align="right" data-icon="settings"></a>
         </div>
