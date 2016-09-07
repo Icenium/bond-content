@@ -6,7 +6,7 @@ So far in this tutorial, you've learned how to work with layouts, how to leverag
 
 <hr data-action="start" />
 
-As you've worked through this tutorial so far, you may have noticed that Kendo UI provides some nice built-in transitions between views as well as for the Drawer menu. 
+As you've worked through this tutorial so far, you may have noticed that Kendo UI provides some nice built-in transitions between views.
 
 #### Action
 
