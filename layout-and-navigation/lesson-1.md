@@ -50,9 +50,48 @@ app = new kendo.mobile.Application(document.body, { layout: "main-layout" });
 
 With a common layout, we can now add multiple views to our app and ensure that the application shell remains consistent throughout. In order to see the benefit of our new layout, we need to add some basic navigation. Kendo UI provides two basic navigation paradigms out of the box, the TabStrip and the Drawer.
 
-### Step 2. Add a TabStrip
+### Step 2. Add a Drawer
 
-The TabStrip, as the name indicates, provides a tab menu at the base or top of your app (depending on the mobile platform) that allows you to switch between multiple views. Let's add one to the layout we created in the last step. 
+In mobile apps, the Drawer is a hidden navigation menu that slides into view from the right or left side of the screen based on user interaction, like clicking a button or swiping in from the edge of the screen.
+
+<hr data-action="start" />
+
+#### Action
+
+* **a**. To add a Drawer widget, add the following markup to the index.html file before the closing `<body>` tag:
+```
+<div data-role="drawer" id="app-drawer">
+    <div data-role="header">
+        <div data-role="navbar">
+            <span data-role="view-title">Menu</span>
+        </div>
+    </div>
+
+    <ul data-role="listview">
+        <li><a href="#index" data-icon="home">Home</a></li>
+        <li><a href="views/favorites.html" data-icon="favorites">Favorites</a></li>
+		<li><a href="views/about.html" data-icon="globe">About</a></li>
+    </ul>
+</div>
+```
+
+<hr data-action="end" />
+
+Users can activate the Drawer by swiping in from the left by default, but most apps also include a button or link so that users can explicitly invoke this feature. Let's add a button for our drawer next.
+
+<hr data-action="start" />
+
+* **b**. Add a button to invoke the drawer by adding the following markup inside of the `data-role="navbar"` div of your layout. (It can go before or after the `<span data-role="view-title">` element.)
+```
+<a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>
+```
+* **c**. Open up the iPhone simulator, click the Menu link in the header, and watch the drawer magically appear!
+
+<hr data-action="end" />
+
+### Step 3. Switch to a TabStrip
+
+The TabStrip, as the name indicates, provides a tab menu at the base or top of your app (depending on the mobile platform) that allows you to switch between multiple views. Let's add one to the layout we created in the first step. 
 
 <hr data-action="start" />
 
@@ -83,59 +122,10 @@ The TabStrip, as the name indicates, provides a tab menu at the base or top of y
 
 **Tip**: The `data-icon` attribute allows you to specify the image that will accompany a tab or drawer item. You can learn more about icons, including how to create your own, in [this article](http://docs.telerik.com/kendo-ui/mobile/icons).
 
-* **c**. Save the index.html file and re-open the iPhone simulator. Click each tab and notice how the layout is preserved, even as the main content changes.
-* **d**. Close the iPhone simulator and open an Android phone simulator. Notice how Kendo UI automatically adapts to an Android style by moving the TabStrip to the top of the screen.
+* **c**. Now, you'll want to remove the Drawer you added in the last step. Delete the button that invokes the drawer (`<a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>`) and the entire Drawer div (`<div data-role="drawer" id="app-drawer">`) from your index.html file.
+* **d**. Save the index.html file and re-open the iPhone simulator. Click each tab and notice how the layout is preserved, even as the main content changes.
+* **e**. Close the iPhone simulator and open an Android phone simulator. Notice how Kendo UI automatically adapts to an Android style by moving the TabStrip to the top of the screen.
 
-<hr data-action="end" />
-
-### Step 3. Switch to a Drawer
-
-While the TabStrip has been a common navigation pattern since the early days of mobile, drawer navigation has gained in popularity in recent years. In mobile apps, the Drawer is a hidden navigation menu that slides into view from the right or left side of the screen based on user interaction, like clicking a button or swiping in from the edge of the screen.
-
-<hr data-action="start" />
-
-#### Action
-
-* **a**. To add a Drawer widget, add the following markup to the index.html file before the closing `<body>` tag:
-```
-<div data-role="drawer" id="app-drawer">
-    <div data-role="header">
-        <div data-role="navbar">
-            <span data-role="view-title">Menu</span>
-        </div>
-    </div>
-
-    <ul data-role="listview">
-        <li><a href="#index" data-icon="home">Home</a></li>
-        <li><a href="views/favorites.html" data-icon="favorites">Favorites</a></li>
-		<li><a href="views/about.html" data-icon="globe">About</a></li>
-    </ul>
-</div>
-```
-
-* **b**. Now, you'll want to remove the TabStrip you added in the last step from your app layout. Go ahead and remove the footer element from your layout so that it looks like this:
-```
-<div data-role="layout" data-id="main-layout">
-    <div data-role="header">
-        <div data-role="navbar">
-            <span data-role="view-title">
-            </span>
-        </div>
-    </div>
-</div>
-```
-
-<hr data-action="end" />
-
-Users can activate the Drawer by swiping in from the left by default, but most apps also include a button or link so that users can explicitly invoke this feature. Let's add a button for our drawer next.
-
-<hr data-action="start" />
-
-* **c**. Add a button to invoke the drawer by adding the following markup inside of the `data-role="navbar"` div of your layout. (It can go before or after the `<span data-role="view-title">` element.)
-```
-<a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>
-```
-* **d**. Open up the iPhone simulator, click the Menu link in the header, and watch the drawer magically appear!
 
 <hr data-action="end" />
 
