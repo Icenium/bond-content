@@ -122,7 +122,7 @@ The TabStrip, as the name indicates, provides a tab menu at the base or top of y
 
 **Tip**: The `data-icon` attribute allows you to specify the image that will accompany a tab or drawer item. You can learn more about icons, including how to create your own, in [this article](http://docs.telerik.com/kendo-ui/mobile/icons).
 
-* **c**. Now, you'll want to remove the Drawer you added in the last step. Delete the button that invokes the drawer (`<a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>`) and the full Drawer div(`<div data-role="drawer" id="app-drawer">`) from your index.html file.
+* **c**. Now, you'll want to remove the Drawer you added in the last step. Delete the button that invokes the drawer (`<a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>`) and the entire Drawer div (`<div data-role="drawer" id="app-drawer">`) from your index.html file.
 * **d**. Save the index.html file and re-open the iPhone simulator. Click each tab and notice how the layout is preserved, even as the main content changes.
 * **e**. Close the iPhone simulator and open an Android phone simulator. Notice how Kendo UI automatically adapts to an Android style by moving the TabStrip to the top of the screen.
 
