@@ -103,6 +103,7 @@ The TabStrip, as the name indicates, provides a tab menu at the base or top of y
     <div data-role="header">
         <div data-role="navbar">
             <span data-role="view-title"></span>
+            <a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>
         </div>
     </div>
     <div data-role="footer">

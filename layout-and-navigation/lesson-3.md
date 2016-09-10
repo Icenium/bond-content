@@ -43,15 +43,13 @@ Now let's look a little bit more at navigation. As with many other features in K
 
 #### Action
 
-* **a**. Open the index.html file and find the `main-layout` `<div>` that we defined back in the first lesson. Inside of the NavBar for that layout, add another button for a settings view:
+* **a**. Open the index.html file and find the `main-layout` `<div>` that we defined back in the first lesson. Inside the NavBar for that layout, add a button for a settings view:
 ```
-<div data-role="layout" data-id="main-layout">
-    <div data-role="header">
-        <div data-role="navbar">
-            <span data-role="view-title"></span>
-            <a data-click="Books.settings" data-role="button" data-align="right" data-icon="settings"></a>
-        </div>
-    </div>
+<div data-role="header">
+     <div data-role="navbar">
+          <span data-role="view-title"></span>
+          <a data-click="Books.settings" data-role="button" data-align="right" data-icon="settings"></a>
+     </div>
 </div>
 ```
 
