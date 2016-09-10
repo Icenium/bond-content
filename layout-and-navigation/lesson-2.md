@@ -41,7 +41,7 @@ Let's use this new layout in one of our existing views.
 <div data-role="view" data-title="Book Details" data-reload="true" data-layout="back-layout">
 ```
 
-* **c**. Open up the iPhone simulator and navigate to the details view by clicking on one of the items in the list. Notice that, instead of a drawer menu button, we now have a nice back button in its place. In the next step, we'll wire this button up using, you guessed it, MVVM.
+* **c**. Open up the iPhone simulator and navigate to the details view by clicking on one of the items in the list. Notice that we now have a nice back button. In the next step, we'll wire this button up using, you guessed it, MVVM.
 
 <hr data-action="end" />
 
