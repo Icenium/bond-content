@@ -43,7 +43,7 @@ Now let's look a little bit more at navigation. As with many other features in K
 
 #### Action
 
-* **a**. Open the index.html file and find the `main-layout` `<div>` that we defined back in the first lesson. Inside of the NavBar for that layout, add a button for a settings view:
+* **a**. Open the index.html file and find the `main-layout` `<div>` that we defined back in the first lesson. Inside the NavBar for that layout, add a button for a settings view:
 ```
 <div data-role="header">
      <div data-role="navbar">
