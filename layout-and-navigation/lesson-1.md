@@ -42,7 +42,7 @@ app = new kendo.mobile.Application(document.body, { layout: "main-layout" });
 ```
 
 * **f**. Save the app.js file.
-* **g**. Open the iPhone simulator (select **Run** --> **iPhone**) to see your new layout in action. Please note the defined layout will appear specific to the particular platform. 
+* **g**. To see your new layout in action, select **Run** --> **Open Simulator** and then select any iPhone from the **iOS Devices** section in the drop-down menu located in the top-left corner. Please note the defined layout will appear specific to the particular platform. 
 
 **Tip**: Depending on the project requirements, the mobile application may be styled in several different ways. Check out the documentation on [Kendo UI Mobile CSS Dependencies](http://docs.telerik.com/kendo-ui/mobile/styling#kendo-ui-mobile-css-dependencies) for full configuration options on styling in different ways.
 
@@ -125,7 +125,7 @@ The TabStrip, as the name indicates, provides a tab menu at the base or top of y
 
 * **c**. Now, you'll want to remove the Drawer you added in the last step. Delete the button that invokes the drawer (`<a href="#app-drawer" data-rel="drawer" data-role="button" data-align="left" data-icon="details"></a>`) and the entire Drawer div (`<div data-role="drawer" id="app-drawer">`) from your index.html file.
 * **d**. Save the index.html file and re-open the iPhone simulator. Click each tab and notice how the layout is preserved, even as the main content changes.
-* **e**. Close the iPhone simulator and open an Android phone simulator. Notice how Kendo UI automatically adapts to an Android style by moving the TabStrip to the top of the screen.
+* **e**. Switch to Android phone simulator by selecting it in the drop-down menu located in the top-left corner. Notice how Kendo UI automatically adapts to an Android style by moving the TabStrip to the top of the screen.
 
 
 <hr data-action="end" />

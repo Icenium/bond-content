@@ -31,7 +31,7 @@ Kendo UI Mobile automatically styles the navbar to look great on each platform. 
 
 #### Action
 
-* **e**. Open the iPhone simulator by selecting **Run** --> **iPhone**.
+* **e**. Open the iPhone simulator (select **Run** --> **Open Simulator**) and then select any iPhone from the **iOS Devices** section in the drop-down menu located in the top-left corner.
 * **f**. With the simulator open, change the title of the view by updating its `data-title` attribute—for instance `<div data-role="view" data-title="My Cool Photos">`.
 * **g**. Save your index.html file and note how the simulator updates automatically.
 

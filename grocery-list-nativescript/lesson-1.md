@@ -44,8 +44,8 @@ The true power of the Telerik Platform’s Backend Services is how easy it makes
 #### Action
 
 * **a**. Click the “Code” tab on the left-hand side of the screen.
-* **b**. Click the **Run** menu and then select **Build**. Choose your device's platform (iOS, Android, or Windows Phone), make sure the “AppBuilder companion app” radio button is selected, and then click **Next**.
-* **c**. Scan the resulting QR code using your device's QR reader to open the app in the NativeScript companion app.
+* **b**. Click the **Run** menu and then select **Build**. Choose your device's platform (iOS, Android, or Windows Phone), make sure the “NativeScript developer app” radio button is selected, and then click **Next**.
+* **c**. Scan the resulting QR code using your device's QR reader to open the app in the NativeScript developer app.
 
 <hr data-action="end" />
 
