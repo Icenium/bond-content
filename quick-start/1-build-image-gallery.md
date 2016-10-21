@@ -31,7 +31,7 @@ Kendo UI Mobile automatically styles the navbar to look great on each platform. 
 
 #### Action
 
-* **e**. Open the iPhone simulator (select **Run** --> **Open Simulator**) and then select any iPhone from the **iOS Devices** section in the drop-down menu located in the top-left corner.
+* **e**. Open the iPhone simulator (select **Run** &#8594; **Open Simulator**) and then select any iPhone from the **iOS Devices** section in the drop-down menu located in the top-left corner.
 * **f**. With the simulator open, change the title of the view by updating its `data-title` attribute—for instance `<div data-role="view" data-title="My Cool Photos">`.
 * **g**. Save your index.html file and note how the simulator updates automatically.
 
@@ -92,7 +92,7 @@ The Telerik Platform Companion app is a dashboard app that lists the application
 * **c**. **iOS or Android:** Open the Telerik Platform Companion app on your device, and tap on **Help & About**. In the newly opened page, locate the Cordova section and select **Install Dev Application**. You will be redirected to your device's app store, where you should click **Install**. This will download and install the Cordova player app, which the Telerik Platform Companion app will use to run your applications.
 * **d**. **Windows Phone:** Open the AppBuilder Companion app on your device, and then use a two-finger swipe to reveal the Companion app's menu.
 ![Using a two-finger swipe on your device](images/swipe.png)
-* **e**. In the browser, select **Run** --> **Build**, choose your device's platform (iOS/Android/Windows Phone), select **AppBuilder companion app**, and click **Next**. Once the build finishes, tap the **QR Scanner** option in the Companion app's menu and use the integrated scanner to scan the generated QR code.
+* **e**. In the browser, select **Run** &#8594; **Build**, choose your device's platform (iOS/Android/Windows Phone), select **AppBuilder companion app**, and click **Next**. Once the build finishes, tap the **QR Scanner** option in the Companion app's menu and use the integrated scanner to scan the generated QR code.
 
 <hr data-action="end" />
 
