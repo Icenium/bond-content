@@ -78,7 +78,7 @@ The Telerik Platform Companion app is a dashboard app that lists the application
 * **c**. Open the Telerik Platform Companion app on your device, and tap **Help & About**. In the newly opened page, locate the NativeScript section and select **Install Dev Application**. You will be redirected to your device's app store, where you should click **Install**. This will download and install the NativeScript player app, which the Telerik Platform Companion app will use to run your applications.
 
 
-* **d.** In the browser, select **Run** --> **Build**, choose your device's platform (iOS/Android), select **NativeScript companion app**, and click **Next**. Once the build finishes, tap the **QR Scanner** option in the Companion app's menu and use the integrated scanner to scan the generated QR code.
+* **d.** In the browser, select **Run** &#8594; **Build**, choose your device's platform (iOS/Android), select **NativeScript companion app**, and click **Next**. Once the build finishes, tap the **QR Scanner** option in the Companion app's menu and use the integrated scanner to scan the generated QR code.
 
 <hr data-action="end" />
 
@@ -104,13 +104,13 @@ This process is known as LiveSync and makes updating your apps as easy as a quic
 
 ### Step 4. Populate a ListView with images
 
-It's time to populate the `ListView` with images. For that purpose, the `Photo Album Native` project has already been provisioned with eight images. As discussed earlier, they are located in the `app --> res` folder. These images should be set as the items source of the `ListView`. The items source definition should be created in a view model file and then consumed by the `ListView` in the `homeView.js/homeView.xml` files.
+It's time to populate the `ListView` with images. For that purpose, the `Photo Album Native` project has already been provisioned with eight images. As discussed earlier, they are located in the `app &#8594; res` folder. These images should be set as the items source of the `ListView`. The items source definition should be created in a view model file and then consumed by the `ListView` in the `homeView.js/homeView.xml` files.
 
 <hr data-action="start" />
 
 #### Action
 
-* **a.** Right-click the `homeView` folder and choose **Add** --> **New File**. Select `JavaScript` for the file type and  name the file `homeView-view-model.js`. This is the place you will define the data model.
+* **a.** Right-click the `homeView` folder and choose **Add** &#8594; **New File**. Select `JavaScript` for the file type and  name the file `homeView-view-model.js`. This is the place you will define the data model.
 * **a.** In the `homeView-view-model.js` add the following declarations to load the necessary modules from the `tns-core-modules`: 
 ```
 var observable = require("data/observable");

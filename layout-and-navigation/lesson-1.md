@@ -42,7 +42,7 @@ app = new kendo.mobile.Application(document.body, { layout: "main-layout" });
 ```
 
 * **f**. Save the app.js file.
-* **g**. To see your new layout in action, select **Run** --> **Open Simulator** and then select any iPhone from the **iOS Devices** section in the drop-down menu located in the top-left corner. Please note the defined layout will appear specific to the particular platform. 
+* **g**. To see your new layout in action, select **Run** &#8594; **Open Simulator** and then select any iPhone from the **iOS Devices** section in the drop-down menu located in the top-left corner. Please note the defined layout will appear specific to the particular platform. 
 
 **Tip**: Depending on the project requirements, the mobile application may be styled in several different ways. Check out the documentation on [Kendo UI Mobile CSS Dependencies](http://docs.telerik.com/kendo-ui/mobile/styling#kendo-ui-mobile-css-dependencies) for full configuration options on styling in different ways.
 

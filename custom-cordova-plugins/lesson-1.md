@@ -71,7 +71,7 @@ It's fun to see the fruits of your labor, even if you have only just begun the l
 [![Google Play](images/google-play-icon.png)](https://play.google.com/store/apps/details?id=com.telerik.AppBuilder&hl=en)
 [![Windows Phone Store](images/windows-phone-store-icon.png)](https://www.windowsphone.com/en-us/store/app/appbuilder/0171d46b-b5f2-43d9-a36b-0a78c9692aab?signin=true)
 
-* **b**. Back in AppBuilder, select **Run** --> **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
+* **b**. Back in AppBuilder, select **Run** &#8594; **Build**, select your device's platform (iOS/Android/Windows Phone), choose "AppBuilder companion app", and click Next.
 
 * **c**. Scan the provided QR code on your device and play with the app you just created!
 
