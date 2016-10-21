@@ -11,7 +11,7 @@
 			"name": "Groceries Code",
 			"description": "",
 			"type": "appbuilder",
-			"url": "https://github.com/tjvantoll/bond-grocery-list-native.git"
+			"url": "https://github.com/Icenium/bond-grocery-list-native.git"
 		}
 	},
 	"app": {
@@ -19,7 +19,7 @@
 		"description": "Sample app for learning how to connect your NativeScript app with data and web services",
 		"content": { 
 			"appbuilder": {
-				"repoUrl": "https://github.com/tjvantoll/bond-grocery-list-native.git"
+				"repoUrl": "https://github.com/Icenium/bond-grocery-list-native.git"
 			}
 		}
 	}

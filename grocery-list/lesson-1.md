@@ -42,7 +42,7 @@ The true power of the Telerik Platform’s Backend Services is just how easy it 
 #### Action
 
 * **a**. Click the “Code” tab on the left-hand side of the screen.
-* **b**. Run this project in the simulator by clicking **Run** --> **iPhone** in the menu at the top of the screen.
+* **b**. Run this project in the simulator by clicking **Run** --> **Open Simulator** in the menu at the top of the screen.
 
 <hr data-action="end" />
 
